@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private CharacterController controller;
+    [SerializeField] private GameObject flashLight;
 
     private readonly float groundDistance = 0.4f;
     private readonly float speed = 2f;
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    bool isFlashLightOn;
 
     void Update()
     {
@@ -23,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isFlashLightOn = !isFlashLightOn;
+            flashLight.SetActive(isFlashLightOn);
+        }
 
         Vector3 move = transform.right * x + transform.forward * z;
 
