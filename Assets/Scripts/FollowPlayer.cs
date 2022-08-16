@@ -7,6 +7,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Animator animator;
 
+
     void FixedUpdate()
     {
         animatronic.SetDestination(target.position);
