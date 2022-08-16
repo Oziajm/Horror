@@ -4,14 +4,13 @@ using System;
 
 public class InGameTime : MonoBehaviour
 {
-    float currentTime = 0f;
-
     [SerializeField] TextMeshPro countdownText;
+
+    float currentTime = 0f;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
     }
 
     private void Update()
