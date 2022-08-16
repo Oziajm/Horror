@@ -12,12 +12,15 @@ public class BatteryController : MonoBehaviour
     [SerializeField] private Renderer[] lightsEmissions;
     [SerializeField] private ButtonInteractions[] buttonInteractions;
     [SerializeField] private ButtonLightsInteractions[] buttonLightsInteractions;
+    [SerializeField] private BatteryController batteryController;
 
     private float batteryAmmount = 1f;
 
     private void Update()
     {
         batteryImage.fillAmount = batteryAmmount / 1;
+        usageImage.fillAmount = usage / 5;
+
         batteryAmmount -= usage * 0.00002f;
 
         if(batteryAmmount <= 0.001f)
@@ -38,9 +41,9 @@ public class BatteryController : MonoBehaviour
                 }
             }
             usage = 0f;
+            batteryController.enabled = false;
         }
 
-        usageImage.fillAmount = usage / 5;
         if(usage <= 2)
         {
             usageImage.color = Color.green;
