@@ -8,7 +8,7 @@ public class ButtonLightsInteractions : MonoBehaviour
     [SerializeField] private GameObject spotlight;
     [SerializeField] private Renderer button;
     [SerializeField] private Renderer spotlightBulb;
-    [SerializeField] private BatteryController batteryController;
+    [SerializeField] private GameController batteryController;
 
     private void Start()
     {

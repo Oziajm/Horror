@@ -8,7 +8,7 @@ public class ButtonInteractions : MonoBehaviour
     [SerializeField] private Transform door;
     [SerializeField] private Transform openedDoorLocation;
     [SerializeField] private Renderer button;
-    [SerializeField] private BatteryController batteryController;
+    [SerializeField] private GameController batteryController;
     
     private Vector3 oldPosition;
 
@@ -20,13 +20,12 @@ public class ButtonInteractions : MonoBehaviour
     private void Update()
     {
         door.position = Vector3.MoveTowards(door.position, !isPressed ? openedDoorLocation.position : oldPosition, 5f * Time.deltaTime);
+        isOpen = door.position == openedDoorLocation.position;
     }
 
-    private void ChangeButtonsColor()
+    public void ChangeButtonsColor()
     {
         button.material.SetColor("_EmissionColor", !isPressed ? Color.green * 1f : Color.red * 1f);
-
-        isOpen = door.position == openedDoorLocation.position;
     }
     private void OnMouseDown()
     {
