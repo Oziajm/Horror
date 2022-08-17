@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private CharacterController controller;
-    [SerializeField] private GameObject flashLight;
     [SerializeField] private float mouseSensitivity = 100f;
     [SerializeField] private Transform cameraTransform;
 
