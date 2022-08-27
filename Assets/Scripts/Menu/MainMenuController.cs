@@ -5,11 +5,11 @@ using System.Collections;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private Light light;
+    [SerializeField] private Light spotlight;
     [SerializeField] private TextMeshProUGUI night;
-    [SerializeField] private Renderer[] eyes = new Renderer[3];
-    [SerializeField] private Light[] lights = new Light[9];
-    [SerializeField] private Transform[] heads ;
+    [SerializeField] private Renderer[] eyes;
+    [SerializeField] private Light[] lights;
+    [SerializeField] private Transform[] heads;
     [SerializeField] private Transform cameraTransform;
     private int nightNumber = 1;
 
@@ -25,23 +25,23 @@ public class MainMenuController : MonoBehaviour
     public void NewGame()
     {
         nightNumber = 1;
-        StartCoroutine(transition("Night1"));
+        StartCoroutine(Transition("Night1"));
     }
 
     public void LoadGame()
     {
         string nextNight = "Night" + nightNumber;
-        SceneManager.LoadScene(nextNight);
+        StartCoroutine(Transition(nextNight));
     }
 
-    IEnumerator transition(string nextScene)
+    IEnumerator Transition(string nextScene)
     {
         float time = 2f;
         bool eyesGlowing = false;
         while (time >= 0)
         {
             yield return new WaitForSeconds(0.1f);
-            light.intensity -= 0.3f;
+            spotlight.intensity -= 0.3f;
             time -= 0.1f;
 
             if (time <= 0.5f && !eyesGlowing)
@@ -59,6 +59,7 @@ public class MainMenuController : MonoBehaviour
                     head.LookAt(cameraTransform);
                 }
             }
+            yield return new WaitForSeconds(0.1f);
         }
         SceneManager.LoadScene(nextScene);
     }
