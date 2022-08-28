@@ -6,6 +6,12 @@ public class KeyboardController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (Input.GetKey(KeyCode.Return))
+        {
+            camerasController.isInPosition = true;
+            camerasController.TurnTVOnOff();
+        }
+
         if (Input.GetKey(KeyCode.E))
         {
             if (camerasController.rotation < 20)
@@ -73,5 +79,11 @@ public class KeyboardController : MonoBehaviour
             camerasController.cameraNumber = 9;
             camerasController.ChangeCameraAtScreen();
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        camerasController.isInPosition = false;
+        camerasController.TurnTVOnOff();
     }
 }

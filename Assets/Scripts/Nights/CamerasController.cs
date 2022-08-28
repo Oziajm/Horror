@@ -3,17 +3,28 @@ using UnityEngine.UI;
 
 public class CamerasController : MonoBehaviour
 {
-    public int cameraNumber;
+    public int cameraNumber = 10;
     public int rotation = 0;
+    public bool isInPosition;
 
     [SerializeField] private Image[] activeCamerasImage;
     [SerializeField] private MeshRenderer TVScreen;
     [SerializeField] private Material[] camerasMaterials;
     [SerializeField] private GameObject[] cameras;
     [SerializeField] private Slider slider;
+    [SerializeField] private GameObject camerasHud;
+    [SerializeField] private Renderer OnOffLight;
 
     private void Start()
     {
+        TurnTVOnOff();
+        ChangeCameraAtScreen();
+    }
+
+    public void TurnTVOnOff()
+    {
+        camerasHud.SetActive(isInPosition);
+        OnOffLight.material.SetColor("_EmissionColor", isInPosition ? Color.green * 1f : Color.red * 1f);
         ChangeCameraAtScreen();
     }
 
@@ -22,10 +33,17 @@ public class CamerasController : MonoBehaviour
         TurnOffAllCameras();
         SetAllCamerasColorsToGray();
 
-        activeCamerasImage[cameraNumber].color = Color.red;
-        cameras[cameraNumber].SetActive(true);
-        TVScreen.material = camerasMaterials[cameraNumber];
-        SetNewCameraRotation();
+        if (isInPosition)
+        {
+            activeCamerasImage[cameraNumber].color = Color.red;
+            cameras[cameraNumber].SetActive(true);
+            TVScreen.material = camerasMaterials[cameraNumber];
+            SetNewCameraRotation();
+        }
+        else
+        {
+            TVScreen.material = camerasMaterials[10];
+        }
     }
 
     public void SetNewCameraRotation()

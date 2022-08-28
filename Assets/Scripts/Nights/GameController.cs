@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
         }
 
         float batteryUsage = (usage + 1) / 2.5f;
-        batteryAmmount -= batteryUsage * nightMultiplier * 0.00004f;
+        batteryAmmount -= batteryUsage * nightMultiplier * 0.00005f;
 
         if (batteryAmmount <= 0.001f)
         {
