@@ -41,7 +41,7 @@ public class MainMenuController : MonoBehaviour
         while (time >= 0)
         {
             yield return new WaitForSeconds(0.1f);
-            spotlight.intensity -= 0.3f;
+            spotlight.intensity -= 0.5f;
             time -= 0.1f;
 
             if (time <= 0.5f && !eyesGlowing)
