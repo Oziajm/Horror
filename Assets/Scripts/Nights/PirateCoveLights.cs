@@ -14,13 +14,13 @@ public class PirateCoveLights : MonoBehaviour
     {
         while (true)
         {
-            for(int i = 0; i <= 11; i++)
+            for(int i = 0; i < lights.Length; i++)
             {
                 lights[i].material.SetColor("_EmissionColor", i % 2 == 0 ? lights[i].material.color * 5f : Color.black);
             }
             yield return new WaitForSeconds(1f);
 
-            for (int i = 0; i <= 11; i++)
+            for (int i = 0; i < lights.Length; i++)
             {
                 lights[i].material.SetColor("_EmissionColor", i % 2 != 0 ? lights[i].material.color * 5f : Color.black);
             }
