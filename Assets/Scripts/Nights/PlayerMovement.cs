@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,10 +8,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private float mouseSensitivity = 100f;
     [SerializeField] private Transform cameraTransform;
+    [SerializeField] private StaminaBarController staminaBar;
 
     private readonly float groundDistance = 0.4f;
     private readonly float speed = 2f;
+    private readonly float sprintSpeed = 5f;
+    private readonly float staminaRegenerationDelay = 2f;
+    private readonly float maxStamina = 10f;
     private readonly float gravity = -19.62f;
+
+    private float stamina = 10f;
+    private Coroutine healthRegeneration = null;
 
     Vector3 velocity;
     bool isGrounded;
@@ -19,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        staminaBar.setMaxValue(maxStamina);
     }
 
     void Update()
@@ -52,10 +61,45 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(speed * Time.deltaTime * move);
+        float appliedSpeed = speed;
+        if (stamina > 0 && Input.GetKey(KeyCode.LeftShift))
+        {
+            if(healthRegeneration != null)
+            {
+                StopCoroutine(healthRegeneration);
+                healthRegeneration = null;
+            }
+
+            appliedSpeed = sprintSpeed;
+            stamina -= Time.deltaTime;
+        }
+        else if (stamina < maxStamina)
+        {
+             if(healthRegeneration == null)
+             {
+                healthRegeneration = StartCoroutine(regenerateHealth());
+             }
+        }
+        staminaBar.setValue(stamina);
+
+        controller.Move(appliedSpeed * Time.deltaTime * move);
 
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    IEnumerator regenerateHealth()
+    {
+        yield return new WaitForSeconds(staminaRegenerationDelay);
+
+        while (stamina < maxStamina)
+        {
+            stamina += 0.2f;
+            staminaBar.setValue(stamina);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        healthRegeneration = null;
     }
 }
