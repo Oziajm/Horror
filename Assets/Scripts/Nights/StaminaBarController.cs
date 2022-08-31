@@ -18,5 +18,4 @@ public class StaminaBarController : MonoBehaviour
         slider.value = value;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-    
 }

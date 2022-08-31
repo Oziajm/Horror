@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly float gravity = -19.62f;
 
     private float stamina = 10f;
-    private Coroutine healthRegeneration = null;
+    private Coroutine staminaRegeneration = null;
 
     Vector3 velocity;
     bool isGrounded;
@@ -64,10 +64,10 @@ public class PlayerMovement : MonoBehaviour
         float appliedSpeed = speed;
         if (stamina > 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            if(healthRegeneration != null)
+            if(staminaRegeneration != null)
             {
-                StopCoroutine(healthRegeneration);
-                healthRegeneration = null;
+                StopCoroutine(staminaRegeneration);
+                staminaRegeneration = null;
             }
 
             appliedSpeed = sprintSpeed;
@@ -75,9 +75,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (stamina < maxStamina)
         {
-             if(healthRegeneration == null)
+             if(staminaRegeneration == null)
              {
-                healthRegeneration = StartCoroutine(regenerateHealth());
+                staminaRegeneration = StartCoroutine(regenerateStamina());
              }
         }
         staminaBar.setValue(stamina);
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    IEnumerator regenerateHealth()
+    IEnumerator regenerateStamina()
     {
         yield return new WaitForSeconds(staminaRegenerationDelay);
 
@@ -100,6 +100,6 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        healthRegeneration = null;
+        staminaRegeneration = null;
     }
 }
