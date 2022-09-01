@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly float speed = 2f;
     private readonly float sprintSpeed = 5f;
     private readonly float staminaRegenerationDelay = 2f;
+    private readonly float regSpeed = 1f;
     private readonly float maxStamina = 10f;
     private readonly float gravity = -19.62f;
 
@@ -64,21 +65,21 @@ public class PlayerMovement : MonoBehaviour
         float appliedSpeed = speed;
         if (stamina > 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            if(staminaRegeneration != null)
+            if (staminaRegeneration != null)
             {
                 StopCoroutine(staminaRegeneration);
                 staminaRegeneration = null;
             }
 
             appliedSpeed = sprintSpeed;
-            stamina -= Time.deltaTime;
+            stamina = Mathf.Clamp(stamina - Time.deltaTime, 0, maxStamina);
         }
         else if (stamina < maxStamina)
         {
-             if(staminaRegeneration == null)
-             {
+            if (staminaRegeneration == null)
+            {
                 staminaRegeneration = StartCoroutine(regenerateStamina());
-             }
+            }
         }
         staminaBar.setValue(stamina);
 
@@ -95,9 +96,9 @@ public class PlayerMovement : MonoBehaviour
 
         while (stamina < maxStamina)
         {
-            stamina += 0.2f;
+            stamina += Time.deltaTime * speed;
             staminaBar.setValue(stamina);
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
 
         staminaRegeneration = null;
