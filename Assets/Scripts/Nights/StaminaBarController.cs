@@ -7,16 +7,15 @@ public class StaminaBarController : MonoBehaviour
     [SerializeField] private Gradient gradient;
     [SerializeField] private Image fill;
 
-    public void  setMaxValue(float value)
+    public void SetMaxValue(float value)
     {
         slider.maxValue = value;
-        setValue(value);
+        SetValue(value);
     }
 
-    public void setValue(float value)
+    public void SetValue(float value)
     {
         slider.value = value;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-    
 }

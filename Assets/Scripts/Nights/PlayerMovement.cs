@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly float gravity = -19.62f;
 
     private float stamina = 10f;
-    private Coroutine healthRegeneration = null;
+    private Coroutine isRegenerating;
 
     Vector3 velocity;
     bool isGrounded;
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        staminaBar.setMaxValue(maxStamina);
+        staminaBar.SetMaxValue(maxStamina);
     }
 
     void Update()
@@ -64,23 +64,23 @@ public class PlayerMovement : MonoBehaviour
         float appliedSpeed = speed;
         if (stamina > 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            if(healthRegeneration != null)
-            {
-                StopCoroutine(healthRegeneration);
-                healthRegeneration = null;
-            }
+            StopAllCoroutines();
 
             appliedSpeed = sprintSpeed;
-            stamina -= Time.deltaTime;
+            if(stamina > 0)
+            {
+                stamina -= Time.deltaTime;
+            }
         }
         else if (stamina < maxStamina)
         {
-             if(healthRegeneration == null)
-             {
-                healthRegeneration = StartCoroutine(regenerateHealth());
-             }
+            if (isRegenerating == null)
+            {
+                isRegenerating = StartCoroutine(RegenerateStamina());
+            }
         }
-        staminaBar.setValue(stamina);
+
+        staminaBar.SetValue(stamina);
 
         controller.Move(appliedSpeed * Time.deltaTime * move);
 
@@ -89,17 +89,17 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    IEnumerator regenerateHealth()
+    IEnumerator RegenerateStamina()
     {
         yield return new WaitForSeconds(staminaRegenerationDelay);
 
         while (stamina < maxStamina)
         {
-            stamina += 0.2f;
-            staminaBar.setValue(stamina);
-            yield return new WaitForSeconds(0.1f);
+            stamina += 0.1f;
+            staminaBar.SetValue(stamina);
+            yield return new WaitForSeconds(0.05f);
         }
 
-        healthRegeneration = null;
+        isRegenerating = null;
     }
 }
