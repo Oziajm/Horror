@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        staminaBar.setMaxValue(maxStamina);
+        staminaBar.SetMaxValue(maxStamina);
     }
 
     void Update()
@@ -78,10 +78,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (staminaRegeneration == null)
             {
-                staminaRegeneration = StartCoroutine(regenerateStamina());
+                staminaRegeneration = StartCoroutine(RegenerateStamina());
             }
         }
-        staminaBar.setValue(stamina);
+
+        staminaBar.SetValue(stamina);
 
         controller.Move(appliedSpeed * Time.deltaTime * move);
 
@@ -90,14 +91,15 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    IEnumerator regenerateStamina()
+
+    IEnumerator RegenerateStamina()
     {
         yield return new WaitForSeconds(staminaRegenerationDelay);
 
         while (stamina < maxStamina)
         {
             stamina += Time.deltaTime * speed;
-            staminaBar.setValue(stamina);
+            staminaBar.SetValue(stamina);
             yield return null;
         }
 
