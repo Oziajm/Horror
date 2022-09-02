@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float stamina = 10f;
     private Coroutine staminaRegeneration = null;
+    private Vector3 defaultCameraLocalPos;
+    private float cameraShakeTimer;
 
     Vector3 velocity;
     bool isGrounded;
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         staminaController.SetMaxValue(maxStamina);
         staminaController.SetStaminaVisible(false);
+        defaultCameraLocalPos = cameraTransform.localPosition;
     }
 
     void Update()
@@ -64,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         float appliedSpeed = speed;
+        bool isSprinting = false;
         if (stamina > 0 && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
             if (staminaRegeneration != null)
@@ -72,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
                 staminaRegeneration = null;
             }
 
+            isSprinting = true;
             appliedSpeed = sprintSpeed;
             stamina = Mathf.Clamp(stamina - Time.deltaTime, 0, maxStamina);
         }
@@ -81,6 +86,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 staminaRegeneration = StartCoroutine(RegenerateStamina());
             }
+        }
+        if (x != 0 || z != 0) CameraShake(isSprinting);
+        else 
+        {
+            Vector3.MoveTowards(cameraTransform.localPosition, defaultCameraLocalPos, 1f);
+            cameraShakeTimer = 0;
         }
 
         staminaController.SetStaminaVisible(stamina < maxStamina);
@@ -93,6 +104,16 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    private void CameraShake(bool isSprinting)
+    {
+        float frequency = isSprinting ? 20f : 10f;
+        float magnitude = 0.05f;
+
+        Vector3 newPos = defaultCameraLocalPos;
+        newPos.y += magnitude * Mathf.Sin(cameraShakeTimer * frequency);
+        cameraTransform.localPosition = newPos;
+        cameraShakeTimer += Time.deltaTime;
+    }
 
     IEnumerator RegenerateStamina()
     {

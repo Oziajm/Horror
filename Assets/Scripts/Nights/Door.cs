@@ -5,7 +5,7 @@ public class Door : MonoBehaviour
 {
     public bool isOpen = false;
 
-    [SerializeField] private float duration;
+    [SerializeField] private float duration = 1;
     [SerializeField] private Vector3 closedRotation;
     [SerializeField] private Vector3 openRotation;
 
