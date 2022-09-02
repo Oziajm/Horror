@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private float mouseSensitivity = 100f;
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private StaminaBarController staminaBar;
+    [SerializeField] private StaminaBarController staminaController;
 
     private readonly float groundDistance = 0.4f;
     private readonly float speed = 2f;
@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        staminaBar.SetMaxValue(maxStamina);
+        staminaController.SetMaxValue(maxStamina);
+        staminaController.SetStaminaVisible(false);
     }
 
     void Update()
@@ -62,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         float appliedSpeed = speed;
-        if (stamina > 0 && Input.GetKey(KeyCode.LeftShift))
+        if (stamina > 0 && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
             StopAllCoroutines();
 
@@ -80,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        staminaBar.SetValue(stamina);
+        staminaController.SetStaminaVisible(stamina < maxStamina);
+        staminaController.SetValue(stamina);
 
         controller.Move(appliedSpeed * Time.deltaTime * move);
 
@@ -96,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         while (stamina < maxStamina)
         {
             stamina += 0.1f;
-            staminaBar.SetValue(stamina);
+            staminaController.SetValue(stamina);
             yield return new WaitForSeconds(0.05f);
         }
 

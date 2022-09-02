@@ -18,4 +18,9 @@ public class StaminaBarController : MonoBehaviour
         slider.value = value;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
+
+    public void SetStaminaVisible(bool isSprinting)
+    {
+        slider.gameObject.SetActive(isSprinting);
+    }
 }
