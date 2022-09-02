@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerUsables : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float maxDistance = 5;
+    [SerializeField] private float maxDistance = 2;
     [SerializeField] private LayerMask layers;
     [SerializeField] private Text useText;
 
@@ -20,8 +20,16 @@ public class PlayerUsables : MonoBehaviour
 
                 if(Input.GetKeyDown(KeyCode.E))
                 {
-                    if (door.isOpen) door.close();
-                    else door.open();
+                    if (door.isOpen) door.Close();
+                    else door.Open();
+                }
+            }
+            else if(hitInfo.collider.TryGetComponent<Button>(out Button button))
+            {
+                useText.text = "Press E to Use";
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    button.OnClick();
                 }
             }
             return;

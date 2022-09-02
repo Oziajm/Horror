@@ -25,7 +25,7 @@ public class Door : MonoBehaviour
         openingTime = 0;
     }
 
-    public void open()
+    public void Open()
     {
         if(!isOpen)
         {
@@ -33,11 +33,11 @@ public class Door : MonoBehaviour
             {
                 StopCoroutine(doorAnimation);
             }
-            doorAnimation = StartCoroutine(doOpenRotation());
+            doorAnimation = StartCoroutine(DoOpenRotation());
         }
     }
 
-    IEnumerator doOpenRotation()
+    IEnumerator DoOpenRotation()
     {
         Quaternion startRot = transform.rotation;
         Quaternion endRot = Quaternion.Euler(openRotation);
@@ -56,7 +56,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    public void close()
+    public void Close()
     {
         if (isOpen)
         {
@@ -64,11 +64,11 @@ public class Door : MonoBehaviour
             {
                 StopCoroutine(doorAnimation);
             }
-            doorAnimation = StartCoroutine(doCloseRotation());
+            doorAnimation = StartCoroutine(DoCloseRotation());
         }
     }
 
-    IEnumerator doCloseRotation()
+    IEnumerator DoCloseRotation()
     {
         Quaternion startRot = transform.rotation;
         Quaternion endRot = Quaternion.Euler(closedRotation);

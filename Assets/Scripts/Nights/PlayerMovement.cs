@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly float speed = 2f;
     private readonly float sprintSpeed = 5f;
     private readonly float staminaRegenerationDelay = 2f;
-    private readonly float regSpeed = 1f;
+    private readonly float staminaRegenerationSpeed = 1f;
     private readonly float maxStamina = 10f;
     private readonly float gravity = -19.62f;
 
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
         while (stamina < maxStamina)
         {
-            stamina += Time.deltaTime * speed;
+            stamina += Time.deltaTime * staminaRegenerationSpeed;
             staminaBar.SetValue(stamina);
             yield return null;
         }
