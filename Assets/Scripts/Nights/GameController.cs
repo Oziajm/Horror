@@ -11,8 +11,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private Image[] usageImage;
     [SerializeField] private GameObject[] lights;
     [SerializeField] private Renderer[] lightsEmissions;
-    [SerializeField] private ButtonInteractions[] buttonInteractions;
-    [SerializeField] private ButtonLightsInteractions[] buttonLightsInteractions;
+    [SerializeField] private DoorButton[] buttonInteractions;
+    [SerializeField] private LightButton[] buttonLightsInteractions;
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private TextMeshProUGUI fpsCounter;
     [SerializeField] private float nightMultiplier;

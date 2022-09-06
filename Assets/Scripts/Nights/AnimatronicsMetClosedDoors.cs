@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class AnimatronicsMetClosedDoors : MonoBehaviour
 {
+    /*
     [SerializeField] private Transform stageLocation;
     [SerializeField] private NavMeshAgent foxy;
     [SerializeField] private ButtonInteractions door;
@@ -16,4 +17,5 @@ public class AnimatronicsMetClosedDoors : MonoBehaviour
             }
         }
     }
+    */
 }
