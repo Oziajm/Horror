@@ -41,6 +41,11 @@ public class DoorButton : Button
             batteryController.usage -= 1;
         }
 
+        ChangeButtonsColor();   
+    }
+
+    public void ChangeButtonsColor()
+    {
         button.material.SetColor("_EmissionColor", !isPressed ? Color.green * 1f : Color.red * 1f);
     }
 }
