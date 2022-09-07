@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.002920366, g: 0.0019177067, b: 0.0021366123, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -359,7 +359,7 @@ Transform:
   - {fileID: 676104117}
   - {fileID: 1382828754}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 250
+  m_RootOrder: 261
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!65 &25242452
 BoxCollider:
@@ -4361,7 +4361,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 253
+  m_RootOrder: 264
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &662038405
 MonoBehaviour:
@@ -4375,9 +4375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd3a55daf8e3e84a88144ebdc781efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageLocation: {fileID: 1138463278}
-  foxy: {fileID: 856487001}
-  door: {fileID: 620785430}
 --- !u!65 &662038406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7056,11 +7053,6 @@ MonoBehaviour:
   - {fileID: 877710015}
   - {fileID: 1808033628}
   - {fileID: 541082317}
---- !u!4 &1138463278 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8476956377450112307, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
-  m_PrefabInstance: {fileID: 1641751199}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1138463281
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11434,7 +11426,7 @@ Transform:
   m_Children:
   - {fileID: 329172614}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 249
+  m_RootOrder: 260
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 20}
 --- !u!1 &1622242879
 GameObject:
@@ -17960,7 +17952,7 @@ Transform:
   - {fileID: 296038096}
   - {fileID: 1543263781}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 252
+  m_RootOrder: 263
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994011658
 GameObject:
@@ -19247,7 +19239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 251
+  m_RootOrder: 262
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2128909374
 BoxCollider:
