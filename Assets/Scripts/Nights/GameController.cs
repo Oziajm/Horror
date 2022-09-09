@@ -12,7 +12,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject[] lights;
     [SerializeField] private Renderer[] lightsEmissions;
     [SerializeField] private DoorButton[] buttonInteractions;
-    [SerializeField] private LightButton[] buttonLightsInteractions;
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private TextMeshProUGUI fpsCounter;
     [SerializeField] private float nightMultiplier;
@@ -74,13 +73,11 @@ public class GameController : MonoBehaviour
             }
             for (int i = 0; i < 2; i++)
             {
-                buttonLightsInteractions[i].isPressed = false;
                 buttonInteractions[i].isPressed = false;
                 if (buttonInteractions[i].isOpen)
                 {
                     buttonInteractions[i].ChangeButtonsColor();
                     buttonInteractions[i].enabled = false;
-                    buttonLightsInteractions[i].enabled = false;
                 }
             }
             usage = -1;
