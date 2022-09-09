@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class StaminaBarController : MonoBehaviour
 {
-    //[SerializeField] private Slider slider;
     [SerializeField] private Image fill;
     [SerializeField] private Gradient gradientFill;
     [SerializeField] private Image border;
@@ -15,22 +14,6 @@ public class StaminaBarController : MonoBehaviour
     private float normalizedValue = 1;
     private bool borderLocked = false;
     private Coroutine fadeOutAnimation = null;
-
-    /*public void SetMaxValue(float value)
-    {
-        //slider.maxValue = value;
-        SetValue(value);
-    }
-
-    public void SetValue(float value)
-    {
-        //slider.value = value;
-        fill.color = gradient.Evaluate(slider.normalizedValue);
-    }
-    public void SetStaminaVisible(bool isSprinting)
-    {
-        //slider.gameObject.SetActive(isSprinting);
-    }*/
 
     private void Start()
     {
