@@ -20,7 +20,7 @@ public class ArcadeFlickeringLights : MonoBehaviour
             lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0f);
             timeDelay = Random.Range(0.02f, 0.2f);
             yield return new WaitForSeconds(timeDelay);
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 1f);
+            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0.5f);
             timeDelay = Random.Range(0.02f, 0.2f);
             yield return new WaitForSeconds(timeDelay);
         }
@@ -34,7 +34,7 @@ public class ArcadeFlickeringLights : MonoBehaviour
             lightSource.gameObject.SetActive(false);
             timeDelay = Random.Range(0.02f, 0.2f);
             yield return new WaitForSeconds(timeDelay);
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 1f);
+            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0.5f);
             lightSource.gameObject.SetActive(true);
             timeDelay = Random.Range(0.02f, 0.2f);
             yield return new WaitForSeconds(timeDelay);

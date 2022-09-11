@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerUsables : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float maxDistance = 2;
+    [SerializeField] private float maxDistance = 1;
     [SerializeField] private LayerMask layers;
     [SerializeField] private Text useText;
 
