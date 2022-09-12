@@ -1855,7 +1855,7 @@ Transform:
   m_Children:
   - {fileID: 912089161}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 335
+  m_RootOrder: 350
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &327046612
 MeshRenderer:
@@ -2251,7 +2251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 332
+  m_RootOrder: 349
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &362312255
 MeshRenderer:
@@ -3953,7 +3953,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 326
+  m_RootOrder: 346
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &554801673
 MeshRenderer:
@@ -4464,6 +4464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767b53379ac141746abcd15e30e6208d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isPressed: 0
   isOpen: 1
   door: {fileID: 1328360293}
@@ -6121,7 +6122,7 @@ Transform:
   m_Children:
   - {fileID: 1812253934}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 250
+  m_RootOrder: 343
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &822525447
 MeshRenderer:
@@ -8661,7 +8662,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 342
+  m_RootOrder: 351
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1211337230
 MeshRenderer:
@@ -9467,7 +9468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use
+  m_Text: 
 --- !u!222 &1256361998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9637,7 +9638,7 @@ Transform:
   m_Children:
   - {fileID: 115877012}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 329
+  m_RootOrder: 347
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1287774985
 MeshRenderer:
@@ -9720,6 +9721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: -90, y: 0, z: -180}
@@ -10216,7 +10218,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 80
+  m_RootOrder: 135
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &1345826100
 MeshRenderer:
@@ -10428,6 +10430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: 0, y: -180, z: 0}
@@ -10598,6 +10601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: 0, y: 0, z: 0}
@@ -10899,6 +10903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: -90, y: 0, z: 0}
@@ -12467,7 +12472,7 @@ Transform:
   m_Children:
   - {fileID: 329172614}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 101
+  m_RootOrder: 165
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 20}
 --- !u!1 &1622242879
 GameObject:
@@ -17572,7 +17577,7 @@ Transform:
   m_Children:
   - {fileID: 620814342}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 323
+  m_RootOrder: 344
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1653314700
 MeshRenderer:
@@ -18352,6 +18357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: -90, y: 0, z: -90}
@@ -18799,8 +18805,8 @@ GameObject:
   - component: {fileID: 1795078681}
   - component: {fileID: 1795078680}
   - component: {fileID: 1795078679}
-  - component: {fileID: 1795078682}
   - component: {fileID: 1795078683}
+  - component: {fileID: 1795078684}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -18884,24 +18890,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1795078682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795078678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e76f0c921de29b4cb3bd14fccc9b8d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 53789828}
-  maxDistance: 2
-  layers:
-    serializedVersion: 2
-    m_Bits: 64
-  useText: {fileID: 1256361997}
 --- !u!82 &1795078683
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18998,6 +18986,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1795078684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795078678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98073fe079c35f341a03c01669908336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 53789828}
+  maxDistance: 2
+  layers:
+    serializedVersion: 2
+    m_Bits: 64
+  useText: {fileID: 1256361997}
 --- !u!1 &1795995836
 GameObject:
   m_ObjectHideFlags: 0
@@ -20566,6 +20572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767b53379ac141746abcd15e30e6208d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isPressed: 0
   isOpen: 1
   door: {fileID: 37289497}
@@ -20589,6 +20596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: 0, y: -270, z: 0}
@@ -21116,6 +21124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079953df623a64b45a6eacac97e70d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   isOpen: 0
   duration: 1
   closedRotation: {x: -90, y: 0, z: -270}
