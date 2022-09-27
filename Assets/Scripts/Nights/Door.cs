@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : Interactable
 {
     public bool isOpen = false;
 
@@ -12,6 +12,16 @@ public class Door : MonoBehaviour
     private Coroutine doorAnimation;
     private float closingTime;
     private float openingTime;
+
+    public override void Interact()
+    {
+        if (isOpen) Close();
+        else Open();
+    }
+    public override string GetHoverText()
+    {
+        return isOpen ? "Press E to Close" : "Press E to Open";
+    }
 
     private void Awake()
     {

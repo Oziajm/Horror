@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoorButton : Button
+public class DoorButton : Interactable
 {
     public bool isPressed = false;
     public bool isOpen = true;
@@ -25,7 +25,12 @@ public class DoorButton : Button
         isOpen = door.position == openedDoorLocation.position;
     }
 
-    public override void OnClick()
+    public override string GetHoverText()
+    {
+        return "Press E to Use";
+    }
+
+    public override void Interact()
     {
         if (door.position == openedDoorLocation.position || door.position == oldPosition)
         {

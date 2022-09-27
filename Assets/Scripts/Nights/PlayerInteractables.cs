@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUsables : MonoBehaviour
+public class PlayerInteractables : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float maxDistance = 1;
@@ -12,8 +12,7 @@ public class PlayerUsables : MonoBehaviour
     {
         if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hitInfo, maxDistance, layers))
         {
-            useText.gameObject.SetActive(true);
-            if (hitInfo.collider.TryGetComponent<Door>(out Door door))
+            /*if (hitInfo.collider.TryGetComponent<Door>(out Door door))
             {
                 if (door.isOpen) useText.text = "Press E to close";
                 else useText.text = "Press E to open";
@@ -32,7 +31,17 @@ public class PlayerUsables : MonoBehaviour
                     button.OnClick();
                 }
             }
-            return;
+            return;*/
+            if(hitInfo.collider.TryGetComponent<Interactable>(out Interactable interactable) && interactable.active)
+            {
+                useText.gameObject.SetActive(true);
+                useText.text = interactable.GetHoverText();
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    interactable.Interact();
+                }
+                return;
+            }
         }
         useText.gameObject.SetActive(false);
     }
