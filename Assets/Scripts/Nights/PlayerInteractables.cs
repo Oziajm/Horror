@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,26 +13,6 @@ public class PlayerInteractables : MonoBehaviour
     {
         if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hitInfo, maxDistance, layers))
         {
-            /*if (hitInfo.collider.TryGetComponent<Door>(out Door door))
-            {
-                if (door.isOpen) useText.text = "Press E to close";
-                else useText.text = "Press E to open";
-
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    if (door.isOpen) door.Close();
-                    else door.Open();
-                }
-            }
-            else if(hitInfo.collider.TryGetComponent<Button>(out Button button))
-            {
-                useText.text = "Press E to Use";
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    button.OnClick();
-                }
-            }
-            return;*/
             if(hitInfo.collider.TryGetComponent<Interactable>(out Interactable interactable) && interactable.active)
             {
                 useText.gameObject.SetActive(true);
