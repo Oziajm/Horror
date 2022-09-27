@@ -34,6 +34,16 @@ public class GameController : MonoBehaviour
         BatteryController();
     }
 
+    public void ShowTime()
+    {
+        if (currentTime < 360)
+        {
+            currentTime += 1 * Time.deltaTime;
+        }
+        var timeSpan = TimeSpan.FromSeconds(currentTime);
+        countdownText.text = Mathf.RoundToInt(currentTime) % 2 == 0 ? timeSpan.ToString("mm':'ss") : timeSpan.ToString("mm' 'ss");
+    }
+
     private void FPSCounter()
     {
         float timelapse = Time.smoothDeltaTime;
@@ -41,16 +51,6 @@ public class GameController : MonoBehaviour
 
         if (timer <= 0) avgFramerate = (int)(1f / timelapse);
         fpsCounter.text = avgFramerate.ToString() + " FPS";
-    }
-
-    private void ShowTime()
-    {
-        if(currentTime < 360)
-        {
-            currentTime += 1 * Time.deltaTime;
-        }
-        var timeSpan = TimeSpan.FromSeconds(currentTime);
-        countdownText.text = Mathf.RoundToInt(currentTime) % 2 == 0 ? timeSpan.ToString("mm':'ss") : timeSpan.ToString("mm' 'ss");
     }
 
     private void BatteryController()
