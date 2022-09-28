@@ -17,10 +17,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private float nightMultiplier;
 
     private float timer, avgFramerate;
-    private float currentTime = 0f;
+    private float currentTime = 0;
     private float batteryAmmount = 1f;
 
     private readonly float refresh;
+
+    public int CurrentTime => Mathf.RoundToInt(currentTime);
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class GameController : MonoBehaviour
         BatteryController();
     }
 
-    public void ShowTime()
+    private void ShowTime()
     {
         if (currentTime < 360)
         {
