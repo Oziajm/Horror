@@ -4,16 +4,20 @@ using System.Collections;
 
 public class AnimatronicsLogic : MonoBehaviour
 {
+    [Space(10)]
     [SerializeField] private NavMeshAgent animatronic;
-    [SerializeField] private Transform target;
+    [SerializeField] private Transform playerLocation;
     [SerializeField] private Animator animator;
     [SerializeField] private GameController gameController;
     [SerializeField] private Vector3[] locations;
+    [SerializeField] private Transform playerCamera;
+    [Space(10)]
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip startUp;
     [SerializeField] private AudioClip scream;
 
+    [Space(10)]
     private Coroutine animatronicDestinationCoroutine;
     private bool isPlayerSpotted;
     private bool isAnimatronicOn;
@@ -29,7 +33,11 @@ public class AnimatronicsLogic : MonoBehaviour
     {
         if (isAnimatronicOn)
         {
-            float distance = Vector3.Distance(target.position, animatronic.transform.position);
+            float distance = Vector3.Distance(playerLocation.position, animatronic.transform.position);
+            if (distance < 3f)
+            {
+                playerCamera.LookAt(transform);
+            }
             if (distance < 10f)
             {
                 animatronic.enabled = false;
@@ -56,14 +64,15 @@ public class AnimatronicsLogic : MonoBehaviour
                 }
             }
             animator.SetBool("isPlayerSpotted", isPlayerSpotted);
+            animatronic.stoppingDistance = isPlayerSpotted ? 0f : 2f;
 
             if (isPlayerSpotted)
             {
                 animatronicDestinationCoroutine = null;
                 StopCoroutine(SetNewAnimatronicDestination());
                 animatronic.enabled = true;
-                animatronic.SetDestination(target.position);
-                animatronic.speed = 8f;
+                animatronic.SetDestination(playerLocation.position);
+                animatronic.speed = 30f;
             }
             else if (animatronicDestinationCoroutine == null && !isPlayerSpotted)
             {
@@ -99,7 +108,7 @@ public class AnimatronicsLogic : MonoBehaviour
             {
                 if (animatronic.remainingDistance <= animatronic.stoppingDistance)
                 {
-                    if (!animatronic.hasPath || animatronic.velocity.sqrMagnitude < 1f)
+                    if (!animatronic.hasPath || animatronic.velocity.sqrMagnitude < 2f)
                     {
                         animator.SetBool("reachedDestination", true);
                         yield return new WaitForSeconds(10f);
