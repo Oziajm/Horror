@@ -4,20 +4,24 @@ using System.Collections;
 
 public class AnimatronicsLogic : MonoBehaviour
 {
+    [Header("Animatronic")]
     [Space(10)]
     [SerializeField] private NavMeshAgent animatronic;
-    [SerializeField] private Transform playerLocation;
     [SerializeField] private Animator animator;
     [SerializeField] private GameController gameController;
     [SerializeField] private Vector3[] locations;
-    [SerializeField] private Transform playerCamera;
-    [Space(10)]
 
+    [Header("Animatronic")]
+    [Space(10)]
+    [SerializeField] private Transform playerLocation;
+    [SerializeField] private Transform playerCamera;
+
+    [Space(10)]
+    [Header("SFX")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip startUp;
     [SerializeField] private AudioClip scream;
 
-    [Space(10)]
     private Coroutine animatronicDestinationCoroutine;
     private bool isPlayerSpotted;
     private bool isAnimatronicOn;
@@ -31,55 +35,80 @@ public class AnimatronicsLogic : MonoBehaviour
 
     void FixedUpdate()
     {
+        TurnOnAnimatronic();
+        AnimatronicsAI();
+    }
+
+    private void AnimatronicsAI()
+    {
         if (isAnimatronicOn)
         {
-            float distance = Vector3.Distance(playerLocation.position, animatronic.transform.position);
-            if (distance < 3f)
-            {
-                playerCamera.LookAt(transform);
-            }
-            if (distance < 10f)
-            {
-                animatronic.enabled = false;
-                isPlayerSpotted = true;
-                animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-                if (animatorClipInfo[0].clip.name == "Scream")
-                {
-                    animatronic.enabled = false;
-                    if (!audioSource.isPlaying && !haventScreamedYet)
-                    {
-                        audioSource.PlayOneShot(scream);
-                        haventScreamedYet = true;
-                    }
-                }
-            }
-            if (distance > 15f)
-            {
-                isPlayerSpotted = false;
-                haventScreamedYet = false;
-                animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-                if (animatorClipInfo[0].clip.name == "Idle")
-                {
-                    animatronic.enabled = false;
-                }
-            }
+            IsInRange();
             animator.SetBool("isPlayerSpotted", isPlayerSpotted);
             animatronic.stoppingDistance = isPlayerSpotted ? 0f : 2f;
+            animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
 
             if (isPlayerSpotted)
             {
-                animatronicDestinationCoroutine = null;
-                StopCoroutine(SetNewAnimatronicDestination());
-                animatronic.enabled = true;
-                animatronic.SetDestination(playerLocation.position);
-                animatronic.speed = 30f;
+                PlayerIsSpotted();
             }
-            else if (animatronicDestinationCoroutine == null && !isPlayerSpotted)
+
+            if (animatronicDestinationCoroutine == null && !isPlayerSpotted)
             {
-                animatronicDestinationCoroutine = StartCoroutine(SetNewAnimatronicDestination());
+                PlayerIsNotSpotted();
             }
         }
+    }
 
+    private void PlayerIsSpotted()
+    {
+        if (animatorClipInfo[0].clip.name == "Scream")
+        {
+            animatronic.enabled = false;
+            if (!audioSource.isPlaying && !haventScreamedYet)
+            {
+                audioSource.volume = 1f;
+                audioSource.PlayOneShot(scream);
+                haventScreamedYet = true;
+            }
+        }
+        animatronicDestinationCoroutine = null;
+        StopCoroutine(SetNewAnimatronicDestinationToCheck());
+        animatronic.enabled = true;
+        animatronic.SetDestination(playerLocation.position);
+        if (animatorClipInfo[0].clip.name == "RunningAnimatronics")
+        {
+            animatronic.speed = 15f;
+        }
+    }
+
+    private void PlayerIsNotSpotted()
+    {
+        if (animatorClipInfo[0].clip.name == "Idle")
+        {
+            animatronic.enabled = false;
+        }
+        haventScreamedYet = false;
+        animatronicDestinationCoroutine = StartCoroutine(SetNewAnimatronicDestinationToCheck());
+    }
+
+    private void IsInRange()
+    {
+        float distance = Vector3.Distance(playerLocation.position, animatronic.transform.position);
+
+        if (distance < 10f)
+        {
+            isPlayerSpotted = true;
+        }
+        if (distance > 15f)
+        {
+            isPlayerSpotted = false;
+        }
+    }
+
+    private void TurnOnAnimatronic()
+    {
+        //TODO: Later in development change gameController.CurrentTime value to 60.
         if (gameController.CurrentTime == 5)
         {
             animator.SetBool("is2AM", true);
@@ -89,20 +118,15 @@ public class AnimatronicsLogic : MonoBehaviour
             }
             isAnimatronicOn = true;
         }
-        else
-        {
-            return;
-        }
     }
 
-    IEnumerator SetNewAnimatronicDestination()
+    IEnumerator SetNewAnimatronicDestinationToCheck()
     {
         yield return new WaitForSeconds(10f);
         animatronic.enabled = true;
-        animatronic.SetDestination(locations[Random.Range(0, 3)]);
+        animatronic.speed = 0.3f;
         while (true)
         {
-            animatronic.enabled = true;
             yield return new WaitForSeconds(3f);
             if (!animatronic.pathPending)
             {
@@ -111,9 +135,15 @@ public class AnimatronicsLogic : MonoBehaviour
                     if (!animatronic.hasPath || animatronic.velocity.sqrMagnitude < 2f)
                     {
                         animator.SetBool("reachedDestination", true);
+                        animatronic.enabled = false;
                         yield return new WaitForSeconds(10f);
-                        animatronic.SetDestination(locations[Random.Range(0, 3)]);
                         animator.SetBool("reachedDestination", false);
+                        animatronic.enabled = true;
+                        if (animatorClipInfo[0].clip.name != "Idle")
+                        {
+                            yield return new WaitForSeconds(3f);
+                            animatronic.SetDestination(locations[Random.Range(0, 3)]);
+                        }
                     }
                 }
             }
