@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class Door : Interactable
 {
+    [Space(10)]
+    [Header("Public Values")]
+    [Space(10)]
     public bool isOpen = false;
 
+    [Space(10)]
+    [Header("Door Values")]
+    [Space(10)]
     [SerializeField] private float duration = 1;
     [SerializeField] private Vector3 closedRotation;
     [SerializeField] private Vector3 openRotation;

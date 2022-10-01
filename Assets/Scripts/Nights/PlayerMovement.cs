@@ -3,17 +3,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Space(10)]
     [Header("General")]
+    [Space(10)]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float mouseSensitivity = 100f;
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float crouchSpeed = 1f;
+    [SerializeField] private float crouchHeight = 0.5f;
+    [SerializeField] private Vector3 crouchCenter = new Vector3(0f, 0.5f, 0f);
+    [SerializeField] private float standHeight = 1.7f;
+    [SerializeField] private Vector3 standCenter = Vector3.zero;
+    [SerializeField] private float timeToCrouch = 0.25f;
     private bool isMoving = false;
     private bool isSprinting = false;
+    private bool isCrouching = false;
+    private bool duringCrouchAnimation = false;
 
+    [Space(10)]
     [Header("Stamina")]
+    [Space(10)]
     [SerializeField] private StaminaBarController staminaController;
     [SerializeField] private float sprintSpeed = 5f;
     [SerializeField] private float staminaUsageSpeed = 1f;
@@ -23,22 +35,26 @@ public class PlayerMovement : MonoBehaviour
     private float stamina = 10f;
     private Coroutine staminaRegeneration = null;
 
+    [Space(10)]
     [Header("Camera Shake")]
+    [Space(10)]
     [SerializeField] private float magnitude = 0.05f;
     [SerializeField] private float sprintingFrequency = 20f;
     [SerializeField] private float walkingFrequency = 10f;
-    private float GetCameraShakeFrequency => isSprinting ? sprintingFrequency : walkingFrequency;
+    [SerializeField] private float crouchingFrequency = 5;
+    private float GetCameraShakeFrequency => isSprinting ? sprintingFrequency : isCrouching ? crouchingFrequency : walkingFrequency;
     private Vector3 defaultCameraLocalPos;
     private float cameraShakeTimer;
 
+    [Space(10)]
     [Header("Footsteps")]
+    [Space(10)]
     [SerializeField] private float stepSpeed = 0.6f;
     [SerializeField] private float sprintingMultiplier = 0.5f;
     [SerializeField] private AudioSource audioSource = default;
     [SerializeField] private AudioClip[] walkingClips;
     private float GetStepOffset => isSprinting ? stepSpeed * sprintingMultiplier : stepSpeed;
     private float footstepTimer = 0f;
-
 
     private readonly float groundDistance = 0.4f;
     private readonly float gravity = -19.62f;
@@ -87,9 +103,16 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        float appliedSpeed = speed;
+        float appliedSpeed = isCrouching ? crouchSpeed : speed;
         if (stamina > 0 && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
+            if (duringCrouchAnimation) StopCoroutine(DoCrouchStand());
+            if(isCrouching)
+            {
+                isCrouching = false;
+                StartCoroutine(DoCrouchStand());
+            }
+
             if (staminaRegeneration != null)
             {
                 StopCoroutine(staminaRegeneration);
@@ -109,16 +132,26 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.LeftShift))
+        {
+            // toggle crouch
+            if (duringCrouchAnimation) StopCoroutine(DoCrouchStand());
+            isCrouching = !isCrouching;
+            StartCoroutine(DoCrouchStand());
+        }
+
         if (x != 0 || z != 0)
         {
-            CameraShake();
             isMoving = true;
         }
         else
         {
-            Vector3.MoveTowards(cameraTransform.localPosition, defaultCameraLocalPos, 1f);
-            cameraShakeTimer = 0;
             isMoving = false;
+        }
+
+        if (!duringCrouchAnimation)
+        {
+            CameraShake();
         }
 
         staminaController.SetStaminaVisible(stamina < maxStamina);
@@ -145,10 +178,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void CameraShake()
     {
-        Vector3 newPos = defaultCameraLocalPos;
-        newPos.y += magnitude * Mathf.Sin(cameraShakeTimer * GetCameraShakeFrequency);
-        cameraTransform.localPosition = newPos;
-        cameraShakeTimer += Time.deltaTime;
+        if(isMoving)
+        {
+            Vector3 newPos = defaultCameraLocalPos;
+            newPos.y += magnitude * Mathf.Sin(cameraShakeTimer * GetCameraShakeFrequency);
+            cameraTransform.localPosition = newPos;
+            cameraShakeTimer += Time.deltaTime;
+            return;
+        }
+
+        Vector3.MoveTowards(cameraTransform.localPosition, defaultCameraLocalPos, 1f);
+        cameraShakeTimer = 0;
     }
 
     IEnumerator RegenerateStamina()
@@ -163,5 +203,29 @@ public class PlayerMovement : MonoBehaviour
         }
 
         staminaRegeneration = null;
+    }
+
+    IEnumerator DoCrouchStand()
+    {
+        duringCrouchAnimation = true;
+        float time = 0f;
+        float startHeight = controller.height;
+        float targetHeight = isCrouching ? crouchHeight : standHeight;
+        Vector3 startCenter = controller.center;
+        Vector3 targetCenter = isCrouching ? crouchCenter : standCenter;
+
+        while(time <= timeToCrouch)
+        {
+            Debug.Log($"startHeight: {startHeight} | currentHeight: {controller.height} | targetHeight: {targetHeight}");
+            controller.height = Mathf.Lerp(startHeight, targetHeight, time/timeToCrouch);
+            controller.center = Vector3.Lerp(startCenter, targetCenter, time/timeToCrouch);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        controller.height = targetHeight;
+        controller.center = targetCenter;
+
+        duringCrouchAnimation = false;
     }
 }

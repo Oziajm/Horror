@@ -3,10 +3,16 @@ using UnityEngine.UI;
 
 public class CamerasController : MonoBehaviour
 {
+    [Space(10)]
+    [Header("Camera Mechanics Values")]
+    [Space(10)]
     public int cameraNumber = 10;
     public int rotation = 0;
-    public bool isInPosition;
+    public bool isPlayerNearKeyboard;
 
+    [Space(10)]
+    [Header("Cameras Screen")]
+    [Space(10)]
     [SerializeField] private Image[] activeCamerasImage;
     [SerializeField] private MeshRenderer TVScreen;
     [SerializeField] private Material[] camerasMaterials;
@@ -23,8 +29,8 @@ public class CamerasController : MonoBehaviour
 
     public void TurnTVOnOff()
     {
-        camerasHud.SetActive(isInPosition);
-        OnOffLight.material.SetColor("_EmissionColor", isInPosition ? Color.green * 1f : Color.red * 1f);
+        camerasHud.SetActive(isPlayerNearKeyboard);
+        OnOffLight.material.SetColor("_EmissionColor", isPlayerNearKeyboard ? Color.green * 1f : Color.red * 1f);
         ChangeCameraAtScreen();
     }
 
@@ -33,7 +39,7 @@ public class CamerasController : MonoBehaviour
         TurnOffAllCameras();
         SetAllCamerasColorsToGray();
 
-        if (isInPosition)
+        if (isPlayerNearKeyboard)
         {
             activeCamerasImage[cameraNumber].color = Color.red;
             cameras[cameraNumber].SetActive(true);

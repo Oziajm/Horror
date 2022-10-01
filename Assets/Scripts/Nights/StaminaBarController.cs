@@ -4,10 +4,17 @@ using UnityEngine.UI;
 
 public class StaminaBarController : MonoBehaviour
 {
-    [SerializeField] private Image fill;
-    [SerializeField] private Gradient gradientFill;
+    [Space(10)]
+    [Header("Stamina Border")]
+    [Space(10)]
     [SerializeField] private Image border;
     [SerializeField] private Gradient gradientBorder;
+
+    [Space(10)]
+    [Header("Stamina Fill")]
+    [Space(10)]
+    [SerializeField] private Image fill;
+    [SerializeField] private Gradient gradientFill;
 
     private float maxValue = 10;
     private float maxFillWidth = 500;

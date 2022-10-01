@@ -5,15 +5,37 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [Space(10)]
+    [Header("Public Values")]
+    [Space(10)]
     public int usage;
 
+    [Space(10)]
+    [Header("Game Mechanics Images")]
+    [Space(10)]
     [SerializeField] private Image batteryImage;
     [SerializeField] private Image[] usageImage;
+
+    [Space(10)]
+    [Header("Lights")]
+    [Space(10)]
     [SerializeField] private GameObject[] lights;
     [SerializeField] private Renderer[] lightsEmissions;
-    [SerializeField] private DoorButton[] buttonInteractions;
+
+    [Space(10)]
+    [Header("Scripts To Shut Down By Battery")]
+    [Space(10)]
+    [SerializeField] private SecurityDoors[] buttonInteractions;
+
+    [Space(10)]
+    [Header("FPS")]
+    [Space(10)]
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private TextMeshProUGUI fpsCounter;
+
+    [Space(10)]
+    [Header("Game Mechanics Values")]
+    [Space(10)]
     [SerializeField] private float nightMultiplier;
 
     private float timer, avgFramerate;

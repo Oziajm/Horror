@@ -8,7 +8,7 @@ public class KeyboardController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            camerasController.isInPosition = true;
+            camerasController.isPlayerNearKeyboard = true;
             camerasController.TurnTVOnOff();
         }
 
@@ -83,7 +83,7 @@ public class KeyboardController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        camerasController.isInPosition = false;
+        camerasController.isPlayerNearKeyboard = false;
         camerasController.TurnTVOnOff();
     }
 }

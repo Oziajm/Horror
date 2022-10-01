@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class ArcadeFlickeringLights : MonoBehaviour
+public class FlickeringLights : MonoBehaviour
 {
+    [Space(10)]
+    [Header("Lights")]
+    [Space(10)]
     [SerializeField] private Renderer lightRenderer;
     [SerializeField] private Light lightSource;
 
