@@ -21,8 +21,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Base_Color:
+    - _Base:
         m_Texture: {fileID: 2800000, guid: 0faea32d819a32f4e90f1db2b67403cb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Color:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -67,8 +71,9 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
+    - _Base_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 0}
     - _Color: {r: 1.490566, g: 1.113626, b: 0.6257564, a: 0}
-    - _GlowColor: {r: 1.490566, g: 1.113626, b: 0.6257564, a: 0}
+    - _GlowColor: {r: 1.9900229, g: 0.65332407, b: 0.16670345, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1769409237158940630
 MonoBehaviour:
