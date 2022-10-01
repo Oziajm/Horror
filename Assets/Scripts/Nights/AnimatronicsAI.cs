@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
-public class AnimatronicsLogic : MonoBehaviour
+public class AnimatronicsAI : MonoBehaviour
 {
+    [Space(10)]
     [Header("Animatronic")]
     [Space(10)]
     [SerializeField] private NavMeshAgent animatronic;
@@ -11,21 +12,25 @@ public class AnimatronicsLogic : MonoBehaviour
     [SerializeField] private GameController gameController;
     [SerializeField] private Vector3[] locations;
 
-    [Header("Animatronic")]
+    [Space(10)]
+    [Header("Player")]
     [Space(10)]
     [SerializeField] private Transform playerLocation;
     [SerializeField] private Transform playerCamera;
 
     [Space(10)]
     [Header("SFX")]
+    [Space(10)]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip startUp;
     [SerializeField] private AudioClip scream;
 
     private Coroutine animatronicDestinationCoroutine;
+
     private bool isPlayerSpotted;
     private bool isAnimatronicOn;
     private bool haventScreamedYet = false;
+
     private AnimatorClipInfo[] animatorClipInfo;
 
     private void Start()
@@ -36,10 +41,10 @@ public class AnimatronicsLogic : MonoBehaviour
     void FixedUpdate()
     {
         TurnOnAnimatronic();
-        AnimatronicsAI();
+        AnimatronicsLogic();
     }
 
-    private void AnimatronicsAI()
+    private void AnimatronicsLogic()
     {
         if (isAnimatronicOn)
         {

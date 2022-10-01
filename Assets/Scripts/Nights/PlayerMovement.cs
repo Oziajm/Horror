@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Space(10)]
     [Header("General")]
+    [Space(10)]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private CharacterController controller;
@@ -13,7 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving = false;
     private bool isSprinting = false;
 
+    [Space(10)]
     [Header("Stamina")]
+    [Space(10)]
     [SerializeField] private StaminaBarController staminaController;
     [SerializeField] private float sprintSpeed = 5f;
     [SerializeField] private float staminaUsageSpeed = 1f;
@@ -23,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
     private float stamina = 10f;
     private Coroutine staminaRegeneration = null;
 
+    [Space(10)]
     [Header("Camera Shake")]
+    [Space(10)]
     [SerializeField] private float magnitude = 0.05f;
     [SerializeField] private float sprintingFrequency = 20f;
     [SerializeField] private float walkingFrequency = 10f;
@@ -31,14 +37,15 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 defaultCameraLocalPos;
     private float cameraShakeTimer;
 
+    [Space(10)]
     [Header("Footsteps")]
+    [Space(10)]
     [SerializeField] private float stepSpeed = 0.6f;
     [SerializeField] private float sprintingMultiplier = 0.5f;
     [SerializeField] private AudioSource audioSource = default;
     [SerializeField] private AudioClip[] walkingClips;
     private float GetStepOffset => isSprinting ? stepSpeed * sprintingMultiplier : stepSpeed;
     private float footstepTimer = 0f;
-
 
     private readonly float groundDistance = 0.4f;
     private readonly float gravity = -19.62f;

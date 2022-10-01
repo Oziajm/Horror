@@ -1,10 +1,16 @@
 using UnityEngine;
 
-public class DoorButton : Interactable
+public class SecurityDoors : Interactable
 {
+    [Space(10)]
+    [Header("Public Values")]
+    [Space(10)]
     public bool isPressed = false;
     public bool isOpen = true;
 
+    [Space(10)]
+    [Header("Door Values")]
+    [Space(10)]
     [SerializeField] private Transform door;
     [SerializeField] private Transform openedDoorLocation;
     [SerializeField] private Renderer button;
@@ -12,13 +18,11 @@ public class DoorButton : Interactable
 
     private Vector3 oldPosition;
 
-    // Start is called before the first frame update
     void Start()
     {
         oldPosition = door.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         door.position = Vector3.MoveTowards(door.position, !isPressed ? openedDoorLocation.position : oldPosition, 5f * Time.deltaTime);
@@ -46,7 +50,7 @@ public class DoorButton : Interactable
             batteryController.usage -= 1;
         }
 
-        ChangeButtonsColor();   
+        ChangeButtonsColor();
     }
 
     public void ChangeButtonsColor()

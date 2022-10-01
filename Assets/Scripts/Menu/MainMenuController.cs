@@ -5,12 +5,20 @@ using System.Collections;
 
 public class MainMenuController : MonoBehaviour
 {
+    [Space(10)]
+    [Header("Lights")]
+    [Space(10)]
     [SerializeField] private Light spotlight;
-    [SerializeField] private TextMeshProUGUI night;
     [SerializeField] private Renderer[] eyes;
     [SerializeField] private Light[] lights;
+
+    [Space(10)]
+    [Header("Mechanics")]
+    [Space(10)]
+    [SerializeField] private TextMeshProUGUI night;
     [SerializeField] private Transform[] heads;
     [SerializeField] private Transform cameraTransform;
+
     private int nightNumber = 1;
 
     private void Start()
