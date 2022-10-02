@@ -10,13 +10,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cameraTransform;
+
+    [Space(10)]
+    [Header("General Settings")]
+    [Space(10)]
     [SerializeField] private float mouseSensitivity = 100f;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float crouchSpeed = 1f;
-    [SerializeField] private float crouchHeight = 0.5f;
-    [SerializeField] private Vector3 crouchCenter = new Vector3(0f, 0.5f, 0f);
     [SerializeField] private float standHeight = 1.7f;
-    [SerializeField] private Vector3 standCenter = Vector3.zero;
     [SerializeField] private float timeToCrouch = 0.25f;
     private bool isMoving = false;
     private bool isSprinting = false;
@@ -53,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float sprintingMultiplier = 0.5f;
     [SerializeField] private AudioSource audioSource = default;
     [SerializeField] private AudioClip[] walkingClips;
-    private float GetStepOffset => isSprinting ? stepSpeed * sprintingMultiplier : stepSpeed;
     private float footstepTimer = 0f;
+    private float GetStepOffset => isSprinting ? stepSpeed * sprintingMultiplier : stepSpeed;
 
     private readonly float groundDistance = 0.4f;
     private readonly float gravity = -19.62f;
@@ -169,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isMoving) return;
 
         footstepTimer -= Time.deltaTime;
-        if(footstepTimer <= 0)
+        if(footstepTimer <= 0 && !isCrouching)
         {
             audioSource.PlayOneShot(walkingClips[Random.Range(0, walkingClips.Length - 1)]);
             footstepTimer = GetStepOffset;
@@ -210,21 +211,19 @@ public class PlayerMovement : MonoBehaviour
         duringCrouchAnimation = true;
         float time = 0f;
         float startHeight = controller.height;
-        float targetHeight = isCrouching ? crouchHeight : standHeight;
-        Vector3 startCenter = controller.center;
-        Vector3 targetCenter = isCrouching ? crouchCenter : standCenter;
+        float targetHeight = isCrouching ? standHeight - 1f : standHeight;
+        float targetCenter = isCrouching ? 0.2f : 0f;
 
         while(time <= timeToCrouch)
         {
             Debug.Log($"startHeight: {startHeight} | currentHeight: {controller.height} | targetHeight: {targetHeight}");
             controller.height = Mathf.Lerp(startHeight, targetHeight, time/timeToCrouch);
-            controller.center = Vector3.Lerp(startCenter, targetCenter, time/timeToCrouch);
             time += Time.deltaTime;
             yield return null;
         }
 
         controller.height = targetHeight;
-        controller.center = targetCenter;
+        controller.center = new (0f, targetCenter, 0f);
 
         duringCrouchAnimation = false;
     }
