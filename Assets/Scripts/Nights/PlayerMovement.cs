@@ -223,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         controller.height = targetHeight;
-        controller.center = new (0f, targetCenter, 0f);
+        controller.center = new Vector3(0f, targetCenter, 0f);
 
         duringCrouchAnimation = false;
     }
