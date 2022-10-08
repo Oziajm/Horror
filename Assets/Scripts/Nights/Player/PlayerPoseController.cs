@@ -1,39 +1,55 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class PlayerPoseController : MonoBehaviour
 {
     [SerializeField] protected CharacterController characterController;
     [SerializeField] private PlayerSettings playerSettings;
 
-    public bool duringCrouchAnimation { get; private set; }
-    public bool isCrouching { get; private set; }
+    private Coroutine crouchingCoroutine = null;
 
-    public void SetCrouch(bool val)
+    public bool IsCrouching { get; private set; }
+
+    private void Start()
     {
-        if (duringCrouchAnimation) StopCoroutine(DoCrouchStand());
-        isCrouching = val;
-        StartCoroutine(DoCrouchStand());
+        InputActions inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.Crouch.performed += SetCrouch;
+
+        IsCrouching = false;
+    }
+
+    public void SetCrouch(InputAction.CallbackContext context)
+    {
+        IsCrouching = !IsCrouching;
+
+        if (crouchingCoroutine == null)
+        {
+            crouchingCoroutine = StartCoroutine(DoCrouchStand());
+        }
     }
 
     public IEnumerator DoCrouchStand()
     {
-        duringCrouchAnimation = true;
         float time = 0f;
         float startHeight = characterController.height;
-        float targetHeight = isCrouching ? playerSettings.standHeight - 1f : playerSettings.standHeight;
-        float targetCenter = isCrouching ? 0.2f : 0f;
+        Vector3 startCenter = Vector3.zero;
+        float targetHeight = IsCrouching ? playerSettings.standHeight - 1f : playerSettings.standHeight;
+        Vector3 targetCenter = IsCrouching ? new(0, 0.2f, 0) : startCenter;
 
         while (time <= playerSettings.timeToCrouch)
         {
             characterController.height = Mathf.Lerp(startHeight, targetHeight, time / playerSettings.timeToCrouch);
-            time += Time.deltaTime;
+            characterController.center = Vector3.Lerp(startCenter, targetCenter, time / playerSettings.timeToCrouch);
+            time += 1 * Time.deltaTime;
             yield return null;
         }
 
         characterController.height = targetHeight;
-        characterController.center = new Vector3(0f, targetCenter, 0f);
+        characterController.center = targetCenter;
 
-        duringCrouchAnimation = false;
+        crouchingCoroutine = null;
+        StopCoroutine(DoCrouchStand());
     }
 }

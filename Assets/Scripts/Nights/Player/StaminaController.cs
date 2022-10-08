@@ -20,12 +20,6 @@ public class StaminaController : MonoBehaviour
         staminaBarController.SetStaminaVisible(false);
     }
 
-    public void UpdateStaminaBarValues()
-    {
-        staminaBarController.SetStaminaVisible(stamina < playerSettings.maxStamina);
-        staminaBarController.SetValue(stamina);
-    }
-
     public bool IsFull()
     {
         return stamina >= playerSettings.maxStamina;

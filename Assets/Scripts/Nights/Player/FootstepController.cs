@@ -9,7 +9,7 @@ public class FootstepController : MonoBehaviour
     private PlayerMovement playerMovement;
 
     private float footstepTimer = 0f;
-    private float GetStepOffset => playerMovement.isSprinting ? playerSettings.stepSoundDelay * playerSettings.sprintingDelayMultiplier : playerSettings.stepSoundDelay;
+    private float GetStepOffset => playerMovement.IsSprinting ? playerSettings.stepSoundDelay * playerSettings.sprintingDelayMultiplier : playerSettings.stepSoundDelay;
 
     private void Start()
     {
@@ -26,10 +26,10 @@ public class FootstepController : MonoBehaviour
 
     private void HandleFootSteps()
     {
-        if (!playerMovement.isMoving) return;
+        if (!playerMovement.IsMoving) return;
 
         footstepTimer -= Time.deltaTime;
-        if (footstepTimer <= 0 && !playerMovement.isCrouching)
+        if (footstepTimer <= 0 && !playerMovement.IsCrouching)
         {
             audioSource.PlayOneShot(walkingClips[Random.Range(0, walkingClips.Length - 1)]);
             footstepTimer = GetStepOffset;
