@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CameraController : CameraSettings
 {
+    [SerializeField] private Transform playerTransform;
+
     private float xRotation = 0f;
 
     private void Update()
@@ -18,6 +20,6 @@ public class CameraController : CameraSettings
         xRotation = Mathf.Clamp(xRotation, -90, 90f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        playerTransform.Rotate(Vector3.up * mouseX);
     }
 }

@@ -18,10 +18,10 @@ public class FootstepController : PlayerSettings
 
     private void HandleFootSteps()
     {
-        if (IsMoving) return;
+        if (!IsMoving) return;
 
         footstepTimer -= Time.deltaTime;
-        if (footstepTimer <= 0 && IsCrouching)
+        if (footstepTimer <= 0 && !IsCrouching)
         {
             audioSource.PlayOneShot(walkingClips[Random.Range(0, walkingClips.Length - 1)]);
             footstepTimer = GetStepOffset;

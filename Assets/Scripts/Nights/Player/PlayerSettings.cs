@@ -1,30 +1,27 @@
 using UnityEngine;
 
-public class PlayerSettings : MonoBehaviour
+public class PlayerSettings : ScriptableObject
 {
-    protected float crouchingSpeed = 2f;
-    protected float standHeight = 1.7f;
-    protected float timeToCrouch = 0.25f;
+    public float crouchingSpeed = 2f;
+    public float standHeight = 1.7f;
+    public float timeToCrouch = 0.25f;
+    
+    public float sprintingDelayMultiplier = 0.5f;
+    public float sprintSpeed = 5f;
+    public float maxStamina = 10f;
+    
+    public float stepSoundDelay = 0.5f;
+    public float walkingSpeed = 3f;
+    
+    public float stamina = 10f;
+    public float staminaUsageSpeed = 1f;
+    public float staminaRegenerationDelay = 2f;
+    public float staminaRegenerationSpeed = 1f;
+    
+    public bool isMoving = false;
+    public bool isSprinting = false;
+    public bool isCrouching = false;
+    
+    public bool duringCrouchAnimation = false;
 
-    protected float sprintingDelayMultiplier = 0.5f;
-    protected float sprintSpeed = 5f;
-    protected float maxStamina = 10f;
-
-    protected float stepSoundDelay = 0.5f;
-    protected float walkingSpeed = 3f;
-
-    protected float stamina = 10f;
-    protected float staminaUsageSpeed = 1f;
-    protected float staminaRegenerationDelay = 2f;
-    protected float staminaRegenerationSpeed = 1f;
-
-    protected bool isMoving = false;
-    protected bool isSprinting = false;
-    protected bool isCrouching = false;
-
-    protected bool duringCrouchAnimation = false;
-
-    public bool IsMoving => isMoving;
-    public bool IsSprinting => isSprinting;
-    public bool IsCrouching => isCrouching;
 }

@@ -17,7 +17,7 @@ public class PlayerMovement : PlayerPoseController
 
         //StaminaController Methods
         UpdateStaminaBarValues();
-        StartCrouching();
+        StartStopCrouching();
     }
 
     private void MovementController()
@@ -37,7 +37,7 @@ public class PlayerMovement : PlayerPoseController
 
         float currentSpeed = isCrouching ? crouchingSpeed : walkingSpeed;
 
-        if (stamina > 0 && isMoving && Input.GetKeyDown(KeyCode.LeftShift))
+        if (stamina > 0 && isMoving && Input.GetKey(KeyCode.LeftShift))
         {
             if (duringCrouchAnimation) 
                 StopCoroutine(DoCrouchStand());
