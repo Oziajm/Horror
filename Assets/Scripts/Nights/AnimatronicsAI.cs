@@ -9,7 +9,6 @@ public class AnimatronicsAI : MonoBehaviour
     [Space(10)]
     [SerializeField] private NavMeshAgent animatronic;
     [SerializeField] private Animator animator;
-    [SerializeField] private GameController gameController;
     [SerializeField] private Vector3[] locations;
 
     [Space(10)]
@@ -17,6 +16,7 @@ public class AnimatronicsAI : MonoBehaviour
     [Space(10)]
     [SerializeField] private Transform playerLocation;
     [SerializeField] private Transform playerCamera;
+    [SerializeField] private PlayerMovement playerMovement;
 
     [Space(10)]
     [Header("SFX")]
@@ -35,37 +35,32 @@ public class AnimatronicsAI : MonoBehaviour
 
     private void Start()
     {
-        animatronic.enabled = false;
+        EventManager.current.OnAnimatronicTurnedEvent += OnAnimatronicTurned;
+        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
     }
 
     void FixedUpdate()
     {
-        TurnOnAnimatronic();
-        AnimatronicsLogic();
-    }
-
-    private void AnimatronicsLogic()
-    {
         if (isAnimatronicOn)
         {
             IsInRange();
-            animator.SetBool("isPlayerSpotted", isPlayerSpotted);
+            animator.SetBool("isPlayerSpotted", isPlayerSpotted && !playerMovement.IsCrouching);
             animatronic.stoppingDistance = isPlayerSpotted ? 0f : 2f;
-            animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
 
-            if (isPlayerSpotted)
+
+            if (isPlayerSpotted && !playerMovement.IsCrouching)
             {
-                PlayerIsSpotted();
+                OnPlayerIsSpotted();
             }
 
             if (animatronicDestinationCoroutine == null && !isPlayerSpotted)
             {
-                PlayerIsNotSpotted();
+                OnPlayerIsNotSpotted();
             }
         }
     }
 
-    private void PlayerIsSpotted()
+    private void OnPlayerIsSpotted()
     {
         if (animatorClipInfo[0].clip.name == "Scream")
         {
@@ -87,7 +82,7 @@ public class AnimatronicsAI : MonoBehaviour
         }
     }
 
-    private void PlayerIsNotSpotted()
+    private void OnPlayerIsNotSpotted()
     {
         if (animatorClipInfo[0].clip.name == "Idle")
         {
@@ -111,18 +106,14 @@ public class AnimatronicsAI : MonoBehaviour
         }
     }
 
-    private void TurnOnAnimatronic()
+    private void OnAnimatronicTurned()
     {
-        //TODO: Later in development change gameController.CurrentTime value to 60.
-        if (gameController.CurrentTime == 5)
+        animator.SetBool("is2AM", true);
+        if (!audioSource.isPlaying)
         {
-            animator.SetBool("is2AM", true);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(startUp);
-            }
-            isAnimatronicOn = true;
+            audioSource.PlayOneShot(startUp);
         }
+        isAnimatronicOn = true;
     }
 
     IEnumerator SetNewAnimatronicDestinationToCheck()
