@@ -3,31 +3,40 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Variables
+
+    public bool IsMoving { get; private set; }
+    public bool IsSprinting { get; private set; }
+    public bool IsCrouching { get { return playerPoseController.IsCrouching; } }
+
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private PlayerSettings playerSettings;
     [SerializeField] private CharacterController characterController;
 
-    public float currentSpeed;
+    private Transform player;
+
+    private float currentSpeed;
 
     private PlayerPoseController playerPoseController;
     private StaminaController staminaController;
 
-    protected readonly float groundDistance = 0.4f;
-    protected readonly float gravity = -19.62f;
+    private readonly float groundDistance = 0.4f;
+    private readonly float gravity = -19.62f;
 
     private InputActions inputActions;
-
-    public bool IsMoving { get; private set; }
-    public bool IsSprinting { get; private set; }
-    public bool IsCrouching { get { return playerPoseController.IsCrouching; }}
 
     private Vector3 velocity;
     private Vector2 inputVector;
     private bool isGrounded;
 
+    #endregion
+
+    #region Unity Methods
+
     private void Start()
     {
+        player = GetComponent<Transform>();
         staminaController = GetComponent<StaminaController>();
         playerPoseController = GetComponent<PlayerPoseController>();
 
@@ -44,17 +53,21 @@ public class PlayerMovement : MonoBehaviour
         DoGravity();
         MoveCharacter();
         HandleStamina();
+
+        currentSpeed = IsCrouching ? playerSettings.crouchingSpeed : IsSprinting ? playerSettings.sprintSpeed : playerSettings.walkingSpeed;
     }
+
+    #endregion
+
+    #region Private Methods
 
     private void ChangeCurrentSpeedToRunningSpeed(InputAction.CallbackContext context)
     {
-        currentSpeed = playerSettings.sprintSpeed;
         IsSprinting = true;
     }
 
     private void ChangeCurrentSpeedToWalkingSpeed(InputAction.CallbackContext context)
     {
-        currentSpeed = playerSettings.walkingSpeed;
         IsSprinting = false;
     }
 
@@ -71,7 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
         IsMoving = inputVector.x > 0 || inputVector.y > 0;
 
-        characterController.Move(currentSpeed * Time.deltaTime * new Vector3(inputVector.x, 0f, inputVector.y));
+        Vector3 move = player.forward * inputVector.y + player.right * inputVector.x;
+
+        characterController.Move(currentSpeed * Time.deltaTime * move);
     }
 
     private void HandleStamina()
@@ -98,4 +113,6 @@ public class PlayerMovement : MonoBehaviour
 
         characterController.Move(velocity * Time.deltaTime);
     }
+
+    #endregion
 }

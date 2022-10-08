@@ -4,12 +4,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerPoseController : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] protected CharacterController characterController;
     [SerializeField] private PlayerSettings playerSettings;
 
     private Coroutine crouchingCoroutine = null;
 
     public bool IsCrouching { get; private set; }
+
+    #endregion
+
+    #region Unity Methods
 
     private void Start()
     {
@@ -19,6 +25,10 @@ public class PlayerPoseController : MonoBehaviour
 
         IsCrouching = false;
     }
+
+    #endregion
+
+    #region Public Methods
 
     public void SetCrouch(InputAction.CallbackContext context)
     {
@@ -52,4 +62,6 @@ public class PlayerPoseController : MonoBehaviour
         crouchingCoroutine = null;
         StopCoroutine(DoCrouchStand());
     }
+
+    #endregion
 }

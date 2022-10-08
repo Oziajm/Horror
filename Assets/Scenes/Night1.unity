@@ -407,8 +407,8 @@ GameObject:
   - component: {fileID: 53789827}
   - component: {fileID: 53789826}
   - component: {fileID: 53789829}
-  - component: {fileID: 53789832}
   - component: {fileID: 53789830}
+  - component: {fileID: 53789831}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1795078679}
   cameraSettings: {fileID: 11400000, guid: 90e50a58a9d73dc4493d6b45f67bf360, type: 2}
---- !u!114 &53789832
+--- !u!114 &53789831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22126,7 +22126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795078678}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.86, y: 0.938, z: -10.34}
+  m_LocalPosition: {x: 0.021, y: 1.502, z: -9.751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22401,7 +22401,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1795078687}
         m_TargetAssemblyTypeName: PlayerPoseController, Assembly-CSharp
         m_MethodName: SetCrouch
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22412,6 +22412,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3e93d025-5a2e-4d72-a374-0282cb01229b
     m_ActionName: Player/Crouch[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1795078679}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: MoveCharacter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 45c64d1c-d4e6-4d18-a9c0-ab740c38386d
+    m_ActionName: Player/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c22b1800-3ca5-4369-be0d-09af0cd9cac9
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

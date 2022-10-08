@@ -9,7 +9,7 @@ public class CameraShaker : MonoBehaviour
 
     private Vector3 defaultCameraLocalPos;
     private float cameraShakeTimer;
-    private float GetCameraShakeFrequency => playerMovement.IsSprinting ? cameraSettings.sprintingFrequency : playerMovement.IsCrouching ? cameraSettings.crouchingFrequency : cameraSettings.walkingFrequency;
+    private float GetCameraShakeFrequency => playerMovement.IsCrouching ? cameraSettings.crouchingFrequency : playerMovement.IsSprinting ? cameraSettings.sprintingFrequency : cameraSettings.walkingFrequency;
 
     #endregion
 

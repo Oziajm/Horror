@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FootstepController : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] private AudioClip[] walkingClips;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private PlayerSettings playerSettings;
@@ -10,6 +12,10 @@ public class FootstepController : MonoBehaviour
 
     private float footstepTimer = 0f;
     private float GetStepOffset => playerMovement.IsSprinting ? playerSettings.stepSoundDelay * playerSettings.sprintingDelayMultiplier : playerSettings.stepSoundDelay;
+
+    #endregion
+
+    #region Unity Methods
 
     private void Start()
     {
@@ -24,6 +30,10 @@ public class FootstepController : MonoBehaviour
         //}
     }
 
+    #endregion
+
+    #region Private Methods
+
     private void HandleFootSteps()
     {
         if (!playerMovement.IsMoving) return;
@@ -35,4 +45,6 @@ public class FootstepController : MonoBehaviour
             footstepTimer = GetStepOffset;
         }
     }
+
+    #endregion
 }
