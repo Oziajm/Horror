@@ -44,11 +44,11 @@ public class AnimatronicsAI : MonoBehaviour
         if (isAnimatronicOn)
         {
             IsInRange();
-            animator.SetBool("isPlayerSpotted", isPlayerSpotted && !playerMovement.IsCrouching);
+            animator.SetBool("isPlayerSpotted", isPlayerSpotted && !playerMovement.isCrouching);
             animatronic.stoppingDistance = isPlayerSpotted ? 0f : 2f;
 
 
-            if (isPlayerSpotted && !playerMovement.IsCrouching)
+            if (isPlayerSpotted && !playerMovement.isCrouching)
             {
                 OnPlayerIsSpotted();
             }

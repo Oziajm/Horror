@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class CameraShaker : CameraSettings
+public class CameraShaker : MonoBehaviour
 {
     #region Variables
 
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private CameraSettings cameraSettings;
 
     private Vector3 defaultCameraLocalPos;
     private float cameraShakeTimer;
-    private float GetCameraShakeFrequency => playerMovement.IsSprinting ? sprintingFrequency : playerMovement.IsCrouching ? crouchingFrequency : walkingFrequency;
+    private float GetCameraShakeFrequency => playerMovement.isSprinting ? cameraSettings.sprintingFrequency : playerMovement.isCrouching ? cameraSettings.crouchingFrequency : cameraSettings.walkingFrequency;
 
     #endregion
 
@@ -30,10 +31,10 @@ public class CameraShaker : CameraSettings
 
     private void CameraShake()
     {
-        if (playerMovement.IsMoving)
+        if (playerMovement.isMoving)
         {
             Vector3 newPos = defaultCameraLocalPos;
-            newPos.y += magnitude * Mathf.Sin(cameraShakeTimer * GetCameraShakeFrequency);
+            newPos.y += cameraSettings.magnitude * Mathf.Sin(cameraShakeTimer * GetCameraShakeFrequency);
             transform.localPosition = newPos;
             cameraShakeTimer += Time.deltaTime;
             return;

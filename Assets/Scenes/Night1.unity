@@ -407,7 +407,6 @@ GameObject:
   - component: {fileID: 53789827}
   - component: {fileID: 53789826}
   - component: {fileID: 53789829}
-  - component: {fileID: 53789831}
   - component: {fileID: 53789832}
   - component: {fileID: 53789830}
   m_Layer: 0
@@ -531,18 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1795078679}
---- !u!114 &53789831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53789825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2c7dc1fa85b8444a5e2d7cb1ddf3c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  cameraSettings: {fileID: 11400000, guid: 90e50a58a9d73dc4493d6b45f67bf360, type: 2}
 --- !u!114 &53789832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92765781683209440a49bae885493ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1795078681}
+  cameraSettings: {fileID: 11400000, guid: 90e50a58a9d73dc4493d6b45f67bf360, type: 2}
 --- !u!1 &55344694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2980397419073779767, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -1805,7 +1795,7 @@ Transform:
   m_Children:
   - {fileID: 912089161}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 180
+  m_RootOrder: 287
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &327046612
 MeshRenderer:
@@ -8682,7 +8672,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 286
+  m_RootOrder: 408
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1211337230
 MeshRenderer:
@@ -9259,7 +9249,7 @@ Transform:
   m_Children:
   - {fileID: 115877012}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 224
+  m_RootOrder: 352
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1287774985
 MeshRenderer:
@@ -12171,7 +12161,7 @@ Transform:
   m_Children:
   - {fileID: 329172614}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 347
+  m_RootOrder: 409
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 20}
 --- !u!1 &1622242879
 GameObject:
@@ -22083,7 +22073,6 @@ GameObject:
   - component: {fileID: 1795078688}
   - component: {fileID: 1795078687}
   - component: {fileID: 1795078686}
-  - component: {fileID: 1795078685}
   - component: {fileID: 1795078689}
   m_Layer: 0
   m_Name: Player
@@ -22104,11 +22093,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258e9855d2ca66742905ce43ed4b51ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterController: {fileID: 1795078680}
   groundCheck: {fileID: 1239208386}
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  playerSettings: {fileID: 11400000, guid: a94d0bcf386ffdf44b4f4e69e161d65a, type: 2}
+  characterController: {fileID: 1795078680}
 --- !u!143 &1795078680
 CharacterController:
   m_ObjectHideFlags: 0
@@ -22258,18 +22248,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   useText: {fileID: 1256361997}
---- !u!114 &1795078685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795078678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a0ece548f96d64ba0d4796e603fae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1795078686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22282,6 +22260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca02ca40b3cf0ab4bba6d50840e8c923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSettings: {fileID: 11400000, guid: a94d0bcf386ffdf44b4f4e69e161d65a, type: 2}
 --- !u!114 &1795078687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22295,6 +22274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1795078680}
+  playerSettings: {fileID: 11400000, guid: a94d0bcf386ffdf44b4f4e69e161d65a, type: 2}
 --- !u!114 &1795078688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22317,6 +22297,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
   - {fileID: 8300000, guid: d15f7338d693f0343843a6b9096d27f6, type: 3}
   audioSource: {fileID: 1795078683}
+  playerSettings: {fileID: 11400000, guid: a94d0bcf386ffdf44b4f4e69e161d65a, type: 2}
 --- !u!114 &1795078689
 MonoBehaviour:
   m_ObjectHideFlags: 0

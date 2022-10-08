@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class CameraController : CameraSettings
+public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private CameraSettings cameraSettings;
 
     private float xRotation = 0f;
 
@@ -13,8 +14,8 @@ public class CameraController : CameraSettings
 
     private void RotateCamera()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * cameraSettings.mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * cameraSettings.mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90f);

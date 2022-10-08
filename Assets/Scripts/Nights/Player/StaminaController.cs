@@ -1,37 +1,95 @@
 using UnityEngine;
 using System.Collections;
 
-public class StaminaController : PlayerSettings
+public class StaminaController : MonoBehaviour
 {
-    protected StaminaBarController staminaBarController;
+    [SerializeField] private PlayerSettings playerSettings;
 
-    public Coroutine staminaRegeneration = null;
-    
+    private StaminaBarController staminaBarController;
+
+    private Coroutine staminaRegeneration = null;
+    private Coroutine usageCoroutine = null;
+    private float stamina;
+
     private void Start()
     {
         staminaBarController = GetComponent<StaminaBarController>();
 
-        staminaBarController.SetMaxValue(maxStamina);
+        stamina = playerSettings.maxStamina;
+        staminaBarController.SetMaxValue(stamina);
         staminaBarController.SetStaminaVisible(false);
     }
 
     public void UpdateStaminaBarValues()
     {
-        staminaBarController.SetStaminaVisible(stamina < maxStamina);
+        staminaBarController.SetStaminaVisible(stamina < playerSettings.maxStamina);
         staminaBarController.SetValue(stamina);
     }
 
-    public IEnumerator RegenerateStamina()
+    public bool IsFull()
     {
-        yield return new WaitForSeconds(staminaRegenerationDelay);
+        return stamina >= playerSettings.maxStamina;
+    }
 
-        while (stamina < maxStamina)
+    public bool IsAvaiable()
+    {
+        return stamina > 0;
+    }
+
+    public void StartRegenerating()
+    {
+        if (staminaRegeneration == null)
         {
-            stamina += Time.deltaTime * staminaRegenerationSpeed;
+            staminaRegeneration = StartCoroutine(RegenerateStamina());
+        }
+    }
+
+    public void StopRegenerating()
+    {
+        if (staminaRegeneration != null)
+        {
+            StopCoroutine(staminaRegeneration);
+            staminaRegeneration = null;
+        }
+    }
+
+    public void StartUsing()
+    {
+        if (usageCoroutine == null)
+        {
+            usageCoroutine = StartCoroutine(UseStamina());
+        }
+    }
+
+    public void StopUsing()
+    {
+        if (usageCoroutine != null)
+        {
+            StopCoroutine(usageCoroutine);
+            usageCoroutine = null;
+        }
+    }
+
+    private IEnumerator RegenerateStamina()
+    {
+        yield return new WaitForSeconds(playerSettings.staminaRegenerationDelay);
+
+        while (stamina < playerSettings.maxStamina)
+        {
+            stamina += Time.deltaTime * playerSettings.staminaRegenerationSpeed;
             staminaBarController.SetValue(stamina);
             yield return null;
         }
 
         staminaRegeneration = null;
+    }
+
+    private IEnumerator UseStamina()
+    {
+        while (stamina > 0)
+        {
+            stamina = Mathf.Clamp(stamina - Time.deltaTime * playerSettings.staminaUsageSpeed, 0, playerSettings.maxStamina);
+            yield return null;
+        }
     }
 }

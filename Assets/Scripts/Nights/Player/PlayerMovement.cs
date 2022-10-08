@@ -1,23 +1,37 @@
 using UnityEngine;
 
-public class PlayerMovement : PlayerPoseController
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private PlayerSettings playerSettings;
+    [SerializeField] private CharacterController characterController;
+
+    private StaminaController staminaController;
+    private PlayerPoseController playerPoseController;
 
     protected readonly float groundDistance = 0.4f;
     protected readonly float gravity = -19.62f;
 
+    public bool isMoving { get; private set; }
+    public bool isSprinting { get; private set; }
+    public bool isCrouching { get { return playerPoseController.isCrouching; }}
+
     private Vector3 velocity;
     private bool isGrounded;
+
+    private void Start()
+    {
+        staminaController = GetComponent<StaminaController>();
+        playerPoseController = GetComponent<PlayerPoseController>();
+    }
 
     void FixedUpdate()
     {
         MovementController();
 
         //StaminaController Methods
-        UpdateStaminaBarValues();
-        StartStopCrouching();
+        staminaController.UpdateStaminaBarValues();
     }
 
     private void MovementController()
@@ -35,36 +49,29 @@ public class PlayerMovement : PlayerPoseController
 
         isMoving = x != 0 || z != 0;
 
-        float currentSpeed = isCrouching ? crouchingSpeed : walkingSpeed;
-
-        if (stamina > 0 && isMoving && Input.GetKey(KeyCode.LeftShift))
+        float currentSpeed = playerPoseController.isCrouching ? playerSettings.crouchingSpeed : playerSettings.walkingSpeed;
+        isSprinting = false;
+        if (staminaController.IsAvaiable() && isMoving && Input.GetKey(KeyCode.LeftShift)) // check if sprinting
         {
-            if (duringCrouchAnimation) 
-                StopCoroutine(DoCrouchStand());
+            playerPoseController.SetCrouch(false);
 
-            if(isCrouching)
-            {
-                isCrouching = false;
-                StartCoroutine(DoCrouchStand());
-            }
-
-            if (staminaRegeneration != null)
-            {
-                StopCoroutine(staminaRegeneration);
-                staminaRegeneration = null;
-            }
+            staminaController.StopRegenerating();
 
             isSprinting = true;
-            currentSpeed = sprintSpeed;
-            stamina = Mathf.Clamp(stamina - Time.deltaTime*staminaUsageSpeed, 0, maxStamina);
+            currentSpeed = playerSettings.sprintSpeed;
+            staminaController.StartUsing();
         }
-        else if (stamina < maxStamina)
+        else if (!staminaController.IsFull())  // start regenerating if not full
+        {            
+            staminaController.StartRegenerating();
+        }
+
+        if (!isSprinting)
+            staminaController.StopUsing();
+
+        if(Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.LeftShift))
         {
-            isSprinting = false;
-            if (staminaRegeneration == null)
-            {
-                staminaRegeneration = StartCoroutine(RegenerateStamina());
-            }
+            playerPoseController.SetCrouch(!playerPoseController.isCrouching);
         }
 
         characterController.Move(currentSpeed * Time.deltaTime * move);

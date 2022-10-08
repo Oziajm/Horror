@@ -6,27 +6,23 @@ public class PlayerPoseController : MonoBehaviour
     [SerializeField] protected CharacterController characterController;
     [SerializeField] private PlayerSettings playerSettings;
 
-    public void StartStopCrouching()
-    {
-        if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.LeftShift))
-        {
-            if (playerSettings.duringCrouchAnimation) StopCoroutine(DoCrouchStand());
-            playerSettings.isCrouching = !playerSettings.isCrouching;
-            StartCoroutine(DoCrouchStand());
-        }
-    }
+    public bool duringCrouchAnimation { get; private set; }
+    public bool isCrouching { get; private set; }
 
-    public void StopCrouching()
-    { 
+    public void SetCrouch(bool val)
+    {
+        if (duringCrouchAnimation) StopCoroutine(DoCrouchStand());
+        isCrouching = val;
+        StartCoroutine(DoCrouchStand());
     }
 
     public IEnumerator DoCrouchStand()
     {
-        playerSettings.duringCrouchAnimation = true;
+        duringCrouchAnimation = true;
         float time = 0f;
         float startHeight = characterController.height;
-        float targetHeight = playerSettings.isCrouching ? playerSettings.standHeight - 1f : playerSettings.standHeight;
-        float targetCenter = playerSettings.isCrouching ? 0.2f : 0f;
+        float targetHeight = isCrouching ? playerSettings.standHeight - 1f : playerSettings.standHeight;
+        float targetCenter = isCrouching ? 0.2f : 0f;
 
         while (time <= playerSettings.timeToCrouch)
         {
@@ -38,6 +34,6 @@ public class PlayerPoseController : MonoBehaviour
         characterController.height = targetHeight;
         characterController.center = new Vector3(0f, targetCenter, 0f);
 
-        playerSettings.duringCrouchAnimation = false;
+        duringCrouchAnimation = false;
     }
 }
