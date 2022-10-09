@@ -21,7 +21,7 @@ public class PlayerPoseController : MonoBehaviour
     {
         InputActions inputActions = new();
         inputActions.Player.Enable();
-        inputActions.Player.Crouch.performed += SetCrouch;
+        inputActions.Player.Crouch.started += SetCrouch;
 
         IsCrouching = false;
     }
