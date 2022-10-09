@@ -85,7 +85,6 @@ public class StaminaController : MonoBehaviour
         {
             stamina += Time.deltaTime * playerSettings.staminaRegenerationSpeed;
             staminaBarController.SetValue(stamina);
-            Debug.Log($"Regen {stamina}");
             yield return null;
         }
 
@@ -100,7 +99,6 @@ public class StaminaController : MonoBehaviour
         {
             stamina = Mathf.Clamp(stamina - Time.deltaTime * playerSettings.staminaUsageSpeed, 0, playerSettings.maxStamina);
             staminaBarController.SetValue(stamina);
-            Debug.Log($"Usage {stamina}");
             yield return null;
         }
     }

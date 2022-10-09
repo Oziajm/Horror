@@ -40,6 +40,15 @@ public class PlayerPoseController : MonoBehaviour
         }
     }
 
+    public void SetCrouch(bool val)
+    {
+        IsCrouching = val;
+        if (crouchingCoroutine == null)
+        {
+            crouchingCoroutine = StartCoroutine(DoCrouchStand());
+        }
+    }
+
     public IEnumerator DoCrouchStand()
     {
         float time = 0f;

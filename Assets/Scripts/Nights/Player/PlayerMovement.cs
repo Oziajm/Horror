@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         IsSprinting = false;
         if (staminaController.IsAvaiable() && IsMoving && isSprintingRequested) // check if sprinting
         {
+            playerPoseController.SetCrouch(false);
             staminaController.StopRegenerating();
 
             currentSpeed = playerSettings.sprintSpeed;
