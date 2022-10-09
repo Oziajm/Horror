@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         inputActions.Player.Enable();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         RotateCamera();
     }
