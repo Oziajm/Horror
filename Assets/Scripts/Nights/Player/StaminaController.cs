@@ -88,14 +88,17 @@ public class StaminaController : MonoBehaviour
             yield return null;
         }
 
+        staminaBarController.SetStaminaVisible(false);
         staminaRegeneration = null;
     }
 
     private IEnumerator UseStamina()
     {
+        staminaBarController.SetStaminaVisible(true);
         while (stamina > 0)
         {
             stamina = Mathf.Clamp(stamina - Time.deltaTime * playerSettings.staminaUsageSpeed, 0, playerSettings.maxStamina);
+            staminaBarController.SetValue(stamina);
             yield return null;
         }
     }

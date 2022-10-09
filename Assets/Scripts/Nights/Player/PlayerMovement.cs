@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private Vector2 inputVector;
     private bool isGrounded;
+    private bool isSprintingRequested = false;
 
     #endregion
 
@@ -63,12 +64,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeCurrentSpeedToRunningSpeed(InputAction.CallbackContext context)
     {
-        IsSprinting = true;
+        isSprintingRequested = true;
     }
 
     private void ChangeCurrentSpeedToWalkingSpeed(InputAction.CallbackContext context)
     {
-        IsSprinting = false;
+        isSprintingRequested = false;
     }
 
     private void MoveCharacter()
@@ -91,12 +92,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleStamina()
     {
-        if (staminaController.IsAvaiable() && IsMoving && IsSprinting) // check if sprinting
+        IsSprinting = false;
+        if (staminaController.IsAvaiable() && IsMoving && isSprintingRequested) // check if sprinting
         {
+            playerPoseController.SetCrouch(false);
             staminaController.StopRegenerating();
 
             currentSpeed = playerSettings.sprintSpeed;
             staminaController.StartUsing();
+            IsSprinting = true;
         }
         else if (!staminaController.IsFull())  // start regenerating if not full
         {

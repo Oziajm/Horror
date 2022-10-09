@@ -1,29 +1,14 @@
+
+/*
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
 public class AnimatronicsAI : MonoBehaviour
 {
+    [Header("Patrol locations")]
     [Space(10)]
-    [Header("Animatronic")]
-    [Space(10)]
-    [SerializeField] private NavMeshAgent animatronic;
-    [SerializeField] private Animator animator;
     [SerializeField] private Vector3[] locations;
-
-    [Space(10)]
-    [Header("Player")]
-    [Space(10)]
-    [SerializeField] private Transform playerLocation;
-    [SerializeField] private Transform playerCamera;
-    [SerializeField] private PlayerMovement playerMovement;
-
-    [Space(10)]
-    [Header("SFX")]
-    [Space(10)]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip startUp;
-    [SerializeField] private AudioClip scream;
 
     private Coroutine animatronicDestinationCoroutine;
 
@@ -31,16 +16,24 @@ public class AnimatronicsAI : MonoBehaviour
     private bool isAnimatronicOn;
     private bool haventScreamedYet = false;
 
+    private Animator animator;
+
+    private NavMeshAgent animatronic;
+
     private AnimatorClipInfo[] animatorClipInfo;
 
     private void Start()
     {
+        animatronic = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+
         EventManager.current.OnAnimatronicTurnedEvent += OnAnimatronicTurned;
         animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
     }
 
     void FixedUpdate()
     {
+        Debug.Log(animatorClipInfo.Length);
         if (isAnimatronicOn)
         {
             IsInRange();
@@ -67,6 +60,7 @@ public class AnimatronicsAI : MonoBehaviour
             animatronic.enabled = false;
             if (!audioSource.isPlaying && !haventScreamedYet)
             {
+                
                 audioSource.volume = 1f;
                 audioSource.PlayOneShot(scream);
                 haventScreamedYet = true;
@@ -146,3 +140,4 @@ public class AnimatronicsAI : MonoBehaviour
         }
     }
 }
+*/
