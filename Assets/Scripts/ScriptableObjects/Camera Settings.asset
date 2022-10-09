@@ -16,4 +16,4 @@ MonoBehaviour:
   sprintingFrequency: 20
   walkingFrequency: 10
   crouchingFrequency: 5
-  mouseSensitivity: 200
+  mouseSensitivity: 20

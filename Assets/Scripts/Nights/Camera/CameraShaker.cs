@@ -9,7 +9,7 @@ public class CameraShaker : MonoBehaviour
 
     private Vector3 defaultCameraLocalPos;
     private float cameraShakeTimer;
-    private float GetCameraShakeFrequency => playerMovement.isSprinting ? cameraSettings.sprintingFrequency : playerMovement.isCrouching ? cameraSettings.crouchingFrequency : cameraSettings.walkingFrequency;
+    private float GetCameraShakeFrequency => playerMovement.IsCrouching ? cameraSettings.crouchingFrequency : playerMovement.IsSprinting ? cameraSettings.sprintingFrequency : cameraSettings.walkingFrequency;
 
     #endregion
 
@@ -31,7 +31,7 @@ public class CameraShaker : MonoBehaviour
 
     private void CameraShake()
     {
-        if (playerMovement.isMoving)
+        if (playerMovement.IsMoving)
         {
             Vector3 newPos = defaultCameraLocalPos;
             newPos.y += cameraSettings.magnitude * Mathf.Sin(cameraShakeTimer * GetCameraShakeFrequency);

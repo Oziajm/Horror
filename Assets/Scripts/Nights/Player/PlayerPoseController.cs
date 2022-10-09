@@ -1,47 +1,67 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class PlayerPoseController : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] protected CharacterController characterController;
     [SerializeField] private PlayerSettings playerSettings;
 
-    public bool duringCrouchAnimation { get; private set; }
-    public bool isCrouching { get; private set; }
+    private Coroutine crouchingCoroutine = null;
 
-    private void Awake()
+    public bool IsCrouching { get; private set; }
+
+    #endregion
+
+    #region Unity Methods
+
+    private void Start()
     {
-        duringCrouchAnimation = false;
-        isCrouching = false;
+        InputActions inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.Crouch.performed += SetCrouch;
+
+        IsCrouching = false;
     }
 
-    public void SetCrouch(bool val)
+    #endregion
+
+    #region Public Methods
+
+    public void SetCrouch(InputAction.CallbackContext context)
     {
-        if (duringCrouchAnimation) StopCoroutine(DoCrouchStand());
-        isCrouching = val;
-        StartCoroutine(DoCrouchStand());
+        IsCrouching = !IsCrouching;
+
+        if (crouchingCoroutine == null)
+        {
+            crouchingCoroutine = StartCoroutine(DoCrouchStand());
+        }
     }
 
     public IEnumerator DoCrouchStand()
     {
-        duringCrouchAnimation = true;
         float time = 0f;
         float startHeight = characterController.height;
-        float targetHeight = isCrouching ? playerSettings.standHeight - 1f : playerSettings.standHeight;
-        float startCenter = characterController.center.y;
-        float targetCenter = isCrouching ? 0.2f : 0f;
+        Vector3 startCenter = Vector3.zero;
+        float targetHeight = IsCrouching ? playerSettings.standHeight - 1f : playerSettings.standHeight;
+        Vector3 targetCenter = IsCrouching ? new(0, 0.2f, 0) : startCenter;
 
         while (time <= playerSettings.timeToCrouch)
         {
             characterController.height = Mathf.Lerp(startHeight, targetHeight, time / playerSettings.timeToCrouch);
-            //characterController.center = new Vector3(0f, Mathf.Lerp(startCenter, startHeight, time / playerSettings.timeToCrouch));
-            time += Time.deltaTime;
+            characterController.center = Vector3.Lerp(startCenter, targetCenter, time / playerSettings.timeToCrouch);
+            time += 1 * Time.deltaTime;
             yield return null;
         }
 
         characterController.height = targetHeight;
-        characterController.center = new Vector3(0f, targetCenter, 0f);
+        characterController.center = targetCenter;
 
-        duringCrouchAnimation = false;
+        crouchingCoroutine = null;
+        StopCoroutine(DoCrouchStand());
     }
+
+    #endregion
 }

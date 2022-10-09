@@ -3,6 +3,8 @@ using System.Collections;
 
 public class StaminaController : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] private PlayerSettings playerSettings;
 
     private StaminaBarController staminaBarController;
@@ -11,6 +13,9 @@ public class StaminaController : MonoBehaviour
     private Coroutine usageCoroutine = null;
     private float stamina;
 
+    #endregion
+
+    #region Unity Methods
     private void Start()
     {
         staminaBarController = GetComponent<StaminaBarController>();
@@ -20,11 +25,9 @@ public class StaminaController : MonoBehaviour
         staminaBarController.SetStaminaVisible(false);
     }
 
-    public void UpdateStaminaBarValues()
-    {
-        staminaBarController.SetStaminaVisible(stamina < playerSettings.maxStamina);
-        staminaBarController.SetValue(stamina);
-    }
+    #endregion
+
+    #region Public Methods
 
     public bool IsFull()
     {
@@ -70,6 +73,10 @@ public class StaminaController : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Private Coroutines
+
     private IEnumerator RegenerateStamina()
     {
         yield return new WaitForSeconds(playerSettings.staminaRegenerationDelay);
@@ -92,4 +99,6 @@ public class StaminaController : MonoBehaviour
             yield return null;
         }
     }
+
+    #endregion
 }

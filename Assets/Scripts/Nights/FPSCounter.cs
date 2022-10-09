@@ -7,8 +7,6 @@ public class FPSCounter : MonoBehaviour
 
     private float timer, avgFramerate;
 
-    private readonly float refresh;
-
     private void Start()
     {
         fpsText = GetComponent<TextMeshProUGUI>();
@@ -23,7 +21,7 @@ public class FPSCounter : MonoBehaviour
     private void ShowFPS()
     {
         float timelapse = Time.smoothDeltaTime;
-        timer = timer <= 0 ? refresh : timer -= timelapse;
+        timer -= timelapse;
 
         if (timer <= 0) avgFramerate = (int)(1f / timelapse);
         fpsText.text = avgFramerate.ToString() + " FPS";

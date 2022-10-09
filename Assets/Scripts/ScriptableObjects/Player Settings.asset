@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouchingSpeed: 2
   standHeight: 1.7
-  timeToCrouch: 0.25
+  timeToCrouch: 0.1
   sprintingDelayMultiplier: 0.5
   sprintSpeed: 5
-  stepSoundDelay: 0.5
+  stepSoundDelay: 0.65
   walkingSpeed: 3
   maxStamina: 10
   staminaUsageSpeed: 1
