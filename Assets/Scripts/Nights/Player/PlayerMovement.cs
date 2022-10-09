@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        isMoving = false;
+        isSprinting = false;
         staminaController = GetComponent<StaminaController>();
         playerPoseController = GetComponent<PlayerPoseController>();
     }
