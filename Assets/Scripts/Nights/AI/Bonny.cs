@@ -1,7 +1,30 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Bonny : MonoBehaviour
+public class Bonny : Animatronic
 {
-    private AnimatronicsSoundsController animatronicsSoundsController;
 
+    private PlayerMovement playerMovement;
+
+    public void Start()
+    {
+        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        playerMovement = player.GetComponent<PlayerMovement>();
+        soundsController = GetComponent<AnimatronicsSoundsController>();
+    }
+
+    protected void InitializeStateMachine()
+    {
+        stateMachine.SetStates(new Dictionary<Type, BaseState>()
+        {
+
+        });
+    }
+
+    public override bool IsPlayerSpotted()
+    {
+        return fov.canSeePlayer && !playerMovement.IsCrouching;
+    }
 }

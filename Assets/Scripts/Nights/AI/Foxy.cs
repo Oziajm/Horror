@@ -1,7 +1,32 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Foxy : MonoBehaviour
+public class Foxy : Animatronic
 {
-    private AnimatronicsSoundsController animatronicsSoundsController;
+    private PlayerMovement playerMovement;
 
+    public void Start()
+    {
+        stateMachine = GetComponent<StateMachine>();
+        InitializeStateMachine();
+        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        playerMovement = player.GetComponent<PlayerMovement>();
+        soundsController = GetComponent<AnimatronicsSoundsController>();
+    }
+    protected void InitializeStateMachine()
+    {
+        stateMachine.SetStates(new Dictionary<Type, BaseState>()
+        {
+            {typeof(DisabledState), new DisabledState(this)},
+            {typeof(RoamingState), new RoamingState(this)},
+            {typeof(ChaseState), new ChaseState(this)}
+        });
+    }
+
+    public override bool IsPlayerSpotted()
+    {
+        return fov.canSeePlayer && !playerMovement.IsCrouching;
+    }
 }
