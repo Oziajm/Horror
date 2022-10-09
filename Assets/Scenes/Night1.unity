@@ -24366,21 +24366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8a816e72b933a49825c0d9e035becf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locations:
-  - {x: 9.5, y: 0, z: -0.5}
-  - {x: -8, y: 0, z: -7}
-  - {x: 14, y: 0, z: -1.7}
-  playerLocation: {fileID: 1795078681}
-  playerCamera: {fileID: 53789828}
-  playerMovement: {fileID: 1795078679}
-  audioSource: {fileID: 1966617474}
-  startUp: {fileID: 8300000, guid: b0358885bbf22424eaa5ab4446cba970, type: 3}
-  scream: {fileID: 8300000, guid: 86440dff7c13f6a4eb4869b56071a8d2, type: 3}
-  isPlayerSpotted: 0
-  isAnimatronicOn: 0
-  haventScreamedYet: 0
-  animator: {fileID: 0}
-  animatronic: {fileID: 0}
 --- !u!195 &1966617473
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -24388,7 +24373,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966617471}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 100
   m_Speed: 0.3
@@ -24499,6 +24484,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1966617475 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 24b44613188288d4691866e1f5a0cd1e, type: 3}
+  m_PrefabInstance: {fileID: 201660084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1966617477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966617471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7d5db6e19624046a389a4904e83128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolLocations: []
+  player: {fileID: 1795078678}
+  fov: {fileID: 77256623}
+  soundsController: {fileID: 0}
+  navMeshAgent: {fileID: 1966617473}
+  animator: {fileID: 1966617475}
+  isOn: 0
+--- !u!114 &1966617478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966617471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fe7d56991934446bfb7dcfe61dba51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1966617479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966617471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac589c073340a1b438ae9a18ea56d2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startUpSound: {fileID: 8300000, guid: b0358885bbf22424eaa5ab4446cba970, type: 3}
+  screamSound: {fileID: 8300000, guid: 86440dff7c13f6a4eb4869b56071a8d2, type: 3}
+  chaseSound: {fileID: 0}
+  idleSound: {fileID: 0}
+  footstepSound: {fileID: 0}
 --- !u!1 &1974984188
 GameObject:
   m_ObjectHideFlags: 0
