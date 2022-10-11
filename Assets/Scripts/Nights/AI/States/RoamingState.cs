@@ -27,7 +27,7 @@ public class RoamingState : BaseState
         if (isPlayerSpotted)
         {
             animatronicDestinationCoroutine = null;
-            StopCoroutine(SetNewAnimatronicDestinationToCheck());
+            //StopCoroutine(SetNewAnimatronicDestinationToCheck());
             return typeof(ChaseState);
         }
 
@@ -44,7 +44,7 @@ public class RoamingState : BaseState
         {
             animatronic.enabled = false;
         }
-        animatronicDestinationCoroutine = StartCoroutine(SetNewAnimatronicDestinationToCheck());
+        //animatronicDestinationCoroutine = StartCoroutine(SetNewAnimatronicDestinationToCheck());
     }
 
     IEnumerator SetNewAnimatronicDestinationToCheck()
