@@ -16,7 +16,6 @@ public class AIFieldOfView : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
     }
 

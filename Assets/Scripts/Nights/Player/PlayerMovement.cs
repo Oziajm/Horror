@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         inputVector = inputActions.Player.Movement.ReadValue<Vector2>();
 
-        IsMoving = inputVector.x > 0 || inputVector.y > 0;
+        IsMoving = inputVector.x != 0 || inputVector.y != 0;
 
         Vector3 move = player.forward * inputVector.y + player.right * inputVector.x;
 
