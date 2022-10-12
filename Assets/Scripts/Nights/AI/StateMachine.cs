@@ -21,7 +21,7 @@ public class StateMachine : MonoBehaviour
         {
             currentState = states.Values.First();
         }
-        Debug.Log(currentState.GetType());
+
         var nextState = currentState.Tick();
 
         if (nextState != null && nextState != currentState?.GetType())

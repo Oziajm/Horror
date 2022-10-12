@@ -27,7 +27,7 @@ public class RoamingState : BaseState
         if (isPlayerSpotted)
         {
             animatronicDestinationCoroutine = null;
-            //StopCoroutine(SetNewAnimatronicDestinationToCheck());
+            EventManager.current.StopCoroutine(SetNewAnimatronicDestinationToCheck());
             return typeof(ChaseState);
         }
 
@@ -44,14 +44,14 @@ public class RoamingState : BaseState
         {
             animatronic.enabled = false;
         }
-        //animatronicDestinationCoroutine = StartCoroutine(SetNewAnimatronicDestinationToCheck());
+        animatronicDestinationCoroutine = EventManager.current.StartCoroutine(SetNewAnimatronicDestinationToCheck());
     }
 
     IEnumerator SetNewAnimatronicDestinationToCheck()
     {
         yield return animationDuration;
         animatronic.enabled = true;
-        animatronic.animator.speed = 0.3f;
+        animatronic.navMeshAgent.speed = 0.3f;
         while (true)
         {
             yield return waitForAnimationFinished;
