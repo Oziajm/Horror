@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class RoamingState : BaseState
 {
-    private Animatronic animatronic;
-
-    private WaitForSeconds animationDuration = new(10f);
-    private WaitForSeconds waitForAnimationFinished = new(3f);
-
     private Coroutine animatronicDestinationCoroutine;
 
+    private readonly Animatronic animatronic;
+
+    private readonly WaitForSeconds animationDuration = new(10f);
+    private readonly WaitForSeconds waitForAnimationFinished = new(3f);
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -19,6 +18,8 @@ public class RoamingState : BaseState
 
     public override Type Tick()
     {
+        animatronic.UpdateAnimatorName();
+
         bool isPlayerSpotted = animatronic.IsPlayerSpotted();
 
         animatronic.animator.SetBool("isPlayerSpotted", isPlayerSpotted);
@@ -42,15 +43,17 @@ public class RoamingState : BaseState
     {
         if (animatronic.animatorClipInfo[0].clip.name == "Idle")
         {
-            animatronic.enabled = false;
+            animatronic.navMeshAgent.enabled = false;
         }
+        animatronic.haveScreamedYet = false;
         animatronicDestinationCoroutine = EventManager.current.StartCoroutine(SetNewAnimatronicDestinationToCheck());
     }
 
     IEnumerator SetNewAnimatronicDestinationToCheck()
     {
+        animatronic.UpdateAnimatorName();
         yield return animationDuration;
-        animatronic.enabled = true;
+        animatronic.navMeshAgent.enabled = true;
         animatronic.navMeshAgent.speed = 0.3f;
         while (true)
         {
@@ -62,10 +65,10 @@ public class RoamingState : BaseState
                     if (!animatronic.navMeshAgent.hasPath || animatronic.navMeshAgent.velocity.sqrMagnitude < 2f)
                     {
                         animatronic.animator.SetBool("reachedDestination", true);
-                        animatronic.enabled = false;
+                        animatronic.navMeshAgent.enabled = false;
                         yield return animationDuration;
                         animatronic.animator.SetBool("reachedDestination", false);
-                        animatronic.enabled = true;
+                        animatronic.navMeshAgent.enabled = true;
                         if (animatronic.animatorClipInfo[0].clip.name != "Idle")
                         {
                             yield return waitForAnimationFinished;

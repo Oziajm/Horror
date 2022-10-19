@@ -1,9 +1,8 @@
 using System;
-using UnityEngine;
 
 public class DisabledState : BaseState
 {
-    private Animatronic animatronic;
+    private readonly Animatronic animatronic;
     private bool turnedOnEvent = false;
     public DisabledState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -15,7 +14,7 @@ public class DisabledState : BaseState
     {
         if (turnedOnEvent)
             return typeof(RoamingState);
-       return null;
+        return null;
     }
 
     private void OnAnimatronicsTurned()

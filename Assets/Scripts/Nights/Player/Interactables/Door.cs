@@ -23,7 +23,7 @@ public class Door : Interactable
     }
     public override string GetHoverText()
     {
-        return isOpen ? "Press E to Close" : "Press E to Open";
+        return isOpen ? "Close" : "Open";
     }
 
     #endregion

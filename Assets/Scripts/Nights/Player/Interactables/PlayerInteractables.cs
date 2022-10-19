@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
-
+using TMPro;
 public class PlayerInteractables : MonoBehaviour
 {
     #region Variables
@@ -8,7 +7,8 @@ public class PlayerInteractables : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float maxDistance = 1;
     [SerializeField] private LayerMask layers;
-    [SerializeField] private Text useText;
+    [SerializeField] private TextMeshProUGUI useText;
+    [SerializeField] private GameObject textWindow;
 
     #endregion
 
@@ -20,7 +20,7 @@ public class PlayerInteractables : MonoBehaviour
         {
             if(hitInfo.collider.TryGetComponent<Interactable>(out Interactable interactable) && interactable.active)
             {
-                useText.gameObject.SetActive(true);
+                textWindow.SetActive(true);
                 useText.text = interactable.GetHoverText();
                 if(Input.GetKeyDown(KeyCode.E))
                 {
@@ -29,7 +29,7 @@ public class PlayerInteractables : MonoBehaviour
                 return;
             }
         }
-        useText.gameObject.SetActive(false);
+        textWindow.SetActive(false);
     }
 
     #endregion

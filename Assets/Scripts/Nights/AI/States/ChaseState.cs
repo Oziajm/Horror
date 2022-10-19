@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ChaseState : BaseState
 {
-    private Animatronic animatronic;
-    private Transform playerTransform;
+    private readonly Animatronic animatronic;
+    private readonly Transform playerTransform;
     public ChaseState(Animatronic animatronic) : base(animatronic.gameObject)
     {
         this.animatronic = animatronic;
@@ -13,15 +13,24 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
-        if (!animatronic.IsPlayerSpotted()) return typeof(RoamingState);
+        animatronic.UpdateAnimatorName();
+
+        if (!animatronic.IsPlayerSpotted()) 
+            return typeof(RoamingState);
 
         if (animatronic.animatorClipInfo[0].clip.name == "Scream")
         {
-            animatronic.enabled = false;
-            animatronic.soundsController.PlayScream();
+            if (!animatronic.haveScreamedYet)
+            {
+                animatronic.navMeshAgent.enabled = false;
+                animatronic.soundsController.PlayScream();
+                animatronic.haveScreamedYet = true;
+            }
         }
-        animatronic.enabled = true;
+
+        animatronic.navMeshAgent.enabled = true;
         animatronic.navMeshAgent.SetDestination(playerTransform.position);
+
         if (animatronic.animatorClipInfo[0].clip.name == "RunningAnimatronics")
         {
             animatronic.navMeshAgent.speed = 15f;

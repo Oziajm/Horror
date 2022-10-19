@@ -1,7 +1,5 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Chica : Animatronic
 {
@@ -9,7 +7,7 @@ public class Chica : Animatronic
 
     public void Start()
     {
-        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        UpdateAnimatorName();
         playerMovement = player.GetComponent<PlayerMovement>();
         soundsController = GetComponent<AnimatronicsSoundsController>();
     }
