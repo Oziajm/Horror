@@ -42,7 +42,7 @@ public class RoamingState : BaseState
     {
         if (animatronic.animatorClipInfo[0].clip.name == "Idle")
         {
-            animatronic.enabled = false;
+            animatronic.navMeshAgent.enabled = false;
         }
         animatronicDestinationCoroutine = EventManager.current.StartCoroutine(SetNewAnimatronicDestinationToCheck());
     }
@@ -50,7 +50,7 @@ public class RoamingState : BaseState
     IEnumerator SetNewAnimatronicDestinationToCheck()
     {
         yield return animationDuration;
-        animatronic.enabled = true;
+        animatronic.navMeshAgent.enabled = true;
         animatronic.navMeshAgent.speed = 0.3f;
         while (true)
         {
@@ -65,7 +65,7 @@ public class RoamingState : BaseState
                         animatronic.enabled = false;
                         yield return animationDuration;
                         animatronic.animator.SetBool("reachedDestination", false);
-                        animatronic.enabled = true;
+                        animatronic.navMeshAgent.enabled = true;
                         if (animatronic.animatorClipInfo[0].clip.name != "Idle")
                         {
                             yield return waitForAnimationFinished;

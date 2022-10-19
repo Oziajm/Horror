@@ -8,7 +8,7 @@ public class StateMachine : MonoBehaviour
     private BaseState currentState;
     private Dictionary<Type, BaseState> states;
 
-    private event Action<BaseState> onStateChanged;
+    public event Action<BaseState> onStateChanged;
 
     public void SetStates(Dictionary<Type, BaseState> states)
     {

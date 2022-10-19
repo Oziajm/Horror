@@ -26,10 +26,15 @@ public class AnimatronicsSoundsController : MonoBehaviour
     public void PlayScream()
     {
         if (!audioSource.isPlaying && !haveScreamedYet)
-        { 
+        {
             audioSource.volume = 1f;
             audioSource.PlayOneShot(screamSound);
             haveScreamedYet = true;
         }
+    }
+
+    public void ResetScream()
+    {
+        haveScreamedYet = false;
     }
 }

@@ -13,14 +13,15 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
+        animatronic.animatorClipInfo = animatronic.animator.GetCurrentAnimatorClipInfo(0);
         if (!animatronic.IsPlayerSpotted()) return typeof(RoamingState);
 
         if (animatronic.animatorClipInfo[0].clip.name == "Scream")
         {
-            animatronic.enabled = false;
+            animatronic.navMeshAgent.enabled = false;
             animatronic.soundsController.PlayScream();
         }
-        animatronic.enabled = true;
+        animatronic.navMeshAgent.enabled = true;
         animatronic.navMeshAgent.SetDestination(playerTransform.position);
         if (animatronic.animatorClipInfo[0].clip.name == "RunningAnimatronics")
         {
