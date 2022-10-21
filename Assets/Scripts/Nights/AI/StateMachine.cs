@@ -8,7 +8,7 @@ public class StateMachine : MonoBehaviour
     private BaseState currentState;
     private Dictionary<Type, BaseState> states;
 
-    public event Action<BaseState> onStateChanged;
+    public event Action<BaseState> OnStateChanged;
 
     public void SetStates(Dictionary<Type, BaseState> states)
     {
@@ -31,6 +31,6 @@ public class StateMachine : MonoBehaviour
     private void SwitchState(Type newState)
     {
         currentState = states[newState];
-        onStateChanged?.Invoke(currentState);
+        OnStateChanged?.Invoke(currentState);
     }
 }

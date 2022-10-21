@@ -11,7 +11,7 @@ public class Foxy : Animatronic
     {
         stateMachine = GetComponent<StateMachine>();
         InitializeStateMachine();
-        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        UpdateAnimatorName();
         playerMovement = player.GetComponent<PlayerMovement>();
         soundsController = GetComponent<AnimatronicsSoundsController>();
     }

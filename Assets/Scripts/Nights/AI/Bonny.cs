@@ -10,7 +10,7 @@ public class Bonny : Animatronic
 
     public void Start()
     {
-        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        UpdateAnimatorName();
         playerMovement = player.GetComponent<PlayerMovement>();
         soundsController = GetComponent<AnimatronicsSoundsController>();
     }

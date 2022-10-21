@@ -15,7 +15,15 @@ public abstract class Animatronic : MonoBehaviour
     public Animator animator;
 
     protected StateMachine stateMachine;
+
     public bool isOn = false;
 
+    public bool haveScreamedYet = false;
+
     public abstract bool IsPlayerSpotted();
+
+    public void UpdateAnimatorName()
+    {
+        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+    }
 }

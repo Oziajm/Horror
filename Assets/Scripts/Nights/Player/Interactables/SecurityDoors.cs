@@ -46,7 +46,7 @@ public class SecurityDoors : Interactable
 
     public override string GetHoverText()
     {
-        return batteryAmmount > 0 ? "Press E to Use" : "IT'S ME";
+        return batteryAmmount > 0 ? "Use" : "IT'S ME";
     }
 
     public override void Interact()

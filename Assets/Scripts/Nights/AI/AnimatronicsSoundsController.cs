@@ -10,8 +10,6 @@ public class AnimatronicsSoundsController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private bool haveScreamedYet = false;
-
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -25,16 +23,10 @@ public class AnimatronicsSoundsController : MonoBehaviour
 
     public void PlayScream()
     {
-        if (!audioSource.isPlaying && !haveScreamedYet)
-        {
+        if (!audioSource.isPlaying)
+        { 
             audioSource.volume = 1f;
             audioSource.PlayOneShot(screamSound);
-            haveScreamedYet = true;
         }
-    }
-
-    public void ResetScream()
-    {
-        haveScreamedYet = false;
     }
 }
