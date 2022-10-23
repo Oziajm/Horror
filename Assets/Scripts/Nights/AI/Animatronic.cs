@@ -3,8 +3,8 @@ using UnityEngine.AI;
 
 public abstract class Animatronic : MonoBehaviour
 {
-    [SerializeField] public Vector3[] patrolLocations;
-    [SerializeField] public GameObject player;
+    public Vector3[] patrolLocations;
+    public GameObject player;
 
     [SerializeField] protected AIFieldOfView fov;
     

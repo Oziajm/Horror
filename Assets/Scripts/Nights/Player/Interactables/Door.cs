@@ -13,6 +13,17 @@ public class Door : Interactable
     private bool isOpen = false;
     private Coroutine doorAnimation;
 
+    public bool IsOpen => transform.rotation != Quaternion.Euler(closedRotation);
+
+    #endregion
+
+    #region Unity Methods
+
+    private void Start()
+    {
+        transform.rotation = Quaternion.Euler(closedRotation);
+    }
+
     #endregion
 
     #region Public Methods
@@ -20,6 +31,7 @@ public class Door : Interactable
     public override void Interact()
     {
         OpenCloseDoor();
+
     }
     public override string GetHoverText()
     {
@@ -43,8 +55,6 @@ public class Door : Interactable
         Quaternion startRot = transform.rotation;
         Quaternion endRot = Quaternion.Euler(isOpen ? closedRotation : openRotation);
 
-        isOpen = !isOpen;
-
         float newDuration = 1;
         float newTime = 0;
         while (newTime < newDuration)
@@ -53,6 +63,10 @@ public class Door : Interactable
             yield return null;
             newTime += Time.deltaTime;
         }
+        transform.rotation = endRot;
+
+        isOpen = !isOpen;
+
         doorAnimation = null;
     }
 

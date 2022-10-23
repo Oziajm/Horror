@@ -11,6 +11,6 @@ public class PickUpItem : Interactable
 
     private void TakeItem()
     {
-
+        Destroy(gameObject);
     }
 }

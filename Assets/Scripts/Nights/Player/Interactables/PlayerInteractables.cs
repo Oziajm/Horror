@@ -36,12 +36,12 @@ public class PlayerInteractables : MonoBehaviour
         }
         if(lastVisibleValue != textWindowVisible)
         {
-            StopCoroutine(doFadeInOutAnimation());
-            StartCoroutine(doFadeInOutAnimation());
+            StopCoroutine(DoFadeInOutAnimation());
+            StartCoroutine(DoFadeInOutAnimation());
         }
     }
 
-    private IEnumerator doFadeInOutAnimation()
+    private IEnumerator DoFadeInOutAnimation()
     {
         float time = 0;
         CanvasGroup textWindowFrame = textWindow.GetComponent<CanvasGroup>();
