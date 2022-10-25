@@ -16,4 +16,7 @@ public class EventManager : MonoBehaviour
     {
         OnAnimatronicTurnedEvent?.Invoke();
     }
+
+    public event Action<BaseItem> OnItemPickedUp;
+    public void PickUpItem(BaseItem item) { OnItemPickedUp?.Invoke(item); }
 }
