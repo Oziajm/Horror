@@ -35,12 +35,14 @@ public class PlayerLookingAtEndosController : MonoBehaviour
             if (IsVisible(cam, target))
             {
                 target.GetComponent<Animator>().enabled = false;
-                target.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+                target.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0f;
+                target.GetComponent<StateMachine>().enabled = false;
             }
             else
             {
                 target.GetComponent<Animator>().enabled = true;
-                target.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+                target.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0.3f;
+                target.GetComponent<StateMachine>().enabled = true;
             }
         }
     }

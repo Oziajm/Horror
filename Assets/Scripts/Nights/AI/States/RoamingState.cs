@@ -57,22 +57,25 @@ public class RoamingState : BaseState
         animatronic.navMeshAgent.speed = 0.3f;
         while (true)
         {
-            yield return waitForAnimationFinished;
-            if (!animatronic.navMeshAgent.pathPending)
+            if (animatronic.isActiveAndEnabled)
             {
-                if (animatronic.navMeshAgent.remainingDistance <= animatronic.navMeshAgent.stoppingDistance)
+                yield return waitForAnimationFinished;
+                if (!animatronic.navMeshAgent.pathPending)
                 {
-                    if (!animatronic.navMeshAgent.hasPath || animatronic.navMeshAgent.velocity.sqrMagnitude < 2f)
+                    if (animatronic.navMeshAgent.remainingDistance <= animatronic.navMeshAgent.stoppingDistance)
                     {
-                        animatronic.animator.SetBool("reachedDestination", true);
-                        animatronic.navMeshAgent.enabled = false;
-                        yield return animationDuration;
-                        animatronic.animator.SetBool("reachedDestination", false);
-                        animatronic.navMeshAgent.enabled = true;
-                        if (animatronic.animatorClipInfo[0].clip.name != "Idle")
+                        if (!animatronic.navMeshAgent.hasPath || animatronic.navMeshAgent.velocity.sqrMagnitude < 2f)
                         {
-                            yield return waitForAnimationFinished;
-                            animatronic.navMeshAgent.SetDestination(animatronic.patrolLocations[UnityEngine.Random.Range(0, 3)]);
+                            animatronic.animator.SetBool("reachedDestination", true);
+                            animatronic.navMeshAgent.enabled = false;
+                            yield return animationDuration;
+                            animatronic.animator.SetBool("reachedDestination", false);
+                            animatronic.navMeshAgent.enabled = true;
+                            if (animatronic.animatorClipInfo[0].clip.name != "Idle")
+                            {
+                                yield return waitForAnimationFinished;
+                                animatronic.navMeshAgent.SetDestination(animatronic.patrolLocations[UnityEngine.Random.Range(0, 3)]);
+                            }
                         }
                     }
                 }
