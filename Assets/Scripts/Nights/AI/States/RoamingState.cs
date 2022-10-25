@@ -67,10 +67,10 @@ public class RoamingState : BaseState
                         if (!animatronic.navMeshAgent.hasPath || animatronic.navMeshAgent.velocity.sqrMagnitude < 2f)
                         {
                             animatronic.animator.SetBool("reachedDestination", true);
-                            animatronic.navMeshAgent.enabled = false;
+                            animatronic.navMeshAgent.speed = 0;
                             yield return animationDuration;
                             animatronic.animator.SetBool("reachedDestination", false);
-                            animatronic.navMeshAgent.enabled = true;
+                            animatronic.navMeshAgent.speed = 0.3f;
                             if (animatronic.animatorClipInfo[0].clip.name != "Idle")
                             {
                                 yield return waitForAnimationFinished;
