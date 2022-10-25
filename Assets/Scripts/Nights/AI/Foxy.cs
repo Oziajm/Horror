@@ -1,11 +1,12 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Foxy : Animatronic
 {
     private PlayerMovement playerMovement;
+
+    public bool isImmuneToFlashlight = false;
+    public bool isTriggered = false;
 
     public void Start()
     {

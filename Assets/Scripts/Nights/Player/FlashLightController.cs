@@ -3,10 +3,12 @@ using UnityEngine.InputSystem;
 
 public class FlashLightController : MonoBehaviour
 {
-    public GameObject flashLight;
+    [SerializeField] private GameObject flashLight;
 
     private InputActions inputActions;
     private bool isOn = false;
+
+    public bool IsOn => isOn;
 
     private void Start()
     {
