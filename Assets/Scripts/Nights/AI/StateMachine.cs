@@ -30,7 +30,8 @@ public class StateMachine : MonoBehaviour
 
     private void SwitchState(Type newState)
     {
-        currentState = states[newState];
+        if(states[newState] != null)
+            currentState = states[newState];
         OnStateChanged?.Invoke(currentState);
     }
 }
