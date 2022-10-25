@@ -1,48 +1,32 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.AI;
 
-public class PlayerLookingAtEndosController : MonoBehaviour
+public class PlayerLookingAtEndosController : PlayerLookingAtAnimatronics
 {
-    [SerializeField] private GameObject[] targets;
+    [SerializeField] private GameObject[] endos;
 
     private Camera cam;
 
     private void Start()
     {
         cam = GetComponent<Camera>();
-
-    }
-
-    private bool IsVisible(Camera c, GameObject target)
-    {
-        var planes = GeometryUtility.CalculateFrustumPlanes(c);
-        var point = target.transform.position;
-
-        foreach(var plane in planes)
-        {
-            if(plane.GetDistanceToPoint(point) < 0)
-            {
-                return false;
-            }
-        }
-        return true;
     }
 
     private void Update()
     {
-        foreach(var target in targets)
+        foreach(var endo in endos)
         {
-            if (IsVisible(cam, target))
+            if (IsVisible(cam, endo))
             {
-                target.GetComponent<Animator>().enabled = false;
-                target.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0f;
-                target.GetComponent<StateMachine>().enabled = false;
+                endo.GetComponent<Animator>().enabled = false;
+                endo.GetComponent<NavMeshAgent>().speed = 0f;
+                endo.GetComponent<StateMachine>().enabled = false;
             }
             else
             {
-                target.GetComponent<Animator>().enabled = true;
-                target.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0.3f;
-                target.GetComponent<StateMachine>().enabled = true;
+                endo.GetComponent<Animator>().enabled = true;
+                endo.GetComponent<NavMeshAgent>().speed = 0.3f;
+                endo.GetComponent<StateMachine>().enabled = true;
             }
         }
     }
