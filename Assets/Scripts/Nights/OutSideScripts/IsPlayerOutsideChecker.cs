@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class IsPlayerOutsideChecker : MonoBehaviour
 {
-    [SerializeField] private bool isOutside;
+    private bool isOutside = false;
 
     public bool IsOutside => isOutside;
 
