@@ -1576,6 +1576,7 @@ GameObject:
   - component: {fileID: 1114798336529977704}
   - component: {fileID: 420638888727854251}
   - component: {fileID: 9123242606459638266}
+  - component: {fileID: 6503550769575024082}
   m_Layer: 8
   m_Name: Endo
   m_TagString: Untagged
@@ -1615,7 +1616,7 @@ Animator:
   m_GameObject: {fileID: 1265169845022460948}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 38a63dc318e9d34439b1cd407aef6bf9, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6dc86cae032155442bb33879b09383cd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1654,7 +1655,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265169845022460948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24fe7d56991934446bfb7dcfe61dba51, type: 3}
   m_Name: 
@@ -1676,6 +1677,26 @@ MonoBehaviour:
   chaseSound: {fileID: 0}
   idleSound: {fileID: 0}
   footstepSound: {fileID: 0}
+--- !u!114 &6503550769575024082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265169845022460948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58afc38cb18406e49946e2dc4973b164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolLocations: []
+  player: {fileID: 0}
+  fov: {fileID: 0}
+  soundsController: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+  animator: {fileID: 0}
+  isOn: 0
+  haveScreamedYet: 0
 --- !u!1 &1320469529294632674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,6 +6534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2142143684639410885}
+  - component: {fileID: 6330816932785414129}
   m_Layer: 8
   m_Name: EyeStuffALL_jnt
   m_TagString: Untagged
@@ -6537,6 +6559,28 @@ Transform:
   m_Father: {fileID: 5891024027589369946}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6330816932785414129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212773170406499120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6655b72a6d9d50f4a929cb285cdbdb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 8
+  angle: 90
+  player: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  canSeePlayer: 0
 --- !u!1 &5222749932849744236
 GameObject:
   m_ObjectHideFlags: 0
