@@ -39,4 +39,10 @@ public class StateMachine : MonoBehaviour
             OnStateChanged?.Invoke(currentState);
         }
     }
+    
+    public void UndoState()
+    {
+        currentState = states[lastState];
+        OnStateChanged?.Invoke(currentState);
+    }
 }
