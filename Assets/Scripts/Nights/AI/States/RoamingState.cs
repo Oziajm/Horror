@@ -21,7 +21,10 @@ public class RoamingState : BaseState
         Debug.Log("RoamingState");
 
         animatronic.UpdateAnimatorName();
-
+        
+        if(animatronic.IsVisible())
+            return typeof(FrozenState);
+        
         bool isPlayerSpotted = animatronic.IsPlayerSpotted();
 
         animatronic.animator.SetBool("isPlayerSpotted", isPlayerSpotted);
