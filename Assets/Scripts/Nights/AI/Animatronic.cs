@@ -43,4 +43,9 @@ public abstract class Animatronic : MonoBehaviour
         }
         return true;
     }
+    
+    public void UndoState()
+    {
+        stateMachine.UndoState();
+    }
 }
