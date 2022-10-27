@@ -16,7 +16,10 @@ public class ChaseState : BaseState
         Debug.Log("ChaseState");
 
         animatronic.UpdateAnimatorName();
-
+        
+        if(animatronic.IsVisible())
+            return typeof(FrozenState);
+        
         if (!animatronic.IsPlayerSpotted()) 
             return typeof(RoamingState);
 
