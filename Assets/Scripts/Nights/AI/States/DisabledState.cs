@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class DisabledState : BaseState
 {
@@ -12,6 +13,7 @@ public class DisabledState : BaseState
 
     public override Type Tick()
     {
+        Debug.Log("DisabledState");
         if (turnedOnEvent)
             return typeof(RoamingState);
         return null;

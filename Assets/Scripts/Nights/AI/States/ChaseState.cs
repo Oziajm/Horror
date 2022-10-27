@@ -13,6 +13,8 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
+        Debug.Log("ChaseState");
+
         animatronic.UpdateAnimatorName();
 
         if (!animatronic.IsPlayerSpotted()) 
