@@ -536,6 +536,7 @@ MonoBehaviour:
   - {fileID: 382662445}
   - {fileID: 999820420}
   - {fileID: 1900574132}
+  cam: {fileID: 0}
 --- !u!114 &53789833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +555,7 @@ MonoBehaviour:
   eyesLights:
   - {fileID: 1629261510}
   - {fileID: 520522006}
+  cam: {fileID: 0}
 --- !u!1 &55344694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2980397419073779767, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -3095,7 +3097,7 @@ Transform:
   m_Children:
   - {fileID: 912089161}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 531
+  m_RootOrder: 595
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &327046612
 MeshRenderer:
@@ -5534,7 +5536,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 242
+  m_RootOrder: 269
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &554801673
 MeshRenderer:
@@ -7905,7 +7907,7 @@ Transform:
   m_Children:
   - {fileID: 1812253934}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 406
+  m_RootOrder: 448
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &822525447
 MeshRenderer:
@@ -11159,6 +11161,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 6dc86cae032155442bb33879b09383cd, type: 2}
     - target: {fileID: 6503550769575024082, guid: 93ebf0c55fa61af448415c852cd723a6, type: 3}
+      propertyPath: c
+      value: 
+      objectReference: {fileID: 53789827}
+    - target: {fileID: 6503550769575024082, guid: 93ebf0c55fa61af448415c852cd723a6, type: 3}
       propertyPath: fov
       value: 
       objectReference: {fileID: 93547386}
@@ -12536,7 +12542,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 208
+  m_RootOrder: 224
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &1345826100
 MeshRenderer:
@@ -15671,7 +15677,7 @@ Transform:
   m_Children:
   - {fileID: 329172614}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 223
+  m_RootOrder: 239
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 20}
 --- !u!1 &1622242879
 GameObject:
@@ -28906,6 +28912,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 6dc86cae032155442bb33879b09383cd, type: 2}
     - target: {fileID: 6503550769575024082, guid: 93ebf0c55fa61af448415c852cd723a6, type: 3}
+      propertyPath: c
+      value: 
+      objectReference: {fileID: 53789827}
+    - target: {fileID: 6503550769575024082, guid: 93ebf0c55fa61af448415c852cd723a6, type: 3}
       propertyPath: fov
       value: 
       objectReference: {fileID: 2133687796}
@@ -32777,12 +32787,16 @@ MonoBehaviour:
   - {x: -8, y: -3.5, z: -5.75}
   - {x: -9.35, y: -3.5, z: 9.5}
   player: {fileID: 1795078678}
+  c: {fileID: 53789827}
   fov: {fileID: 77256623}
   soundsController: {fileID: 0}
   navMeshAgent: {fileID: 1966617473}
   animator: {fileID: 1966617475}
   isOn: 0
   haveScreamedYet: 0
+  flashLightController: {fileID: 0}
+  eyes: {fileID: 0}
+  eyesLights: []
   isImmuneToFlashlight: 0
   isTriggered: 0
 --- !u!114 &1966617478
@@ -35943,6 +35957,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1795078678}
+    - target: {fileID: 6503550769575024082, guid: 93ebf0c55fa61af448415c852cd723a6, type: 3}
+      propertyPath: c
+      value: 
+      objectReference: {fileID: 53789827}
     - target: {fileID: 6503550769575024082, guid: 93ebf0c55fa61af448415c852cd723a6, type: 3}
       propertyPath: fov
       value: 

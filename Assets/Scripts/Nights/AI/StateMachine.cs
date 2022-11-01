@@ -7,7 +7,7 @@ public class StateMachine : MonoBehaviour
 {
     public BaseState CurrentState { get; private set; }
     private Dictionary<Type, BaseState> states;
-    private Type lastState;
+    private BaseState lastState;
     
     public event Action<BaseState> OnStateChanged;
     
@@ -21,8 +21,8 @@ public class StateMachine : MonoBehaviour
     {
         if(CurrentState == null)
         {
-            currentState = states.Values.First();
-            lastState = typeof(currentState);
+            CurrentState = states.Values.First();
+            lastState = CurrentState;
         }
 
         var nextState = CurrentState?.Tick();
@@ -33,17 +33,17 @@ public class StateMachine : MonoBehaviour
 
     private void SwitchState(Type newState)
     {
-        if(states[newState] != null)
+        if(states.ContainsKey(newState))
         {
-            lastState = typeof(currentState);
-            currentState = states[newState];
-            OnStateChanged?.Invoke(currentState);
+            lastState = CurrentState;
+            CurrentState = states[newState];
+            OnStateChanged?.Invoke(CurrentState);
         }
     }
     
     public void UndoState()
     {
-        currentState = states[lastState];
-        OnStateChanged?.Invoke(currentState);
+        CurrentState = states[lastState.GetType()];
+        OnStateChanged?.Invoke(CurrentState);
     }
 }

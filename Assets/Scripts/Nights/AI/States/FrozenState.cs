@@ -11,8 +11,6 @@ public class FrozenState : BaseState
 
     public override Type Tick()
     {
-        Debug.Log("FrozenState");
-
         FreezeEndo();
 
         return null;

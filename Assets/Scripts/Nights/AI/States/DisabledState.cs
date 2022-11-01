@@ -13,8 +13,7 @@ public class DisabledState : BaseState
 
     public override Type Tick()
     {
-        Debug.Log("DisabledState");
-        if(animatronic.IsVisible())
+        if(animatronic.IsVisible(animatronic.player))
             return typeof(FrozenState);
         if (turnedOnEvent)
             return typeof(RoamingState);

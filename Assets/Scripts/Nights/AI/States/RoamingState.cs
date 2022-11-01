@@ -18,11 +18,9 @@ public class RoamingState : BaseState
 
     public override Type Tick()
     {
-        Debug.Log("RoamingState");
-
         animatronic.UpdateAnimatorName();
         
-        if(animatronic.IsVisible())
+        if(animatronic.IsVisible(animatronic.player))
             return typeof(FrozenState);
         
         bool isPlayerSpotted = animatronic.IsPlayerSpotted();

@@ -12,8 +12,6 @@ public class FoxyFlashedState : BaseState
 
     public override Type Tick()
     {
-        Debug.Log("foxyFlashedState");
-
         if (foxy.IsVisible(foxy.gameObject) && foxy.IsFlashlightOn && !foxy.isImmuneToFlashlight)
         {
             foxy.navMeshAgent.speed = 0f;

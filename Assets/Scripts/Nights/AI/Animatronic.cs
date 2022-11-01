@@ -26,7 +26,7 @@ public abstract class Animatronic : MonoBehaviour
 
     public void UpdateAnimatorName()
     {
-        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0); 
     }
 
     public bool IsVisible(GameObject target)
