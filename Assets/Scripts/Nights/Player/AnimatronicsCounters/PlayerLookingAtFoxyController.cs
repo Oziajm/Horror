@@ -20,6 +20,7 @@ public class PlayerLookingAtFoxyController : PlayerLookingAtAnimatronics
     {
         if (IsVisible(cam, foxy) && flashLightController.IsOn && !foxy.GetComponent<Foxy>().isImmuneToFlashlight)
         {
+            Debug.Log("flash");
             foxy.GetComponent<Animator>().SetBool("isFlashedOut", true);
             foxy.GetComponent<NavMeshAgent>().speed = 0f;
             foxy.GetComponent<StateMachine>().enabled = false;

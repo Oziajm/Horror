@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    private BaseState currentState;
+    public BaseState CurrentState { get; private set; }
     private Dictionary<Type, BaseState> states;
 
     public event Action<BaseState> OnStateChanged;
@@ -13,25 +13,26 @@ public class StateMachine : MonoBehaviour
     public void SetStates(Dictionary<Type, BaseState> states)
     {
         this.states = states;
+        CurrentState = states.Values.First();
     }
 
     void Update()
     {
-        if(currentState == null)
+        if(CurrentState == null)
         {
-            currentState = states.Values.First();
+            CurrentState = states.Values.First();
         }
 
-        var nextState = currentState.Tick();
+        var nextState = CurrentState?.Tick();
 
-        if (nextState != null && nextState != currentState?.GetType())
+        if (nextState != null && nextState != CurrentState?.GetType())
             SwitchState(nextState);
     }
 
     private void SwitchState(Type newState)
     {
         if(states[newState] != null)
-            currentState = states[newState];
-        OnStateChanged?.Invoke(currentState);
+            CurrentState = states[newState];
+        OnStateChanged?.Invoke(CurrentState);
     }
 }
