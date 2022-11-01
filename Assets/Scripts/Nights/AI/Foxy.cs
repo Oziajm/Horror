@@ -1,12 +1,18 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Foxy : Animatronic
 {
-    private PlayerMovement playerMovement;
-
+    public FlashLightController flashLightController;
+    public Material eyes;
+    public Light[] eyesLights;
     public bool isImmuneToFlashlight = false;
     public bool isTriggered = false;
+
+    private PlayerMovement playerMovement;
+
+    public bool IsFlashlightOn => flashLightController.IsOn;
 
     public void Start()
     {
@@ -22,6 +28,7 @@ public class Foxy : Animatronic
         {
             {typeof(DisabledState), new DisabledState(this)},
             {typeof(RoamingState), new RoamingState(this)},
+            {typeof(FoxyFlashedState), new FoxyFlashedState(this)},
             {typeof(ChaseState), new ChaseState(this)}
         });
     }

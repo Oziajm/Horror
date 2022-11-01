@@ -13,8 +13,13 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
-        animatronic.UpdateAnimatorName();
+        Debug.Log("ChaseState");
 
+        animatronic.UpdateAnimatorName();
+        
+        if(animatronic.IsVisible())
+            return typeof(FrozenState);
+        
         if (!animatronic.IsPlayerSpotted()) 
             return typeof(RoamingState);
 

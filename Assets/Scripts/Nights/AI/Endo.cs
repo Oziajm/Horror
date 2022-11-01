@@ -19,6 +19,7 @@ public class Endo : Animatronic
         {
             {typeof(DisabledState), new DisabledState(this)},
             {typeof(RoamingState), new RoamingState(this)},
+            {typeof(FrozenState), new FrozenState(this)},
             {typeof(ChaseState), new ChaseState(this)}
         });
     }
