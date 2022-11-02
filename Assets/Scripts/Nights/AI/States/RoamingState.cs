@@ -20,9 +20,6 @@ public class RoamingState : BaseState
     {
         animatronic.UpdateAnimatorName();
         
-        if(animatronic.IsVisible(animatronic.player))
-            return typeof(FrozenState);
-        
         bool isPlayerSpotted = animatronic.IsPlayerSpotted();
 
         animatronic.animator.SetBool("isPlayerSpotted", isPlayerSpotted);
@@ -39,6 +36,9 @@ public class RoamingState : BaseState
         {
             OnPlayerIsNotSpotted();
         }
+
+        if (animatronic.IsVisible(animatronic.gameObject))
+            return typeof(FrozenState);
 
         return null;
     }

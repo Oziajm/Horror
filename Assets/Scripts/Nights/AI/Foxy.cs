@@ -35,6 +35,6 @@ public class Foxy : Animatronic
 
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer && !playerMovement.IsCrouching;
+        return fov.canSeePlayer;
     }
 }

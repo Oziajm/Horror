@@ -36,7 +36,7 @@ public abstract class Animatronic : MonoBehaviour
 
         foreach (var plane in planes)
         {
-            if (plane.GetDistanceToPoint(point) < 0)
+            if (plane.GetDistanceToPoint(point) < 2)
             {
                 return false;
             }
