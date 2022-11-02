@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8887879979318634711}
   - component: {fileID: 894912912818734601}
   - component: {fileID: 4225898111358660898}
-  m_Layer: 0
+  - component: {fileID: 3543737854464181226}
+  - component: {fileID: 2729157040660294830}
+  m_Layer: 6
   m_Name: StraithLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +79,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3543737854464181226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381007403606357838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c406ed25d5090b4dbcb62134bd6f6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+--- !u!65 &2729157040660294830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381007403606357838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2184053994681455751
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +116,7 @@ GameObject:
   - component: {fileID: 5352997587210820987}
   - component: {fileID: 5881297921616740628}
   - component: {fileID: 1994160330892245706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
