@@ -13,12 +13,15 @@ public class FrozenState : BaseState
     {
         FreezeEndo();
 
+        if (!endo.IsVisible(endo.gameObject))
+            return typeof(RoamingState);
+
         return null;
     }
 
     private void FreezeEndo()
     {
         endo.animator.enabled = !endo.IsVisible(endo.gameObject);
-        endo.navMeshAgent.speed = !endo.IsVisible(endo.gameObject) ? 0f : 0.3f;
+        endo.navMeshAgent.speed = !endo.IsVisible(endo.gameObject) ? 0.3f : 0f;
     }
 }

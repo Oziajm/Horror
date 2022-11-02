@@ -5,6 +5,8 @@ public class ChaseState : BaseState
 {
     private readonly Animatronic animatronic;
     private readonly Transform playerTransform;
+
+    float elapsedTime = 0f;
     public ChaseState(Animatronic animatronic) : base(animatronic.gameObject)
     {
         this.animatronic = animatronic;
@@ -14,12 +16,26 @@ public class ChaseState : BaseState
     public override Type Tick()
     {
         animatronic.UpdateAnimatorName();
-        
-        if(animatronic.IsVisible(animatronic.player))
+
+        if (animatronic.IsVisible(animatronic.gameObject))
             return typeof(FrozenState);
-        
-        if (!animatronic.IsPlayerSpotted()) 
+
+        ChaseSequence();
+
+        return null;
+    }
+
+    private Type ChaseSequence()
+    {
+        elapsedTime += 1f * Time.deltaTime;
+        if (!animatronic.IsPlayerSpotted() && elapsedTime > 5f)
+        {
+            elapsedTime = 0f;
             return typeof(RoamingState);
+        }
+
+        if (animatronic.IsPlayerSpotted())
+            elapsedTime = 0f;
 
         if (animatronic.animatorClipInfo[0].clip.name == "Scream")
         {
@@ -38,7 +54,7 @@ public class ChaseState : BaseState
         {
             animatronic.navMeshAgent.speed = 15f;
         }
+
         return null;
     }
-
 }
