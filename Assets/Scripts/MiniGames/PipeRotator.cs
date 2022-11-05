@@ -1,6 +1,5 @@
 using UnityEngine;
-
-public class RotatePipe : Interactable
+public class PipeRotator : Interactable
 {
     public override void Interact()
     {
