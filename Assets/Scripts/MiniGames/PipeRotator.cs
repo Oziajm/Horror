@@ -1,7 +1,7 @@
 using UnityEngine;
 public class PipeRotator : Interactable
 {
-    [SerializeField] private PipeController pipeController;
+    [SerializeField] public PipeController pipeController;
 
     private void Start()
     {
