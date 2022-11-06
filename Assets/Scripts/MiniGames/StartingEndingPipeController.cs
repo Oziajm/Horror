@@ -17,10 +17,6 @@ public class StartingEndingPipeController : MonoBehaviour
             pipeConnectedChecker.areStartingConnectors = true;
             pipeConnectedChecker.isPowered = true;
         }
-        else
-        {
-            ChangePipeColor();
-        }
     }
 
     private void Update()
@@ -43,8 +39,6 @@ public class StartingEndingPipeController : MonoBehaviour
         }
     }
 }
-
-
 
 enum StartingOrEnding
 {
