@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7883769a713ee64683c4da19621ec4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPipePowered: 0
   image: {fileID: 3730171817280973218}
   pipeConnectedCheckers:
   - {fileID: 6414054307375688301}
@@ -200,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
+  pipeController: {fileID: 5676260981764933813}
 --- !u!1001 &2575176976071307082
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
+  pipeController: {fileID: 5762754061074211130}
 --- !u!1 &2184053994681455751
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7883769a713ee64683c4da19621ec4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPipePowered: 0
   image: {fileID: 1994160330892245706}
   pipeConnectedCheckers:
   - {fileID: 5212770689938816137}

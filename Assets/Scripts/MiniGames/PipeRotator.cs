@@ -12,7 +12,7 @@ public class PipeRotator : Interactable
     public override void Interact()
     {
         RotatePipes();
-        CheckIfConnected();
+        pipeController.CheckIfConnected();
     }
     public override string GetHoverText()
     {
@@ -22,10 +22,5 @@ public class PipeRotator : Interactable
     private void RotatePipes()
     {
         transform.Rotate(0, 0, 90);
-    }
-
-    private void CheckIfConnected()
-    {
-        pipeController.CheckIfConnected();
     }
 }
