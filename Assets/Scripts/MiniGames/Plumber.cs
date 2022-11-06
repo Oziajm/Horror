@@ -7,7 +7,6 @@ public class Plumber : MonoBehaviour
 
     private void Start()
     {
-        GeneratePath();
         GenerateNewMap();
     }
 
@@ -25,10 +24,5 @@ public class Plumber : MonoBehaviour
                 obj.GetComponent<RectTransform>().anchoredPosition = newPosition;
             }
         }
-    }
-
-    private void GeneratePath()
-    {
-
     }
 }

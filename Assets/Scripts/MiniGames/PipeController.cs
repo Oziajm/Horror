@@ -3,19 +3,18 @@ using UnityEngine.UI;
 
 public class PipeController : MonoBehaviour
 {
-    public bool isPowered;
-
     [SerializeField] private Image image;
+    [SerializeField] private PipeConnectedChecker[] pipeConnectedCheckers;
 
-    private PipeController collidersPipeController;
-
-    private void OnTriggerEnter(Collider other)
+    public void ChangePipeColor()
     {
-        collidersPipeController = other.gameObject.GetComponent<PipeController>();
-        if (collidersPipeController.isPowered)
+        if(pipeConnectedCheckers[0].isPowered || pipeConnectedCheckers[1].isPowered)
         {
-            isPowered = true;
             image.color = Color.cyan;
+        }
+        else
+        {
+            image.color = Color.white;
         }
     }
 }
