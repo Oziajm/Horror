@@ -4,8 +4,29 @@ public class PipeConnectedChecker : MonoBehaviour
 {
     public bool isPowered;
     public bool areStartingConnectors = false;
+    public PipeConnectedChecker collidersPipeConnectedChecker;
 
-    private PipeConnectedChecker collidersPipeConnectedChecker;
+    [SerializeField] private PipeController pipeController;
+
+    private void OnTriggerStay(Collider other)
+    {
+        collidersPipeConnectedChecker = other.gameObject.GetComponent<PipeConnectedChecker>();
+        ChangePipesParameters();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        collidersPipeConnectedChecker = null;
+        ChangePipesParameters();
+    }
+
+    public void ChangePipesParameters()
+    {
+        if (!areStartingConnectors)
+            isPowered = CheckIfConnectedPipesArePowered();
+        if(pipeController != null)
+            pipeController.ChangePipeColor();
+    }
 
     private bool CheckIfConnectedPipesArePowered()
     {
@@ -17,12 +38,5 @@ public class PipeConnectedChecker : MonoBehaviour
         {
             return false;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        collidersPipeConnectedChecker = other.gameObject.GetComponent<PipeConnectedChecker>();
-        if(!areStartingConnectors)
-            isPowered = CheckIfConnectedPipesArePowered();
     }
 }

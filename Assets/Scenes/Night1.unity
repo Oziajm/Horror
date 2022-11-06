@@ -1850,6 +1850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IgnitedFoxyHW
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24b44613188288d4691866e1f5a0cd1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1388756878098176345, guid: 24b44613188288d4691866e1f5a0cd1e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.24841522
@@ -10916,10 +10920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122802068}
     m_Modifications:
-    - target: {fileID: 1509433609033030678, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 2293534385487896768, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10955,18 +10955,6 @@ PrefabInstance:
     - target: {fileID: 2293534385487896768, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293534385487896768, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293534385487896768, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293534385487896768, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2293534385487896768, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11020,17 +11008,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartingEndingPoint
       objectReference: {fileID: 0}
-    - target: {fileID: 4648454507227525403, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
+    - target: {fileID: 7051355603589881900, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
+      propertyPath: isPowered
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5707285641445340337, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_IsTrigger
+    - target: {fileID: 7051355603589881900, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
+      propertyPath: startingOrEnding
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8244646567965012740, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
@@ -14114,6 +14098,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122802068}
     m_Modifications:
+    - target: {fileID: 635749043715335418, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635749043715335418, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
+      propertyPath: m_Center.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1405709602618469205, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -14250,7 +14242,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5707285641445340337, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2538e2340bb47ad43a10ef8694de542b, type: 3}
 --- !u!1 &926626013 stripped
 GameObject:
@@ -17956,7 +17949,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 635
+  m_RootOrder: 649
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &1345826100
 MeshRenderer:

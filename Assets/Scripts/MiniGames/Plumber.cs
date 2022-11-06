@@ -19,7 +19,6 @@ public class Plumber : MonoBehaviour
                 int random = Random.Range(0, 2);
                 Vector3 newPosition = new ((i * 100)+50, (j * 100)+50, 0);
                 Quaternion newRotation = new (0, 0, 0, 0);
-                Debug.Log(j + " " + i);
                 GameObject obj = Instantiate(random == 0 ? straithLine : curvedLine, newPosition, newRotation, transform);
                 obj.GetComponent<RectTransform>().anchoredPosition = newPosition;
             }
