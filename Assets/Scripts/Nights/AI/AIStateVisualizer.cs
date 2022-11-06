@@ -22,8 +22,10 @@ public class AIStateVisualizer : MonoBehaviour
        
         foreach (var stateMachine in stateMachines)
         {
+            UnityEditor.Handles.BeginGUI();
             if(stateMachine.transform.position != null)
                 UnityEditor.Handles.Label(stateMachine.transform.position + offset, stateMachine.CurrentState?.ToString(), style);
+            UnityEditor.Handles.EndGUI();
         }
     }
 }
