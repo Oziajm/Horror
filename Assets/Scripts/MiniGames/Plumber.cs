@@ -5,18 +5,8 @@ public class Plumber : MonoBehaviour
     [SerializeField] private GameObject straithLine;
     [SerializeField] private GameObject curvedLine;
 
-    public struct Tile
-    {
-        public TileEntrance[] entrances;
-    }
-    public enum TileEntrance
-    {
-        TOP = 0, RIGHT = 1, BOTTOM = 2, LEFT = 3
-    }
-
     private void Start()
     {
-        GeneratePath();
         GenerateNewMap();
     }
 
@@ -34,11 +24,6 @@ public class Plumber : MonoBehaviour
                 obj.GetComponent<RectTransform>().anchoredPosition = newPosition;
             }
         }
-    }
-
-    private void GeneratePath()
-    {
-
     }
 }
 
