@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class PickUpItem : Interactable
 {
-    [SerializeField] private Key keyItem;
+    [SerializeField] private BaseItem item;
 
     public override void Interact()
     {
@@ -15,7 +16,6 @@ public class PickUpItem : Interactable
 
     private void TakeItem()
     {
-        EventManager.current.PickUpItem(keyItem);
         Destroy(gameObject);
     }
 }

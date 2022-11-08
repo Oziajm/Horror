@@ -21,6 +21,6 @@ public class Inventory : MonoBehaviour
     {
         Debug.Log($"Picked up {item.name}");
         itemList.Add(item);
-        gui.addItem(item);
+        gui.AddItem(item);
     }
 }

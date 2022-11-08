@@ -6,7 +6,7 @@ public class InventoryGUI : MonoBehaviour
 {
     [SerializeField] private GameObject itemPrefab;
 
-    public void addItem(BaseItem item)
+    public void AddItem(BaseItem item)
     {
         GameObject newItem = Instantiate(itemPrefab, gameObject.transform);
         Image itemImage = newItem.transform.Find("Image").GetComponent<Image>();
