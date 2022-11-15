@@ -18,7 +18,7 @@ public class Plumber : MonoBehaviour
         {
             PipeRotator pipeRotator = pipes[i].GetComponent<PipeRotator>();
 
-            if (pipeRotator.pipeController.isPipePowered) Debug.Log(i);
+            if (pipeRotator.pipeController.isPipePowered) ;
         }
     }
 
