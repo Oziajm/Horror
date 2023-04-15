@@ -26,7 +26,7 @@ public class FlickeringLights : MonoBehaviour
     {
         while (true)
         {
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0f);
+            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 1f);
             timeDelay = Random.Range(0.02f, 0.2f);
             yield return new WaitForSeconds(timeDelay);
             lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0.5f);
@@ -39,7 +39,7 @@ public class FlickeringLights : MonoBehaviour
     {
         while (true)
         {
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0f);
+            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 1f);
             lightSource.gameObject.SetActive(false);
             timeDelay = Random.Range(0.02f, 0.2f);
             yield return new WaitForSeconds(timeDelay);
