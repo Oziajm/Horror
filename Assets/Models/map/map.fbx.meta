@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: d7dd755c8976f75419dd1d5e7a18d417
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      74: -6412132961962502034
+    second: Sphere.001|Pipe.057|Pipe.057|VertAction|Pipe.057|VertAction
+  - first:
+      74: 8024070323732147017
+    second: Sphere.001|Pipe.059|Pipe.059|VertAction|Pipe.059|VertAction
+  - first:
+      74: 6057094405955135250
+    second: Sphere.001|Pipe.060|Pipe.060|VertAction|Pipe.060|VertAction
+  - first:
+      74: 2608959273946770857
+    second: Sphere.001|Pipe.061|Pipe.061|VertAction|Pipe.061|VertAction
+  - first:
+      74: 1130274579184724560
+    second: Sphere.001|Pipe.063|Pipe.063|VertAction|Pipe.063|VertAction
+  - first:
+      74: 1809117746004702974
+    second: Sphere.001|Pipe.064|Pipe.064|VertAction|Pipe.064|VertAction
+  - first:
+      74: 290033983093087999
+    second: Sphere.001|Pipe.065|Pipe.065|VertAction|Pipe.065|VertAction
+  - first:
+      74: -4512985988685233435
+    second: Sphere.001|Pipe.066|Pipe.066|VertAction|Pipe.066|VertAction
+  - first:
+      74: 1111619557501234170
+    second: Sphere.001|Pipe.067|Pipe.067|VertAction|Pipe.067|VertAction
+  - first:
+      74: -2654090031040655023
+    second: Sphere.001|Pipe.068|Pipe.068|VertAction|Pipe.068|VertAction
+  - first:
+      74: -1993368477156029714
+    second: Sphere.001|Pipe.069|Pipe.069|VertAction|Pipe.069|VertAction
+  - first:
+      74: -1609196776772756914
+    second: Sphere.001|Pipe.074|Pipe.074|VertAction|Pipe.074|VertAction
+  - first:
+      74: 201248537233086951
+    second: Sphere.001|Pipe.078|Pipe.078|VertAction|Pipe.078|VertAction
+  - first:
+      74: 5936342341974988381
+    second: Sphere.001|valve.001|valve.001|VertAction|valve.001|VertAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
