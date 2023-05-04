@@ -6,8 +6,10 @@ public class PlayerPoseController : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] protected CharacterController characterController;
-    [SerializeField] private PlayerSettings playerSettings;
+    [SerializeField] 
+    protected CharacterController characterController;
+    [SerializeField] 
+    private PlayerSettings playerSettings;
 
     private Coroutine crouchingCoroutine = null;
 

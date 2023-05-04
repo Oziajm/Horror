@@ -5,8 +5,10 @@ public class StaminaController : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private PlayerSettings playerSettings;
+    [SerializeField] 
+    private PlayerSettings playerSettings;
 
+    [SerializeField]
     private StaminaBarController staminaBarController;
 
     private Coroutine staminaRegeneration = null;
@@ -18,8 +20,6 @@ public class StaminaController : MonoBehaviour
     #region Unity Methods
     private void Start()
     {
-        staminaBarController = GetComponent<StaminaBarController>();
-
         stamina = playerSettings.maxStamina;
         staminaBarController.SetMaxValue(stamina);
         staminaBarController.SetStaminaVisible(false);
@@ -95,6 +95,7 @@ public class StaminaController : MonoBehaviour
     private IEnumerator UseStamina()
     {
         staminaBarController.SetStaminaVisible(true);
+
         while (stamina > 0)
         {
             stamina = Mathf.Clamp(stamina - Time.deltaTime * playerSettings.staminaUsageSpeed, 0, playerSettings.maxStamina);

@@ -4,8 +4,10 @@ public class CameraShaker : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private CameraSettings cameraSettings;
+    [SerializeField] 
+    private PlayerMovement playerMovement;
+    [SerializeField] 
+    private CameraSettings cameraSettings;
 
     private Vector3 defaultCameraLocalPos;
     private float cameraShakeTimer;

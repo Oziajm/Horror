@@ -8,9 +8,12 @@ public class SecurityDoors : Interactable
 
     [Header("Door Values")]
     [Space(10)]
-    [SerializeField] private Transform door;
-    [SerializeField] private float batteryAmmount;
-    [SerializeField] private Image filledImage;
+    [SerializeField] 
+    private Transform door;
+    [SerializeField] 
+    private float batteryAmmount;
+    [SerializeField] 
+    private Image filledImage;
 
     private Coroutine doorAnimation = null;
     private Coroutine powerConsumption = null;
@@ -68,7 +71,8 @@ public class SecurityDoors : Interactable
 
         if (!isOpen && powerConsumption == null) {
             powerConsumption = StartCoroutine(ConsumePower());
-        } else if (isOpen)
+        } 
+        else if (isOpen)
         {
             powerConsumption = null;
         }

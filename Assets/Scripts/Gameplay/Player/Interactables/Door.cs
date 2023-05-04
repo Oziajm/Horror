@@ -5,15 +5,16 @@ public class Door : Interactable
 {
     #region Variables
 
-    [Header("Door Values")]
+    private const float NEW_DURATION = 1f;
+
+    [Header("Door Rotations")]
     [Space(10)]
     [SerializeField] private Vector3 closedRotation;
     [SerializeField] private Vector3 openRotation;
 
     private bool isOpen = false;
     private Coroutine doorAnimation;
-
-    public bool IsOpen => transform.rotation != Quaternion.Euler(closedRotation);
+    private Quaternion startRot;
 
     #endregion
 
@@ -21,6 +22,7 @@ public class Door : Interactable
 
     private void Start()
     {
+        startRot = transform.rotation;
         transform.rotation = Quaternion.Euler(closedRotation);
     }
 
@@ -31,8 +33,8 @@ public class Door : Interactable
     public override void Interact()
     {
         OpenCloseDoor();
-
     }
+
     public override string GetHoverText()
     {
         return isOpen ? "Close" : "Open";
@@ -46,23 +48,23 @@ public class Door : Interactable
     {
         if (doorAnimation == null)
         {
-            doorAnimation = StartCoroutine(DoDoorRotation());
+            doorAnimation = StartCoroutine(RotateDoors());
         }
     }
 
-    IEnumerator DoDoorRotation()
+    private IEnumerator RotateDoors()
     {
-        Quaternion startRot = transform.rotation;
         Quaternion endRot = Quaternion.Euler(isOpen ? closedRotation : openRotation);
 
-        float newDuration = 1;
         float newTime = 0;
-        while (newTime < newDuration)
+
+        while (newTime < NEW_DURATION)
         {
-            transform.rotation = Quaternion.Slerp(startRot, endRot, newTime / newDuration);
+            transform.rotation = Quaternion.Slerp(startRot, endRot, newTime / NEW_DURATION);
             yield return null;
             newTime += Time.deltaTime;
         }
+
         transform.rotation = endRot;
 
         isOpen = !isOpen;

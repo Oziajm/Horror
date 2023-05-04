@@ -4,14 +4,17 @@ public class FootstepController : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private AudioClip[] walkingClips;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private PlayerSettings playerSettings;
+    [SerializeField] 
+    private AudioClip[] walkingClips;
+    [SerializeField] 
+    private AudioSource audioSource;
+    [SerializeField] 
+    private PlayerSettings playerSettings;
 
     private PlayerMovement playerMovement;
 
-    private float footstepTimer = 0f;
-    private float GetStepOffset => playerMovement.IsSprinting ? playerSettings.stepSoundDelay * playerSettings.sprintingDelayMultiplier : playerSettings.stepSoundDelay;
+    private float footstepTimer;
+    private float GetStepOffset => playerMovement.IsSprinting ? playerSettings.sprintSoundDelay : playerSettings.stepSoundDelay;
 
     #endregion
 
@@ -19,15 +22,17 @@ public class FootstepController : MonoBehaviour
 
     private void Start()
     {
+        footstepTimer = 0f;
+
         playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
-        //if (!duringCrouchAnimation)
-        //{
+        if (playerMovement.IsMoving && !playerMovement.IsCrouching)
+        {
             HandleFootSteps();
-        //}
+        }
     }
 
     #endregion
@@ -36,10 +41,8 @@ public class FootstepController : MonoBehaviour
 
     private void HandleFootSteps()
     {
-        if (!playerMovement.IsMoving) return;
-
         footstepTimer -= Time.deltaTime;
-        if (footstepTimer <= 0 && !playerMovement.IsCrouching)
+        if (footstepTimer <= 0)
         {
             audioSource.PlayOneShot(walkingClips[Random.Range(0, walkingClips.Length - 1)]);
             footstepTimer = GetStepOffset;

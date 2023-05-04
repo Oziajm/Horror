@@ -5,31 +5,35 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Variables
 
-    public bool IsMoving { get; private set; }
+    private const float GROUND_DISTANCE = 0.4f;
+    private const float GRAVITY = -19.62f;
+
+    public bool IsMoving => inputVector.x != 0 || inputVector.y != 0;
     public bool IsSprinting { get; private set; }
     public bool IsCrouching { get { return playerPoseController.IsCrouching; } }
 
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private PlayerSettings playerSettings;
-    [SerializeField] private CharacterController characterController;
+    [SerializeField] 
+    private Transform groundCheck;
+    [SerializeField] 
+    private LayerMask groundMask;
+    [SerializeField] 
+    private PlayerSettings playerSettings;
+    [SerializeField] 
+    private CharacterController characterController;
 
-    private Transform player;
-
-    private float currentSpeed;
-
+    [SerializeField]
     private PlayerPoseController playerPoseController;
+    [SerializeField]
     private StaminaController staminaController;
-
-    private readonly float groundDistance = 0.4f;
-    private readonly float gravity = -19.62f;
 
     private InputActions inputActions;
 
+    private float currentSpeed;
+
     private Vector3 velocity;
     private Vector2 inputVector;
+
     private bool isGrounded;
-    private bool isSprintingRequested = false;
 
     #endregion
 
@@ -37,16 +41,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        player = GetComponent<Transform>();
-        staminaController = GetComponent<StaminaController>();
-        playerPoseController = GetComponent<PlayerPoseController>();
-
-        currentSpeed = playerSettings.walkingSpeed;
+        currentSpeed = playerSettings.walkSpeed;
 
         inputActions = new();
         inputActions.Player.Enable();
         inputActions.Player.Sprint.performed += ChangeCurrentSpeedToRunningSpeed;
         inputActions.Player.Sprint.canceled += ChangeCurrentSpeedToWalkingSpeed;
+        inputActions.Player.Crouch.performed += ChangeCurrentSpeedToCrouchingSpeed;
+        inputActions.Player.Crouch.canceled += ChangeCurrentSpeedToWalkingSpeed;
     }
 
     private void FixedUpdate()
@@ -54,8 +56,6 @@ public class PlayerMovement : MonoBehaviour
         DoGravity();
         MoveCharacter();
         HandleStamina();
-
-        currentSpeed = IsCrouching ? playerSettings.crouchingSpeed : IsSprinting ? playerSettings.sprintSpeed : playerSettings.walkingSpeed;
     }
 
     #endregion
@@ -64,17 +64,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeCurrentSpeedToRunningSpeed(InputAction.CallbackContext context)
     {
-        isSprintingRequested = true;
+        playerPoseController.SetCrouch(false);
+        currentSpeed = playerSettings.sprintSpeed;
+    }
+
+    private void ChangeCurrentSpeedToCrouchingSpeed(InputAction.CallbackContext context)
+    {
+        currentSpeed = playerSettings.crouchSpeed;
     }
 
     private void ChangeCurrentSpeedToWalkingSpeed(InputAction.CallbackContext context)
     {
-        isSprintingRequested = false;
+        currentSpeed = playerSettings.walkSpeed;
     }
 
     private void MoveCharacter()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, GROUND_DISTANCE, groundMask);
 
         if (isGrounded && velocity.y < 0)
         {
@@ -83,37 +89,35 @@ public class PlayerMovement : MonoBehaviour
 
         inputVector = inputActions.Player.Movement.ReadValue<Vector2>();
 
-        IsMoving = inputVector.x != 0 || inputVector.y != 0;
-
-        Vector3 move = player.forward * inputVector.y + player.right * inputVector.x;
+        Vector3 move = transform.forward * inputVector.y + transform.right * inputVector.x;
 
         characterController.Move(currentSpeed * Time.deltaTime * move);
     }
 
     private void HandleStamina()
     {
-        IsSprinting = false;
-        if (staminaController.IsAvaiable() && IsMoving && isSprintingRequested) // check if sprinting
-        {
-            playerPoseController.SetCrouch(false);
-            staminaController.StopRegenerating();
+        IsSprinting = staminaController.IsAvaiable() && IsMoving && currentSpeed == playerSettings.sprintSpeed;
 
-            currentSpeed = playerSettings.sprintSpeed;
-            staminaController.StartUsing();
-            IsSprinting = true;
-        }
-        else if (!staminaController.IsFull())  // start regenerating if not full
+        if (IsSprinting)
         {
+            staminaController.StartUsing();
+            staminaController.StopRegenerating();
+        }
+        else
+        {
+            if (staminaController.IsFull())
+            {
+                return;
+            }
+
+            staminaController.StopUsing();
             staminaController.StartRegenerating();
         }
-
-        if (!IsSprinting)
-            staminaController.StopUsing();
     }
 
     private void DoGravity()
     {
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += GRAVITY * Time.deltaTime;
 
         characterController.Move(velocity * Time.deltaTime);
     }

@@ -5,14 +5,19 @@ public class CameraController : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private CameraSettings cameraSettings;
+    [SerializeField] 
+    private Transform playerTransform;
+    [SerializeField] 
+    private CameraSettings cameraSettings;
 
     private InputActions inputActions;
 
     private Vector2 inputVector;
 
-    private float xRotation = 0f;
+    private float xRotation;
+
+    private float mouseX;
+    private float mouseY;
 
     #endregion
 
@@ -20,8 +25,11 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        xRotation = 0f;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
         inputActions = new();
         inputActions.Player.Enable();
     }
@@ -39,8 +47,8 @@ public class CameraController : MonoBehaviour
     {
         inputVector = inputActions.Player.CameraInput.ReadValue<Vector2>();
 
-        float mouseX = inputVector.x * cameraSettings.mouseSensitivity * Time.deltaTime;
-        float mouseY = inputVector.y * cameraSettings.mouseSensitivity * Time.deltaTime;
+        mouseX = inputVector.x * cameraSettings.mouseSensitivity * Time.deltaTime;
+        mouseY = inputVector.y * cameraSettings.mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90f);
