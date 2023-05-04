@@ -3,15 +3,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable/Player Settings", fileName = "Player Settings")]
 public class PlayerSettings : ScriptableObject
 {
-    public float crouchingSpeed = 2f;
+    public float crouchSpeed = 2f;
     public float standHeight = 1.7f;
     public float timeToCrouch = 0.25f;
     
-    public float sprintingDelayMultiplier = 0.5f;
+    public float sprintSoundDelay = 0.5f;
     public float sprintSpeed = 5f;
     
     public float stepSoundDelay = 0.5f;
-    public float walkingSpeed = 3f;
+    public float walkSpeed = 3f;
     
     public float maxStamina = 10f;
     public float staminaUsageSpeed = 1f;

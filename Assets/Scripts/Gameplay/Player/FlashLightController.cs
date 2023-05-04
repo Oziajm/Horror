@@ -14,10 +14,10 @@ public class FlashLightController : MonoBehaviour
     {
         inputActions = new();
         inputActions.Player.Enable();
-        inputActions.Player.Flashlight.performed += TurnOnOffFlashlight;
+        inputActions.Player.Flashlight.performed += ChangeFlashlightLightning;
     }
 
-    private void TurnOnOffFlashlight(InputAction.CallbackContext context)
+    private void ChangeFlashlightLightning(InputAction.CallbackContext context)
     {
         isOn = !isOn;
         flashLight.SetActive(isOn);

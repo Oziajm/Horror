@@ -12,13 +12,20 @@ public class CamerasController : MonoBehaviour
     [Space(10)]
     [Header("Cameras Screen")]
     [Space(10)]
-    [SerializeField] private Image[] activeCamerasImage;
-    [SerializeField] private MeshRenderer TVScreen;
-    [SerializeField] private Material[] camerasMaterials;
-    [SerializeField] private GameObject[] cameras;
-    [SerializeField] private Slider slider;
-    [SerializeField] private GameObject camerasHud;
-    [SerializeField] private Renderer OnOffLight;
+    [SerializeField] 
+    private Image[] activeCamerasImage;
+    [SerializeField] 
+    private MeshRenderer TVScreen;
+    [SerializeField] 
+    private Material[] camerasMaterials;
+    [SerializeField] 
+    private GameObject[] cameras;
+    [SerializeField] 
+    private Slider slider;
+    [SerializeField] 
+    private GameObject camerasHud;
+    [SerializeField] 
+    private Renderer OnOffLight;
 
     private int camNumber;
 
@@ -50,7 +57,8 @@ public class CamerasController : MonoBehaviour
         if(cameraNumber == 10)
         {
             TVScreen.material = camerasMaterials[cameraNumber];
-        } else
+        } 
+        else
         {
             activeCamerasImage[cameraNumber].color = Color.red;
             cameras[cameraNumber].SetActive(true);
@@ -73,6 +81,7 @@ public class CamerasController : MonoBehaviour
     private void SetAllCamerasColorsToGray()
     {
         Color newColor = new (0.2f, 0.2f, 0.2f);
+
         for (int i = 0; i < activeCamerasImage.Length; i++)
         {
             activeCamerasImage[i].color = newColor;

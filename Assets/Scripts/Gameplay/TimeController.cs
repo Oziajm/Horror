@@ -4,13 +4,14 @@ using System;
 
 public class TimeController : MonoBehaviour
 {
+    [SerializeField]
     private TextMeshPro countdownText;
 
-    private float currentTime = 0;
+    private float currentTime;
 
-    private void Start()
+    private void Awake()
     {
-        countdownText = GetComponent<TextMeshPro>();
+        currentTime = 0;
     }
 
     private void Update()
@@ -21,12 +22,16 @@ public class TimeController : MonoBehaviour
     private void ShowTime()
     {
         if (Mathf.RoundToInt(currentTime) == 5)
+        {
             EventManager.current.AnimatronicTurned();
+        }
+
         if (currentTime < 360)
         {
             currentTime += 1 * Time.deltaTime;
         }
+
         var timeSpan = TimeSpan.FromSeconds(currentTime);
-        countdownText.text = Mathf.RoundToInt(currentTime) % 2 == 0 ? timeSpan.ToString("mm':'ss") : timeSpan.ToString("mm' 'ss");
+        countdownText.SetText(timeSpan.ToString("mm':'ss"));
     }
 }
