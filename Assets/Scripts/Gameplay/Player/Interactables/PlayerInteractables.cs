@@ -5,14 +5,19 @@ using TMPro;
 public class PlayerInteractables : MonoBehaviour
 {
     #region Variables
+    private const float FADE_OUT_ANIM_DURATION = 0.25f;
 
-    [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float maxDistance = 1;
-    [SerializeField] private LayerMask layers;
-    [SerializeField] private TextMeshProUGUI useText;
-    [SerializeField] private GameObject textWindow;
+    [SerializeField] 
+    private Transform cameraTransform;
+    [SerializeField] 
+    private float maxDistance = 1;
+    [SerializeField] 
+    private LayerMask layers;
+    [SerializeField] 
+    private TextMeshProUGUI useText;
+    [SerializeField] 
+    private GameObject textWindow;
 
-    private const float fadeInOutAnimationDuration = 0.25f;
     private bool textWindowVisible = true;
     #endregion
 
@@ -45,9 +50,9 @@ public class PlayerInteractables : MonoBehaviour
     {
         float time = 0;
         CanvasGroup textWindowFrame = textWindow.GetComponent<CanvasGroup>();
-        while (time < fadeInOutAnimationDuration)
+        while (time < FADE_OUT_ANIM_DURATION)
         {
-            textWindowFrame.alpha = (textWindowVisible) ? Mathf.InverseLerp(0, fadeInOutAnimationDuration, time) : Mathf.InverseLerp(fadeInOutAnimationDuration, 0, time);
+            textWindowFrame.alpha = (textWindowVisible) ? Mathf.InverseLerp(0, FADE_OUT_ANIM_DURATION, time) : Mathf.InverseLerp(FADE_OUT_ANIM_DURATION, 0, time);
             time += Time.deltaTime;
             yield return null;
         }
