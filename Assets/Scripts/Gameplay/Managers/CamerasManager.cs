@@ -28,5 +28,10 @@ namespace Gameplay.Managers
         {
             return cameras[index];
         }
+
+        public void SelectButtonWithIndex(int index)
+        {
+            cameras[index].SelectButton();
+        }
     }
 }

@@ -63,6 +63,8 @@ namespace Gameplay.SecurityCameras
             if (areCamerasOpen)
             {
                 ChangeCamera(0);
+                CamerasManager.Instance.SelectButtonWithIndex(0);
+
                 HUDsManager.Instance.OpenCamerasView();
             }
             else

@@ -26,6 +26,11 @@ namespace Gameplay.SecurityCameras
             EventsManager.Instance.CameraButtonClicked?.Invoke(cameraNumber);
         }
 
+        public void SelectButton()
+        {
+            button.Select();
+        }
+
         private void OnDisable()
         {
             button.onClick.RemoveAllListeners();

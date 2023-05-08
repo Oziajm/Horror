@@ -5,11 +5,11 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 1
+    smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 364cf1a2b1636fe409d86417b8cd1e38
+  m_OcclusionCullingData: {fileID: 36300000, guid: 3916666356ff1ca4a9b0fd0418788746, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003402308, g: 0.0056706965, b: 0.009208173, a: 1}
+  m_IndirectSpecularColor: {r: 0.0034407359, g: 0.005744572, b: 0.009371093, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4804,7 +4804,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 304
+  m_RootOrder: 358
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -100.45}
 --- !u!23 &264562727
 MeshRenderer:
@@ -5391,7 +5391,7 @@ Transform:
   m_Children:
   - {fileID: 912089161}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 464
+  m_RootOrder: 521
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!23 &327046612
 MeshRenderer:
@@ -5866,7 +5866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: DINING AREA #3
-  cameraButton: {fileID: 903252364}
+  <CameraButton>k__BackingField: {fileID: 903252364}
 --- !u!1 &371827955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1464565723307685606, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -6731,7 +6731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &427515513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6860,7 +6860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: ENTRANCE
-  cameraButton: {fileID: 2124026278}
+  <CameraButton>k__BackingField: {fileID: 2124026278}
 --- !u!4 &439042586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4245053003583796914, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -13063,7 +13063,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 676287544}
-  m_RootOrder: 327
+  m_RootOrder: 381
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.828}
 --- !u!23 &582073180
 MeshRenderer:
@@ -14208,7 +14208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: STAFF ROOM
-  cameraButton: {fileID: 1517913641}
+  <CameraButton>k__BackingField: {fileID: 1517913641}
 --- !u!1 &664440288 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7870d32ea9471b14eb44543d48060981, type: 3}
@@ -16988,7 +16988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: PARTS & SERVICE
-  cameraButton: {fileID: 226674506}
+  <CameraButton>k__BackingField: {fileID: 226674506}
 --- !u!4 &880707711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9201560969179595052, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -17900,7 +17900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: DINING AREA #2
-  cameraButton: {fileID: 1371855293}
+  <CameraButton>k__BackingField: {fileID: 1371855293}
 --- !u!1 &955375335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8864063682440643446, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -20589,7 +20589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: ARCADE
-  cameraButton: {fileID: 1184085517}
+  <CameraButton>k__BackingField: {fileID: 1184085517}
 --- !u!1 &1209326579
 GameObject:
   m_ObjectHideFlags: 0
@@ -21756,7 +21756,7 @@ Transform:
   m_Children:
   - {fileID: 115877012}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 458
+  m_RootOrder: 514
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1287774985
 MeshRenderer:
@@ -22800,7 +22800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: STAFF HALLWAY
-  cameraButton: {fileID: 1522195911}
+  <CameraButton>k__BackingField: {fileID: 1522195911}
 --- !u!1 &1371855288
 GameObject:
   m_ObjectHideFlags: 0
@@ -25878,7 +25878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: SECURITY HALLWAY
-  cameraButton: {fileID: 1082667354}
+  <CameraButton>k__BackingField: {fileID: 1082667354}
 --- !u!1 &1570378861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a684ade305a58f4cb1a91e5e22e7742, type: 3}
@@ -26079,7 +26079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: DINING AREA #1
-  cameraButton: {fileID: 391007651}
+  <CameraButton>k__BackingField: {fileID: 391007651}
 --- !u!1 &1625706942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8595728129372946372, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
@@ -40980,7 +40980,7 @@ Transform:
   m_Children:
   - {fileID: 620814342}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 341
+  m_RootOrder: 395
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1653314700
 MeshRenderer:
@@ -43000,7 +43000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: KITCHEN
-  cameraButton: {fileID: 183137293}
+  <CameraButton>k__BackingField: {fileID: 183137293}
 --- !u!1 &1795078678
 GameObject:
   m_ObjectHideFlags: 0
@@ -43398,7 +43398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1798114667
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47819,7 +47819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: SUPPLY CLOSET
-  cameraButton: {fileID: 1089398520}
+  <CameraButton>k__BackingField: {fileID: 1089398520}
 --- !u!1 &1983314923
 GameObject:
   m_ObjectHideFlags: 0
@@ -50640,7 +50640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AreaName>k__BackingField: HALLWAY
-  cameraButton: {fileID: 288668145}
+  <CameraButton>k__BackingField: {fileID: 288668145}
 --- !u!23 &2112191449 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -1864433310204615755, guid: d7dd755c8976f75419dd1d5e7a18d417, type: 3}
