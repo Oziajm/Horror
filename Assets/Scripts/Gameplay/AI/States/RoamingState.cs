@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Gameplay.Managers;
 
 public class RoamingState : BaseState
 {
@@ -28,7 +29,9 @@ public class RoamingState : BaseState
         if (isPlayerSpotted)
         {
             animatronicDestinationCoroutine = null;
-            EventManager.current.StopCoroutine(SetNewAnimatronicDestinationToCheck());
+
+            EventsManager.Instance.StopCoroutine(SetNewAnimatronicDestinationToCheck());
+
             return typeof(ChaseState);
         }
 
@@ -49,10 +52,11 @@ public class RoamingState : BaseState
             animatronic.navMeshAgent.enabled = false;
         }
         animatronic.haveScreamedYet = false;
-        animatronicDestinationCoroutine = EventManager.current.StartCoroutine(SetNewAnimatronicDestinationToCheck());
+
+        animatronicDestinationCoroutine = EventsManager.Instance.StartCoroutine(SetNewAnimatronicDestinationToCheck());
     }
 
-    IEnumerator SetNewAnimatronicDestinationToCheck()
+    private IEnumerator SetNewAnimatronicDestinationToCheck()
     {
         animatronic.UpdateAnimatorName();
         yield return animationDuration;

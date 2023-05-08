@@ -5,7 +5,7 @@ public class CameraShaker : MonoBehaviour
     #region Variables
 
     [SerializeField] 
-    private PlayerMovement playerMovement;
+    private MovementController playerMovement;
     [SerializeField] 
     private CameraSettings cameraSettings;
 

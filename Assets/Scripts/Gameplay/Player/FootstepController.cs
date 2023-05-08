@@ -11,7 +11,7 @@ public class FootstepController : MonoBehaviour
     [SerializeField] 
     private PlayerSettings playerSettings;
 
-    private PlayerMovement playerMovement;
+    private MovementController playerMovement;
 
     private float footstepTimer;
     private float GetStepOffset => playerMovement.IsSprinting ? playerSettings.sprintSoundDelay : playerSettings.stepSoundDelay;
@@ -24,7 +24,7 @@ public class FootstepController : MonoBehaviour
     {
         footstepTimer = 0f;
 
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<MovementController>();
     }
 
     private void Update()

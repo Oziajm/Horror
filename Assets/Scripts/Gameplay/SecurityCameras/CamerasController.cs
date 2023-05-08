@@ -1,100 +1,86 @@
 using UnityEngine;
-using UnityEngine.UI;
+using Gameplay.Managers;
+using TMPro;
+using UnityEngine.InputSystem;
 
-public class CamerasController : MonoBehaviour
+namespace Gameplay.SecurityCameras
 {
-    #region Variables
-    [Space(10)]
-    [Header("Public variables")]
-    [Space(10)]
-    public float rotation;
-
-    [Space(10)]
-    [Header("Cameras Screen")]
-    [Space(10)]
-    [SerializeField] 
-    private Image[] activeCamerasImage;
-    [SerializeField] 
-    private MeshRenderer TVScreen;
-    [SerializeField] 
-    private Material[] camerasMaterials;
-    [SerializeField] 
-    private GameObject[] cameras;
-    [SerializeField] 
-    private Slider slider;
-    [SerializeField] 
-    private GameObject camerasHud;
-    [SerializeField] 
-    private Renderer OnOffLight;
-
-    private int camNumber;
-
-    #endregion
-
-    #region Unity Methods
-
-    private void Start()
+    public class CamerasController : Interactable
     {
-        TurnTVOnOff(false);
-    }
+        private const float DISTANCE_TO_ACTIVATE = 2.5f;
 
-    #endregion
+        [SerializeField]
+        private Transform player;
 
-    #region Public Methods
+        [SerializeField]
+        private Transform camerasCam;
 
-    public void TurnTVOnOff(bool isPlayerNearKeyboard)
-    {
-        camerasHud.SetActive(isPlayerNearKeyboard);
-        OnOffLight.material.SetColor("_EmissionColor", isPlayerNearKeyboard ? Color.green * 1f : Color.red * 1f);
-        ChangeCameraAtScreen(isPlayerNearKeyboard ? 1 : 10);
-    }
+        [SerializeField]
+        private TMP_Text areaNameText;
 
-    public void ChangeCameraAtScreen(int cameraNumber)
-    {
-        TurnOffAllCameras();
-        SetAllCamerasColorsToGray();
+        private InputActions inputActions;
 
-        if(cameraNumber == 10)
+        private void OnEnable()
         {
-            TVScreen.material = camerasMaterials[cameraNumber];
-        } 
-        else
+            inputActions = new();
+            inputActions.Player.Enable();
+
+            EventsManager.Instance.CameraButtonClicked += ChangeCamera;
+        }
+
+        public void ChangeCamera(int cameraNumber)
         {
-            activeCamerasImage[cameraNumber].color = Color.red;
-            cameras[cameraNumber].SetActive(true);
-            TVScreen.material = camerasMaterials[cameraNumber];
-            camNumber = cameraNumber;
+            Camera camera = CamerasManager.Instance.GetCameraWithIndex(cameraNumber);
+
+            camerasCam.position = camera.transform.position;
+            camerasCam.rotation = camera.transform.rotation;
+
+            areaNameText.SetText(CamerasManager.Instance.GetAreaName(camera));
+        }
+
+        public override string GetHoverText()
+        {
+            return "Use";
+        }
+
+        public override void Interact()
+        {
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distance < DISTANCE_TO_ACTIVATE)
+            {
+                ChangeCameraView(true);
+                inputActions.Player.Escape.started += OnEscapeDown;
+            }
+        }
+
+        private void ChangeCameraView(bool areCamerasOpen)
+        {
+            ChangeCurrentCamera(areCamerasOpen);
+
+            InteractionsManager.Instance.ChangeCursorInteractability(areCamerasOpen);
+
+            if (areCamerasOpen)
+            {
+                ChangeCamera(0);
+                HUDsManager.Instance.OpenCamerasView();
+            }
+            else
+            {
+                HUDsManager.Instance.OpenGameplayView();
+            }
+        }
+
+        private void OnEscapeDown(InputAction.CallbackContext context)
+        {
+            ChangeCameraView(false);
+            inputActions.Player.Escape.started -= OnEscapeDown;
+        }
+
+        private void ChangeCurrentCamera(bool areCamerasOpen)
+        {
+            camerasCam.gameObject.SetActive(areCamerasOpen);
+            player.gameObject.SetActive(!areCamerasOpen);
         }
     }
-
-    public void SetNewCameraRotation()
-    {
-        slider.value = rotation;
-
-        cameras[camNumber].transform.localRotation = Quaternion.Euler(0, rotation, 0);
-    }
-
-    #endregion
-
-    #region Private Methods
-
-    private void SetAllCamerasColorsToGray()
-    {
-        Color newColor = new (0.2f, 0.2f, 0.2f);
-
-        for (int i = 0; i < activeCamerasImage.Length; i++)
-        {
-            activeCamerasImage[i].color = newColor;
-        }
-    }
-
-    private void TurnOffAllCameras()
-    {
-        for (int i = 0; i < cameras.Length; i++)
-        {
-            cameras[i].SetActive(false);
-        }
-    }
-
-    #endregion
 }

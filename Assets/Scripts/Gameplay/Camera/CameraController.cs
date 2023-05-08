@@ -27,9 +27,6 @@ public class CameraController : MonoBehaviour
     {
         xRotation = 0f;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         inputActions = new();
         inputActions.Player.Enable();
     }

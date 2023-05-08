@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 public class Chica : Animatronic
 {
-    private PlayerMovement playerMovement;
+    private MovementController playerMovement;
 
     public void Start()
     {
         UpdateAnimatorName();
-        playerMovement = player.GetComponent<PlayerMovement>();
+        playerMovement = player.GetComponent<MovementController>();
         soundsController = GetComponent<AnimatronicsSoundsController>();
     }
 
