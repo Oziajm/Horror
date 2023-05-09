@@ -20,12 +20,17 @@ namespace Gameplay.SecurityCameras
 
         private InputActions inputActions;
 
-        private void OnEnable()
+        private void Awake()
         {
             inputActions = new();
+        }
+
+        private void OnEnable()
+        {
             inputActions.Player.Enable();
 
             EventsManager.Instance.CameraButtonClicked += ChangeCamera;
+            EventsManager.Instance.CamerasExitButtonClicked += ExitCameras;
         }
 
         public void ChangeCamera(int cameraNumber)
@@ -75,8 +80,15 @@ namespace Gameplay.SecurityCameras
 
         private void OnEscapeDown(InputAction.CallbackContext context)
         {
+            ExitCameras();
+        }
+
+        private void ExitCameras()
+        {
             ChangeCameraView(false);
             inputActions.Player.Escape.started -= OnEscapeDown;
+            EventsManager.Instance.CameraButtonClicked -= ChangeCamera;
+            EventsManager.Instance.CamerasExitButtonClicked -= ExitCameras;
         }
 
         private void ChangeCurrentCamera(bool areCamerasOpen)

@@ -59,7 +59,7 @@ public class Door : Interactable
         Quaternion endRot = Quaternion.Euler(isOpen ? closedRotation : openRotation);
 
         float newTime = 0;
-
+ 
         while (newTime < NEW_DURATION)
         {
             transform.rotation = Quaternion.Slerp(startRot, endRot, newTime / NEW_DURATION);
