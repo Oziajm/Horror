@@ -80,6 +80,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""a5c8484d-17b6-4369-9a69-1f081e7f3d63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -302,6 +311,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75090a5c-d19c-489e-8224-72a8250ba735"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""623af8ca-214f-4dcf-b07a-40c9ca70c9b2"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -316,6 +347,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_CameraInput = m_Player.FindAction("CameraInput", throwIfNotFound: true);
         m_Player_Flashlight = m_Player.FindAction("Flashlight", throwIfNotFound: true);
         m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
+        m_Player_Use = m_Player.FindAction("Use", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -381,6 +413,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CameraInput;
     private readonly InputAction m_Player_Flashlight;
     private readonly InputAction m_Player_Escape;
+    private readonly InputAction m_Player_Use;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -391,6 +424,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @CameraInput => m_Wrapper.m_Player_CameraInput;
         public InputAction @Flashlight => m_Wrapper.m_Player_Flashlight;
         public InputAction @Escape => m_Wrapper.m_Player_Escape;
+        public InputAction @Use => m_Wrapper.m_Player_Use;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -418,6 +452,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Escape.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
                 @Escape.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
                 @Escape.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                @Use.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUse;
+                @Use.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUse;
+                @Use.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUse;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -440,6 +477,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
+                @Use.started += instance.OnUse;
+                @Use.performed += instance.OnUse;
+                @Use.canceled += instance.OnUse;
             }
         }
     }
@@ -452,5 +492,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnCameraInput(InputAction.CallbackContext context);
         void OnFlashlight(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+        void OnUse(InputAction.CallbackContext context);
     }
 }
