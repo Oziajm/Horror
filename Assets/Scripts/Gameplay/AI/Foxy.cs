@@ -10,7 +10,7 @@ public class Foxy : Animatronic
     public bool isImmuneToFlashlight = false;
     public bool isTriggered = false;
 
-    private PlayerMovement playerMovement;
+    private MovementController playerMovement;
 
     public bool IsFlashlightOn => flashLightController.IsOn;
 
@@ -19,7 +19,7 @@ public class Foxy : Animatronic
         stateMachine = GetComponent<StateMachine>();
         InitializeStateMachine();
         UpdateAnimatorName();
-        playerMovement = player.GetComponent<PlayerMovement>();
+        playerMovement = player.GetComponent<MovementController>();
         soundsController = GetComponent<AnimatronicsSoundsController>();
     }
     protected void InitializeStateMachine()

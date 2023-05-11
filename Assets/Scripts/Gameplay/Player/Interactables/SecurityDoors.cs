@@ -6,6 +6,10 @@ public class SecurityDoors : Interactable
 {
     #region Variables
 
+    private const float Y_VALUE_TO_GET_OPENED_POSITION = 2.1f;
+    private const float POWER_CONSUMPTION_PER_SECOND = 10f;
+    private const int NEW_DURATION = 1;
+
     [Header("Door Values")]
     [Space(10)]
     [SerializeField] 
@@ -21,12 +25,12 @@ public class SecurityDoors : Interactable
     private Vector3 closedPos;
     private Vector3 openedPos;
 
-    Vector3 closedRot = new (0, 0, 60);
-    Vector3 openedRot = new (0, 0, -60);
+    Vector3 closedHandleRot = new (0, 0, 60);
+    Vector3 openedHandleRot = new (0, 0, -60);
 
     private float maxBatteryAmmount;
 
-    private bool isOpen = false;
+    private bool isOpen;
 
     #endregion
 
@@ -36,7 +40,7 @@ public class SecurityDoors : Interactable
     {
         closedPos = door.position;
         openedPos = door.position;
-        openedPos.y += 2.1f;
+        openedPos.y += Y_VALUE_TO_GET_OPENED_POSITION;
 
         maxBatteryAmmount = batteryAmmount;
 
@@ -69,14 +73,14 @@ public class SecurityDoors : Interactable
             doorAnimation = StartCoroutine(ChangeDoorPosition());
         }
 
-        if (!isOpen && powerConsumption == null) {
+        if (!isOpen && powerConsumption == null) 
+        {
             powerConsumption = StartCoroutine(ConsumePower());
         } 
         else if (isOpen)
         {
             powerConsumption = null;
         }
-
     }
 
     IEnumerator ConsumePower()
@@ -85,11 +89,11 @@ public class SecurityDoors : Interactable
         {
             if (batteryAmmount > 0)
             {
-                batteryAmmount -= 100f * Time.deltaTime;
-            } else
+                batteryAmmount -= POWER_CONSUMPTION_PER_SECOND * Time.deltaTime;
+            } 
+            else
             {
                 OpenCloseDoor();
-                isOpen = true;
             }  
 
             filledImage.fillAmount = batteryAmmount / maxBatteryAmmount;
@@ -101,19 +105,20 @@ public class SecurityDoors : Interactable
     IEnumerator ChangeDoorPosition()
     {
         Vector3 newPos = (isOpen ? closedPos : openedPos);
-        Quaternion newRot = Quaternion.Euler(isOpen ? closedRot : openedRot);
+        Quaternion newRot = Quaternion.Euler(isOpen ? closedHandleRot : openedHandleRot);
 
         isOpen = !isOpen;
 
-        float newDuration = 1;
         float newTime = 0;
-        while (newTime < newDuration)
+
+        while (newTime < NEW_DURATION)
         {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, newRot, newTime / newDuration);
-            door.position = Vector3.MoveTowards(door.position, newPos, newTime / newDuration);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, newRot, newTime / NEW_DURATION);
+            door.position = Vector3.MoveTowards(door.position, newPos, newTime / NEW_DURATION);
             yield return null;
             newTime += Time.deltaTime;
         }
+
         doorAnimation = null;
     }
 

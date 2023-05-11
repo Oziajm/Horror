@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Gameplay.Managers;
 
 public class DisabledState : BaseState
 {
@@ -8,7 +9,7 @@ public class DisabledState : BaseState
     public DisabledState(Animatronic animatronic) : base(animatronic.gameObject)
     {
         this.animatronic = animatronic;
-        EventManager.current.OnAnimatronicTurnedEvent += OnAnimatronicsTurned;
+        EventsManager.Instance.AnimatronicsActivated += OnAnimatronicsActivated;
     }
 
     public override Type Tick()
@@ -20,7 +21,7 @@ public class DisabledState : BaseState
         return null;
     }
 
-    private void OnAnimatronicsTurned()
+    private void OnAnimatronicsActivated()
     {
         animatronic.animator.SetBool("is2AM", true);
         animatronic.soundsController.PlayStartUpSound();

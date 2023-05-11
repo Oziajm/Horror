@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 public class Endo : Animatronic
 {
-    private PlayerMovement playerMovement;
+    private MovementController playerMovement;
 
     public void Start()
     {
         stateMachine = GetComponent<StateMachine>();
         InitializeStateMachine();
         UpdateAnimatorName();
-        playerMovement = player.GetComponent<PlayerMovement>();
+        playerMovement = player.GetComponent<MovementController>();
         soundsController = GetComponent<AnimatronicsSoundsController>();
     }
     protected void InitializeStateMachine()

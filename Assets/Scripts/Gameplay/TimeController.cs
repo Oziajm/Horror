@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using Gameplay.Managers;
 
 public class TimeController : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class TimeController : MonoBehaviour
     {
         if (Mathf.RoundToInt(currentTime) == 5)
         {
-            EventManager.current.AnimatronicTurned();
+            EventsManager.Instance.AnimatronicsActivated?.Invoke();
         }
 
         if (currentTime < 360)

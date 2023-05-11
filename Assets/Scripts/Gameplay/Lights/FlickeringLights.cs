@@ -22,7 +22,7 @@ public class FlickeringLights : MonoBehaviour
         StartCoroutine(lightSource == null ? FlickerOnlyRenderers() : FlickerRenderersAndLights());
     }
 
-    IEnumerator FlickerOnlyRenderers()
+    private IEnumerator FlickerOnlyRenderers()
     {
         while (true)
         {
@@ -35,7 +35,7 @@ public class FlickeringLights : MonoBehaviour
         }
     }
 
-    IEnumerator FlickerRenderersAndLights()
+    private IEnumerator FlickerRenderersAndLights()
     {
         while (true)
         {

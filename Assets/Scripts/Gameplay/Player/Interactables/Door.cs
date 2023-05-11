@@ -9,10 +9,12 @@ public class Door : Interactable
 
     [Header("Door Rotations")]
     [Space(10)]
-    [SerializeField] private Vector3 closedRotation;
-    [SerializeField] private Vector3 openRotation;
+    [SerializeField] 
+    private Vector3 closedRotation;
+    [SerializeField] 
+    private Vector3 openRotation;
 
-    private bool isOpen = false;
+    private bool isOpen;
     private Coroutine doorAnimation;
     private Quaternion startRot;
 
