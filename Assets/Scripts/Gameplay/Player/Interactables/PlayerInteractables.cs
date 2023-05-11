@@ -7,10 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerInteractables : MonoBehaviour
 {
     #region Variables
+
     private const float FADE_OUT_ANIM_DURATION = 0.25f;
     private const int FRAMES_NEEDED_TO_UPDATE = 10;
 
-    [SerializeField] 
+    [SerializeField]
     private Transform cameraTransform;
     [SerializeField] 
     private float maxDistance = 1;
@@ -18,6 +19,8 @@ public class PlayerInteractables : MonoBehaviour
     private LayerMask layers;
     [SerializeField] 
     private TextMeshProUGUI useText;
+    [SerializeField]
+    private Image useImage;
     [SerializeField] 
     private GameObject textWindow;
 

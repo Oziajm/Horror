@@ -18,9 +18,9 @@ public abstract class Animatronic : MonoBehaviour
 
     protected StateMachine stateMachine;
 
-    public bool isOn = false;
+    public bool isOn;
 
-    public bool haveScreamedYet = false;
+    public bool haveScreamedYet;
 
     public abstract bool IsPlayerSpotted();
 
@@ -42,10 +42,5 @@ public abstract class Animatronic : MonoBehaviour
             }
         }
         return true;
-    }
-    
-    public void UndoState()
-    {
-        stateMachine.UndoState();
     }
 }
