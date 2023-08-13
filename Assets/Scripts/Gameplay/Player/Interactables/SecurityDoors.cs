@@ -7,7 +7,10 @@ public class SecurityDoors : Interactable
     #region Variables
 
     private const float Y_VALUE_TO_GET_OPENED_POSITION = 2.1f;
+
     private const float POWER_CONSUMPTION_PER_SECOND = 10f;
+    private const float MAX_BATTERY_AMOUNT = 100f;
+
     private const int NEW_DURATION = 1;
 
     [Header("Door Values")]
@@ -15,12 +18,9 @@ public class SecurityDoors : Interactable
     [SerializeField] 
     private Transform door;
     [SerializeField] 
-    private float batteryAmmount;
-    [SerializeField] 
     private Image filledImage;
 
-    private Coroutine doorAnimation = null;
-    private Coroutine powerConsumption = null;
+    private Coroutine doorAnimation;
 
     private Vector3 closedPos;
     private Vector3 openedPos;
@@ -28,7 +28,7 @@ public class SecurityDoors : Interactable
     Vector3 closedHandleRot = new (0, 0, 60);
     Vector3 openedHandleRot = new (0, 0, -60);
 
-    private float maxBatteryAmmount;
+    private float batteryAmount;
 
     private bool isOpen;
 
@@ -42,7 +42,7 @@ public class SecurityDoors : Interactable
         openedPos = door.position;
         openedPos.y += Y_VALUE_TO_GET_OPENED_POSITION;
 
-        maxBatteryAmmount = batteryAmmount;
+        batteryAmount = MAX_BATTERY_AMOUNT;
 
         OpenCloseDoor();
     }
@@ -53,12 +53,12 @@ public class SecurityDoors : Interactable
 
     public override string GetHoverText()
     {
-        return batteryAmmount > 0 ? "Use" : "IT'S ME";
+        return batteryAmount > 0 ? "Use" : "IT'S ME";
     }
 
     public override void Interact()
     {
-        if (batteryAmmount > 0)
+        if (batteryAmount > 0)
             OpenCloseDoor();
     }
 
@@ -73,36 +73,36 @@ public class SecurityDoors : Interactable
             doorAnimation = StartCoroutine(ChangeDoorPosition());
         }
 
-        if (!isOpen && powerConsumption == null) 
+        if (!isOpen)
         {
-            powerConsumption = StartCoroutine(ConsumePower());
-        } 
-        else if (isOpen)
+            StartCoroutine(ConsumePower());
+        }
+        else
         {
-            powerConsumption = null;
+            StopCoroutine(ConsumePower());
         }
     }
 
-    IEnumerator ConsumePower()
+    private IEnumerator ConsumePower()
     {
         while (!isOpen)
         {
-            if (batteryAmmount > 0)
+            if (batteryAmount > 0)
             {
-                batteryAmmount -= POWER_CONSUMPTION_PER_SECOND * Time.deltaTime;
+                batteryAmount -= POWER_CONSUMPTION_PER_SECOND * Time.deltaTime;
             } 
             else
             {
                 OpenCloseDoor();
-            }  
+            }
 
-            filledImage.fillAmount = batteryAmmount / maxBatteryAmmount;
+            filledImage.fillAmount = batteryAmount / MAX_BATTERY_AMOUNT;
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
-    IEnumerator ChangeDoorPosition()
+    private IEnumerator ChangeDoorPosition()
     {
         Vector3 newPos = (isOpen ? closedPos : openedPos);
         Quaternion newRot = Quaternion.Euler(isOpen ? closedHandleRot : openedHandleRot);

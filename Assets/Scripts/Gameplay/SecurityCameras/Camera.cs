@@ -7,12 +7,17 @@ namespace Gameplay.SecurityCameras
         [field:SerializeField]
         public string AreaName { get; private set; }
 
-        [SerializeField]
-        private CameraButton cameraButton;
+        [field:SerializeField]
+        public CameraButton CameraButton { get; private set; }
 
         public void AssignCameraNumber(int cameraNumber)
         {
-            cameraButton.AssignCameraNumber(cameraNumber);
+            CameraButton.AssignCameraNumber(cameraNumber);
+        }
+
+        public void SelectButton()
+        {
+            CameraButton.SelectButton();
         }
     }
 }

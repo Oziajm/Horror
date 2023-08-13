@@ -8,5 +8,7 @@ namespace Gameplay.Managers
         public Action AnimatronicsActivated;
 
         public Action<int> CameraButtonClicked;
+
+        public Action CamerasExitButtonClicked;
     }
 }
