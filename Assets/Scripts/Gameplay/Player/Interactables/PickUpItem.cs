@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using System;
 using UnityEngine;
 
@@ -18,5 +19,6 @@ public class PickUpItem : Interactable
     private void TakeItem()
     {
         Destroy(gameObject);
+        EventsManager.Instance.ItemPickedUp?.Invoke(item);
     }
 }

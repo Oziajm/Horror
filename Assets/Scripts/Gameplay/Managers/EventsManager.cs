@@ -10,5 +10,7 @@ namespace Gameplay.Managers
         public Action<int> CameraButtonClicked;
 
         public Action CamerasExitButtonClicked;
+
+        public Action<BaseItem> ItemPickedUp;
     }
 }

@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,13 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         //EventManager.current.OnItemPickedUp += OnItemPickedUp;
+        EventsManager.Instance.ItemPickedUp += OnItemPickedUp;
     }
 
     private void OnDestroy()
     {
         //EventManager.current.OnItemPickedUp -= OnItemPickedUp;
+        EventsManager.Instance.ItemPickedUp -= OnItemPickedUp;
     }
 
     private void OnItemPickedUp(BaseItem item)
