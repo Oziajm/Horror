@@ -14,5 +14,7 @@ public class InventoryGUI : MonoBehaviour
 
         itemImage.sprite = item.itemImage;
         itemName.text = item.itemName;
+
+        HintSystem.InvokeHint($"Picked up {item.name}.");
     }
 }

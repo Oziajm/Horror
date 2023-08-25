@@ -10,13 +10,11 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        //EventManager.current.OnItemPickedUp += OnItemPickedUp;
         EventsManager.Instance.ItemPickedUp += OnItemPickedUp;
     }
 
     private void OnDestroy()
     {
-        //EventManager.current.OnItemPickedUp -= OnItemPickedUp;
         EventsManager.Instance.ItemPickedUp -= OnItemPickedUp;
     }
 

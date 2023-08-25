@@ -1,16 +1,26 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class HintSystem : MonoBehaviour
 {
+    private struct Hint
+    {
+        string message;
+        float duration;
+    }
+
     private static event Action<string> OnHintRequested;
 
-    [SerializeField] private TextMeshProUGUI hintMessage;
+    //[SerializeField] private GameObject hintMessage;
+    [SerializeField] private GameObject hintsContainer;
     [SerializeField] private float fadeDuration = 1f;
+    [SerializeField] private uint maxHints = 5;
 
     private Coroutine fadeAnimation = null;
+    private List<Hint> hints;
 
     public static void InvokeHint(string message)
     {
@@ -22,16 +32,35 @@ public class HintSystem : MonoBehaviour
         OnHintRequested += HandleHintRequested;
     }
 
-    private void HandleHintRequested(string message)
+    private void OnDestroy()
     {
-        if (fadeAnimation != null)
-            StopCoroutine(fadeAnimation);
-        hintMessage.text = message;
-        fadeAnimation = StartCoroutine(DoFadeAnimation());
-
+        OnHintRequested -= HandleHintRequested;
     }
 
-    IEnumerator DoFadeAnimation()
+    private void HandleHintRequested(string message)
+    {
+        //if (fadeAnimation != null)
+        //    StopCoroutine(fadeAnimation);
+        //hintMessage.text = message;
+        var hint = CreateHint(message, hintsContainer.transform);
+        fadeAnimation = StartCoroutine(DoFadeAnimation(hint));
+    }
+
+    private TextMeshProUGUI CreateHint(string message, Transform parent)
+    {
+        var go = new GameObject();
+        go.transform.parent = parent;
+
+        var hint = go.AddComponent<TextMeshProUGUI>();
+        hint.text = message;
+        hint.fontSize = 20;
+        hint.faceColor = new Color(1f, 0.21f, 0.78f);
+        hint.fontStyle = FontStyles.Bold;
+        hint.alignment = TextAlignmentOptions.Center;
+        return hint;
+    }
+
+    IEnumerator DoFadeAnimation(TextMeshProUGUI hintMessage)
     {
         float time = 0f;
         float alpha = 0f;
