@@ -2,11 +2,14 @@ using Gameplay.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private InventoryGUI gui;
     private List<BaseItem> itemList  = new List<BaseItem>();
+
 
     private void Start()
     {
