@@ -3,56 +3,53 @@ using UnityEngine;
 
 public class ChaseState : BaseState
 {
-    private readonly Animatronic animatronic;
-    private readonly Transform playerTransform;
+    private readonly float SECONDS_NEEDED_TO_RETURN_TO_ROAMING = 5f;
 
-    float elapsedTime = 0f;
+    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
+
+    private readonly Animatronic ANIMATRONIC;
+
+    private float elapsedTime;
+
     public ChaseState(Animatronic animatronic) : base(animatronic.gameObject)
     {
-        this.animatronic = animatronic;
-        this.playerTransform = animatronic.player.GetComponent<Transform>();
+        elapsedTime = 0f;
+        this.ANIMATRONIC = animatronic;
+    }
+
+    public override void Initialize()
+    {
+        ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed * ANIMATRONIC.RunningMultiplier);
     }
 
     public override Type Tick()
     {
-        animatronic.UpdateAnimatorName();
+        ANIMATRONIC.UpdateAnimatorName();
 
-        if (animatronic.IsVisible(animatronic.gameObject))
-            return typeof(FrozenState);
+        elapsedTime += Time.deltaTime;
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.Player.transform.position);
 
-        ChaseSequence();
-
-        return null;
-    }
-
-    private Type ChaseSequence()
-    {
-        elapsedTime += 1f * Time.deltaTime;
-        if (!animatronic.IsPlayerSpotted() && elapsedTime > 5f)
+        if (ANIMATRONIC.IsPlayerSpotted())
         {
             elapsedTime = 0f;
-            return typeof(RoamingState);
         }
-
-        if (animatronic.IsPlayerSpotted())
-            elapsedTime = 0f;
-
-        if (animatronic.animatorClipInfo[0].clip.name == "Scream")
+        else
         {
-            if (!animatronic.haveScreamedYet)
+            if (elapsedTime > SECONDS_NEEDED_TO_RETURN_TO_ROAMING)
             {
-                animatronic.navMeshAgent.enabled = false;
-                animatronic.soundsController.PlayScream();
-                animatronic.haveScreamedYet = true;
+                elapsedTime = 0f;
+
+                ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
+                return typeof(IdleState);
             }
         }
 
-        animatronic.navMeshAgent.enabled = true;
-        animatronic.navMeshAgent.SetDestination(playerTransform.position);
-
-        if (animatronic.animatorClipInfo[0].clip.name == "RunningAnimatronics")
+        if (ANIMATRONIC as Endo)
         {
-            animatronic.navMeshAgent.speed = 15f;
+            bool shouldBeActive = !ANIMATRONIC.IsVisible(ANIMATRONIC.gameObject);
+
+            ANIMATRONIC.Animator.enabled = shouldBeActive;
+            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? ANIMATRONIC.MovementSpeed * ANIMATRONIC.RunningMultiplier : 0);
         }
 
         return null;

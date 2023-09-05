@@ -22,6 +22,9 @@ public class MovementController : MonoBehaviour
     private CharacterController characterController;
 
     [SerializeField]
+    private FootstepController footstepController;
+
+    [SerializeField]
     private PlayerPoseController playerPoseController;
     [SerializeField]
     private StaminaController staminaController;
@@ -56,6 +59,13 @@ public class MovementController : MonoBehaviour
         DoGravity();
         MoveCharacter();
         HandleStamina();
+
+        float stepOffset = IsSprinting ? playerSettings.sprintSoundDelay : playerSettings.stepSoundDelay;
+
+        if (IsMoving && !IsCrouching)
+        {
+            footstepController.HandleFootSteps(stepOffset);
+        }
     }
 
     #endregion

@@ -8,44 +8,29 @@ public class FootstepController : MonoBehaviour
     private AudioClip[] walkingClips;
     [SerializeField] 
     private AudioSource audioSource;
-    [SerializeField] 
-    private PlayerSettings playerSettings;
-
-    private MovementController playerMovement;
 
     private float footstepTimer;
-    private float GetStepOffset => playerMovement.IsSprinting ? playerSettings.sprintSoundDelay : playerSettings.stepSoundDelay;
 
     #endregion
 
     #region Unity Methods
 
-    private void Start()
+    private void Awake()
     {
         footstepTimer = 0f;
-
-        playerMovement = GetComponent<MovementController>();
-    }
-
-    private void Update()
-    {
-        if (playerMovement.IsMoving && !playerMovement.IsCrouching)
-        {
-            HandleFootSteps();
-        }
     }
 
     #endregion
 
-    #region Private Methods
+    #region Public Methods
 
-    private void HandleFootSteps()
+    public void HandleFootSteps(float stepOffSet)
     {
         footstepTimer -= Time.deltaTime;
         if (footstepTimer <= 0)
         {
             audioSource.PlayOneShot(walkingClips[Random.Range(0, walkingClips.Length - 1)]);
-            footstepTimer = GetStepOffset;
+            footstepTimer = stepOffSet;
         }
     }
 

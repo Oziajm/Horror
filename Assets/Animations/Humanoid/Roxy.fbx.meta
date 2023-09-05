@@ -1,0 +1,2855 @@
+fileFormatVersion: 2
+guid: 966d3746307df334088991dfbaf6f66a
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      74: 4975728422709459382
+    second: BOUNCE_ANIMATION
+  - first:
+      74: -5046349414307303509
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_RIG_Glamrock_Roxy
+  - first:
+      74: -8036651816170723597
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_In_RIG_Glamrock_Roxy
+  - first:
+      74: 7238170538870689575
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Loop_RIG_Glamrock_Roxy
+  - first:
+      74: 8006310016575449359
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Out_RIG_Glamrock_Roxy
+  - first:
+      74: 3372538340436911508
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceLand_RIG_Glamrock_Roxy
+  - first:
+      74: -4186310671468620184
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStun_Loop_RIG_Glamrock_Roxy
+  - first:
+      74: 3640799395218094578
+    second: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStunToIdle_RIG_Glamrock_Roxy
+  - first:
+      74: -751034371433973441
+    second: BANGING_DOOR_ANIMATION_1
+  - first:
+      74: 7514276424406915895
+    second: RIG_Glamrock_Roxy|Roxy_Idle_LOOP_add_RIG_Glamrock_Roxy
+  - first:
+      74: -5015332612977494087
+    second: RIG_Glamrock_Roxy|Roxy_Idle_LOOP_RIG_Glamrock_Roxy
+  - first:
+      74: -8623907450181620072
+    second: RIG_Glamrock_Roxy|Roxy_Idle_ScanLeft_RIG_Glamrock_Roxy
+  - first:
+      74: -5289449945299289334
+    second: RIG_Glamrock_Roxy|Roxy_Idle_ScanRight_RIG_Glamrock_Roxy
+  - first:
+      74: -113304205182568803
+    second: RIG_Glamrock_Roxy|Roxy_Idle_Thrash_RIG_Glamrock_Roxy
+  - first:
+      74: 7166264842679081536
+    second: RIG_Glamrock_Roxy|Roxy_Jumpscare_RIG_Glamrock_Roxy
+  - first:
+      74: 622872105959965126
+    second: RIG_Glamrock_Roxy|Roxy_PepTalk_01_RIG_Glamrock_Roxy
+  - first:
+      74: 3352371445451251999
+    second: RIG_Glamrock_Roxy|Roxy_PepTalk_02_RIG_Glamrock_Roxy
+  - first:
+      74: -5936933976202940980
+    second: RIG_Glamrock_Roxy|Roxy_PepTalk_Idle_RIG_Glamrock_Roxy
+  - first:
+      74: 6912160944882626670
+    second: RIG_Glamrock_Roxy|Roxy_Play_00_RIG_Glamrock_Roxy
+  - first:
+      74: 1706532134886574080
+    second: RIG_Glamrock_Roxy|Roxy_Play_00_Slow_RIG_Glamrock_Roxy
+  - first:
+      74: 2290824130213784302
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_01_RIG_Glamrock_Roxy
+  - first:
+      74: 547731074244234972
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_03_RIG_Glamrock_Roxy
+  - first:
+      74: 3661374588940974494
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_JUMP_Location_03_RIG_Glamrock_Roxy
+  - first:
+      74: -2422393529168046353
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_Location02_RIG_Glamrock_Roxy
+  - first:
+      74: -2081651952601962177
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_Location_01_RIG_Glamrock_Roxy
+  - first:
+      74: -8402309244070553825
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_Location_03_RIG_Glamrock_Roxy
+  - first:
+      74: 1384293680885242641
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_Location_04_RIG_Glamrock_Roxy
+  - first:
+      74: -4032704636395259167
+    second: RIG_Glamrock_Roxy|Roxy_Raceway_RUN_Location_01_RIG_Glamrock_Roxy
+  - first:
+      74: 3956912014964387740
+    second: RUN_ANIMATION
+  - first:
+      74: 8840871638801191643
+    second: RIG_Glamrock_Roxy|Roxy_RunToStop_L_RIG_Glamrock_Roxy
+  - first:
+      74: 3034353589407754243
+    second: RIG_Glamrock_Roxy|Roxy_RunToStop_R_RIG_Glamrock_Roxy
+  - first:
+      74: -6953031973920360205
+    second: RIG_Glamrock_Roxy|Roxy_Scan_Down_Both_RIG_Glamrock_Roxy
+  - first:
+      74: -4172020969256247582
+    second: RIG_Glamrock_Roxy|Roxy_Search_Cart_RIG_Glamrock_Roxy
+  - first:
+      74: 641053129898988473
+    second: RIG_Glamrock_Roxy|Roxy_Search_FirstAid_RIG_Glamrock_Roxy
+  - first:
+      74: -3707347389562479116
+    second: RIG_Glamrock_Roxy|Roxy_Search_Kiosk_RIG_Glamrock_Roxy
+  - first:
+      74: 8700102040003232589
+    second: RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy
+  - first:
+      74: 8748808975765763226
+    second: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
+  - first:
+      74: -8525379155736350926
+    second: RIG_Glamrock_Roxy|Roxy_Search_ServiceCart_RIG_Glamrock_Roxy
+  - first:
+      74: 7288027241455377892
+    second: RIG_Glamrock_Roxy|Roxy_Search_Stroller_RIG_Glamrock_Roxy
+  - first:
+      74: 5358173254809793833
+    second: FLASHED_ANIMATION
+  - first:
+      74: -626840596624697371
+    second: RIG_Glamrock_Roxy|Roxy_Stun_Loop_RIG_Glamrock_Roxy
+  - first:
+      74: 6556250665953247783
+    second: STUN_ANIMATION_2
+  - first:
+      74: 1073975169847022283
+    second: RIG_Glamrock_Roxy|Roxy_TailPos_RIG_Glamrock_Roxy
+  - first:
+      74: -6757647549916590
+    second: RIG_Glamrock_Roxy|Roxy_TailPosAdd_RIG_Glamrock_Roxy
+  - first:
+      74: -5671164767919871977
+    second: RIG_Glamrock_Roxy|Roxy_Vent_Jump_RIG_Glamrock_Roxy
+  - first:
+      74: -6165044565948873184
+    second: RIG_Glamrock_Roxy|Roxy_Vent_Land_RIG_Glamrock_Roxy
+  - first:
+      74: 1550696609428506064
+    second: RIG_Glamrock_Roxy|Roxy_Walk_Look_Both_RIG_Glamrock_Roxy
+  - first:
+      74: -2380443608930250614
+    second: RIG_Glamrock_Roxy|Roxy_Walk_Look_L_RIG_Glamrock_Roxy
+  - first:
+      74: -8478961611899944127
+    second: RIG_Glamrock_Roxy|Roxy_Walk_Look_R_RIG_Glamrock_Roxy
+  - first:
+      74: -8706523495558518240
+    second: RIG_Glamrock_Roxy|Roxy_Walk_LOOP_RIG_Glamrock_Roxy
+  - first:
+      74: -7253925442792280683
+    second: RIG_Glamrock_Roxy|Roxy_WalkToStop_L_RIG_Glamrock_Roxy
+  - first:
+      74: 3358083891802615331
+    second: RIG_Glamrock_Roxy|Roxy_WalkToStop_R_RIG_Glamrock_Roxy
+  - first:
+      74: -7743160894150667511
+    second: RIG_Glamrock_Roxy|Roxy_ZeroPos_RIG_Glamrock_Roxy
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Jaw_jnt'
+      has translation animation that will be discarded.\n\t'R_Elbow_jnt' has translation
+      animation that will be discarded.\n\t'R_Wrist_jnt' has translation animation
+      that will be discarded.\n\nClip 'RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_In_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Jaw_jnt'
+      has translation animation that will be discarded.\n\t'L_Knee_jnt' has translation
+      animation that will be discarded.\n\t'L_Ankle_jnt' has translation animation
+      that will be discarded.\n\t'L_Toe_jnt' has translation animation that will
+      be discarded.\n\t'R_Knee_jnt' has translation animation that will be discarded.\n\t'R_Ankle_jnt'
+      has translation animation that will be discarded.\n\nClip 'RIG_Glamrock_Roxy|Glamrock_Roxy_PounceLand_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Shoulder_jnt'
+      has translation animation that will be discarded.\n\t'L_Wrist_jnt' has translation
+      animation that will be discarded.\n\t'L_Knee_jnt' has translation animation
+      that will be discarded.\n\t'L_Ankle_jnt' has translation animation that will
+      be discarded.\n\t'L_Toe_jnt' has translation animation that will be discarded.\n\nClip
+      'RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStun_Loop_RIG_Glamrock_Roxy' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Jaw_jnt' has translation
+      animation that will be discarded.\n\nClip 'RIG_Glamrock_Roxy|Roxy_DoorSlam_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Shoulder_jnt'
+      has translation animation that will be discarded.\n\nClip 'RIG_Glamrock_Roxy|Roxy_Raceway_JUMP_Location_03_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Elbow_jnt'
+      has translation animation that will be discarded.\n\t'L_Wrist_jnt' has translation
+      animation that will be discarded.\n\t'R_Elbow_jnt' has translation animation
+      that will be discarded.\n\t'R_Wrist_jnt' has translation animation that will
+      be discarded.\n\nClip 'RIG_Glamrock_Roxy|Roxy_Raceway_Location_01_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Elbow_jnt'
+      has translation animation that will be discarded.\n\t'L_Wrist_jnt' has translation
+      animation that will be discarded.\n\nClip 'RIG_Glamrock_Roxy|Roxy_Raceway_RUN_Location_01_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine_jnt'
+      has translation animation that will be discarded.\n\t'Spine1_jnt' has translation
+      animation that will be discarded.\n\t'Head_jnt' has translation animation that
+      will be discarded.\n\t'L_Shoulder_jnt' has translation animation that will
+      be discarded.\n\nClip 'RIG_Glamrock_Roxy|Roxy_Run_LOOP_RIG_Glamrock_Roxy' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'R_Shoulder_jnt'
+      has translation animation that will be discarded.\n\nClip 'RIG_Glamrock_Roxy|Roxy_Vent_Jump_RIG_Glamrock_Roxy'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Elbow_jnt'
+      has translation animation that will be discarded.\n\t'L_Wrist_jnt' has translation
+      animation that will be discarded.\n\t'R_Elbow_jnt' has translation animation
+      that will be discarded.\n\t'R_Wrist_jnt' has translation animation that will
+      be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BOUNCE_ANIMATION
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_Loop_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_In_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_In_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Loop_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Loop_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Out_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Out_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 3
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceLand_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceLand_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStun_Loop_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStun_Loop_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStunToIdle_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStunToIdle_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BANGING_DOOR_ANIMATION_1
+      takeName: RIG_Glamrock_Roxy|Roxy_DoorSlam_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 154
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Idle_LOOP_add_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Idle_LOOP_add_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 284
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Idle_LOOP_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Idle_LOOP_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 284
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Idle_ScanLeft_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Idle_ScanLeft_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 231
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Idle_ScanRight_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Idle_ScanRight_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 195
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Idle_Thrash_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Idle_Thrash_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 112
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Jumpscare_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Jumpscare_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_PepTalk_01_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_PepTalk_01_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 747
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_PepTalk_02_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_PepTalk_02_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 747
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_PepTalk_Idle_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_PepTalk_Idle_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 259
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Play_00_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Play_00_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Play_00_Slow_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Play_00_Slow_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 635
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_01_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_01_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 279
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_03_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_03_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 223
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_JUMP_Location_03_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_JUMP_Location_03_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 77
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_Location02_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_Location02_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 570
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_Location_01_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_Location_01_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 711
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_Location_03_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_Location_03_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 583
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_Location_04_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_Location_04_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 570
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Raceway_RUN_Location_01_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Raceway_RUN_Location_01_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 71
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RUN_ANIMATION
+      takeName: RIG_Glamrock_Roxy|Roxy_Run_LOOP_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 114
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_RunToStop_L_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_RunToStop_L_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_RunToStop_R_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_RunToStop_R_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Scan_Down_Both_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Scan_Down_Both_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 291
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_Cart_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_Cart_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 138
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_FirstAid_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_FirstAid_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_Kiosk_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_Kiosk_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 153
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 138
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 149
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_ServiceCart_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_ServiceCart_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 101
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Search_Stroller_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Search_Stroller_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FLASHED_ANIMATION
+      takeName: RIG_Glamrock_Roxy|Roxy_Stun_In_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Stun_Loop_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Stun_Loop_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 199
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: STUN_ANIMATION_2
+      takeName: RIG_Glamrock_Roxy|Roxy_Stun_OUT_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_TailPos_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_TailPos_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_TailPosAdd_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_TailPosAdd_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Vent_Jump_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Vent_Jump_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Vent_Land_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Vent_Land_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Walk_Look_Both_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Walk_Look_Both_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Walk_Look_L_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Walk_Look_L_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Walk_Look_R_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Walk_Look_R_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_Walk_LOOP_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_Walk_LOOP_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_WalkToStop_L_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_WalkToStop_L_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_WalkToStop_R_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_WalkToStop_R_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Glamrock_Roxy|Roxy_ZeroPos_RIG_Glamrock_Roxy
+      takeName: RIG_Glamrock_Roxy|Roxy_ZeroPos_RIG_Glamrock_Roxy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Root_jnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_UpperLeg_jnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_UpperLeg_jnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Knee_jnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Knee_jnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Ankle_jnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Ankle_jnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine_jnt
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine1_jnt
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck_jnt
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head_jnt
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Shoulder_jnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Shoulder_jnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Elbow_jnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Elbow_jnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Wrist_jnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Wrist_jnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Toe_jnt
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Toe_jnt
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_EyeALL_jnt
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_EyeALL_jnt
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Jaw_jnt
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_ThumbA_jnt
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_ThumbB_jnt
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_IndexA_jnt
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_IndexB_jnt
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_MiddleA_jnt
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_MiddleB_jnt
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_PinkyA_jnt
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_PinkyB_jnt
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_ThumbA_jnt
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_ThumbB_jnt
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_IndexA_jnt
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_IndexB_jnt
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_MiddleA_jnt
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_MiddleB_jnt
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_PinkyA_jnt
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_PinkyB_jnt
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Roxy(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Light
+      parentName: Roxy(Clone)
+      position: {x: -4.0762453, y: 5.903862, z: -1.005454}
+      rotation: {x: 0.52327543, y: -0.34203398, z: 0.72694236, w: 0.28416628}
+      scale: {x: 100.00001, y: 100, z: 100}
+    - name: Camera
+      parentName: Roxy(Clone)
+      position: {x: -7.3588915, y: 4.958309, z: 6.925791}
+      rotation: {x: 0.09062851, y: 0.89379627, z: -0.20997299, w: 0.3857799}
+      scale: {x: 100, y: 100.00001, z: 99.99999}
+    - name: RIG_Glamrock_Roxy
+      parentName: Roxy(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: C_World_jnt
+      parentName: RIG_Glamrock_Roxy
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.70710665, y: -0.0000000048703828, z: -0.000000004870381, w: 0.7071069}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Root_jnt
+      parentName: C_World_jnt
+      position: {x: 1.0110372e-10, y: 0.011317518, z: -0.0007734726}
+      rotation: {x: 0.70710695, y: 0.00000014657643, z: -0.7071066, w: -0.00000020861626}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: Spine_jnt
+      parentName: Root_jnt
+      position: {x: 0.000014929138, y: -0.00010672015, z: 0.0000028077884}
+      rotation: {x: -0.99939084, y: -0.034899827, z: -0.00000017881395, w: -0.00000009385836}
+      scale: {x: 1.0000049, y: 1.0000012, z: 1.0000013}
+    - name: Spine1_jnt
+      parentName: Spine_jnt
+      position: {x: -0.00019524143, y: 0.0016807239, z: 8.1490726e-12}
+      rotation: {x: 0.000000040419465, y: -0.000000025022453, z: -0.034899145, w: 0.9993909}
+      scale: {x: 0.99999917, y: 1.0000007, z: 1.0000001}
+    - name: Neck_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.00029956715, y: 0.002160631, z: 6.868504e-11}
+      rotation: {x: 0.0000000462346, y: 0.00000002928273, z: 0.06890764, w: 0.997623}
+      scale: {x: 0.9999997, y: 1.0000006, z: 1.0000001}
+    - name: Head_jnt
+      parentName: Neck_jnt
+      position: {x: -0.00019030609, y: 0.0011922535, z: 5.47152e-11}
+      rotation: {x: -0.000000020994527, y: 0.000000059583993, z: 0.0015664996, w: 0.9999988}
+      scale: {x: 0.9999989, y: 1.0000006, z: 1.0000001}
+    - name: Jaw_jnt
+      parentName: Head_jnt
+      position: {x: -0.0006708185, y: 0.0007101085, z: -0.0000007443409}
+      rotation: {x: -0.5942012, y: 0.3833081, z: 0.59420115, w: 0.38330787}
+      scale: {x: 0.9999996, y: 1, z: 0.9999996}
+    - name: Jaw_Jiggle_jnt
+      parentName: Jaw_jnt
+      position: {x: -1.0477379e-10, y: 0.0008644319, z: -0.000028848104}
+      rotation: {x: 0.21089152, y: -0.000000059604638, z: -0.000000029802319, w: 0.9775095}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1}
+    - name: Jaw_Jiggle_jnt_end
+      parentName: Jaw_Jiggle_jnt
+      position: {x: -0, y: 0.00086491596, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_EyeALL_jnt
+      parentName: Head_jnt
+      position: {x: -0.0011557713, y: 0.0015717234, z: -0.0005556729}
+      rotation: {x: 0.5004729, y: -0.50060797, z: 0.49939266, w: 0.49952525}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: L_Eye_jnt
+      parentName: L_EyeALL_jnt
+      position: {x: -4.4237822e-11, y: 1.2918462e-10, z: -3.0500813e-10}
+      rotation: {x: -0.000000014901161, y: 0.00000008940697, z: 0.000000059604645, w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+    - name: L_Eye_jnt_end
+      parentName: L_Eye_jnt
+      position: {x: -0, y: 0.0008336018, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperEyelid_jnt
+      parentName: L_EyeALL_jnt
+      position: {x: -4.4237822e-11, y: 1.2918462e-10, z: -3.0500813e-10}
+      rotation: {x: -0.000000014901161, y: 0.00000008940697, z: 0.000000059604645, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: L_UpperEyelid_jnt_end
+      parentName: L_UpperEyelid_jnt
+      position: {x: -0, y: 0.0008336018, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerEyelid_jnt
+      parentName: L_EyeALL_jnt
+      position: {x: -4.4237822e-11, y: 1.2918462e-10, z: -3.0500813e-10}
+      rotation: {x: -0.000000029802315, y: 0.000000029802315, z: 0.000000029802315, w: 1}
+      scale: {x: 0.9999999, y: 1.0000004, z: 1.0000005}
+    - name: L_LowerEyelid_jnt_end
+      parentName: L_LowerEyelid_jnt
+      position: {x: -0, y: 0.0008336018, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_EyeALL_jnt
+      parentName: Head_jnt
+      position: {x: -0.0011557706, y: 0.0015717242, z: 0.00055567565}
+      rotation: {x: -0.50060844, y: -0.5004725, z: -0.4995255, w: 0.49939245}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: R_Eye_jnt
+      parentName: R_EyeALL_jnt
+      position: {x: 1.8626451e-11, y: -8.4437485e-11, z: -7.1711836e-10}
+      rotation: {x: 0.000000089406946, y: -0.000000029802315, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: R_Eye_jnt_end
+      parentName: R_Eye_jnt
+      position: {x: -0, y: 0.0008336018, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperEyelid_jnt
+      parentName: R_EyeALL_jnt
+      position: {x: 1.8626451e-11, y: -8.4437485e-11, z: -7.1711836e-10}
+      rotation: {x: -0.000000029802319, y: -0.000000029802319, z: -0.000000029802319, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: R_UpperEyelid_jnt_end
+      parentName: R_UpperEyelid_jnt
+      position: {x: -0, y: 0.0008336018, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerEyelid_jnt
+      parentName: R_EyeALL_jnt
+      position: {x: 1.8626451e-11, y: -8.4437485e-11, z: -7.1711836e-10}
+      rotation: {x: -0, y: -0.00000005960463, z: -0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1.0000002}
+    - name: R_LowerEyelid_jnt_end
+      parentName: R_LowerEyelid_jnt
+      position: {x: -0, y: 0.0008336018, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Ear_jnt
+      parentName: Head_jnt
+      position: {x: -0.000078375, y: 0.0024298488, z: -0.0010075262}
+      rotation: {x: -0.4516123, y: -0.0036386754, z: -0.0031117278, w: 0.89220154}
+      scale: {x: 1.0000006, y: 1.0000007, z: 0.99999964}
+    - name: L_Earing_jnt
+      parentName: L_Ear_jnt
+      position: {x: -0.00010481515, y: 0.0012787294, z: -0.00031773798}
+      rotation: {x: -0.00000047683704, y: 0.0000000761356, z: 0.000000044936304, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000006}
+    - name: L_Earing_jnt_end
+      parentName: L_Earing_jnt
+      position: {x: -0, y: 0.001321775, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_EarEND_jnt
+      parentName: L_Ear_jnt
+      position: {x: -0.00008330688, y: 0.0020190992, z: -0.00013775555}
+      rotation: {x: -0.00000014901158, y: -0.000000007450579, z: 0.00000001781154, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000005}
+    - name: L_EarEND_jnt_end
+      parentName: L_EarEND_jnt
+      position: {x: -0, y: 0.0013217756, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Ear_jnt
+      parentName: Head_jnt
+      position: {x: -0.00007837276, y: 0.0024299417, z: 0.001007552}
+      rotation: {x: -0.0034392793, y: -0.88741684, z: -0.460947, w: 0.0027113655}
+      scale: {x: 1.0000004, y: 1.0000007, z: 0.9999997}
+    - name: R_Earing_jnt
+      parentName: R_Ear_jnt
+      position: {x: 0.00010387707, y: 0.0012850788, z: -0.00029107425}
+      rotation: {x: -0.0000004173762, y: -0.000000031897798, z: -0.0000000011641532, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: R_Earing_jnt_end
+      parentName: R_Earing_jnt
+      position: {x: -0, y: 0.0013217224, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_EarEND_jnt
+      parentName: R_Ear_jnt
+      position: {x: 0.00008250354, y: 0.0020215195, z: -0.00009551821}
+      rotation: {x: 0.0104934815, y: 0.00092881406, z: 0.00014553731, w: 0.99994457}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: R_EarEND_jnt_end
+      parentName: R_EarEND_jnt
+      position: {x: -0, y: 0.0013217224, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FrontHairA_jnt
+      parentName: Head_jnt
+      position: {x: -0.0008598992, y: 0.0028853738, z: 0.00007848629}
+      rotation: {x: 0.00000030030589, y: -0.9999603, z: 0.00003266587, w: 0.008916197}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: FrontHairB_jnt
+      parentName: FrontHairA_jnt
+      position: {x: 0.00010911423, y: 0.00057348155, z: 0.00045880637}
+      rotation: {x: 0.46098146, y: 0.46101528, z: 0.53615665, w: 0.5361875}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: FrontHairC_jnt
+      parentName: FrontHairB_jnt
+      position: {x: -0.00041066407, y: 0.0012481303, z: 0.0003603045}
+      rotation: {x: 0.48025164, y: -0.27033672, z: 0.5616029, w: 0.61715364}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.99999994}
+    - name: FrontHairD_jnt
+      parentName: FrontHairC_jnt
+      position: {x: 0.0001307699, y: 0.0008085982, z: -0.0002990964}
+      rotation: {x: 0.06641931, y: -0.19225693, z: 0.3260159, w: 0.92322224}
+      scale: {x: 1.0000005, y: 1.0000008, z: 1.0000005}
+    - name: FrontHairD_jnt_end
+      parentName: FrontHairD_jnt
+      position: {x: -0, y: 0.0008719943, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairB_jnt
+      parentName: Head_jnt
+      position: {x: 0.0010368326, y: 0.0031742118, z: -0.00014034772}
+      rotation: {x: 0.6645425, y: 0.24162664, z: 0.6645424, w: -0.24162641}
+      scale: {x: 1.0000006, y: 0.99999994, z: 1.0000006}
+    - name: HairC_jnt
+      parentName: HairB_jnt
+      position: {x: 0.0000024423873, y: 0.0017029957, z: 0.000028782708}
+      rotation: {x: -0.25204474, y: -0.000000009313225, z: 0.0000000372529, w: 0.9677156}
+      scale: {x: 1, y: 1, z: 1.0000006}
+    - name: HairD_jnt
+      parentName: HairC_jnt
+      position: {x: 0.00002452253, y: 0.0022595646, z: -0.000033254935}
+      rotation: {x: -0.039321933, y: -0.00000000676259, z: -0.000000005202702, w: 0.9992266}
+      scale: {x: 1, y: 1.0000005, z: 1.0000006}
+    - name: HairE_jnt
+      parentName: HairD_jnt
+      position: {x: 0.000023736977, y: 0.0020517264, z: 0.00009991409}
+      rotation: {x: -0.013078787, y: -0.00000002531317, z: -0.000000011302536, w: 0.9999145}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: HairEND_jnt
+      parentName: HairE_jnt
+      position: {x: 3.7252902e-11, y: 0.0019553283, z: 3.108289e-10}
+      rotation: {x: -0.04223698, y: -0.000000011388156, z: 0.000000012829124, w: 0.99910766}
+      scale: {x: 1.0000001, y: 0.9999996, z: 1}
+    - name: HairEND_jnt_end
+      parentName: HairEND_jnt
+      position: {x: -0, y: 0.0019553273, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HeadMiddle_Jiggle_jnt
+      parentName: Head_jnt
+      position: {x: 2.2400853e-10, y: -1.2340023e-10, z: -5.5879353e-11}
+      rotation: {x: -0.5000006, y: 0.4999995, z: 0.5000008, w: 0.4999992}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Snout_Jiggle_jnt
+      parentName: HeadMiddle_Jiggle_jnt
+      position: {x: 1.3969838e-11, y: 0.0017312422, z: 0.0008818945}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: Snout_Jiggle_jnt_end
+      parentName: Snout_Jiggle_jnt
+      position: {x: -0, y: 0.0019429291, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Shoulder_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0003578207, y: 0.002060868, z: -0.0019171383}
+      rotation: {x: -0.70620286, y: -0.047506835, z: 0.048977584, w: 0.704714}
+      scale: {x: 0.99999875, y: 1.0000021, z: 1.0000008}
+    - name: L_Elbow_jnt
+      parentName: L_Shoulder_jnt
+      position: {x: 0.00007103391, y: 0.0037511098, z: 0.000014848113}
+      rotation: {x: 0.0000014901159, y: 0.00000037625426, z: 0.00000008568167, w: 1}
+      scale: {x: 1.0000014, y: 0.9999994, z: 1.0000006}
+    - name: L_Wrist_jnt
+      parentName: L_Elbow_jnt
+      position: {x: -0.00000083208084, y: 0.0030404704, z: -0.0000033894926}
+      rotation: {x: -0.0000008344648, y: -0.000000018626423, z: -0.00000006333021, w: 1}
+      scale: {x: 0.9999996, y: 1, z: 0.99999976}
+    - name: L_Prop_jnt
+      parentName: L_Wrist_jnt
+      position: {x: 0.0000024259834, y: 0.001093929, z: 0.000001938343}
+      rotation: {x: -0, y: -0.0000000037252423, z: 0.000000044703487, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: L_Prop_jnt_end
+      parentName: L_Prop_jnt
+      position: {x: -0, y: 0.00090617425, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_PinkyA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: 0.00045175655, y: 0.0013395941, z: -0.000002581328}
+      rotation: {x: 0.00000029802322, y: 0.000000018626432, z: -0.000000022351657, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 1.0000001}
+    - name: L_PinkyB_jnt
+      parentName: L_PinkyA_jnt
+      position: {x: 0.0000014771521, y: 0.0006660208, z: 0.0000013828277}
+      rotation: {x: -0.00000005960472, y: -0.00000005960472, z: -0.000000018626404, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 1.0000002}
+    - name: L_PinkyB_jnt_end
+      parentName: L_PinkyB_jnt
+      position: {x: -0, y: 0.000666025, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_MiddleA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: -0.000037992893, y: 0.0013729214, z: -0.0000040286777}
+      rotation: {x: 0.00000029802322, y: 0.000000037252896, z: 7.949197e-14, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: L_MiddleB_jnt
+      parentName: L_MiddleA_jnt
+      position: {x: 0.0000014774502, y: 0.0006660215, z: 0.0000013841689}
+      rotation: {x: -0.000000029802182, y: 0.000000044703512, z: -5.5289093e-14, w: 1}
+      scale: {x: 0.99999964, y: 0.9999999, z: 0.9999996}
+    - name: L_MiddleB_jnt_end
+      parentName: L_MiddleB_jnt
+      position: {x: -0, y: 0.0006660226, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_IndexA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: -0.00051575195, y: 0.0013350961, z: -0.0000055627524}
+      rotation: {x: 0.00000029802322, y: 0.000000018626432, z: -0.000000022351657, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: L_IndexB_jnt
+      parentName: L_IndexA_jnt
+      position: {x: 0.000001476705, y: 0.00066602184, z: 0.0000013823109}
+      rotation: {x: 0.00000008940706, y: -0.00000004097813, z: 0.000000048428852, w: 1}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000001}
+    - name: L_IndexB_jnt_end
+      parentName: L_IndexB_jnt
+      position: {x: -0, y: 0.00066602736, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ThumbA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: -0.0007510088, y: 0.00050234125, z: -0.00006917298}
+      rotation: {x: -0.00010186595, y: -0.0013753755, z: 0.4588513, w: 0.888512}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: L_ThumbB_jnt
+      parentName: L_ThumbA_jnt
+      position: {x: 0.0000023356079, y: 0.000665967, z: -0.0000017887354}
+      rotation: {x: -0.000000021078444, y: 0.000000021078444, z: -0.00000011493772, w: 1}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000005}
+    - name: L_ThumbB_jnt_end
+      parentName: L_ThumbB_jnt
+      position: {x: -0, y: 0.000665977, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Elbow_Jiggle_jnt
+      parentName: L_Elbow_jnt
+      position: {x: -0.00000064007935, y: 0.0015199626, z: -0.000001836121}
+      rotation: {x: -0.0000008344648, y: -0.000000018626423, z: -0.00000006333021, w: 1}
+      scale: {x: 0.99999976, y: 1, z: 0.9999996}
+    - name: L_Elbow_Jiggle_jnt_end
+      parentName: L_Elbow_Jiggle_jnt
+      position: {x: -0, y: 0.0015199627, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Shoulder_Jiggle_jnt
+      parentName: L_Shoulder_jnt
+      position: {x: 0.00003551632, y: 0.0018755546, z: 0.0000074245036}
+      rotation: {x: 0.0000014603139, y: 0.00000041723254, z: 0.00000013038517, w: 1}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000004}
+    - name: L_Shoulder_Jiggle_jnt_end
+      parentName: L_Shoulder_Jiggle_jnt
+      position: {x: -0, y: 0.0018759031, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ShoulderPad_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.00030534304, y: 0.0021262374, z: -0.0015433031}
+      rotation: {x: -0.0010522623, y: 0.001040069, z: 0.068224445, w: 0.997669}
+      scale: {x: 1, y: 1.0000005, z: 1.0000001}
+    - name: L_ShoulderPad_jnt_end
+      parentName: L_ShoulderPad_jnt
+      position: {x: -0, y: 0.0021813004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ShoulderPad_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.00030534383, y: 0.0021262493, z: 0.0015433016}
+      rotation: {x: -0.0010380448, y: -0.0010825965, z: 0.9976689, w: -0.06822415}
+      scale: {x: 1.0000039, y: 1.0000004, z: 1.0000002}
+    - name: R_ShoulderPad_jnt_end
+      parentName: R_ShoulderPad_jnt
+      position: {x: -0, y: 0.0021813004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Shoulder_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.00033468142, y: 0.0020668223, z: 0.0019261924}
+      rotation: {x: 0.7062014, y: 0.04750685, z: 0.048977636, w: 0.70471555}
+      scale: {x: 0.9999989, y: 1.0000013, z: 1.0000007}
+    - name: R_Elbow_jnt
+      parentName: R_Shoulder_jnt
+      position: {x: 0.00007103465, y: 0.0037511056, z: -0.000014839647}
+      rotation: {x: -0.00000016391276, y: 1, z: 0.0000011622905, w: 0.00000042840833}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1}
+    - name: R_Wrist_jnt
+      parentName: R_Elbow_jnt
+      position: {x: 0.0000014391541, y: 0.0030407666, z: -0.0000033388915}
+      rotation: {x: 0.00000007078095, y: -1, z: 0.0000007748602, w: 0.00000008940676}
+      scale: {x: 1.0000002, y: 1, z: 1.0000004}
+    - name: R_Prop_jnt
+      parentName: R_Wrist_jnt
+      position: {x: 0.000002427781, y: 0.001093927, z: -0.0000019370764}
+      rotation: {x: 3.886058e-13, y: 0.00000012665981, z: 0.0000000037250631, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 0.9999998}
+    - name: R_Prop_jnt_end
+      parentName: R_Prop_jnt
+      position: {x: -0, y: 0.00090617005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_PinkyA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: 0.0004517575, y: 0.0013395894, z: 0.000002548322}
+      rotation: {x: -0.00006543854, y: 0.70710725, z: -0.00006530198, w: 0.7071064}
+      scale: {x: 0.9999999, y: 1.0000006, z: 1.0000001}
+    - name: R_PinkyB_jnt
+      parentName: R_PinkyA_jnt
+      position: {x: 0.0000013788789, y: 0.00066599814, z: 0.0000014777481}
+      rotation: {x: 0.00000012639792, y: 0.00000044703478, z: -0.000000042142343, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: R_PinkyB_jnt_end
+      parentName: R_PinkyB_jnt
+      position: {x: -0, y: 0.00066599995, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_MiddleA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: -0.00003799199, y: 0.0013728786, z: 0.000003995374}
+      rotation: {x: -0.00006546833, y: 0.70710725, z: -0.00006539138, w: 0.7071064}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: R_MiddleB_jnt
+      parentName: R_MiddleA_jnt
+      position: {x: 0.0000013799406, y: 0.0006660972, z: 0.0000014787819}
+      rotation: {x: -0.000000042193275, y: 0.0000004768371, z: -3.6379784e-12, w: 1}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000001}
+    - name: R_MiddleB_jnt_end
+      parentName: R_MiddleB_jnt
+      position: {x: -0, y: 0.0006660989, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_IndexA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: -0.0005157518, y: 0.0013351414, z: 0.000005529895}
+      rotation: {x: -0.000065498134, y: 0.70710725, z: -0.00006524237, w: 0.7071064}
+      scale: {x: 0.99999976, y: 1, z: 0.9999999}
+    - name: R_IndexB_jnt
+      parentName: R_IndexA_jnt
+      position: {x: 0.000001380965, y: 0.00066599814, z: 0.0000014773011}
+      rotation: {x: 0.000000105323096, y: 0.0000003874301, z: -0.00000006322078, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000002}
+    - name: R_IndexB_jnt_end
+      parentName: R_IndexB_jnt
+      position: {x: -0, y: 0.0006660011, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ThumbA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: -0.00075100793, y: 0.00050233793, z: 0.00006914206}
+      rotation: {x: -0.3245234, y: 0.62730587, z: -0.32439187, w: -0.6292392}
+      scale: {x: 0.9999997, y: 1, z: 1.0000001}
+    - name: R_ThumbB_jnt
+      parentName: R_ThumbA_jnt
+      position: {x: 0.0000017889961, y: 0.0006659667, z: -0.000002336204}
+      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: 0.000000029802322, w: 1}
+      scale: {x: 1.0000008, y: 1.0000001, z: 1.0000004}
+    - name: R_ThumbB_jnt_end
+      parentName: R_ThumbB_jnt
+      position: {x: -0, y: 0.00066597667, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Elbow_Jiggle_jnt
+      parentName: R_Elbow_jnt
+      position: {x: 0.00000064030286, y: 0.0015199679, z: -0.0000018704543}
+      rotation: {x: -0.0000008344649, y: 0.00000001862628, z: 0.00000001862682, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: R_Elbow_Jiggle_jnt_end
+      parentName: R_Elbow_Jiggle_jnt
+      position: {x: -0, y: 0.0015199644, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Shoulder_Jiggle_jnt
+      parentName: R_Shoulder_jnt
+      position: {x: 0.0000355174, y: 0.0018755541, z: -0.0000073823517}
+      rotation: {x: 0.0000011920929, y: -0.00000033155084, z: 0.00000009685755, w: 1}
+      scale: {x: 0.9999998, y: 0.9999997, z: 0.9999997}
+    - name: R_Shoulder_Jiggle_jnt_end
+      parentName: R_Shoulder_Jiggle_jnt
+      position: {x: -0, y: 0.0018759035, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine1_Jiggle_jnt
+      parentName: Spine1_jnt
+      position: {x: 3.0384398e-10, y: 4.924368e-10, z: -1.2805685e-11}
+      rotation: {x: -0.000000048752405, y: 0.000000056341126, z: -0.0000000037252916, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: Spine1_Jiggle_jnt_end
+      parentName: Spine1_Jiggle_jnt
+      position: {x: -0, y: 0.0021812995, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperLeg_jnt
+      parentName: Root_jnt
+      position: {x: -0.00000015070661, y: 0.0015189312, z: 0.00115224}
+      rotation: {x: 0.0040985863, y: 0.7070949, z: 0.009677797, w: 0.70704055}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000008}
+    - name: L_Knee_jnt
+      parentName: L_UpperLeg_jnt
+      position: {x: -0.000008352101, y: 0.004146827, z: 0.00003418304}
+      rotation: {x: 0.00000006030314, y: -0, z: 0.00000008009374, w: 1}
+      scale: {x: 0.9999998, y: 1.0000005, z: 0.99999964}
+    - name: L_Ankle_jnt
+      parentName: L_Knee_jnt
+      position: {x: 2.9802322e-10, y: 0.0048030796, z: 0.0001563495}
+      rotation: {x: -0.5138724, y: -0.48573157, z: 0.48298448, w: 0.5164552}
+      scale: {x: 0.9999998, y: 1.0000001, z: 0.99999976}
+    - name: L_Toe_jnt
+      parentName: L_Ankle_jnt
+      position: {x: 0.0005627056, y: 0.0009955282, z: 0.0001011537}
+      rotation: {x: -0, y: 0.7071068, z: 0.0000000139698395, w: 0.70710677}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: L_Toe_jnt_end
+      parentName: L_Toe_jnt
+      position: {x: -0, y: 0.0011480174, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Knee_Jiggle_jnt
+      parentName: L_Knee_jnt
+      position: {x: 6.530899e-10, y: 0.0024015398, z: 0.00007817478}
+      rotation: {x: -0.51387244, y: -0.48573157, z: 0.4829845, w: 0.5164551}
+      scale: {x: 1, y: 1.0000006, z: 1.0000002}
+    - name: L_Knee_Jiggle_jnt_end
+      parentName: L_Knee_Jiggle_jnt
+      position: {x: -0, y: 0.002402812, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperLeg_Jiggle_jnt
+      parentName: L_UpperLeg_jnt
+      position: {x: -0.0000041758967, y: 0.0020734135, z: 0.000017092005}
+      rotation: {x: 0.000000059604645, y: -0, z: 0.00000006984919, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: L_UpperLeg_Jiggle_jnt_end
+      parentName: L_UpperLeg_Jiggle_jnt
+      position: {x: -0, y: 0.0020734884, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperLeg_jnt
+      parentName: Root_jnt
+      position: {x: -0.00000015065073, y: 0.0015189294, z: -0.00115224}
+      rotation: {x: -0.009677862, y: 0.7070404, z: -0.0040987423, w: 0.707095}
+      scale: {x: 1, y: 1.0000004, z: 1.0000008}
+    - name: R_Knee_jnt
+      parentName: R_UpperLeg_jnt
+      position: {x: 0.000008351877, y: 0.0041468306, z: 0.00003418311}
+      rotation: {x: -0.000000060070306, y: -0, z: -0.0000000088475645, w: 1}
+      scale: {x: 0.9999998, y: 1.0000007, z: 1.0000006}
+    - name: R_Ankle_jnt
+      parentName: R_Knee_jnt
+      position: {x: -9.3132255e-12, y: 0.004803079, z: 0.00015634943}
+      rotation: {x: -0.5138724, y: 0.48573172, z: -0.48298445, w: 0.5164551}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000005}
+    - name: R_Toe_jnt
+      parentName: R_Ankle_jnt
+      position: {x: -0.00056270685, y: 0.0009955285, z: 0.0001011582}
+      rotation: {x: 0.0000001192093, y: -0.7071069, z: 0.000000011175872, w: 0.7071067}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: R_Toe_jnt_end
+      parentName: R_Toe_jnt
+      position: {x: -0, y: 0.0011480186, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Knee_Jiggle_jnt
+      parentName: R_Knee_jnt
+      position: {x: 4.2840836e-10, y: 0.0024015387, z: 0.00007817462}
+      rotation: {x: -0.5138724, y: 0.4857317, z: -0.48298436, w: 0.51645535}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+    - name: R_Knee_Jiggle_jnt_end
+      parentName: R_Knee_Jiggle_jnt
+      position: {x: -0, y: 0.0024028101, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperLeg_Jiggle_jnt
+      parentName: R_UpperLeg_jnt
+      position: {x: 0.0000041757894, y: 0.0020734153, z: 0.000017091621}
+      rotation: {x: -0, y: -0, z: 4.656613e-10, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1.0000002}
+    - name: R_UpperLeg_Jiggle_jnt_end
+      parentName: R_UpperLeg_Jiggle_jnt
+      position: {x: -0, y: 0.0020734896, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root_Jiggle_jnt
+      parentName: Root_jnt
+      position: {x: -1.4901161e-10, y: 3.958121e-11, z: 0}
+      rotation: {x: -0, y: -0, z: -1.4210855e-14, w: 1}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
+    - name: Root_Jiggle_jnt_end
+      parentName: Root_Jiggle_jnt
+      position: {x: -0, y: 0.00010779619, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: TailBase_jnt
+      parentName: Root_jnt
+      position: {x: 0.0014312033, y: 0.0008235864, z: 5.587935e-10}
+      rotation: {x: -0.5000002, y: -0.4999999, z: 0.4999998, w: -0.5000002}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000002}
+    - name: TailB_jnt
+      parentName: TailBase_jnt
+      position: {x: -2.3283064e-12, y: 0.0014474724, z: 1.8626451e-11}
+      rotation: {x: -0, y: -0, z: -0.000000044703487, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: TailC_jnt
+      parentName: TailB_jnt
+      position: {x: -3.259629e-11, y: 0.0014201892, z: -2.4447216e-10}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1.0000002}
+    - name: TailD_jnt
+      parentName: TailC_jnt
+      position: {x: 4.1909514e-11, y: 0.0014201675, z: -2.4214386e-10}
+      rotation: {x: 0.000000059604645, y: 2.6645355e-15, z: 0.000000044703487, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000002}
+    - name: TailE_jnt
+      parentName: TailD_jnt
+      position: {x: -2.2351741e-10, y: 0.0014201953, z: -4.4703483e-10}
+      rotation: {x: -0.000000059604645, y: 0.000000044703487, z: -0.00000005960465, w: 1}
+      scale: {x: 1.0000001, y: 0.9999996, z: 0.9999996}
+    - name: TailF_jnt
+      parentName: TailE_jnt
+      position: {x: -0, y: 0.0014203724, z: -8.5681673e-10}
+      rotation: {x: 0.000000029802326, y: -0.00000005960465, z: 0.000000044703487, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: TailEND_jnt
+      parentName: TailF_jnt
+      position: {x: 7.4505804e-11, y: 0.0020170915, z: -0.0000000011920929}
+      rotation: {x: -0, y: -0, z: -1.7763567e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: TailEND_jnt_end
+      parentName: TailEND_jnt
+      position: {x: -0, y: 0.0020170892, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_AnkleIK_tracking_jnt
+      parentName: C_World_jnt
+      position: {x: 0.0029680745, y: 0.0012006299, z: 0.0011879735}
+      rotation: {x: -0.5, y: 0.49999985, z: 0.5, w: 0.50000024}
+      scale: {x: 1, y: 0.9999997, z: 0.9999999}
+    - name: R_AnkleIK_tracking_jnt_end
+      parentName: R_AnkleIK_tracking_jnt
+      position: {x: -0, y: 0.0018074968, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_AnkleIK_tracking_jnt
+      parentName: C_World_jnt
+      position: {x: -0.0027411329, y: 0.0012006286, z: -0.0015995974}
+      rotation: {x: -0.5, y: 0.49999985, z: 0.5, w: 0.50000024}
+      scale: {x: 1, y: 0.9999997, z: 0.9999999}
+    - name: L_AnkleIK_tracking_jnt_end
+      parentName: L_AnkleIK_tracking_jnt
+      position: {x: -0, y: 0.0018074968, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Knee_PV__tracking_jnt
+      parentName: C_World_jnt
+      position: {x: -0.004316563, y: 0.0047122515, z: 0.0029319834}
+      rotation: {x: -0.5, y: 0.49999985, z: 0.5, w: 0.50000024}
+      scale: {x: 1, y: 0.9999997, z: 0.9999999}
+    - name: L_Knee_PV__tracking_jnt_end
+      parentName: L_Knee_PV__tracking_jnt
+      position: {x: -0, y: 0.0018074968, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Knee_PV__tracking_jnt
+      parentName: C_World_jnt
+      position: {x: 0.0043069324, y: 0.0040940107, z: 0.007070223}
+      rotation: {x: -0.5, y: 0.49999985, z: 0.5, w: 0.50000024}
+      scale: {x: 1, y: 0.9999997, z: 0.9999999}
+    - name: R_Knee_PV__tracking_jnt_end
+      parentName: R_Knee_PV__tracking_jnt
+      position: {x: -0, y: 0.0018074968, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: World_Prop_jnt
+      parentName: C_World_jnt
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: World_Prop_jnt_end
+      parentName: World_Prop_jnt
+      position: {x: -0, y: 0.0018074968, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jumpscare_jnt
+      parentName: C_World_jnt
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: 2.220446e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jumpscare_jnt_end
+      parentName: Jumpscare_jnt
+      position: {x: -0, y: 0.0018074968, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RIG_Glamrock_Roxy.001
+      parentName: Roxy(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

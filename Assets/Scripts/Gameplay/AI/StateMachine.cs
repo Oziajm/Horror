@@ -29,14 +29,17 @@ public class StateMachine : MonoBehaviour
 
         if (nextState != null && nextState != CurrentState?.GetType())
             SwitchState(nextState);
+
+        Debug.Log(CurrentState);
     }
 
-    private void SwitchState(Type newState)
+    public void SwitchState(Type newState)
     {
         if(states.ContainsKey(newState))
         {
             lastState = CurrentState;
             CurrentState = states[newState];
+            CurrentState.Initialize();
             OnStateChanged?.Invoke(CurrentState);
         }
     }

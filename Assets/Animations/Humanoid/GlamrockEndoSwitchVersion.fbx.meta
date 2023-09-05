@@ -1,0 +1,2233 @@
+fileFormatVersion: 2
+guid: dab684fd1764a7649a2e0b3c2e9d5c91
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      74: -623449639107301891
+    second: CRAWL_ANIMATION
+  - first:
+      74: -326017954390089564
+    second: RIG_Endo.ao|Endo_HangingPose_01
+  - first:
+      74: -7169043557617359247
+    second: RIG_Endo.ao|Endo_HangingPose_02
+  - first:
+      74: 5214058002427717758
+    second: RIG_Endo.ao|Endo_HangingPose_03
+  - first:
+      74: 1231499464248077459
+    second: RIG_Endo.ao|Endo_HangingPose_04
+  - first:
+      74: 3180889714958636468
+    second: RIG_Endo.ao|Endo_HangingPose_05
+  - first:
+      74: 9095023342467744148
+    second: RIG_Endo.ao|Endo_HangingPose_06
+  - first:
+      74: -1993022708768133892
+    second: RIG_Endo.ao|Endo_HangingPose_07
+  - first:
+      74: 589075995633002100
+    second: RIG_Endo.ao|Endo_HangingPose_08
+  - first:
+      74: 5007623310824229647
+    second: RIG_Endo.ao|Endo_HangingPose_09
+  - first:
+      74: -4531785254516886189
+    second: RIG_Endo.ao|Endo_HangingPose_10
+  - first:
+      74: -2456094623043157281
+    second: RIG_Endo.ao|Endo_HangingPose_11
+  - first:
+      74: -3188644694199548060
+    second: RIG_Endo.ao|Endo_HangingPose_12
+  - first:
+      74: -1446444082671999538
+    second: RIG_Endo.ao|Endo_Idle_01
+  - first:
+      74: -3345835534116334917
+    second: RIG_Endo.ao|Endo_Idle_01_LOOP
+  - first:
+      74: -5244216043210057396
+    second: RIG_Endo.ao|Endo_Idle_02
+  - first:
+      74: -2213424656693584419
+    second: IDLE_ANIMATION
+  - first:
+      74: -1305795974357038235
+    second: IDLE_ANIMATION_2
+  - first:
+      74: 995924059356885331
+    second: JUMPSCARE_ANIMATION
+  - first:
+      74: 4169873919186083157
+    second: RIG_Endo.ao|Endo_OffHook
+  - first:
+      74: -5690904394318095099
+    second: RIG_Endo.ao|Endo_Run_01
+  - first:
+      74: -5141680328975578375
+    second: RIG_Endo.ao|Endo_Run_LOOP02
+  - first:
+      74: -6776577200883120656
+    second: RUN_ANIMATION
+  - first:
+      74: 1583842968976363229
+    second: RIG_Endo.ao|Endo_SpawnIN_Bowling
+  - first:
+      74: -6524907336254076398
+    second: STUN_ANIMATION_1
+  - first:
+      74: 4886150377268726752
+    second: RIG_Endo.ao|Endo_Stun_Loop_02
+  - first:
+      74: 3342555393608180209
+    second: RIG_Endo.ao|Endo_Stun_Out_01
+  - first:
+      74: -1012427581341269693
+    second: RIG_Endo.ao|Endo_Stun_OUT_02
+  - first:
+      74: -9146475512714417546
+    second: RIG_Endo.ao|Endo_Walk_01_LOOP
+  - first:
+      74: -4687938430916480963
+    second: WALK_ANIMATION
+  - first:
+      74: -5716336595845710550
+    second: WALK_ANIMATION_2
+  - first:
+      74: -1305795974357038235
+    second: RIG_Endo.ao|Endo_Idle_LOOP03
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'Spine1_jnt'
+      : rotation error = 35.630711 deg\n"
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'RIG_Endo.ao|Endo_Crawl' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_HangingPose_02' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_HangingPose_03'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_HangingPose_04' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_HangingPose_05'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_HangingPose_06' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_HangingPose_07'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_HangingPose_08' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_HangingPose_09'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_HangingPose_10' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_HangingPose_11'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Idle_01' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Idle_01_LOOP' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Idle_02' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Idle_LOOP02' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Idle_LOOP03' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Jumpscare' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_OffHook' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Run_01' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Run_LOOP02' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Run_LOOP03' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_SpawnIN_Bowling' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Stun_Loop_01'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Stun_Loop_02' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Stun_Out_01' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Stun_OUT_02' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Walk_01_LOOP' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RIG_Endo.ao|Endo_Walk_LOOP02' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'Spine1_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'RIG_Endo.ao|Endo_Walk_LOOP03' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Spine1_jnt' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CRAWL_ANIMATION
+      takeName: RIG_Endo.ao|Endo_Crawl
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_01
+      takeName: RIG_Endo.ao|Endo_HangingPose_01
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_02
+      takeName: RIG_Endo.ao|Endo_HangingPose_02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_03
+      takeName: RIG_Endo.ao|Endo_HangingPose_03
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_04
+      takeName: RIG_Endo.ao|Endo_HangingPose_04
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_05
+      takeName: RIG_Endo.ao|Endo_HangingPose_05
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_06
+      takeName: RIG_Endo.ao|Endo_HangingPose_06
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_07
+      takeName: RIG_Endo.ao|Endo_HangingPose_07
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_08
+      takeName: RIG_Endo.ao|Endo_HangingPose_08
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_09
+      takeName: RIG_Endo.ao|Endo_HangingPose_09
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_10
+      takeName: RIG_Endo.ao|Endo_HangingPose_10
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_11
+      takeName: RIG_Endo.ao|Endo_HangingPose_11
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_HangingPose_12
+      takeName: RIG_Endo.ao|Endo_HangingPose_12
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Idle_01
+      takeName: RIG_Endo.ao|Endo_Idle_01
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Idle_01_LOOP
+      takeName: RIG_Endo.ao|Endo_Idle_01_LOOP
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 199
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Idle_02
+      takeName: RIG_Endo.ao|Endo_Idle_02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: IDLE_ANIMATION
+      takeName: RIG_Endo.ao|Endo_Idle_LOOP02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 356
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Idle_LOOP03
+      takeName: RIG_Endo.ao|Endo_Idle_LOOP03
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 336
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: JUMPSCARE_ANIMATION
+      takeName: RIG_Endo.ao|Endo_Jumpscare
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_OffHook
+      takeName: RIG_Endo.ao|Endo_OffHook
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Run_01
+      takeName: RIG_Endo.ao|Endo_Run_01
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Run_LOOP02
+      takeName: RIG_Endo.ao|Endo_Run_LOOP02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RUN_ANIMATION
+      takeName: RIG_Endo.ao|Endo_Run_LOOP03
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_SpawnIN_Bowling
+      takeName: RIG_Endo.ao|Endo_SpawnIN_Bowling
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: STUN_ANIMATION_1
+      takeName: RIG_Endo.ao|Endo_Stun_Loop_01
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 149
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Stun_Loop_02
+      takeName: RIG_Endo.ao|Endo_Stun_Loop_02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Stun_Out_01
+      takeName: RIG_Endo.ao|Endo_Stun_Out_01
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Stun_OUT_02
+      takeName: RIG_Endo.ao|Endo_Stun_OUT_02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RIG_Endo.ao|Endo_Walk_01_LOOP
+      takeName: RIG_Endo.ao|Endo_Walk_01_LOOP
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 294
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: WALK_ANIMATION
+      takeName: RIG_Endo.ao|Endo_Walk_LOOP02
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 370
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: WALK_ANIMATION_2
+      takeName: RIG_Endo.ao|Endo_Walk_LOOP03
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 264
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Root_jnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_UpperLeg_jnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_UpperLeg_jnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Knee_jnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Knee_jnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Ankle_jnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Ankle_jnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine_jnt
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck_jnt
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head_jnt
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Shoulder_jnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Shoulder_jnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Elbow_jnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Elbow_jnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Wrist_jnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Wrist_jnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Toe_jnt
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Toe_jnt
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_EyeALL_jnt
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_EyeALL_jnt
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Jaw_jnt
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_ThumbA_jnt
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_ThumbB_jnt
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_IndexA_jnt
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_IndexB_jnt
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_MiddleA_jnt
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_MiddleB_jnt
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_PinkyA_jnt
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_PinkyB_jnt
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_ThumbA_jnt
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_ThumbB_jnt
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_IndexA_jnt
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_IndexB_jnt
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_MiddleA_jnt
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_MiddleB_jnt
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_PinkyA_jnt
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_PinkyB_jnt
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: GlamrockEndoSwitchVersion(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RIG_Endo.ao
+      parentName: GlamrockEndoSwitchVersion(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: C_World_jnt
+      parentName: RIG_Endo.ao
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071066, y: -0, z: -0, w: 0.70710695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root_jnt
+      parentName: C_World_jnt
+      position: {x: -0.00001624466, y: 0.010587232, z: -0.0012439815}
+      rotation: {x: 0.00000026822093, y: 0.70710665, z: 0.00000020861629, w: 0.7071069}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: L_UpperLeg_jnt
+      parentName: Root_jnt
+      position: {x: -0.00024108338, y: -0.00015867282, z: -0.0016259919}
+      rotation: {x: 0.7069282, y: -0.0013400904, z: 0.7072714, w: 0.0042287856}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.000001}
+    - name: L_Knee_jnt
+      parentName: L_UpperLeg_jnt
+      position: {x: -0.000016430653, y: 0.0040220255, z: 0.000015221871}
+      rotation: {x: 0.00000023841858, y: 4.847607e-10, z: 8.1490725e-10, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000005}
+    - name: L_Ankle_jnt
+      parentName: L_Knee_jnt
+      position: {x: -0.000024362002, y: 0.0059532393, z: 0.00010494936}
+      rotation: {x: -0.5138832, y: -0.48571998, z: 0.48297286, w: 0.51646626}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999996}
+    - name: L_Toe_jnt
+      parentName: L_Ankle_jnt
+      position: {x: 0.00015152553, y: 0.0012020165, z: 0.000010474898}
+      rotation: {x: 0.0020091236, y: 0.6841314, z: -0.0018778257, w: 0.72935367}
+      scale: {x: 1, y: 0.99999994, z: 0.9999997}
+    - name: L_ToeEND_jnt
+      parentName: L_Toe_jnt
+      position: {x: -0.00004426282, y: 0.002449681, z: 0.00068999885}
+      rotation: {x: 0.00000023585744, y: -0.000023037195, z: 0.00000007322524, w: 1}
+      scale: {x: 1, y: 0.99999976, z: 0.99999964}
+    - name: L_ToeEND_jnt_end
+      parentName: L_ToeEND_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ToeTipA_jnt
+      parentName: L_Toe_jnt
+      position: {x: -0.0009992066, y: 0.0016484335, z: 0.00042131418}
+      rotation: {x: 0.0000001193257, y: 0.000039845705, z: 0.000000024912879, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+    - name: L_ToeTipA_jnt_end
+      parentName: L_ToeTipA_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ToeTipB_jnt
+      parentName: L_Toe_jnt
+      position: {x: -0.0000022219729, y: 0.001648282, z: 0.00042309612}
+      rotation: {x: 0.00000019499566, y: -0.0000230968, z: 0.00000007357448, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.99999976}
+    - name: L_ToeTipB_jnt_end
+      parentName: L_ToeTipB_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ToeTipC_jnt
+      parentName: L_Toe_jnt
+      position: {x: 0.0009845792, y: 0.0016481325, z: 0.00042485984}
+      rotation: {x: 0.00000024202745, y: 0.000008374453, z: 0.0000000676373, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.99999964}
+    - name: L_ToeTipC_jnt_end
+      parentName: L_ToeTipC_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine_jnt
+      parentName: Root_jnt
+      position: {x: 0.0007205725, y: 0.0018897819, z: 0}
+      rotation: {x: 1.5440094e-10, y: 0.00000017881393, z: 0.00080896664, w: 0.9999997}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000006}
+    - name: Spine1_jnt
+      parentName: Spine_jnt
+      position: {x: 0.000006984938, y: 0.0018234713, z: -2.2351741e-10}
+      rotation: {x: 7.535639e-15, y: -0, z: -0.000000042142347, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Neck_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0008122686, y: 0.0018339178, z: -4.0978193e-10}
+      rotation: {x: 0.000000021071163, y: -1.7037927e-11, z: 0.000000021071173, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000004}
+    - name: Head_jnt
+      parentName: Neck_jnt
+      position: {x: 0.0000039903075, y: 0.0024659233, z: -2.2351741e-10}
+      rotation: {x: -0.002556352, y: -0.9999964, z: -0.0008076806, w: -0.000053075735}
+      scale: {x: 1.0000004, y: 0.99999976, z: 1.0000001}
+    - name: Jaw_jnt
+      parentName: Head_jnt
+      position: {x: -0.00022040609, y: -0.000025416553, z: -0.00000001848235}
+      rotation: {x: 0.000000042597232, y: 0.00000014870965, z: 0.0000002949964, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Jaw_jnt_end
+      parentName: Jaw_jnt
+      position: {x: -0, y: 0.0008000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_EyeALL_jnt
+      parentName: Head_jnt
+      position: {x: 0.0013161738, y: 0.0010991375, z: 0.00059292716}
+      rotation: {x: 0.49943578, y: -0.50037473, z: -0.50137043, w: 0.4988153}
+      scale: {x: 0.99999964, y: 0.9999995, z: 0.99999934}
+    - name: L_Eye_jnt
+      parentName: L_EyeALL_jnt
+      position: {x: -2.820161e-10, y: 5.3496478e-11, z: -8.560988e-10}
+      rotation: {x: -0.50044143, y: 0.4995579, z: -0.4995583, w: 0.50044155}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000006}
+    - name: L_Eye_jnt_end
+      parentName: L_Eye_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperEyelid_jnt
+      parentName: L_EyeALL_jnt
+      position: {x: -2.820161e-10, y: 5.3496478e-11, z: -8.560988e-10}
+      rotation: {x: -0.50044143, y: 0.4995579, z: -0.4995583, w: 0.50044155}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000006}
+    - name: L_UpperEyelid_jnt_end
+      parentName: L_UpperEyelid_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerEyelid_jnt
+      parentName: L_EyeALL_jnt
+      position: {x: -2.820161e-10, y: 5.3496478e-11, z: -8.560988e-10}
+      rotation: {x: -0.50044143, y: 0.4995579, z: -0.4995583, w: 0.50044155}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000006}
+    - name: L_LowerEyelid_jnt_end
+      parentName: L_LowerEyelid_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_EyeALL_jnt
+      parentName: Head_jnt
+      position: {x: 0.0013160547, y: 0.0011010702, z: -0.00058899383}
+      rotation: {x: -0.49881482, y: 0.5013702, z: -0.5003753, w: 0.49943602}
+      scale: {x: 0.9999997, y: 0.99999964, z: 0.9999997}
+    - name: R_Eye_jnt
+      parentName: R_EyeALL_jnt
+      position: {x: 1.9688741e-10, y: -5.4278644e-11, z: -6.271875e-10}
+      rotation: {x: -0.5000004, y: 0.49999958, z: -0.50000054, w: 0.4999995}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: R_Eye_jnt_end
+      parentName: R_Eye_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperEyelid_jnt
+      parentName: R_EyeALL_jnt
+      position: {x: 1.9688741e-10, y: -5.4278644e-11, z: -6.271875e-10}
+      rotation: {x: -0.5000004, y: 0.49999958, z: -0.50000054, w: 0.4999995}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: R_UpperEyelid_jnt_end
+      parentName: R_UpperEyelid_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerEyelid_jnt
+      parentName: R_EyeALL_jnt
+      position: {x: 1.9688741e-10, y: -5.4278644e-11, z: -6.271875e-10}
+      rotation: {x: -0.5000004, y: 0.49999958, z: -0.50000054, w: 0.4999995}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: R_LowerEyelid_jnt_end
+      parentName: R_LowerEyelid_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Ear_jnt
+      parentName: Head_jnt
+      position: {x: 0.00034577106, y: 0.0014235569, z: 0.00069483864}
+      rotation: {x: 0.0045632455, y: 0.7054177, z: 0.70877576, w: 0.0014150343}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: L_EarB_jnt
+      parentName: L_Ear_jnt
+      position: {x: -0.00014491598, y: 0.00059182954, z: 0.0001224109}
+      rotation: {x: 0.19072352, y: -0.1292053, z: 0.103359565, w: 0.9675988}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
+    - name: L_EarB_jnt_end
+      parentName: L_EarB_jnt
+      position: {x: -0, y: 0.00080000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Ear_jnt
+      parentName: Head_jnt
+      position: {x: 0.000345629, y: 0.0014257964, z: -0.0006903067}
+      rotation: {x: 0.70763546, y: -0.0014945075, z: 0.004488524, w: -0.706562}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_EarB_jnt
+      parentName: R_Ear_jnt
+      position: {x: 0.00014491584, y: 0.000591826, z: 0.00012236889}
+      rotation: {x: -0.19072318, y: -0.12920532, z: 0.103359595, w: -0.96759886}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: R_EarB_jnt_end
+      parentName: R_EarB_jnt
+      position: {x: -0, y: 0.0008000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Shoulder_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0008833584, y: 0.0019738735, z: -0.0034136537}
+      rotation: {x: -0.5002061, y: -0.5032703, z: 0.50082666, w: 0.49566677}
+      scale: {x: 1.0000002, y: 0.9999998, z: 0.9999997}
+    - name: L_Elbow_jnt
+      parentName: L_Shoulder_jnt
+      position: {x: 0.000007487088, y: 0.0034946674, z: 0.00003082685}
+      rotation: {x: -0.00000008940697, y: 0.000000029802322, z: -0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: L_Wrist_jnt
+      parentName: L_Elbow_jnt
+      position: {x: 0.000006330013, y: 0.0030087621, z: 0.000014784336}
+      rotation: {x: 0.0000000745058, y: 0.00000019371508, z: 0.00000020861627, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000005}
+    - name: L_Prop_jnt
+      parentName: L_Wrist_jnt
+      position: {x: 0.0000027108845, y: 0.001290414, z: 0.00008625721}
+      rotation: {x: -0.000000059604606, y: -0.00000047683716, z: -0.0000006258488, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: L_Prop_jnt_end
+      parentName: L_Prop_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_PinkyA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: -0.000005963666, y: 0.0019046462, z: -0.00050119817}
+      rotation: {x: -0.00000007450578, y: -0.00000007450579, z: -0.00000017881395, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000004}
+    - name: L_PinkyB_jnt
+      parentName: L_PinkyA_jnt
+      position: {x: 0.000004046026, y: 0.0009342229, z: 0.0000061642754}
+      rotation: {x: 0.00000001490121, y: -0.00000040233135, z: -0.0000004470349, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: L_PinkyB_jnt_end
+      parentName: L_PinkyB_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_MiddleA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: 0.00000033211427, y: 0.0019001684, z: 0.00013895007}
+      rotation: {x: -0.000000044703434, y: 0.000000014901175, z: -0.00000020861626, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: L_MiddleB_jnt
+      parentName: L_MiddleA_jnt
+      position: {x: 0.0000040459945, y: 0.00093422463, z: 0.000006164327}
+      rotation: {x: -0.000000014901063, y: -0.0000004917383, z: -0.00000041723257, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: L_MiddleB_jnt_end
+      parentName: L_MiddleB_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_IndexA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: 0.0000065991862, y: 0.0018957111, z: 0.00077616726}
+      rotation: {x: -0.000000044703434, y: 0.000000014901175, z: -0.00000020861626, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: L_IndexB_jnt
+      parentName: L_IndexA_jnt
+      position: {x: 0.000004045981, y: 0.00093422364, z: 0.000006165864}
+      rotation: {x: -0.000000014901063, y: -0.0000004917383, z: -0.00000041723257, w: 1}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: L_IndexB_jnt_end
+      parentName: L_IndexB_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ThumbA_jnt
+      parentName: L_Wrist_jnt
+      position: {x: -0.000050530958, y: 0.0007876209, z: 0.0010927332}
+      rotation: {x: 0.4618661, y: 0.0020193786, z: 0.0010233673, w: 0.8869468}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000008}
+    - name: L_ThumbB_jnt
+      parentName: L_ThumbA_jnt
+      position: {x: 0.0000064724322, y: 0.00090477883, z: 0.00003200151}
+      rotation: {x: 0.0000004470349, y: 0.000083138984, z: 0.00000040473248, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1}
+    - name: L_ThumbB_jnt_end
+      parentName: L_ThumbB_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Shoulder_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.000883359, y: 0.0019738504, z: 0.0034136511}
+      rotation: {x: 0.50020605, y: 0.50327027, z: 0.50082654, w: 0.49566692}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: R_Elbow_jnt
+      parentName: R_Shoulder_jnt
+      position: {x: 0.0000074870463, y: 0.0034946718, z: -0.000030826133}
+      rotation: {x: 0.00000013411046, y: -0.00000004470349, z: -0, w: 1}
+      scale: {x: 1, y: 0.99999964, z: 1.0000006}
+    - name: R_Wrist_jnt
+      parentName: R_Elbow_jnt
+      position: {x: 0.000006330004, y: 0.0030087638, z: -0.000014784805}
+      rotation: {x: 0.000000029802308, y: 0.00000020861626, z: -0.00000011920933, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 0.9999996}
+    - name: R_Prop_jnt
+      parentName: R_Wrist_jnt
+      position: {x: 0.000002701797, y: 0.0012903669, z: -0.000086256136}
+      rotation: {x: -0.000000029802322, y: 0.00000014901163, z: -0.000000089407, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 1.0000001}
+    - name: R_Prop_jnt_end
+      parentName: R_Prop_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_PinkyA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: -0.0000059230206, y: 0.0019045988, z: 0.0005012012}
+      rotation: {x: -0.00000011920929, y: -0.00000017881395, z: 0.00000011920932, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: R_PinkyB_jnt
+      parentName: R_PinkyA_jnt
+      position: {x: 0.0000039817414, y: 0.0009342738, z: -0.0000061663427}
+      rotation: {x: 0.00000014901163, y: 0.00000032782557, z: -0.00000038743022, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1}
+    - name: R_PinkyB_jnt_end
+      parentName: R_PinkyB_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_MiddleA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: 0.00000037419144, y: 0.0019001206, z: -0.00013894933}
+      rotation: {x: 0.000000029802315, y: -0.00000020861624, z: 0.00000014901167, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: R_MiddleB_jnt
+      parentName: R_MiddleA_jnt
+      position: {x: 0.0000039816578, y: 0.0009342737, z: -0.0000061656933}
+      rotation: {x: 1.776357e-14, y: 0.0000003576278, z: -0.00000041723263, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: R_MiddleB_jnt_end
+      parentName: R_MiddleB_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_IndexA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: 0.0000066413404, y: 0.0018956626, z: -0.00077616586}
+      rotation: {x: -0.00000011920929, y: -0.00000017881395, z: 0.00000011920932, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: R_IndexB_jnt
+      parentName: R_IndexA_jnt
+      position: {x: 0.000003981702, y: 0.0009342738, z: -0.000006167828}
+      rotation: {x: 0.0000001192093, y: 0.00000029802325, z: -0.00000035762793, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: R_IndexB_jnt_end
+      parentName: R_IndexB_jnt
+      position: {x: -0, y: 0.0008000002, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ThumbA_jnt
+      parentName: R_Wrist_jnt
+      position: {x: -0.00005052069, y: 0.00078764703, z: -0.0010927329}
+      rotation: {x: -0.0010069094, y: 0.88695353, z: -0.46185318, w: 0.002027712}
+      scale: {x: 1, y: 1.0000004, z: 1.0000002}
+    - name: R_ThumbB_jnt
+      parentName: R_ThumbA_jnt
+      position: {x: -0.0000064472806, y: 0.0009047763, z: 0.00003202509}
+      rotation: {x: 0.00000023841872, y: -0.00009925457, z: -0.0000004201948, w: 1}
+      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000001}
+    - name: R_ThumbB_jnt_end
+      parentName: R_ThumbB_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ShoulderShell_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0008833582, y: 0.0019738749, z: -0.0034136532}
+      rotation: {x: -0.5002058, y: -0.50327057, z: 0.5008266, w: 0.4956668}
+      scale: {x: 1.0000002, y: 0.9999998, z: 0.9999998}
+    - name: L_ShoulderShell_jnt_end
+      parentName: L_ShoulderShell_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ShoulderShell_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.000883359, y: 0.0019738504, z: 0.0034136511}
+      rotation: {x: 0.5002058, y: 0.5032707, z: 0.5008264, w: 0.49566695}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: R_ShoulderShell_jnt_end
+      parentName: R_ShoulderShell_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_HigherSpinePistonRY_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0000011457643, y: 0.0008812649, z: -0.00045007607}
+      rotation: {x: -0.5004044, y: -0.4995953, z: 0.49959522, w: 0.50040436}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000001}
+    - name: L_HigherSpinePistonRY_jnt_end
+      parentName: L_HigherSpinePistonRY_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_HigherSpinePistonAim_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0000011457264, y: 0.0008812647, z: -0.00060310215}
+      rotation: {x: -0.5004044, y: -0.4995953, z: 0.49959522, w: 0.50040436}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000001}
+    - name: L_HigherSpinePistonAim_jnt_end
+      parentName: L_HigherSpinePistonAim_jnt
+      position: {x: -0, y: 0.00080000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_HigherSpinePistonRY_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0000011433102, y: 0.00088131375, z: 0.00045007587}
+      rotation: {x: 0.50040436, y: 0.49959528, z: 0.49959525, w: 0.50040454}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: R_HigherSpinePistonRY_jnt_end
+      parentName: R_HigherSpinePistonRY_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_HigherSpinePistonAim_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.000001143366, y: 0.0008813136, z: 0.00060310174}
+      rotation: {x: 0.50040436, y: 0.49959528, z: 0.49959525, w: 0.50040454}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: R_HigherSpinePistonAim_jnt_end
+      parentName: R_HigherSpinePistonAim_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_HigherSpinePistonAimZaxis_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0000012376671, y: 0.0008245596, z: -0.0006031022}
+      rotation: {x: -0.5004044, y: -0.4995953, z: 0.49959522, w: 0.50040436}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000001}
+    - name: L_HigherSpinePistonAimZaxis_jnt_end
+      parentName: L_HigherSpinePistonAimZaxis_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_HigherSpinePistonAimZaxis_jnt
+      parentName: Spine1_jnt
+      position: {x: -0.0000012346916, y: 0.00082460843, z: 0.00060310174}
+      rotation: {x: 0.50040436, y: 0.49959528, z: 0.49959525, w: 0.50040454}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: R_HigherSpinePistonAimZaxis_jnt_end
+      parentName: R_HigherSpinePistonAimZaxis_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_HigherPistonAim_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000009195914, y: 0.0004560699, z: -0.0006438593}
+      rotation: {x: -0.6904479, y: -0.15674928, z: 0.6884168, w: 0.15745999}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: L_HigherPistonAim_jnt_end
+      parentName: L_HigherPistonAim_jnt
+      position: {x: -0, y: 0.00080000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_HigherPistonRY_jnt
+      parentName: Spine_jnt
+      position: {x: -0.0000035587743, y: 0.00045744458, z: -0.00046225646}
+      rotation: {x: -0.7071066, y: 0.00057210034, z: 0.7071066, w: 0.0005720489}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: L_HigherPistonRY_jnt_end
+      parentName: L_HigherPistonRY_jnt
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_HigherPistonRY_jnt
+      parentName: Spine_jnt
+      position: {x: -0.0000035560968, y: 0.00045739688, z: 0.0004622568}
+      rotation: {x: 0.7071066, y: -0.00057214557, z: 0.7071066, w: 0.0005721723}
+      scale: {x: 0.9999997, y: 0.99999976, z: 0.9999999}
+    - name: R_HigherPistonRY_jnt_end
+      parentName: R_HigherPistonRY_jnt
+      position: {x: -0, y: 0.0008000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_HigherPistonAim_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000009209616, y: 0.0004560951, z: 0.0006438596}
+      rotation: {x: 0.6904479, y: 0.1567492, z: 0.6884168, w: 0.15745999}
+      scale: {x: 0.9999999, y: 1.0000004, z: 1}
+    - name: R_HigherPistonAim_jnt_end
+      parentName: R_HigherPistonAim_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_HigherPistonAimZaxis_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000009195914, y: 0.0004560699, z: -0.0006438593}
+      rotation: {x: -0.69044787, y: -0.15674928, z: 0.68841684, w: 0.15745999}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000002}
+    - name: L_HigherPistonAimZaxis_jnt_end
+      parentName: L_HigherPistonAimZaxis_jnt
+      position: {x: -0, y: 0.00080000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_HigherPistonAimZaxis_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000009209616, y: 0.0004560951, z: 0.0006438596}
+      rotation: {x: 0.690448, y: 0.15674917, z: 0.68841684, w: 0.15745996}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.9999996}
+    - name: R_HigherPistonAimZaxis_jnt_end
+      parentName: R_HigherPistonAimZaxis_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerSpinePistonAim_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000022883526, y: 0.001300979, z: -0.00064386}
+      rotation: {x: -0.5004045, y: -0.49959534, z: 0.49959534, w: 0.50040436}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+    - name: L_LowerSpinePistonAim_jnt_end
+      parentName: L_LowerSpinePistonAim_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerSpinePistonRY_jnt
+      parentName: Spine_jnt
+      position: {x: -0.0000021906405, y: 0.0013023596, z: -0.00040738564}
+      rotation: {x: -0.5004044, y: -0.4995953, z: 0.49959525, w: 0.50040436}
+      scale: {x: 1, y: 0.9999999, z: 0.9999998}
+    - name: L_LowerSpinePistonRY_jnt_end
+      parentName: L_LowerSpinePistonRY_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerSpinePistonRY_jnt
+      parentName: Spine_jnt
+      position: {x: -0.0000021890085, y: 0.0013023963, z: 0.00040738477}
+      rotation: {x: 0.50040436, y: 0.49959528, z: 0.49959528, w: 0.5004045}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: R_LowerSpinePistonRY_jnt_end
+      parentName: R_LowerSpinePistonRY_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerSpinePistonAim_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000022889114, y: 0.0013009886, z: 0.00064385973}
+      rotation: {x: 0.50040436, y: 0.49959528, z: 0.49959528, w: 0.5004045}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000006}
+    - name: R_LowerSpinePistonAim_jnt_end
+      parentName: R_LowerSpinePistonAim_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerSpinePistonAimRZ_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000022883526, y: 0.001300979, z: -0.00064386}
+      rotation: {x: -0.5004045, y: -0.49959534, z: 0.49959534, w: 0.50040436}
+      scale: {x: 1.0000002, y: 1, z: 0.99999994}
+    - name: L_LowerSpinePistonAimRZ_jnt_end
+      parentName: L_LowerSpinePistonAimRZ_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerSpinePistonAimRZ_jnt
+      parentName: Spine_jnt
+      position: {x: 0.0000022889114, y: 0.0013009886, z: 0.00064385973}
+      rotation: {x: 0.50040436, y: 0.49959528, z: 0.49959528, w: 0.5004045}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: R_LowerSpinePistonAimRZ_jnt_end
+      parentName: R_LowerSpinePistonAimRZ_jnt
+      position: {x: -0, y: 0.0008, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperLeg_jnt
+      parentName: Root_jnt
+      position: {x: -0.00024108359, y: -0.00015863079, z: 0.0016259891}
+      rotation: {x: 0.70727164, y: -0.0042286576, z: 0.70692796, w: 0.0013400926}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000007}
+    - name: R_Knee_jnt
+      parentName: R_UpperLeg_jnt
+      position: {x: 0.000016430915, y: 0.00402207, z: 0.00001522243}
+      rotation: {x: -1.7462298e-10, y: 2.3192115e-11, z: -0.000000005820766, w: 1}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: R_Ankle_jnt
+      parentName: R_Knee_jnt
+      position: {x: 0.000024361982, y: 0.0059532365, z: 0.00010495088}
+      rotation: {x: -0.5138665, y: 0.48573807, z: -0.48299065, w: 0.51644933}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000005}
+    - name: R_Toe_jnt
+      parentName: R_Ankle_jnt
+      position: {x: -0.00015152573, y: 0.0012020159, z: 0.00001046665}
+      rotation: {x: 0.0020092425, y: -0.6841658, z: 0.0018779058, w: 0.7293214}
+      scale: {x: 0.99999976, y: 1.0000005, z: 1.0000002}
+    - name: R_ToeEND_jnt
+      parentName: R_Toe_jnt
+      position: {x: 0.00004427914, y: 0.0024496843, z: 0.00068999885}
+      rotation: {x: -0.000000036321577, y: 0.000027209517, z: -0.00000007031485, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000002}
+    - name: R_ToeEND_jnt_end
+      parentName: R_ToeEND_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ToeTipA_jnt
+      parentName: R_Toe_jnt
+      position: {x: 0.0009992156, y: 0.0016484293, z: 0.00042129008}
+      rotation: {x: -0.00000006239861, y: -0.0000359416, z: 0.00000007508788, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: R_ToeTipA_jnt_end
+      parentName: R_ToeTipA_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ToeTipB_jnt
+      parentName: R_Toe_jnt
+      position: {x: 0.000002237102, y: 0.0016482787, z: 0.00042309638}
+      rotation: {x: 0.00000012072266, y: 0.000027120106, z: -0.00000007660126, w: 1}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
+    - name: R_ToeTipB_jnt_end
+      parentName: R_ToeTipB_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ToeTipC_jnt
+      parentName: R_Toe_jnt
+      position: {x: -0.0009845685, y: 0.0016481288, z: 0.00042488473}
+      rotation: {x: -0.000000034691762, y: -0.0000043511386, z: 0.000000018044373, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: R_ToeTipC_jnt_end
+      parentName: R_ToeTipC_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerPistonRY_jnt
+      parentName: Root_jnt
+      position: {x: 0.00072211307, y: 0.0012498213, z: -0.001170735}
+      rotation: {x: -0.49999994, y: -0.49999988, z: 0.5000002, w: 0.50000006}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: L_LowerPistonRY_jnt_end
+      parentName: L_LowerPistonRY_jnt
+      position: {x: -0, y: 0.0008000001, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerPistonRY_jnt
+      parentName: Root_jnt
+      position: {x: 0.0007221162, y: 0.0012497724, z: 0.0011707399}
+      rotation: {x: 0.5000002, y: 0.5000001, z: 0.49999982, w: 0.49999988}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000005}
+    - name: R_LowerPistonRY_jnt_end
+      parentName: R_LowerPistonRY_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerPistonAim_jnt
+      parentName: Root_jnt
+      position: {x: 0.00072211307, y: 0.0012498213, z: -0.001170735}
+      rotation: {x: -0.49999994, y: -0.49999988, z: 0.5000002, w: 0.50000006}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000007}
+    - name: L_LowerPistonAim_jnt_end
+      parentName: L_LowerPistonAim_jnt
+      position: {x: -0, y: 0.0008000001, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerPistonAim_jnt
+      parentName: Root_jnt
+      position: {x: 0.0007221162, y: 0.0012497724, z: 0.0011707399}
+      rotation: {x: 0.5000002, y: 0.5000001, z: 0.49999985, w: 0.49999997}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000006}
+    - name: R_LowerPistonAim_jnt_end
+      parentName: R_LowerPistonAim_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_AnkleIK_tracking_jnt
+      parentName: C_World_jnt
+      position: {x: 0.003520331, y: 0.002807505, z: -0.010326677}
+      rotation: {x: 0.00000003090972, y: 0.70710665, z: 0.7071069, w: 0.000000030909696}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000004}
+    - name: R_AnkleIK_tracking_jnt_end
+      parentName: R_AnkleIK_tracking_jnt
+      position: {x: -0, y: 0.00079999975, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_AnkleIK_tracking_jnt
+      parentName: C_World_jnt
+      position: {x: -0.0017635903, y: 0.0015153182, z: -0.004103653}
+      rotation: {x: 0.00000003090972, y: 0.70710665, z: 0.7071069, w: 0.000000030909696}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000004}
+    - name: L_AnkleIK_tracking_jnt_end
+      parentName: L_AnkleIK_tracking_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Knee_PV__tracking_jnt
+      parentName: C_World_jnt
+      position: {x: -0.011576364, y: -0.006905135, z: 0.022264535}
+      rotation: {x: 0.00000003090658, y: 0.7071066, z: 0.70710695, w: 0.000000030910577}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000004}
+    - name: L_Knee_PV__tracking_jnt_end
+      parentName: L_Knee_PV__tracking_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Knee_PV__tracking_jnt
+      parentName: C_World_jnt
+      position: {x: 0.010337541, y: -0.00095289055, z: 0.003361828}
+      rotation: {x: 0.00000003090658, y: 0.7071066, z: 0.70710695, w: 0.000000030910577}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000004}
+    - name: R_Knee_PV__tracking_jnt_end
+      parentName: R_Knee_PV__tracking_jnt
+      position: {x: -0, y: 0.0007999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jumpscare_jnt
+      parentName: C_World_jnt
+      position: {x: -8.51287e-12, y: 2.7939653e-10, z: 3.5110745e-12}
+      rotation: {x: -0.0030553045, y: -0.0031148195, z: -0.70704335, w: 0.7071568}
+      scale: {x: 0.99999976, y: 0.9999998, z: 0.99999994}
+    - name: Jumpscare_jnt_end
+      parentName: Jumpscare_jnt
+      position: {x: -0, y: 0.00079999986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RIG_Endo.002
+      parentName: GlamrockEndoSwitchVersion(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

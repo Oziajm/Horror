@@ -3,15 +3,12 @@ using System.Collections.Generic;
 
 public class Endo : Animatronic
 {
-    private MovementController playerMovement;
-
     public void Start()
     {
         stateMachine = GetComponent<StateMachine>();
         InitializeStateMachine();
         UpdateAnimatorName();
-        playerMovement = player.GetComponent<MovementController>();
-        soundsController = GetComponent<AnimatronicsSoundsController>();
+        AssignSoundController(GetComponent<AnimatronicsSoundsController>());
     }
     protected void InitializeStateMachine()
     {
@@ -19,13 +16,28 @@ public class Endo : Animatronic
         {
             {typeof(DisabledState), new DisabledState(this)},
             {typeof(RoamingState), new RoamingState(this)},
-            {typeof(FrozenState), new FrozenState(this)},
+            {typeof(IdleState), new IdleState(this)},
             {typeof(ChaseState), new ChaseState(this)}
         });
     }
 
+    private void Update()
+    {
+        if (!IsVisible(gameObject))
+        {
+            if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
+            {
+                FootstepController.HandleFootSteps(FootStepDelay);
+            }
+            else if (AnimatorClipInfo[0].clip.name == CHASE_ANIMATION_NAME)
+            {
+                FootstepController.HandleFootSteps(FootStepDelay / 2);
+            }
+        }
+    }
+
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer && !playerMovement.IsCrouching;
+        return fov.canSeePlayer;
     }
 }
