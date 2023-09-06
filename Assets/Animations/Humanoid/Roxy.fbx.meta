@@ -110,7 +110,7 @@ ModelImporter:
     second: RIG_Glamrock_Roxy|Roxy_Search_Kiosk_RIG_Glamrock_Roxy
   - first:
       74: 8700102040003232589
-    second: RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy
+    second: SEARCH_LOCKER
   - first:
       74: 8748808975765763226
     second: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
@@ -1257,7 +1257,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy
+      name: SEARCH_LOCKER
       takeName: RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy
       internalID: 0
       firstFrame: 0
