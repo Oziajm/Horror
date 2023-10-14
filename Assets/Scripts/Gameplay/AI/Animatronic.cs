@@ -1,37 +1,57 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class Animatronic : MonoBehaviour
 {
-    public Vector3[] patrolLocations;
-    public GameObject player;
+    protected readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
+    protected readonly string CHASE_ANIMATION_NAME = "RUN_ANIMATION";
 
-    [SerializeField] private Camera c;
+    [field:SerializeField]
+    public List<Vector3> PatrolLocations { get; private set; }
+    [field: SerializeField]
+    public GameObject Player { get; private set; }
+    [field: SerializeField]
+    public float MovementSpeed { get; private set; }
+    [field: SerializeField]
+    public float FootStepDelay { get; private set; }
+    [field: SerializeField]
+    public AnimatronicsSoundsController SoundsController { get; private set; }
+    [field: SerializeField]
+    public AnimatronicNavMeshController AnimatronicNavMeshController { get; private set; }
+    [field: SerializeField]
+    public Animator Animator { get; private set; }
+    [field: SerializeField]
+    public FootstepController FootstepController { get; private set; }
 
-    [SerializeField] protected AIFieldOfView fov;
-    
-    [HideInInspector] public AnimatorClipInfo[] animatorClipInfo;
-    [HideInInspector] public AnimatronicsSoundsController soundsController;
+    public float RunningMultiplier { get; private set; } = 2;
 
-    public NavMeshAgent navMeshAgent;
-    public Animator animator;
+    public AnimatorClipInfo[] AnimatorClipInfo { get; private set; }
+
+    [SerializeField]
+    private Camera playerCamera;
+    [SerializeField]
+    protected AIFieldOfView fov;
+    [SerializeField]
+    private bool isOn;
 
     protected StateMachine stateMachine;
 
-    public bool isOn;
-
-    public bool haveScreamedYet;
-
     public abstract bool IsPlayerSpotted();
+
+    private void Update()
+    {
+        UpdateAnimatorName();
+    }
 
     public void UpdateAnimatorName()
     {
-        animatorClipInfo = animator.GetCurrentAnimatorClipInfo(0); 
+        AnimatorClipInfo = Animator.GetCurrentAnimatorClipInfo(0); 
     }
 
     public bool IsVisible(GameObject target)
     {
-        var planes = GeometryUtility.CalculateFrustumPlanes(c);
+        var planes = GeometryUtility.CalculateFrustumPlanes(playerCamera);
         var point = target.transform.position;
 
         foreach (var plane in planes)
@@ -42,5 +62,10 @@ public abstract class Animatronic : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void AssignSoundController(AnimatronicsSoundsController soundController)
+    {
+        this.SoundsController = soundController;
     }
 }

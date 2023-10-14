@@ -8,8 +8,8 @@ public class Freddy : Animatronic
     public void Start()
     {
         UpdateAnimatorName();
-        playerMovement = player.GetComponent<MovementController>();
-        soundsController = GetComponent<AnimatronicsSoundsController>();
+        playerMovement = Player.GetComponent<MovementController>();
+        AssignSoundController(GetComponent<AnimatronicsSoundsController>());
     }
 
     protected void InitializeStateMachine()

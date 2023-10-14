@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class AnimatronicsSoundsController : MonoBehaviour
 {
-    [SerializeField] private AudioClip startUpSound;
-    [SerializeField] private AudioClip screamSound;
-    [SerializeField] private AudioClip chaseSound;
-    [SerializeField] private AudioClip idleSound;
-    [SerializeField] private AudioClip footstepSound;
+    [SerializeField]
+    private AudioClip startUpSound;
+
+    [SerializeField]
+    private AudioClip angerSound;
 
     private AudioSource audioSource;
 
@@ -21,12 +21,9 @@ public class AnimatronicsSoundsController : MonoBehaviour
             audioSource.PlayOneShot(startUpSound);
     }
 
-    public void PlayScream()
+    public void PlayAngerSound()
     {
         if (!audioSource.isPlaying)
-        { 
-            audioSource.volume = 1f;
-            audioSource.PlayOneShot(screamSound);
-        }
+            audioSource.PlayOneShot(angerSound);
     }
 }

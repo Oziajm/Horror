@@ -2,91 +2,60 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Gameplay.Managers;
+using System.Linq;
+using System.Collections.Generic;
 
 public class RoamingState : BaseState
 {
-    private Coroutine animatronicDestinationCoroutine;
+    private readonly Animatronic ANIMATRONIC;
 
-    private readonly Animatronic animatronic;
+    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
 
-    private readonly WaitForSeconds animationDuration = new(10f);
-    private readonly WaitForSeconds waitForAnimationFinished = new(3f);
+    private int lastPatrolLocationIndex;
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
-        this.animatronic = animatronic;
+        this.ANIMATRONIC = animatronic;
+    }
+
+    public override void Initialize()
+    {
+        ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
+
+        int patrolLocationIndex = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count);
+        while (lastPatrolLocationIndex == patrolLocationIndex)
+        {
+            patrolLocationIndex = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count);
+        }
+
+        //ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.PatrolLocations[UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count)]);
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.PatrolLocations[patrolLocationIndex]);
+        lastPatrolLocationIndex = patrolLocationIndex;
     }
 
     public override Type Tick()
     {
-        animatronic.UpdateAnimatorName();
-        
-        bool isPlayerSpotted = animatronic.IsPlayerSpotted();
+        ANIMATRONIC.UpdateAnimatorName();
 
-        animatronic.animator.SetBool("isPlayerSpotted", isPlayerSpotted);
-        animatronic.navMeshAgent.stoppingDistance = isPlayerSpotted ? 0f : 2f; // q
-
-        if (isPlayerSpotted)
+        if (ANIMATRONIC.IsPlayerSpotted())
         {
-            animatronicDestinationCoroutine = null;
-
-            EventsManager.Instance.StopCoroutine(SetNewAnimatronicDestinationToCheck());
-
-            return typeof(ChaseState);
+            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
         }
 
-        if (animatronicDestinationCoroutine == null)
+        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() == 0)
         {
-            OnPlayerIsNotSpotted();
+            ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
+            return typeof(IdleState);
         }
 
-        if (animatronic.IsVisible(animatronic.gameObject))
-            return typeof(FrozenState);
+        if (ANIMATRONIC as Endo)
+        {
+            bool shouldBeActive = !ANIMATRONIC.IsVisible(ANIMATRONIC.gameObject);
+
+            ANIMATRONIC.Animator.enabled = shouldBeActive;
+            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? ANIMATRONIC.MovementSpeed : 0);
+        }
 
         return null;
-    }
-    private void OnPlayerIsNotSpotted()
-    {
-        if (animatronic.animatorClipInfo[0].clip.name == "Idle")
-        {
-            animatronic.navMeshAgent.enabled = false;
-        }
-        animatronic.haveScreamedYet = false;
-
-        animatronicDestinationCoroutine = EventsManager.Instance.StartCoroutine(SetNewAnimatronicDestinationToCheck());
-    }
-
-    private IEnumerator SetNewAnimatronicDestinationToCheck()
-    {
-        animatronic.UpdateAnimatorName();
-        yield return animationDuration;
-        animatronic.navMeshAgent.enabled = true;
-        animatronic.navMeshAgent.speed = 0.3f;
-        while (true)
-        {
-            if (animatronic.isActiveAndEnabled)
-            {
-                yield return waitForAnimationFinished;
-                if (!animatronic.navMeshAgent.pathPending)
-                {
-                    if (animatronic.navMeshAgent.remainingDistance <= animatronic.navMeshAgent.stoppingDistance)
-                    {
-                        if (!animatronic.navMeshAgent.hasPath || animatronic.navMeshAgent.velocity.sqrMagnitude < 2f)
-                        {
-                            animatronic.animator.SetBool("reachedDestination", true);
-                            animatronic.navMeshAgent.speed = 0;
-                            yield return animationDuration;
-                            animatronic.animator.SetBool("reachedDestination", false);
-                            animatronic.navMeshAgent.speed = 0.3f;
-                            if (animatronic.animatorClipInfo[0].clip.name != "Idle")
-                            {
-                                yield return waitForAnimationFinished;
-                                animatronic.navMeshAgent.SetDestination(animatronic.patrolLocations[UnityEngine.Random.Range(0, 3)]);
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }

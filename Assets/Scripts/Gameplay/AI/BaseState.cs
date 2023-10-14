@@ -8,9 +8,10 @@ public abstract class BaseState
         parentTransform = gameObj.transform;
     }
 
+    public abstract void Initialize();
+
     public abstract Type Tick();
 
     protected GameObject parentGameObj;
     protected Transform parentTransform;
-
 }
