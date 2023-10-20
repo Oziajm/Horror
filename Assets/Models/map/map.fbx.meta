@@ -2,49 +2,7 @@ fileFormatVersion: 2
 guid: d7dd755c8976f75419dd1d5e7a18d417
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable:
-  - first:
-      74: -6412132961962502034
-    second: Sphere.001|Pipe.057|Pipe.057|VertAction|Pipe.057|VertAction
-  - first:
-      74: 8024070323732147017
-    second: Sphere.001|Pipe.059|Pipe.059|VertAction|Pipe.059|VertAction
-  - first:
-      74: 6057094405955135250
-    second: Sphere.001|Pipe.060|Pipe.060|VertAction|Pipe.060|VertAction
-  - first:
-      74: 2608959273946770857
-    second: Sphere.001|Pipe.061|Pipe.061|VertAction|Pipe.061|VertAction
-  - first:
-      74: 1130274579184724560
-    second: Sphere.001|Pipe.063|Pipe.063|VertAction|Pipe.063|VertAction
-  - first:
-      74: 1809117746004702974
-    second: Sphere.001|Pipe.064|Pipe.064|VertAction|Pipe.064|VertAction
-  - first:
-      74: 290033983093087999
-    second: Sphere.001|Pipe.065|Pipe.065|VertAction|Pipe.065|VertAction
-  - first:
-      74: -4512985988685233435
-    second: Sphere.001|Pipe.066|Pipe.066|VertAction|Pipe.066|VertAction
-  - first:
-      74: 1111619557501234170
-    second: Sphere.001|Pipe.067|Pipe.067|VertAction|Pipe.067|VertAction
-  - first:
-      74: -2654090031040655023
-    second: Sphere.001|Pipe.068|Pipe.068|VertAction|Pipe.068|VertAction
-  - first:
-      74: -1993368477156029714
-    second: Sphere.001|Pipe.069|Pipe.069|VertAction|Pipe.069|VertAction
-  - first:
-      74: -1609196776772756914
-    second: Sphere.001|Pipe.074|Pipe.074|VertAction|Pipe.074|VertAction
-  - first:
-      74: 201248537233086951
-    second: Sphere.001|Pipe.078|Pipe.078|VertAction|Pipe.078|VertAction
-  - first:
-      74: 5936342341974988381
-    second: Sphere.001|valve.001|valve.001|VertAction|valve.001|VertAction
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2

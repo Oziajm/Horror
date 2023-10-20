@@ -21,13 +21,13 @@ public class CharactersDetector : MonoBehaviour
         charactersInTrigger = new List<Collider>();
     }
 
+    private void Update()
+    {
+        Debug.Log(charactersInTrigger.Count);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (charactersInTrigger.Count != 0)
-        {
-            return;
-        }
-
         if ( isDoorFacingNorth )
         {
             isPlayerComingFromNorth = other.transform.position.z - transform.position.z < 0;
@@ -47,11 +47,6 @@ public class CharactersDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (charactersInTrigger.Count != 1)
-        {
-            return;
-        }
-
         charactersInTrigger.Remove(other);
 
         if (other.CompareTag(CHARACTERS_TAG))
