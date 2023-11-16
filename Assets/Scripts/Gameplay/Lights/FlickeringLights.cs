@@ -9,7 +9,6 @@ public class FlickeringLights : MonoBehaviour
     [Header("Lights")]
     [Space(10)]
     [SerializeField] private Renderer lightRenderer;
-    [SerializeField] private Light lightSource;
 
     private float timeDelay;
 
@@ -19,33 +18,18 @@ public class FlickeringLights : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(lightSource == null ? FlickerOnlyRenderers() : FlickerRenderersAndLights());
+        StartCoroutine(FlickerOnlyRenderers());
     }
 
     private IEnumerator FlickerOnlyRenderers()
     {
         while (true)
         {
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 1f);
-            timeDelay = Random.Range(0.02f, 0.2f);
+            lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 50f);
+            timeDelay = Random.Range(0.02f, 1f);
             yield return new WaitForSeconds(timeDelay);
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0.5f);
-            timeDelay = Random.Range(0.02f, 0.2f);
-            yield return new WaitForSeconds(timeDelay);
-        }
-    }
-
-    private IEnumerator FlickerRenderersAndLights()
-    {
-        while (true)
-        {
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 1f);
-            lightSource.gameObject.SetActive(false);
-            timeDelay = Random.Range(0.02f, 0.2f);
-            yield return new WaitForSeconds(timeDelay);
-            lightRenderer.material.SetColor("_EmissionColor", lightRenderer.material.color * 0.5f);
-            lightSource.gameObject.SetActive(true);
-            timeDelay = Random.Range(0.02f, 0.2f);
+            lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 0f);
+            timeDelay = Random.Range(0.02f, 1f);
             yield return new WaitForSeconds(timeDelay);
         }
     }
