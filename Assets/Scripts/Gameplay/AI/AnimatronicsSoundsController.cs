@@ -23,7 +23,6 @@ public class AnimatronicsSoundsController : MonoBehaviour
 
     public void PlayAngerSound()
     {
-        if (!audioSource.isPlaying)
-            audioSource.PlayOneShot(angerSound);
+        audioSource.PlayOneShot(angerSound);
     }
 }
