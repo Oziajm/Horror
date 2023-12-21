@@ -77,6 +77,7 @@ public class Foxy : Animatronic
             {
                 canBeStunned = false;
                 foxysEyesController.SetFoxyTriggeredEyes();
+                SoundsController.PlayAngerSound();
 
                 stateMachine.SwitchState(typeof(StunnedState));
             }

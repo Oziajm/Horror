@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
 using UnityEngine;
-using Gameplay.Managers;
-using System.Linq;
-using System.Collections.Generic;
 
 public class RoamingState : BaseState
 {
@@ -11,7 +7,10 @@ public class RoamingState : BaseState
 
     private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
 
-    private int lastPatrolLocationIndex;
+    private bool initialized = false;
+
+    private int lastLocationNumber = 0;
+    private int newLocationNumber = 1;
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -20,21 +19,35 @@ public class RoamingState : BaseState
 
     public override void Initialize()
     {
+        initialized = false;
+
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
 
-        int patrolLocationIndex = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count);
-        while (lastPatrolLocationIndex == patrolLocationIndex)
+        newLocationNumber = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count - 1);
+        Debug.Log(newLocationNumber);
+
+        if (lastLocationNumber == newLocationNumber)
         {
-            patrolLocationIndex = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count);
+            newLocationNumber++;
+            if (newLocationNumber > ANIMATRONIC.PatrolLocations.Count - 1)
+            {
+                newLocationNumber = 0;
+            }
         }
 
-        //ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.PatrolLocations[UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count)]);
-        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.PatrolLocations[patrolLocationIndex]);
-        lastPatrolLocationIndex = patrolLocationIndex;
+        lastLocationNumber = newLocationNumber;
+
+        Vector3 destination = ANIMATRONIC.PatrolLocations[newLocationNumber];
+
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(destination);
+
+        initialized = true;
     }
 
     public override Type Tick()
     {
+        if (!initialized) return null;
+
         ANIMATRONIC.UpdateAnimatorName();
 
         if (ANIMATRONIC.IsPlayerSpotted())
@@ -42,7 +55,7 @@ public class RoamingState : BaseState
             ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
         }
 
-        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() == 0)
+        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 2)
         {
             ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
             return typeof(IdleState);

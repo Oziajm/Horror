@@ -3503,7 +3503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3688571472670265053
 Transform:
   m_ObjectHideFlags: 0
@@ -3685,6 +3685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startUpSound: {fileID: 8300000, guid: 4398db154d27bc945ab95446b72baaa5, type: 3}
+  angerSound: {fileID: 0}
 --- !u!114 &3092684346946793901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8345,7 +8346,7 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: ccd8b27ecf282b74ba579c0db1a6e526, type: 2}
   - {fileID: 2100000, guid: c988bd04f43ee9b4a8c0d13f73c104c5, type: 2}
-  - {fileID: 2100000, guid: 5fd108920ebb0964484740d5edf5ff03, type: 2}
+  - {fileID: 2100000, guid: 109522e4ce2df6a4197c1ffba00d8fad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

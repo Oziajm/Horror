@@ -10,7 +10,7 @@ public class FoxysEyesController : MonoBehaviour
 
     public void SetFoxyTriggeredEyes()
     {
-        eyesMaterial.SetColor("_EmissionColor", Color.red);
+        eyesMaterial.SetColor("_EmissiveColor", Color.red * 50f);
 
         foreach (Light light in lights)
         {
@@ -20,7 +20,7 @@ public class FoxysEyesController : MonoBehaviour
 
     public void SetFoxyCalmEyes()
     {
-        eyesMaterial.SetColor("_EmissionColor", Color.white);
+        eyesMaterial.SetColor("_EmissiveColor", Color.white * 50f);
 
         foreach (Light light in lights)
         {
