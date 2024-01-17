@@ -9,6 +9,7 @@ public class FlickeringLights : MonoBehaviour
     [Header("Lights")]
     [Space(10)]
     [SerializeField] private Renderer lightRenderer;
+    [SerializeField] private Light light;
 
     private float timeDelay;
 
@@ -25,12 +26,17 @@ public class FlickeringLights : MonoBehaviour
     {
         while (true)
         {
-            lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 50f);
-            timeDelay = Random.Range(0.02f, 1f);
-            yield return new WaitForSeconds(timeDelay);
-            lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 0f);
-            timeDelay = Random.Range(0.02f, 1f);
-            yield return new WaitForSeconds(timeDelay);
+            if (lightRenderer)
+                lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 50f);
+            if (light)
+                light.enabled = true;
+            yield return new WaitForSeconds(Random.Range(0.02f, 1f));
+
+            if (lightRenderer)
+                lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 0f);
+            if (light)
+                light.enabled = false;
+            yield return new WaitForSeconds(Random.Range(0.02f, 1f));
         }
     }
 
