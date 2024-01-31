@@ -38,6 +38,6 @@ public class Endo : Animatronic
 
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer;
+        return fov.CanSeePlayer;
     }
 }

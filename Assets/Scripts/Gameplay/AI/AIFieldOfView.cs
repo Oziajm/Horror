@@ -3,16 +3,21 @@ using System.Collections;
 
 public class AIFieldOfView : MonoBehaviour
 {
-    public float radius;
+    public bool CanSeePlayer { get; private set; }
+
+    [SerializeField]
+    private float radius;
     [Range(0,360)]
-    public float angle;
+    [SerializeField]
+    private float angle;
 
-    public GameObject player;
+    [SerializeField]
+    private GameObject player;
 
-    public LayerMask targetMask;
-    public LayerMask obstructionMask;
-
-    public bool canSeePlayer;
+    [SerializeField]
+    private LayerMask targetMask;
+    [SerializeField]
+    private LayerMask obstructionMask;
 
     private void Start()
     {
@@ -44,15 +49,15 @@ public class AIFieldOfView : MonoBehaviour
                 float disanceToTarget = Vector3.Distance(transform.position, target.position);
 
                 if (!Physics.Raycast(transform.position, directionToTarget, disanceToTarget, obstructionMask))
-                    canSeePlayer = true;
+                    CanSeePlayer = true;
                 else
-                    canSeePlayer = false;
+                    CanSeePlayer = false;
             }
             else
-                canSeePlayer = false;
+                CanSeePlayer = false;
         }
-        else if (canSeePlayer)
-            canSeePlayer = false;
+        else if (CanSeePlayer)
+            CanSeePlayer = false;
     }
 
 }

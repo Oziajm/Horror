@@ -61,6 +61,7 @@ public abstract class Animatronic : MonoBehaviour
                 return false;
             }
         }
+
         return true;
     }
 

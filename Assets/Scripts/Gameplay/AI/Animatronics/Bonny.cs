@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Bonny : Animatronic
 {
-
     private MovementController playerMovement;
 
     public void Start()
@@ -25,6 +24,6 @@ public class Bonny : Animatronic
 
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer && !playerMovement.IsCrouching;
+        return fov.CanSeePlayer && !playerMovement.IsCrouching;
     }
 }

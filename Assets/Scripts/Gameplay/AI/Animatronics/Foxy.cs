@@ -44,25 +44,13 @@ public class Foxy : Animatronic
     private void Update()
     {
         UpdateAnimatorName();
-        HandleFootSteps();
         HandleWeakness();
+        HandleFootSteps();
     }
 
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer;
-    }
-
-    private void HandleFootSteps()
-    {
-        if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
-        {
-            FootstepController.HandleFootSteps(FootStepDelay);
-        }
-        else if (AnimatorClipInfo[0].clip.name == CHASE_ANIMATION_NAME)
-        {
-            FootstepController.HandleFootSteps(FootStepDelay / 2);
-        }
+        return fov.CanSeePlayer;
     }
 
     private void HandleWeakness()
@@ -102,6 +90,18 @@ public class Foxy : Animatronic
 
                 elapsedTime = 0;
             }
+        }
+    }
+
+    public void HandleFootSteps()
+    {
+        if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
+        {
+            FootstepController.HandleFootSteps(FootStepDelay);
+        }
+        else if (AnimatorClipInfo[0].clip.name == CHASE_ANIMATION_NAME)
+        {
+            FootstepController.HandleFootSteps(FootStepDelay / 2);
         }
     }
 }
