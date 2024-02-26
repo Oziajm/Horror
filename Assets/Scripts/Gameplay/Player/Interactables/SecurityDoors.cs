@@ -6,7 +6,7 @@ public class SecurityDoors : Interactable
 {
     #region Variables
 
-    private const float Y_VALUE_TO_GET_OPENED_POSITION = 2.1f;
+    private const float Y_VALUE_TO_GET_OPENED_POSITION = 2.25f;
 
     private const float POWER_CONSUMPTION_PER_SECOND = 10f;
     private const float MAX_BATTERY_AMOUNT = 100f;
@@ -17,16 +17,16 @@ public class SecurityDoors : Interactable
     [Space(10)]
     [SerializeField] 
     private Transform door;
-    [SerializeField] 
-    private Image filledImage;
+    //[SerializeField] 
+    //private Image filledImage;
 
     private Coroutine doorAnimation;
 
     private Vector3 closedPos;
     private Vector3 openedPos;
 
-    Vector3 closedHandleRot = new (0, 0, 60);
-    Vector3 openedHandleRot = new (0, 0, -60);
+    private Vector3 closedHandleRot;
+    private Vector3 openedHandleRot;
 
     private float batteryAmount;
 
@@ -41,6 +41,10 @@ public class SecurityDoors : Interactable
         closedPos = door.position;
         openedPos = door.position;
         openedPos.y += Y_VALUE_TO_GET_OPENED_POSITION;
+
+        openedHandleRot = transform.rotation.eulerAngles;
+        closedHandleRot = openedHandleRot;
+        closedHandleRot.x += 70;
 
         batteryAmount = MAX_BATTERY_AMOUNT;
 
@@ -96,7 +100,7 @@ public class SecurityDoors : Interactable
                 OpenCloseDoor();
             }
 
-            filledImage.fillAmount = batteryAmount / MAX_BATTERY_AMOUNT;
+            //filledImage.fillAmount = batteryAmount / MAX_BATTERY_AMOUNT;
 
             yield return new WaitForSeconds(0.1f);
         }

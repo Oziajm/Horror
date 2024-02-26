@@ -7,8 +7,6 @@ public class DisabledState : BaseState
 
     private readonly Animatronic ANIMATRONIC;
 
-    private bool turnedOnEvent = false;
-
     public DisabledState(Animatronic animatronic) : base(animatronic.gameObject)
     {
         this.ANIMATRONIC = animatronic;
@@ -22,15 +20,13 @@ public class DisabledState : BaseState
 
     public override Type Tick()
     {
-        if (turnedOnEvent)
-            return typeof(IdleState);
-        return null;
+        OnAnimatronicsActivated();
+        return typeof(IdleState);
     }
 
     private void OnAnimatronicsActivated()
     {
         ANIMATRONIC.Animator.SetBool(ANIMATRONIC_ACTIVATED_VARIABLE, true);
         ANIMATRONIC.SoundsController.PlayStartUpSound();
-        turnedOnEvent = true;
     }
 }
