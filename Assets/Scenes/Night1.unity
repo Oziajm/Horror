@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0043568183, g: 0.0063247075, b: 0.009881522, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,7 +156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1874913970}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 24
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 90, y: 43, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -44041,11 +44041,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_Intensity
-      value: 339.73984
+      value: 8.027802
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_SpotAngle
-      value: 50
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShadowRadius
@@ -44065,11 +44065,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_Intensity
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShapeRadius
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
+      propertyPath: m_InnerSpotPercent
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShadowUpdateMode
