@@ -24,7 +24,7 @@ public abstract class Animatronic : MonoBehaviour
     [field: SerializeField]
     public FootstepController FootstepController { get; private set; }
 
-    public float RunningMultiplier { get; private set; } = 2;
+    public float RunningMultiplier { get; private set; } = 2.5f;
 
     public AnimatorClipInfo[] AnimatorClipInfo { get; private set; }
 

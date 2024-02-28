@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ChaseState : BaseState
 {
-    private readonly float SECONDS_NEEDED_TO_RETURN_TO_ROAMING = 5f;
+    private readonly float SECONDS_NEEDED_TO_RETURN_TO_ROAMING = 15f;
 
     private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
 
