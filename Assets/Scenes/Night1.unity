@@ -156,7 +156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1874913970}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 35
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 90, y: 43, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -42266,18 +42266,18 @@ AudioReverbZone:
   m_Enabled: 1
   m_MinDistance: 35
   m_MaxDistance: 35
-  m_ReverbPreset: 13
+  m_ReverbPreset: 4
   m_Room: -1000
-  m_RoomHF: -300
+  m_RoomHF: -1200
   m_DecayTime: 1.49
-  m_DecayHFRatio: 0.59
-  m_Reflections: -1219
+  m_DecayHFRatio: 0.54
+  m_Reflections: -370
   m_ReflectionsDelay: 0.007
-  m_Reverb: 441
+  m_Reverb: 1030
   m_ReverbDelay: 0.011
   m_HFReference: 5000
   m_Diffusion: 100
-  m_Density: 100
+  m_Density: 60
   m_LFReference: 250
   m_RoomLF: 0
 --- !u!114 &1966958502 stripped
@@ -44318,11 +44318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_Intensity
-      value: 8.027802
+      value: 84.93496
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_SpotAngle
-      value: 179
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShadowRadius
@@ -44350,11 +44350,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_InnerSpotPercent
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShadowUpdateMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
+      propertyPath: m_CustomSpotLightShadowCone
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_UpdateShadowOnLightMovement
