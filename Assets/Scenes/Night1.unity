@@ -156,7 +156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1874913970}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 67
+  m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 90, y: 43, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -44318,11 +44318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_Intensity
-      value: 84.93496
+      value: 11.879485
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_SpotAngle
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025037, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShadowRadius
@@ -44342,7 +44342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_Intensity
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3703483881971025038, guid: 9fdc39c956b18cb4f87d2419c44c2220, type: 3}
       propertyPath: m_ShapeRadius
