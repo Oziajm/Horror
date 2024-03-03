@@ -21,15 +21,19 @@ public class ItemBoobing : MonoBehaviour
     private float sinTime;
     private InputActions inputActions;
 
-    private float addingValue = 1f;
-    private float currentRotation = 0f;
+    private float cameraMovementSpeed;
+    private float basicSpeed;
 
     private void Start()
     {
+        cameraMovementSpeed = 0.001f;
+        basicSpeed = effectSpeed;
+
         inputActions = new();
         inputActions.Player.Enable();
         inputActions.Player.Sprint.performed += ChangeEffectSpeedToRunning;
         inputActions.Player.Sprint.canceled += ChangeEffectSpeedToWalking;
+        inputActions.Player.Crouch.performed += ChangeEffectSpeedToWalking;
     }
 
     private void Update()
@@ -54,16 +58,18 @@ public class ItemBoobing : MonoBehaviour
             offset += sinAmountX;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, origin.position + offset, 0.001f);
+        transform.position = Vector3.MoveTowards(transform.position, origin.position + offset, cameraMovementSpeed);
     }
 
     private void ChangeEffectSpeedToRunning(InputAction.CallbackContext context)
     {
-        effectSpeed *= 2;
+        effectSpeed = basicSpeed * 2;
+        cameraMovementSpeed = 0.01f;
     }
 
     private void ChangeEffectSpeedToWalking(InputAction.CallbackContext context)
     {
-        effectSpeed /= 2;
+        effectSpeed = basicSpeed;
+        cameraMovementSpeed = 0.001f;
     }
 }

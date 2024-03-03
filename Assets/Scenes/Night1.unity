@@ -156,7 +156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1874913970}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 49
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 90, y: 43, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7314,7 +7314,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -42101,7 +42101,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

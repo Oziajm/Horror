@@ -63,6 +63,10 @@ public class PlayerInteractables : MonoBehaviour
                     this.interactable = interactable;
                 }
             }
+            else
+            {
+                this.interactable = null;
+            }
 
             if (lastVisibleValue != textWindowVisible)
             {
