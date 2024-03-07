@@ -1,5 +1,6 @@
 using System;
 using Gameplay.Utils;
+using UnityEngine;
 
 namespace Gameplay.Managers
 {
@@ -10,5 +11,8 @@ namespace Gameplay.Managers
         public Action<int> CameraButtonClicked;
 
         public Action CamerasExitButtonClicked;
+
+        public Action<HidingSpot> PlayerEnteredHidingSpot;
+        public Action PlayerLeftHidingSpot;
     }
 }

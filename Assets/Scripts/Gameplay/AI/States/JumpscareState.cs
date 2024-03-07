@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpscareState : MonoBehaviour
 {
-    private readonly string CHARACTERS_TAG = "Characters";
+    private readonly string PLAYER_TAG = "Player";
 
     [SerializeField]
     private GameObject animatronic;
@@ -22,7 +22,7 @@ public class JumpscareState : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag(CHARACTERS_TAG))
+        if(other.CompareTag(PLAYER_TAG))
         {
             animatronic.SetActive(false);
             animatronicJumpscare.SetActive(true);

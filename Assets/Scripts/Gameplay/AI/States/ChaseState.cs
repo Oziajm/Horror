@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using System;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class ChaseState : BaseState
 
     private float elapsedTime;
 
+    private bool isPlayerSpotted;
+
     public ChaseState(Animatronic animatronic) : base(animatronic.gameObject)
     {
         elapsedTime = 0f;
@@ -19,6 +22,8 @@ public class ChaseState : BaseState
 
     public override void Initialize()
     {
+        EventsManager.Instance.PlayerEnteredHidingSpot += ChangeStateToCheckHidingSpotState;
+
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed * ANIMATRONIC.RunningMultiplier);
     }
 
@@ -32,12 +37,15 @@ public class ChaseState : BaseState
         if (ANIMATRONIC.IsPlayerSpotted())
         {
             elapsedTime = 0f;
+            isPlayerSpotted = true;
         }
         else
         {
             if (elapsedTime > SECONDS_NEEDED_TO_RETURN_TO_ROAMING)
             {
                 elapsedTime = 0f;
+
+                isPlayerSpotted = false;
 
                 ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
                 return typeof(IdleState);
@@ -53,5 +61,15 @@ public class ChaseState : BaseState
         }
 
         return null;
+    }
+
+    private void ChangeStateToCheckHidingSpotState(HidingSpot hidingSpotToCheck)
+    {
+        if (isPlayerSpotted)
+        {
+            ANIMATRONIC.SetNewHidingSpotToCheck(hidingSpotToCheck);
+            EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
+            ANIMATRONIC.StateMachine.SwitchState(typeof(CheckHidingSpotState));
+        }
     }
 }

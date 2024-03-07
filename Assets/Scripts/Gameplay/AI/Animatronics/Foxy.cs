@@ -24,20 +24,21 @@ public class Foxy : Animatronic
         elapsedTime = 0;
 
         foxysEyesController.SetFoxyCalmEyes();
-        stateMachine = GetComponent<StateMachine>();
+        SetStateMachine(GetComponent<StateMachine>());
         InitializeStateMachine();
         UpdateAnimatorName();
         AssignSoundController(GetComponent<AnimatronicsSoundsController>());
     }
     protected void InitializeStateMachine()
     {
-        stateMachine.SetStates(new Dictionary<Type, BaseState>()
+        StateMachine.SetStates(new Dictionary<Type, BaseState>()
         {
             {typeof(DisabledState), new DisabledState(this)},
             {typeof(RoamingState), new RoamingState(this)},
             {typeof(IdleState), new IdleState(this)},
             {typeof(StunnedState), new StunnedState(this)},
-            {typeof(ChaseState), new ChaseState(this)}
+            {typeof(ChaseState), new ChaseState(this)},
+            {typeof(CheckHidingSpotState), new CheckHidingSpotState(this, Vector3.zero)},
         });
     }
 
@@ -67,7 +68,7 @@ public class Foxy : Animatronic
                 foxysEyesController.SetFoxyTriggeredEyes();
                 SoundsController.PlayAngerSound();
 
-                stateMachine.SwitchState(typeof(StunnedState));
+                StateMachine.SwitchState(typeof(StunnedState));
             }
             else
             {

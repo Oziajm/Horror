@@ -16,7 +16,7 @@ public class Bonny : Animatronic
 
     protected void InitializeStateMachine()
     {
-        stateMachine.SetStates(new Dictionary<Type, BaseState>()
+        StateMachine.SetStates(new Dictionary<Type, BaseState>()
         {
 
         });

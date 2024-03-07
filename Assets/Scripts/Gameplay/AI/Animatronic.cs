@@ -23,10 +23,10 @@ public abstract class Animatronic : MonoBehaviour
     public Animator Animator { get; private set; }
     [field: SerializeField]
     public FootstepController FootstepController { get; private set; }
-
     public float RunningMultiplier { get; private set; } = 2.5f;
-
     public AnimatorClipInfo[] AnimatorClipInfo { get; private set; }
+    public StateMachine StateMachine { get; private set; }
+    public HidingSpot HidingSpotToCheck { get; private set; }
 
     [SerializeField]
     private Camera playerCamera;
@@ -34,8 +34,6 @@ public abstract class Animatronic : MonoBehaviour
     protected AIFieldOfView fov;
     [SerializeField]
     private bool isOn;
-
-    protected StateMachine stateMachine;
 
     public abstract bool IsPlayerSpotted();
 
@@ -68,5 +66,15 @@ public abstract class Animatronic : MonoBehaviour
     public void AssignSoundController(AnimatronicsSoundsController soundController)
     {
         this.SoundsController = soundController;
+    }
+
+    public void SetStateMachine(StateMachine stateMachine)
+    {
+        this.StateMachine = stateMachine;
+    }
+
+    public void SetNewHidingSpotToCheck(HidingSpot hidingSpotToCheck)
+    {
+        this.HidingSpotToCheck = hidingSpotToCheck;
     }
 }
