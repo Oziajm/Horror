@@ -14,5 +14,8 @@ namespace Gameplay.Managers
 
         public Action<HidingSpot> PlayerEnteredHidingSpot;
         public Action PlayerLeftHidingSpot;
+
+        public Action PlayerSpotted;
+        public Action PlayerOutOfSight;
     }
 }

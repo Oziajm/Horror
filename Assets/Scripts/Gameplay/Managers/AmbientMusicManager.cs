@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using Gameplay.Utils;
 using System.Collections;
 using UnityEngine;
@@ -15,27 +16,25 @@ public class AmbientMusicManager : Singleton<AmbientMusicManager>
     private float volume;
     private float fadeOutValue;
 
-    private void Awake()
-    {
-        volume = audioSource.volume;
-        fadeOutValue = volume/10;
-    }
-
     private void Start()
     {
+        volume = audioSource.volume;
+        fadeOutValue = volume / 10;
+
+        EventsManager.Instance.PlayerSpotted += PlayChaseMusic;
+        EventsManager.Instance.PlayerOutOfSight += PlayAmbientMusic;
+
         PlayAmbientMusic();
     }
 
     private void PlayMusic(AudioClip musicClip)
     {
-        StartCoroutine(FadeOutMusic());
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
         }
         audioSource.clip = musicClip;
         audioSource.Play();
-        StartCoroutine(FadeInMusic());
     }
 
     public void PlayChaseMusic()
@@ -46,25 +45,5 @@ public class AmbientMusicManager : Singleton<AmbientMusicManager>
     public void PlayAmbientMusic()
     {
         PlayMusic(ambient);
-    }
-
-    private IEnumerator FadeOutMusic()
-    {
-        while (audioSource.volume > 0)
-        {
-            audioSource.volume -= fadeOutValue * Time.deltaTime;
-
-            yield return null;
-        }
-    }
-
-    private IEnumerator FadeInMusic()
-    {
-        while (audioSource.volume < volume)
-        {
-            audioSource.volume += fadeOutValue * Time.deltaTime;
-
-            yield return null;
-        }
     }
 }

@@ -23,6 +23,7 @@ public class ChaseState : BaseState
     {
         elapsedTime = 0f;
 
+        EventsManager.Instance.PlayerSpotted?.Invoke();
         EventsManager.Instance.PlayerEnteredHidingSpot += ChangeStateToCheckHidingSpotState;
 
         ANIMATRONIC.Animator.Play(RUN_ANIMATION_NAME);
@@ -50,6 +51,7 @@ public class ChaseState : BaseState
                 isPlayerSpotted = false;
 
                 EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
+                EventsManager.Instance.PlayerOutOfSight?.Invoke();
                 return typeof(IdleState);
             }
         }
@@ -63,6 +65,7 @@ public class ChaseState : BaseState
         {
             ANIMATRONIC.SetNewHidingSpotToCheck(hidingSpotToCheck);
             EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
+            EventsManager.Instance.PlayerOutOfSight?.Invoke();
             ANIMATRONIC.StateMachine.SwitchState(typeof(CheckHidingSpotState));
         }
     }

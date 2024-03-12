@@ -156,7 +156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1874913970}
   m_Father: {fileID: 676287544}
-  m_RootOrder: 196
+  m_RootOrder: 200
   m_LocalEulerAnglesHint: {x: 90, y: 43, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10578,7 +10578,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.02
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -18,6 +18,7 @@ public class StunnedState : BaseState
 
     public override void Initialize()
     {
+        EventsManager.Instance.PlayerOutOfSight?.Invoke();
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
         elapsedTime = 0;
         ANIMATRONIC.Animator.Play(FLASHED_ANIMATION);

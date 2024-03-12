@@ -21,11 +21,11 @@ public class RoamingState : BaseState
     {
         initialized = false;
 
-        GetNextLocationToCheck();
-
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
 
         ANIMATRONIC.Animator.Play(WALK_ANIMATION_NAME);
+
+        GetNextLocationToCheck();
 
         initialized = true;
     }
@@ -51,7 +51,7 @@ public class RoamingState : BaseState
 
     private void GetNextLocationToCheck()
     {
-        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count - 1;
+        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count;
 
         newLocationNumber = UnityEngine.Random.Range(0, amountOfPatrolLocations);
 
@@ -66,8 +66,8 @@ public class RoamingState : BaseState
 
         lastLocationNumber = newLocationNumber;
 
-        Vector3 destination = ANIMATRONIC.PatrolLocations[newLocationNumber];
+        Vector3 newDestination = ANIMATRONIC.PatrolLocations[newLocationNumber];
 
-        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(destination);
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(newDestination);
     }
 }
