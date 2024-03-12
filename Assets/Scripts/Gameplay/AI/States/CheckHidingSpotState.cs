@@ -6,11 +6,12 @@ public class CheckHidingSpotState : BaseState
 {
     private readonly Animatronic ANIMATRONIC;
 
-    private readonly string CHECK_PHOTOBOOTH_ANIMATION_NAME = "CheckPhotoBooth";
+    private readonly string CHECK_PHOTOBOOTH_ANIMATION_NAME = "CHECK_PHOTOBOOTH_ANIMATION";
+    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
 
     private bool isReadyToPlayAnimation;
 
-    public CheckHidingSpotState(Animatronic animatronic, Vector3 positionToCheck) : base(animatronic.gameObject)
+    public CheckHidingSpotState(Animatronic animatronic ) : base(animatronic.gameObject)
     {
         this.ANIMATRONIC = animatronic;
     }
@@ -18,7 +19,9 @@ public class CheckHidingSpotState : BaseState
     public override void Initialize()
     {
         isReadyToPlayAnimation = false;
-        
+
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.HidingSpotToCheck.AnimatronicPositionToCheckSpot);
+
         EventsManager.Instance.PlayerLeftHidingSpot += ChangeStateToChaseState;
     }
 
@@ -26,14 +29,13 @@ public class CheckHidingSpotState : BaseState
     {
         if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 0.05f)
         {
-            ANIMATRONIC.transform.position = ANIMATRONIC.HidingSpotToCheck.AnimatronicPositionToCheckSpot;
+            ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
 
             if (ANIMATRONIC.IsPlayerSpotted())
             {
                 ChangeStateToChaseState();
             }
-            else
-            {
+
                 if (!isReadyToPlayAnimation)
                 {
                     PlaceAnimatronicForAnimation();
@@ -47,11 +49,6 @@ public class CheckHidingSpotState : BaseState
                         ANIMATRONIC.HidingSpotToCheck.OpenByAnimatronic();
                     }
                 }
-            }
-        }
-        else
-        {
-            ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.HidingSpotToCheck.AnimatronicPositionToCheckSpot);
         }
 
         return null;
@@ -66,8 +63,8 @@ public class CheckHidingSpotState : BaseState
     {
         Vector3 dir = (ANIMATRONIC.HidingSpotToCheck.HidingSpotPosition - ANIMATRONIC.HidingSpotToCheck.AnimatronicPositionToCheckSpot).normalized;
 
-        ANIMATRONIC.transform.rotation = Quaternion.LookRotation(dir);
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
-        isReadyToPlayAnimation = true;
+        ANIMATRONIC.transform.rotation = Quaternion.LookRotation(dir);
+        ANIMATRONIC.transform.position = ANIMATRONIC.HidingSpotToCheck.AnimatronicPositionToCheckSpot;
     }
 }

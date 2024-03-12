@@ -25,10 +25,15 @@ public class StunnedState : BaseState
 
     public override Type Tick()
     {
+        ANIMATRONIC.UpdateAnimatorName();
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime > STUN_DURATION)
-            return typeof(IdleState);
+        {
+            if (ANIMATRONIC.AnimatorClipInfo[0].clip.name != FLASHED_ANIMATION)
+                return typeof(DisabledState);
+        }
+
 
         return null;
     }

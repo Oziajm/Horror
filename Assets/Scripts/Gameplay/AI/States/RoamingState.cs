@@ -5,12 +5,12 @@ public class RoamingState : BaseState
 {
     private readonly Animatronic ANIMATRONIC;
 
-    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
+    private readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
 
-    private bool initialized = false;
+    private int lastLocationNumber;
+    private int newLocationNumber;
 
-    private int lastLocationNumber = 0;
-    private int newLocationNumber = 1;
+    private bool initialized;
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -21,25 +21,11 @@ public class RoamingState : BaseState
     {
         initialized = false;
 
+        GetNextLocationToCheck();
+
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
 
-        newLocationNumber = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count - 1);
-        Debug.Log(newLocationNumber);
-
-        if (lastLocationNumber == newLocationNumber)
-        {
-            newLocationNumber++;
-            if (newLocationNumber > ANIMATRONIC.PatrolLocations.Count - 1)
-            {
-                newLocationNumber = 0;
-            }
-        }
-
-        lastLocationNumber = newLocationNumber;
-
-        Vector3 destination = ANIMATRONIC.PatrolLocations[newLocationNumber];
-
-        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(destination);
+        ANIMATRONIC.Animator.Play(WALK_ANIMATION_NAME);
 
         initialized = true;
     }
@@ -52,23 +38,36 @@ public class RoamingState : BaseState
 
         if (ANIMATRONIC.IsPlayerSpotted())
         {
-            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
+            return typeof(ChaseState);
         }
 
-        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 2)
+        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 0.05f)
         {
-            ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
             return typeof(IdleState);
         }
 
-        if (ANIMATRONIC as Endo)
-        {
-            bool shouldBeActive = !ANIMATRONIC.IsVisible(ANIMATRONIC.gameObject);
+        return null;
+    }
 
-            ANIMATRONIC.Animator.enabled = shouldBeActive;
-            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? ANIMATRONIC.MovementSpeed : 0);
+    private void GetNextLocationToCheck()
+    {
+        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count - 1;
+
+        newLocationNumber = UnityEngine.Random.Range(0, amountOfPatrolLocations);
+
+        if (lastLocationNumber == newLocationNumber)
+        {
+            newLocationNumber++;
+            if (newLocationNumber > amountOfPatrolLocations)
+            {
+                newLocationNumber = 0;
+            }
         }
 
-        return null;
+        lastLocationNumber = newLocationNumber;
+
+        Vector3 destination = ANIMATRONIC.PatrolLocations[newLocationNumber];
+
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(destination);
     }
 }

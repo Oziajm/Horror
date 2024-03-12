@@ -4,9 +4,6 @@ using UnityEngine.AI;
 
 public abstract class Animatronic : MonoBehaviour
 {
-    protected readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
-    protected readonly string CHASE_ANIMATION_NAME = "RUN_ANIMATION";
-
     [field:SerializeField]
     public List<Vector3> PatrolLocations { get; private set; }
     [field: SerializeField]
@@ -36,11 +33,6 @@ public abstract class Animatronic : MonoBehaviour
     private bool isOn;
 
     public abstract bool IsPlayerSpotted();
-
-    private void Update()
-    {
-        UpdateAnimatorName();
-    }
 
     public void UpdateAnimatorName()
     {

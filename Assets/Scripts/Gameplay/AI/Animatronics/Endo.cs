@@ -23,17 +23,17 @@ public class Endo : Animatronic
 
     private void Update()
     {
-        if (!IsVisible(gameObject))
-        {
-            if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
-            {
-                FootstepController.HandleFootSteps(FootStepDelay);
-            }
-            else if (AnimatorClipInfo[0].clip.name == CHASE_ANIMATION_NAME)
-            {
-                FootstepController.HandleFootSteps(FootStepDelay / 2);
-            }
-        }
+        FreezeIfNeeded();
+    }
+
+    private void FreezeIfNeeded()
+    {
+        bool shouldBeActive = !IsVisible(gameObject);
+
+        Animator.enabled = shouldBeActive;
+        AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? MovementSpeed : 0);
+
+        //TODO: Zablokowac kroki
     }
 
     public override bool IsPlayerSpotted()

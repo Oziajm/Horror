@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Foxy : Animatronic
 {
-    private readonly string RUN_ANIMATION = "RUN_ANIMATION";
+    private readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
+    private readonly string RUN_ANIMATION_NAME = "RUN_ANIMATION";
 
     [SerializeField]
     private FoxysEyesController foxysEyesController;
@@ -26,7 +27,6 @@ public class Foxy : Animatronic
         foxysEyesController.SetFoxyCalmEyes();
         SetStateMachine(GetComponent<StateMachine>());
         InitializeStateMachine();
-        UpdateAnimatorName();
         AssignSoundController(GetComponent<AnimatronicsSoundsController>());
     }
     protected void InitializeStateMachine()
@@ -38,7 +38,7 @@ public class Foxy : Animatronic
             {typeof(IdleState), new IdleState(this)},
             {typeof(StunnedState), new StunnedState(this)},
             {typeof(ChaseState), new ChaseState(this)},
-            {typeof(CheckHidingSpotState), new CheckHidingSpotState(this, Vector3.zero)},
+            {typeof(CheckHidingSpotState), new CheckHidingSpotState(this)},
         });
     }
 
@@ -56,51 +56,64 @@ public class Foxy : Animatronic
 
     private void HandleWeakness()
     {
-        bool weaknessTrggered = IsVisible(gameObject) && flashLightController.IsOn && IsPlayerSpotted();
+        bool weaknessTriggered = IsVisible(gameObject) && flashLightController.IsOn && IsPlayerSpotted();
 
-        if (weaknessTrggered)
+        if (weaknessTriggered)
         {
             elapsedTime = 0;
 
             if (canBeStunned)
-            {
-                canBeStunned = false;
-                foxysEyesController.SetFoxyTriggeredEyes();
-                SoundsController.PlayAngerSound();
-
-                StateMachine.SwitchState(typeof(StunnedState));
-            }
+                StunnAnimatronic();
             else
-            {
-                if (AnimatorClipInfo[0].clip.name == RUN_ANIMATION)
-                {
-                    Animator.speed = foxyParameters.AngerMultiplier;
-                    AnimatronicNavMeshController.SwitchAnimatronicMovement(true, MovementSpeed * RunningMultiplier * foxyParameters.AngerMultiplier);
-                }
-            }
+                MakeAnimatronicAngry();
         }
         else
         {
-            elapsedTime+=Time.deltaTime;
+            if (canBeStunned) return;
 
-            if (elapsedTime > foxyParameters.AngerDuration)
-            {
-                canBeStunned = true;
-                foxysEyesController.SetFoxyCalmEyes();
-                Animator.speed = 1;
+            elapsedTime += Time.deltaTime;
 
-                elapsedTime = 0;
-            }
+            ResetIfNeeded();
         }
     }
 
-    public void HandleFootSteps()
+    private void ResetIfNeeded()
+    {
+        if (elapsedTime > foxyParameters.AngerDuration)
+        {
+            canBeStunned = true;
+            foxysEyesController.SetFoxyCalmEyes();
+            Animator.speed = 1;
+
+            elapsedTime = 0;
+        }
+    }
+
+    private void StunnAnimatronic()
+    {
+        canBeStunned = false;
+        foxysEyesController.SetFoxyTriggeredEyes();
+        SoundsController.PlayAngerSound();
+
+        StateMachine.SwitchState(typeof(StunnedState));
+    }
+
+    private void MakeAnimatronicAngry()
+    {
+        if (AnimatorClipInfo[0].clip.name == RUN_ANIMATION_NAME)
+        {
+            Animator.speed = foxyParameters.AngerMultiplier;
+            AnimatronicNavMeshController.SwitchAnimatronicMovement(true, MovementSpeed * RunningMultiplier * foxyParameters.AngerMultiplier);
+        }
+    }
+
+    private void HandleFootSteps()
     {
         if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
         {
             FootstepController.HandleFootSteps(FootStepDelay);
         }
-        else if (AnimatorClipInfo[0].clip.name == CHASE_ANIMATION_NAME)
+        else if (AnimatorClipInfo[0].clip.name == RUN_ANIMATION_NAME)
         {
             FootstepController.HandleFootSteps(FootStepDelay / 2);
         }
