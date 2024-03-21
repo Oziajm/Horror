@@ -19,21 +19,15 @@ public class RoamingState : BaseState
 
     public override void Initialize()
     {
-        initialized = false;
-
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
 
         ANIMATRONIC.Animator.Play(WALK_ANIMATION_NAME);
 
         GetNextLocationToCheck();
-
-        initialized = true;
     }
 
     public override Type Tick()
     {
-        if (!initialized) return null;
-
         ANIMATRONIC.UpdateAnimatorName();
 
         if (ANIMATRONIC.IsPlayerSpotted())
@@ -51,7 +45,7 @@ public class RoamingState : BaseState
 
     private void GetNextLocationToCheck()
     {
-        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count;
+        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count - 1;
 
         newLocationNumber = UnityEngine.Random.Range(0, amountOfPatrolLocations);
 

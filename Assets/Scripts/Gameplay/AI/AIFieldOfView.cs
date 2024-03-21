@@ -5,11 +5,10 @@ public class AIFieldOfView : MonoBehaviour
 {
     public bool CanSeePlayer { get; private set; }
 
-    [SerializeField]
-    private float radius;
-    [Range(0,360)]
-    [SerializeField]
-    private float angle;
+    [field:SerializeField]
+    public float Radius { get; private set; }
+    [field:SerializeField]
+    public float Angle { get; private set; }
 
     [SerializeField]
     private GameObject player;
@@ -37,14 +36,14 @@ public class AIFieldOfView : MonoBehaviour
 
     private void FieldOfViewCheck()
     {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, Radius, targetMask);
 
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            if (Vector3.Angle(transform.forward, directionToTarget) < Angle / 2)
             {
                 float disanceToTarget = Vector3.Distance(transform.position, target.position);
 

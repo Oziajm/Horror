@@ -17,7 +17,8 @@ public class AnimatronicNavMeshController : MonoBehaviour
 
     public void SetNewDestination(Vector3 newLocation)
     {
-        navMeshAgent.destination = newLocation;
+        if (navMeshAgent.enabled)
+            navMeshAgent.destination = newLocation;
     }
 
     public float GetRemaningDistance()
