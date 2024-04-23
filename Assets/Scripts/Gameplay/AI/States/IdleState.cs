@@ -2,8 +2,7 @@ using System;
 
 public class IdleState : BaseState
 {
-    private readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
-    private readonly string RUN_ANIMATION_NAME = "RUN_ANIMATION";
+    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
 
     private readonly string PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE = "reachedDestination";
 
@@ -16,6 +15,9 @@ public class IdleState : BaseState
 
     public override void Initialize()
     {
+        ANIMATRONIC.Animator.SetBool(PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE, false);
+        ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
+
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
     }
 
@@ -25,29 +27,15 @@ public class IdleState : BaseState
 
         if (ANIMATRONIC.IsPlayerSpotted())
         {
-            ANIMATRONIC.Animator.Play(RUN_ANIMATION_NAME);
             return typeof(ChaseState);
         }
-        else
-        {
-            ANIMATRONIC.Animator.SetBool(PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE, true);
 
-            if (ANIMATRONIC.AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
-                return typeof(RoamingState);
-        }
-
-        if (ANIMATRONIC as Endo)
+        ANIMATRONIC.Animator.SetBool(PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE, true);
+        if (ANIMATRONIC.AnimatorClipInfo[0].clip.name != IDLE_ANIMATION_NAME)
         {
-            CheckIfEndoIsVisible();
+            return typeof(RoamingState);
         }
 
         return null;
-    }
-
-    private void CheckIfEndoIsVisible()
-    {
-        bool isVisible = ANIMATRONIC.IsVisible(ANIMATRONIC.gameObject);
-
-        ANIMATRONIC.Animator.enabled = !isVisible;
     }
 }

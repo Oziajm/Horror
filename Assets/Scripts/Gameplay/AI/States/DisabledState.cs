@@ -5,32 +5,30 @@ public class DisabledState : BaseState
 {
     private readonly string ANIMATRONIC_ACTIVATED_VARIABLE = "animatronicActivated";
 
-    private readonly Animatronic ANIMATRONIC;
+    private readonly string STUN_ANIMATION = "STUN_ANIMATION_1";
+    private readonly string EXITING_STUN_ANIMATION = "STUN_ANIMATION_2";
 
-    private bool turnedOnEvent = false;
+    private readonly Animatronic ANIMATRONIC;
 
     public DisabledState(Animatronic animatronic) : base(animatronic.gameObject)
     {
         this.ANIMATRONIC = animatronic;
-        EventsManager.Instance.AnimatronicsActivated += OnAnimatronicsActivated;
     }
 
     public override void Initialize()
     {
-
+        ANIMATRONIC.Animator.SetBool(ANIMATRONIC_ACTIVATED_VARIABLE, true);
     }
 
     public override Type Tick()
     {
-        if (turnedOnEvent)
-            return typeof(IdleState);
-        return null;
-    }
+        ANIMATRONIC.UpdateAnimatorName();
 
-    private void OnAnimatronicsActivated()
-    {
-        ANIMATRONIC.Animator.SetBool(ANIMATRONIC_ACTIVATED_VARIABLE, true);
-        ANIMATRONIC.SoundsController.PlayStartUpSound();
-        turnedOnEvent = true;
+        string animationName = ANIMATRONIC.AnimatorClipInfo[0].clip.name;
+
+        if (animationName != STUN_ANIMATION && animationName != EXITING_STUN_ANIMATION)
+            return typeof(IdleState);
+
+        return null;
     }
 }

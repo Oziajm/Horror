@@ -5,12 +5,12 @@ public class RoamingState : BaseState
 {
     private readonly Animatronic ANIMATRONIC;
 
-    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
+    private readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
 
-    private bool initialized = false;
+    private int lastLocationNumber;
+    private int newLocationNumber;
 
-    private int lastLocationNumber = 0;
-    private int newLocationNumber = 1;
+    private bool initialized;
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -19,17 +19,40 @@ public class RoamingState : BaseState
 
     public override void Initialize()
     {
-        initialized = false;
-
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
 
-        newLocationNumber = UnityEngine.Random.Range(0, ANIMATRONIC.PatrolLocations.Count - 1);
-        Debug.Log(newLocationNumber);
+        ANIMATRONIC.Animator.Play(WALK_ANIMATION_NAME);
+
+        GetNextLocationToCheck();
+    }
+
+    public override Type Tick()
+    {
+        ANIMATRONIC.UpdateAnimatorName();
+
+        if (ANIMATRONIC.IsPlayerSpotted())
+        {
+            return typeof(ChaseState);
+        }
+
+        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 0.05f)
+        {
+            return typeof(IdleState);
+        }
+
+        return null;
+    }
+
+    private void GetNextLocationToCheck()
+    {
+        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count - 1;
+
+        newLocationNumber = UnityEngine.Random.Range(0, amountOfPatrolLocations);
 
         if (lastLocationNumber == newLocationNumber)
         {
             newLocationNumber++;
-            if (newLocationNumber > ANIMATRONIC.PatrolLocations.Count - 1)
+            if (newLocationNumber > amountOfPatrolLocations)
             {
                 newLocationNumber = 0;
             }
@@ -37,38 +60,8 @@ public class RoamingState : BaseState
 
         lastLocationNumber = newLocationNumber;
 
-        Vector3 destination = ANIMATRONIC.PatrolLocations[newLocationNumber];
+        Vector3 newDestination = ANIMATRONIC.PatrolLocations[newLocationNumber];
 
-        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(destination);
-
-        initialized = true;
-    }
-
-    public override Type Tick()
-    {
-        if (!initialized) return null;
-
-        ANIMATRONIC.UpdateAnimatorName();
-
-        if (ANIMATRONIC.IsPlayerSpotted())
-        {
-            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
-        }
-
-        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 2)
-        {
-            ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
-            return typeof(IdleState);
-        }
-
-        if (ANIMATRONIC as Endo)
-        {
-            bool shouldBeActive = !ANIMATRONIC.IsVisible(ANIMATRONIC.gameObject);
-
-            ANIMATRONIC.Animator.enabled = shouldBeActive;
-            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? ANIMATRONIC.MovementSpeed : 0);
-        }
-
-        return null;
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(newDestination);
     }
 }

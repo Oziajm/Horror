@@ -3,16 +3,20 @@ using System.Collections;
 
 public class AIFieldOfView : MonoBehaviour
 {
-    public float radius;
-    [Range(0,360)]
-    public float angle;
+    public bool CanSeePlayer { get; private set; }
 
-    public GameObject player;
+    [field:SerializeField]
+    public float Radius { get; private set; }
+    [field:SerializeField]
+    public float Angle { get; private set; }
 
-    public LayerMask targetMask;
-    public LayerMask obstructionMask;
+    [SerializeField]
+    private GameObject player;
 
-    public bool canSeePlayer;
+    [SerializeField]
+    private LayerMask targetMask;
+    [SerializeField]
+    private LayerMask obstructionMask;
 
     private void Start()
     {
@@ -32,27 +36,27 @@ public class AIFieldOfView : MonoBehaviour
 
     private void FieldOfViewCheck()
     {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, Radius, targetMask);
 
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            if (Vector3.Angle(transform.forward, directionToTarget) < Angle / 2)
             {
                 float disanceToTarget = Vector3.Distance(transform.position, target.position);
 
                 if (!Physics.Raycast(transform.position, directionToTarget, disanceToTarget, obstructionMask))
-                    canSeePlayer = true;
+                    CanSeePlayer = true;
                 else
-                    canSeePlayer = false;
+                    CanSeePlayer = false;
             }
             else
-                canSeePlayer = false;
+                CanSeePlayer = false;
         }
-        else if (canSeePlayer)
-            canSeePlayer = false;
+        else if (CanSeePlayer)
+            CanSeePlayer = false;
     }
 
 }

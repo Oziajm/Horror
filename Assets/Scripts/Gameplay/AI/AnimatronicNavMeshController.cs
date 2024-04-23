@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class AnimatronicNavMeshController : MonoBehaviour
 {
+    //REMEMBER TO ALWAYS ENABLE NAVMESHAGENT BEFORE USING ANY AVAIBLE IN THIS FILE METHODS
+
     [SerializeField]
     private NavMeshAgent navMeshAgent;
 
@@ -15,10 +17,8 @@ public class AnimatronicNavMeshController : MonoBehaviour
 
     public void SetNewDestination(Vector3 newLocation)
     {
-        if (!navMeshAgent.enabled)
-            return;
-
-        navMeshAgent.destination = newLocation;
+        if (navMeshAgent.enabled)
+            navMeshAgent.destination = newLocation;
     }
 
     public float GetRemaningDistance()
@@ -31,6 +31,9 @@ public class AnimatronicNavMeshController : MonoBehaviour
 
     public float GetStoppingDistance()
     {
+        if (!navMeshAgent.enabled)
+            return 0;
+
         return navMeshAgent.stoppingDistance;
     }
 }

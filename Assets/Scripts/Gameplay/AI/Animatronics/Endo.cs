@@ -5,14 +5,14 @@ public class Endo : Animatronic
 {
     public void Start()
     {
-        stateMachine = GetComponent<StateMachine>();
+        SetStateMachine(GetComponent<StateMachine>());
         InitializeStateMachine();
         UpdateAnimatorName();
         AssignSoundController(GetComponent<AnimatronicsSoundsController>());
     }
     protected void InitializeStateMachine()
     {
-        stateMachine.SetStates(new Dictionary<Type, BaseState>()
+        StateMachine.SetStates(new Dictionary<Type, BaseState>()
         {
             {typeof(DisabledState), new DisabledState(this)},
             {typeof(RoamingState), new RoamingState(this)},
@@ -23,21 +23,21 @@ public class Endo : Animatronic
 
     private void Update()
     {
-        if (!IsVisible(gameObject))
-        {
-            if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
-            {
-                FootstepController.HandleFootSteps(FootStepDelay);
-            }
-            else if (AnimatorClipInfo[0].clip.name == CHASE_ANIMATION_NAME)
-            {
-                FootstepController.HandleFootSteps(FootStepDelay / 2);
-            }
-        }
+        FreezeIfNeeded();
+    }
+
+    private void FreezeIfNeeded()
+    {
+        bool shouldBeActive = !IsVisible(gameObject);
+
+        Animator.enabled = shouldBeActive;
+        AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? MovementSpeed : 0);
+
+        //TODO: Zablokowac kroki
     }
 
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer;
+        return fov.CanSeePlayer;
     }
 }

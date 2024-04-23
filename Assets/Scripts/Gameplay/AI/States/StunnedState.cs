@@ -18,6 +18,7 @@ public class StunnedState : BaseState
 
     public override void Initialize()
     {
+        EventsManager.Instance.PlayerOutOfSight?.Invoke();
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
         elapsedTime = 0;
         ANIMATRONIC.Animator.Play(FLASHED_ANIMATION);
@@ -25,10 +26,15 @@ public class StunnedState : BaseState
 
     public override Type Tick()
     {
+        ANIMATRONIC.UpdateAnimatorName();
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime > STUN_DURATION)
-            return typeof(IdleState);
+        {
+            if (ANIMATRONIC.AnimatorClipInfo[0].clip.name != FLASHED_ANIMATION)
+                return typeof(DisabledState);
+        }
+
 
         return null;
     }

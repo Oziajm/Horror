@@ -113,7 +113,7 @@ ModelImporter:
     second: SEARCH_LOCKER
   - first:
       74: 8748808975765763226
-    second: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
+    second: CheckPhotoBooth
   - first:
       74: -8525379155736350926
     second: RIG_Glamrock_Roxy|Roxy_Search_ServiceCart_RIG_Glamrock_Roxy
@@ -1286,7 +1286,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
+      name: CheckPhotoBooth
       takeName: RIG_Glamrock_Roxy|Roxy_Search_Photobooth_RIG_Glamrock_Roxy
       internalID: 0
       firstFrame: 0

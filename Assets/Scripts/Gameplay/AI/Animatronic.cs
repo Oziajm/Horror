@@ -4,9 +4,6 @@ using UnityEngine.AI;
 
 public abstract class Animatronic : MonoBehaviour
 {
-    protected readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
-    protected readonly string CHASE_ANIMATION_NAME = "RUN_ANIMATION";
-
     [field:SerializeField]
     public List<Vector3> PatrolLocations { get; private set; }
     [field: SerializeField]
@@ -23,10 +20,10 @@ public abstract class Animatronic : MonoBehaviour
     public Animator Animator { get; private set; }
     [field: SerializeField]
     public FootstepController FootstepController { get; private set; }
-
-    public float RunningMultiplier { get; private set; } = 2;
-
+    public float RunningMultiplier { get; private set; } = 2.5f;
     public AnimatorClipInfo[] AnimatorClipInfo { get; private set; }
+    public StateMachine StateMachine { get; private set; }
+    public HidingSpot HidingSpotToCheck { get; private set; }
 
     [SerializeField]
     private Camera playerCamera;
@@ -35,14 +32,7 @@ public abstract class Animatronic : MonoBehaviour
     [SerializeField]
     private bool isOn;
 
-    protected StateMachine stateMachine;
-
     public abstract bool IsPlayerSpotted();
-
-    private void Update()
-    {
-        UpdateAnimatorName();
-    }
 
     public void UpdateAnimatorName()
     {
@@ -61,11 +51,22 @@ public abstract class Animatronic : MonoBehaviour
                 return false;
             }
         }
+
         return true;
     }
 
     public void AssignSoundController(AnimatronicsSoundsController soundController)
     {
         this.SoundsController = soundController;
+    }
+
+    public void SetStateMachine(StateMachine stateMachine)
+    {
+        this.StateMachine = stateMachine;
+    }
+
+    public void SetNewHidingSpotToCheck(HidingSpot hidingSpotToCheck)
+    {
+        this.HidingSpotToCheck = hidingSpotToCheck;
     }
 }

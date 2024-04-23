@@ -1,24 +1,33 @@
+using Gameplay.Managers;
 using System;
 using UnityEngine;
 
 public class ChaseState : BaseState
 {
-    private readonly float SECONDS_NEEDED_TO_RETURN_TO_ROAMING = 5f;
+    private readonly float SECONDS_NEEDED_TO_RETURN_TO_ROAMING = 15f;
 
-    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
+    private readonly string RUN_ANIMATION_NAME = "RUN_ANIMATION";
 
     private readonly Animatronic ANIMATRONIC;
 
     private float elapsedTime;
 
+    private bool isPlayerSpotted;
+
     public ChaseState(Animatronic animatronic) : base(animatronic.gameObject)
     {
-        elapsedTime = 0f;
         this.ANIMATRONIC = animatronic;
     }
 
     public override void Initialize()
     {
+        elapsedTime = 0f;
+
+        EventsManager.Instance.PlayerSpotted?.Invoke();
+        EventsManager.Instance.PlayerEnteredHidingSpot += ChangeStateToCheckHidingSpotState;
+
+        ANIMATRONIC.Animator.Play(RUN_ANIMATION_NAME);
+
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed * ANIMATRONIC.RunningMultiplier);
     }
 
@@ -26,32 +35,38 @@ public class ChaseState : BaseState
     {
         ANIMATRONIC.UpdateAnimatorName();
 
-        elapsedTime += Time.deltaTime;
         ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.Player.transform.position);
 
         if (ANIMATRONIC.IsPlayerSpotted())
         {
             elapsedTime = 0f;
+            isPlayerSpotted = true;
         }
         else
         {
+            elapsedTime += Time.deltaTime;
+
             if (elapsedTime > SECONDS_NEEDED_TO_RETURN_TO_ROAMING)
             {
-                elapsedTime = 0f;
+                isPlayerSpotted = false;
 
-                ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
+                EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
+                EventsManager.Instance.PlayerOutOfSight?.Invoke();
                 return typeof(IdleState);
             }
         }
 
-        if (ANIMATRONIC as Endo)
-        {
-            bool shouldBeActive = !ANIMATRONIC.IsVisible(ANIMATRONIC.gameObject);
-
-            ANIMATRONIC.Animator.enabled = shouldBeActive;
-            ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(shouldBeActive, shouldBeActive ? ANIMATRONIC.MovementSpeed * ANIMATRONIC.RunningMultiplier : 0);
-        }
-
         return null;
+    }
+
+    private void ChangeStateToCheckHidingSpotState(HidingSpot hidingSpotToCheck)
+    {
+        if (isPlayerSpotted)
+        {
+            ANIMATRONIC.SetNewHidingSpotToCheck(hidingSpotToCheck);
+            EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
+            EventsManager.Instance.PlayerOutOfSight?.Invoke();
+            ANIMATRONIC.StateMachine.SwitchState(typeof(CheckHidingSpotState));
+        }
     }
 }

@@ -14,7 +14,7 @@ public class Freddy : Animatronic
 
     protected void InitializeStateMachine()
     {
-        stateMachine.SetStates(new Dictionary<Type, BaseState>()
+        StateMachine.SetStates(new Dictionary<Type, BaseState>()
         {
 
         });
@@ -22,6 +22,6 @@ public class Freddy : Animatronic
 
     public override bool IsPlayerSpotted()
     {
-        return fov.canSeePlayer && !playerMovement.IsCrouching;
+        return fov.CanSeePlayer && !playerMovement.IsCrouching;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class FlashLightController : MonoBehaviour
 {
     [SerializeField] private GameObject flashLight;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
 
     private InputActions inputActions;
     private bool isOn;
@@ -21,5 +23,6 @@ public class FlashLightController : MonoBehaviour
     {
         isOn = !isOn;
         flashLight.SetActive(isOn);
+        audioSource.PlayOneShot(audioClip);
     }
 }

@@ -23,7 +23,9 @@ Material:
   m_Name: walls
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ValidKeywords:
+  - _DETAIL_MAP
   - _DISABLE_SSR_TRANSPARENT
+  - _MASKMAP
   - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
@@ -74,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dd199c18dd9817449b773fc78d8832a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
@@ -110,7 +112,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 907f06e896639004ab7907054a1e0e8a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -203,10 +205,10 @@ Material:
     - _Cutoff: 0.5
     - _DepthOffsetEnable: 0
     - _DetailAlbedoMapScale: 1
-    - _DetailAlbedoScale: 1
+    - _DetailAlbedoScale: 0
     - _DetailNormalMapScale: 0.1
-    - _DetailNormalScale: 1
-    - _DetailSmoothnessScale: 1
+    - _DetailNormalScale: 0
+    - _DetailSmoothnessScale: 2
     - _DiffusionProfile: 0
     - _DiffusionProfileHash: 0
     - _DisplacementLockObjectScale: 1
@@ -244,10 +246,10 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
-    - _MetallicRemapMax: 0
-    - _MetallicRemapMin: 0
+    - _MetallicRemapMax: 1
+    - _MetallicRemapMin: 0.696915
     - _NormalMapSpace: 0
-    - _NormalScale: 0.5
+    - _NormalScale: 1
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
@@ -264,7 +266,7 @@ Material:
     - _RefractionModel: 0
     - _Smoothness: 0
     - _SmoothnessRemapMax: 1
-    - _SmoothnessRemapMin: 0
+    - _SmoothnessRemapMin: 0.6975153
     - _SmoothnessTextureChannel: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
