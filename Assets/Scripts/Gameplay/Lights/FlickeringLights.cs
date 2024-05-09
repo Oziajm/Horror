@@ -10,6 +10,7 @@ public class FlickeringLights : MonoBehaviour
     [Space(10)]
     [SerializeField] private Renderer lightRenderer;
     [SerializeField] private Light light;
+    [SerializeField] private AudioSource audioSource;
 
     private float timeDelay;
 
@@ -30,12 +31,16 @@ public class FlickeringLights : MonoBehaviour
                 lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 50f);
             if (light)
                 light.enabled = true;
+            if (audioSource)
+                audioSource.Play();
             yield return new WaitForSeconds(Random.Range(0.02f, 1f));
 
             if (lightRenderer)
                 lightRenderer.material.SetColor("_EmissiveColor", lightRenderer.material.color * 0f);
             if (light)
                 light.enabled = false;
+            if (audioSource)
+                audioSource.Stop();
             yield return new WaitForSeconds(Random.Range(0.02f, 1f));
         }
     }
