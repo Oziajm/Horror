@@ -71,3 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Nebula Skyboxes/Nebula_01_Cubemap.exr
+Assets/Models/map/map.fbx
+/Assets/Models/map
+*.fbx

@@ -9,9 +9,9 @@ public class RotatingLights : MonoBehaviour
 
     #region Unity Methods
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.Rotate(new Vector3(2, 0, 0));
+        transform.Rotate(new Vector3(2f, 0, 0));
     }
 
     #endregion

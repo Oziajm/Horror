@@ -14,12 +14,13 @@ public class SecurityDoors : Interactable
     [SerializeField] private Transform door;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
+    [SerializeField] private Light doorLight;
 
     private Coroutine doorAnimation;
     private Vector3 closedPos, openedPos;
     private Vector3 closedHandleRot, openedHandleRot;
     private float batteryAmount;
-    private bool isOpen, wasAudioPlayed;
+    private bool isOpen;
 
     private void Start()
     {
@@ -52,22 +53,16 @@ public class SecurityDoors : Interactable
 
         if (!isOpen)
         {
-            if (!wasAudioPlayed)
-                PlayAudioOnce();
+            audioSource.PlayOneShot(audioClip);
+            doorLight.enabled = true;
 
             StartCoroutine(ConsumePower());
         }
         else
         {
-            wasAudioPlayed = false;
+            doorLight.enabled = false;
             StopCoroutine(ConsumePower());
         }
-    }
-
-    private void PlayAudioOnce()
-    {
-        wasAudioPlayed = true;
-        audioSource.PlayOneShot(audioClip);
     }
 
     private IEnumerator ConsumePower()
