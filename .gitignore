@@ -74,3 +74,4 @@ Assets/Nebula Skyboxes/Nebula_01_Cubemap.exr
 Assets/Models/map/map.fbx
 /Assets/Models/map
 *.fbx
+Assets/Scenes/Night1/LightingData.asset

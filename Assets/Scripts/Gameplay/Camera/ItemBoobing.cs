@@ -5,7 +5,7 @@ public class ItemBoobing : MonoBehaviour
 {
     private readonly float MAX_ROTATE_ANGLE = 30f;
     private readonly float TILT_AMOUNT = 10f;
-    private readonly float TILT_SPEED = 5f;
+    private readonly float TILT_SPEED = 10f;
 
     private readonly float BREATHING_AMOUNT = 0.02f;
     private readonly float BREATHING_SPEED = 1.5f;
