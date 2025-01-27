@@ -30,6 +30,6 @@ public class JumpscaresController : MonoBehaviour
         gameplayView.SetActive(false);
         flashlight.SetActive(false);
 
-        cameraController.OnJumpscareTriggered(caughtBy);
+        //cameraController.OnJumpscareTriggered(caughtBy); TODO: add jumpscare back
     }
 }

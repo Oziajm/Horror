@@ -88,7 +88,7 @@ public class CameraController : MonoBehaviour
         mouseY = inputVector.y * cameraSettings.mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90, 90f);
+        xRotation = Mathf.Clamp(xRotation, -90, 80f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerTransform.Rotate(Vector3.up * mouseX);

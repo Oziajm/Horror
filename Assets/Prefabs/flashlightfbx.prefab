@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1850750829258509271}
   - component: {fileID: 1039950753027549225}
   - component: {fileID: 6724525022329159698}
+  - component: {fileID: 6489160983912261309}
   m_Layer: 2
   m_Name: flashlightfbx
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193598034156268034}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.22, y: -0.26, z: 0.24}
+  m_LocalPosition: {x: 0.15, y: -0.3, z: 0.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -197,6 +198,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6489160983912261309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193598034156268034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8d2a8e006bade46bd300711542a2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1039950752376802169
 GameObject:
   m_ObjectHideFlags: 0

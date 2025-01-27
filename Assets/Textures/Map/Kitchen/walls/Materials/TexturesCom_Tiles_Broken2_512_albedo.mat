@@ -43,7 +43,6 @@ Material:
   - _DISABLE_SSR_TRANSPARENT
   - _ENABLE_GEOMETRIC_SPECULAR_AA
   - _MASKMAP
-  - _MATERIAL_FEATURE_CLEAR_COAT
   - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
@@ -195,7 +194,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AORemapMax: 0.045732856
+    - _AORemapMax: 0.44045067
     - _AORemapMin: 0
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
@@ -216,7 +215,7 @@ Material:
     - _BumpScale: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CoatMask: 1
+    - _CoatMask: 0
     - _Cull: 2
     - _CullMode: 2
     - _CullModeForward: 2
@@ -264,8 +263,8 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
-    - _MetallicRemapMax: 1
-    - _MetallicRemapMin: 1
+    - _MetallicRemapMax: 0
+    - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
     - _NormalScale: 0.45
     - _OcclusionStrength: 1
@@ -284,7 +283,7 @@ Material:
     - _RefractionModel: 0
     - _Smoothness: 0
     - _SmoothnessRemapMax: 1
-    - _SmoothnessRemapMin: 0
+    - _SmoothnessRemapMin: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
