@@ -16,6 +16,12 @@ public class FieldOfViewEditor : Editor
         Handles.color = Color.yellow;
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngle01 * fov.Radius);
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngle02 * fov.Radius);
+
+        if (fov.CanSeePlayer)
+        {
+            Handles.color = Color.green;
+            Handles.DrawLine(fov.transform.position, fov.Player.transform.position);
+        }
     }
 
     private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)

@@ -9,9 +9,8 @@ public class AIFieldOfView : MonoBehaviour
     public float Radius { get; private set; }
     [field:SerializeField]
     public float Angle { get; private set; }
-
-    [SerializeField]
-    private GameObject player;
+    [field:SerializeField]
+    public GameObject Player { get; private set; }
 
     [SerializeField]
     private LayerMask targetMask;

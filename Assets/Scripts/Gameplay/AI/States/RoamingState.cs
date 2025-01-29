@@ -3,40 +3,41 @@ using UnityEngine;
 
 public class RoamingState : BaseState
 {
-    private readonly Animatronic ANIMATRONIC;
-
-    private readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
+    private const string WALK_ANIMATION_NAME = "WALK_ANIMATION";
+    private readonly Animatronic animatronic;
 
     private int lastLocationNumber;
     private int newLocationNumber;
-
     private bool initialized;
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
-        this.ANIMATRONIC = animatronic;
+        this.animatronic = animatronic ?? throw new ArgumentNullException(nameof(animatronic));
     }
 
     public override void Initialize()
     {
-        ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed);
-
-        ANIMATRONIC.Animator.Play(WALK_ANIMATION_NAME);
-
+        initialized = false;
         GetNextLocationToCheck();
+
+        animatronic.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, animatronic.MovementSpeed);
+        animatronic.Animator.Play(WALK_ANIMATION_NAME);
     }
 
     public override Type Tick()
     {
-        ANIMATRONIC.UpdateAnimatorName();
+        if (!initialized) return null;
 
-        if (ANIMATRONIC.IsPlayerSpotted())
+        animatronic.UpdateAnimatorName();
+
+        if (animatronic.IsPlayerSpotted())
         {
             return typeof(ChaseState);
         }
 
-        if (ANIMATRONIC.AnimatronicNavMeshController.GetRemaningDistance() <= 0.05f)
+        if (animatronic.AnimatronicNavMeshController.GetRemaningDistance() <= 0.05f)
         {
+            Debug.Log(animatronic.AnimatronicNavMeshController.GetRemaningDistance());
             return typeof(IdleState);
         }
 
@@ -45,23 +46,20 @@ public class RoamingState : BaseState
 
     private void GetNextLocationToCheck()
     {
-        int amountOfPatrolLocations = ANIMATRONIC.PatrolLocations.Count - 1;
+        int amountOfPatrolLocations = animatronic.PatrolLocations.Count;
+        if (amountOfPatrolLocations == 0) return;
 
         newLocationNumber = UnityEngine.Random.Range(0, amountOfPatrolLocations);
 
         if (lastLocationNumber == newLocationNumber)
         {
-            newLocationNumber++;
-            if (newLocationNumber > amountOfPatrolLocations)
-            {
-                newLocationNumber = 0;
-            }
+            newLocationNumber = (newLocationNumber + 1) % amountOfPatrolLocations;
         }
 
         lastLocationNumber = newLocationNumber;
+        Vector3 newDestination = animatronic.PatrolLocations[newLocationNumber];
 
-        Vector3 newDestination = ANIMATRONIC.PatrolLocations[newLocationNumber];
-
-        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(newDestination);
+        animatronic.AnimatronicNavMeshController.SetNewDestination(newDestination);
+        initialized = true;
     }
 }
