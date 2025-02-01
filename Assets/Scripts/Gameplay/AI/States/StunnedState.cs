@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class StunnedState : BaseState
 {
-    private readonly float STUN_DURATION = 5f;
-    private readonly string FLASHED_ANIMATION = "FLASHED_ANIMATION";
-
     private readonly Animatronic ANIMATRONIC;
 
     private float elapsedTime;
@@ -21,20 +18,17 @@ public class StunnedState : BaseState
         EventsManager.Instance.PlayerOutOfSight?.Invoke();
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
         elapsedTime = 0;
-        ANIMATRONIC.Animator.Play(FLASHED_ANIMATION);
+        ANIMATRONIC.Animator.CrossFade(StringsManager.Instance.FLASHED_ANIMATION, 0.05f);
     }
 
     public override Type Tick()
     {
-        ANIMATRONIC.UpdateAnimatorName();
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > STUN_DURATION)
+        if (elapsedTime > ANIMATRONIC.AnimatronicSettings.StunDuration)
         {
-            if (ANIMATRONIC.AnimatorClipInfo[0].clip.name != FLASHED_ANIMATION)
-                return typeof(DisabledState);
+            return typeof(IdleState);
         }
-
 
         return null;
     }

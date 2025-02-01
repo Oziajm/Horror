@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,5 +25,6 @@ public class FlashLightController : MonoBehaviour
         isOn = !isOn;
         flashLight.SetActive(isOn);
         audioSource.PlayOneShot(audioClip);
+        EventsManager.Instance.ToggleFlashlight.Invoke(isOn);
     }
 }

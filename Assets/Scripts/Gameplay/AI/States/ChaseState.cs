@@ -1,18 +1,18 @@
 using Gameplay.Managers;
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class ChaseState : BaseState
 {
     private readonly float SECONDS_NEEDED_TO_RETURN_TO_ROAMING = 15f;
-
-    private readonly string RUN_ANIMATION_NAME = "RUN_ANIMATION";
+    private readonly float DELAY_BEFORE_CHANGING_ANIMATION = 0.1f;
 
     private readonly Animatronic ANIMATRONIC;
 
     private float elapsedTime;
-
-    private bool isPlayerSpotted;
+    private GameObject targetPlayer;
+    private bool isAnimationFinished;
 
     public ChaseState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -22,25 +22,30 @@ public class ChaseState : BaseState
     public override void Initialize()
     {
         elapsedTime = 0f;
-
+        isAnimationFinished = false;
         EventsManager.Instance.PlayerSpotted?.Invoke();
-        EventsManager.Instance.PlayerEnteredHidingSpot += ChangeStateToCheckHidingSpotState;
+        targetPlayer = ANIMATRONIC.GetTargetPlayer();
+        ANIMATRONIC.Animator.CrossFade(StringsManager.Instance.RUN_ANIMATION_NAME, DELAY_BEFORE_CHANGING_ANIMATION);
+        ANIMATRONIC.StartCoroutine(WaitForAnimationToEnd());
+    }
 
-        ANIMATRONIC.Animator.Play(RUN_ANIMATION_NAME);
-
-        ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.MovementSpeed * ANIMATRONIC.RunningMultiplier);
+    private IEnumerator WaitForAnimationToEnd()
+    {
+        yield return new WaitForSeconds(DELAY_BEFORE_CHANGING_ANIMATION);
+        isAnimationFinished = true;
+        ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, ANIMATRONIC.AnimatronicSettings.MovementSpeed * ANIMATRONIC.AnimatronicSettings.RunningMultiplier);
     }
 
     public override Type Tick()
     {
-        ANIMATRONIC.UpdateAnimatorName();
+        if (!isAnimationFinished)
+            return null;
 
-        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(ANIMATRONIC.Player.transform.position);
+        ANIMATRONIC.AnimatronicNavMeshController.SetNewDestination(targetPlayer.transform.position);
 
         if (ANIMATRONIC.IsPlayerSpotted())
         {
             elapsedTime = 0f;
-            isPlayerSpotted = true;
         }
         else
         {
@@ -48,25 +53,11 @@ public class ChaseState : BaseState
 
             if (elapsedTime > SECONDS_NEEDED_TO_RETURN_TO_ROAMING)
             {
-                isPlayerSpotted = false;
-
-                EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
                 EventsManager.Instance.PlayerOutOfSight?.Invoke();
                 return typeof(IdleState);
             }
         }
 
         return null;
-    }
-
-    private void ChangeStateToCheckHidingSpotState(HidingSpot hidingSpotToCheck)
-    {
-        if (isPlayerSpotted)
-        {
-            ANIMATRONIC.SetNewHidingSpotToCheck(hidingSpotToCheck);
-            EventsManager.Instance.PlayerEnteredHidingSpot -= ChangeStateToCheckHidingSpotState;
-            EventsManager.Instance.PlayerOutOfSight?.Invoke();
-            ANIMATRONIC.StateMachine.SwitchState(typeof(CheckHidingSpotState));
-        }
     }
 }

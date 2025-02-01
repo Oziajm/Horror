@@ -17,5 +17,7 @@ namespace Gameplay.Managers
 
         public Action PlayerSpotted;
         public Action PlayerOutOfSight;
+
+        public Action<bool> ToggleFlashlight;
     }
 }

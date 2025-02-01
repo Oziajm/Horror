@@ -1,12 +1,12 @@
+using Gameplay.Managers;
 using System;
+using UnityEngine;
 
 public class IdleState : BaseState
 {
-    private readonly string IDLE_ANIMATION_NAME = "IDLE_ANIMATION";
-
-    private readonly string PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE = "reachedDestination";
-
     private readonly Animatronic ANIMATRONIC;
+
+    private float elapsedTime;
 
     public IdleState(Animatronic animatronic) : base(animatronic.gameObject)
     {
@@ -15,23 +15,16 @@ public class IdleState : BaseState
 
     public override void Initialize()
     {
-        ANIMATRONIC.Animator.SetBool(PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE, false);
-        ANIMATRONIC.Animator.Play(IDLE_ANIMATION_NAME);
-
         ANIMATRONIC.AnimatronicNavMeshController.SwitchAnimatronicMovement(false, 0);
+        ANIMATRONIC.Animator.CrossFade(StringsManager.Instance.IDLE_ANIMATION_NAME, 0.1f);
+        elapsedTime = 0;
     }
 
     public override Type Tick()
-    {   
-        ANIMATRONIC.UpdateAnimatorName();
+    {
+        elapsedTime += Time.deltaTime;
 
-        if (ANIMATRONIC.IsPlayerSpotted())
-        {
-            return typeof(ChaseState);
-        }
-
-        ANIMATRONIC.Animator.SetBool(PLAYER_REACHED_DESTINATION_ANIMATOR_VARIABLE, true);
-        if (ANIMATRONIC.AnimatorClipInfo[0].clip.name != IDLE_ANIMATION_NAME)
+        if (elapsedTime > ANIMATRONIC.AnimatronicSettings.IdleDuration)
         {
             return typeof(RoamingState);
         }

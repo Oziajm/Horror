@@ -9,9 +9,7 @@ public class Bonny : Animatronic
 
     public void Start()
     {
-        UpdateAnimatorName();
-        playerMovement = Player.GetComponent<MovementController>();
-        AssignSoundController(GetComponent<AnimatronicsSoundsController>());
+
     }
 
     protected void InitializeStateMachine()
@@ -24,6 +22,6 @@ public class Bonny : Animatronic
 
     public override bool IsPlayerSpotted()
     {
-        return fov.CanSeePlayer && !playerMovement.IsCrouching;
+        return fov.SeenPlayer != null;
     }
 }

@@ -10,22 +10,31 @@ public class AnimatronicNavMeshController : MonoBehaviour
 
     public void SwitchAnimatronicMovement(bool toggle, float speed)
     {
+        navMeshAgent.enabled = toggle;
         navMeshAgent.speed = speed;
-        navMeshAgent.acceleration = toggle ? 8 : 0;
+        navMeshAgent.acceleration = toggle ? 8 : -100;
     }
 
     public void SetNewDestination(Vector3 newLocation)
     {
+        navMeshAgent.enabled = true;
         navMeshAgent.destination = newLocation;
     }
 
     public float GetRemaningDistance()
     {
+        if (navMeshAgent.remainingDistance == 0 || !navMeshAgent.isActiveAndEnabled)
+        {
+            return 100;
+        }
+
         return navMeshAgent.remainingDistance;
     }
 
-    public float GetStoppingDistance()
+    public bool IsAnimatronicMoving()
     {
-        return navMeshAgent.stoppingDistance;
+        if (!navMeshAgent.isActiveAndEnabled) { return false; }
+
+        return navMeshAgent.speed != 0;
     }
 }

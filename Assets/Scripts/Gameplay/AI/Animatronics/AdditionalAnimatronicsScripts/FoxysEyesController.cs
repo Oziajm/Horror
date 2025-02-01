@@ -8,7 +8,7 @@ public class FoxysEyesController : MonoBehaviour
     [SerializeField]
     private Light[] lights;
 
-    public void SetFoxyTriggeredEyes()
+    public void SetFoxyAngerEyes()
     {
         eyesMaterial.SetColor("_EmissiveColor", Color.red * 50f);
 

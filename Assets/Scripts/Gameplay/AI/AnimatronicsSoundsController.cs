@@ -10,7 +10,7 @@ public class AnimatronicsSoundsController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }

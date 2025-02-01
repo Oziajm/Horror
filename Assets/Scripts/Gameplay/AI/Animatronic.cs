@@ -7,39 +7,34 @@ public abstract class Animatronic : MonoBehaviour
     [field:SerializeField]
     public List<Vector3> PatrolLocations { get; private set; }
     [field: SerializeField]
-    public GameObject Player { get; private set; }
-    [field: SerializeField]
-    public float MovementSpeed { get; private set; }
-    [field: SerializeField]
-    public float FootStepDelay { get; private set; }
-    [field: SerializeField]
     public AnimatronicsSoundsController SoundsController { get; private set; }
     [field: SerializeField]
     public AnimatronicNavMeshController AnimatronicNavMeshController { get; private set; }
     [field: SerializeField]
-    public Animator Animator { get; private set; }
-    [field: SerializeField]
     public FootstepController FootstepController { get; private set; }
-    public float RunningMultiplier { get; private set; } = 2.5f;
-    public AnimatorClipInfo[] AnimatorClipInfo { get; private set; }
+    [field: SerializeField]
+    public AnimatronicSettings AnimatronicSettings { get; private set; }
+    [field: SerializeField]
+    public Animator Animator { get; private set; }
+
     public StateMachine StateMachine { get; private set; }
-    public HidingSpot HidingSpotToCheck { get; private set; }
+    public bool IsStunned { get; private set; }
+    public bool isMoving => AnimatronicNavMeshController.IsAnimatronicMoving();
 
     [SerializeField]
-    private Camera playerCamera;
-    [SerializeField]
     protected AIFieldOfView fov;
-    [SerializeField]
-    private bool isOn;
+    protected bool playerSpotted = false;
+
+    private Camera playerCamera;
+
+    private void Awake()
+    {
+        playerCamera = Camera.main;
+    }
 
     public abstract bool IsPlayerSpotted();
 
-    public void UpdateAnimatorName()
-    {
-        AnimatorClipInfo = Animator.GetCurrentAnimatorClipInfo(0); 
-    }
-
-    public bool IsVisible(GameObject target)
+    protected bool IsVisible(GameObject target)
     {
         var planes = GeometryUtility.CalculateFrustumPlanes(playerCamera);
         var point = target.transform.position;
@@ -55,6 +50,22 @@ public abstract class Animatronic : MonoBehaviour
         return true;
     }
 
+    protected void HandleFootsteps()
+    {
+        if (!isMoving) return;
+
+        float stepDelay = StateMachine.CurrentState is ChaseState
+            ? AnimatronicSettings.FootStepDelay / 2
+            : AnimatronicSettings.FootStepDelay;
+
+        FootstepController.HandleFootSteps(stepDelay);
+    }
+
+    public GameObject GetTargetPlayer()
+    {
+        return fov.SeenPlayer;
+    }
+
     public void AssignSoundController(AnimatronicsSoundsController soundController)
     {
         this.SoundsController = soundController;
@@ -65,8 +76,8 @@ public abstract class Animatronic : MonoBehaviour
         this.StateMachine = stateMachine;
     }
 
-    public void SetNewHidingSpotToCheck(HidingSpot hidingSpotToCheck)
+    public void ToggleStun(bool isStunned)
     {
-        this.HidingSpotToCheck = hidingSpotToCheck;
+        this.IsStunned = isStunned;
     }
 }

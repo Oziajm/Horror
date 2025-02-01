@@ -1,65 +1,47 @@
+using Gameplay.Managers;
 using System;
 using UnityEngine;
 
 public class RoamingState : BaseState
 {
-    private const string WALK_ANIMATION_NAME = "WALK_ANIMATION";
     private readonly Animatronic animatronic;
-
-    private int lastLocationNumber;
-    private int newLocationNumber;
-    private bool initialized;
+    private int lastLocationNumber = -1;
+    private const float DestinationThreshold = 0.05f;
 
     public RoamingState(Animatronic animatronic) : base(animatronic.gameObject)
     {
-        this.animatronic = animatronic ?? throw new ArgumentNullException(nameof(animatronic));
+        this.animatronic = animatronic;
     }
 
     public override void Initialize()
     {
-        initialized = false;
-        GetNextLocationToCheck();
-
-        animatronic.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, animatronic.MovementSpeed);
-        animatronic.Animator.Play(WALK_ANIMATION_NAME);
+        animatronic.AnimatronicNavMeshController.SwitchAnimatronicMovement(true, animatronic.AnimatronicSettings.MovementSpeed);
+        SetNextPatrolLocation();
+        animatronic.Animator.CrossFade(StringsManager.Instance.WALK_ANIMATION_NAME, 0.1f);
     }
 
     public override Type Tick()
     {
-        if (!initialized) return null;
-
-        animatronic.UpdateAnimatorName();
-
-        if (animatronic.IsPlayerSpotted())
+        if (animatronic.AnimatronicNavMeshController.GetRemaningDistance() <= DestinationThreshold)
         {
-            return typeof(ChaseState);
-        }
-
-        if (animatronic.AnimatronicNavMeshController.GetRemaningDistance() <= 0.05f)
-        {
-            Debug.Log(animatronic.AnimatronicNavMeshController.GetRemaningDistance());
             return typeof(IdleState);
         }
 
         return null;
     }
 
-    private void GetNextLocationToCheck()
+    private void SetNextPatrolLocation()
     {
-        int amountOfPatrolLocations = animatronic.PatrolLocations.Count;
-        if (amountOfPatrolLocations == 0) return;
+        int patrolPoints = animatronic.PatrolLocations.Count;
+        if (patrolPoints == 0) return;
 
-        newLocationNumber = UnityEngine.Random.Range(0, amountOfPatrolLocations);
-
-        if (lastLocationNumber == newLocationNumber)
+        int newLocationNumber;
+        do
         {
-            newLocationNumber = (newLocationNumber + 1) % amountOfPatrolLocations;
-        }
+            newLocationNumber = UnityEngine.Random.Range(0, patrolPoints);
+        } while (newLocationNumber == lastLocationNumber && patrolPoints > 1);
 
         lastLocationNumber = newLocationNumber;
-        Vector3 newDestination = animatronic.PatrolLocations[newLocationNumber];
-
-        animatronic.AnimatronicNavMeshController.SetNewDestination(newDestination);
-        initialized = true;
+        animatronic.AnimatronicNavMeshController.SetNewDestination(animatronic.PatrolLocations[newLocationNumber]);
     }
 }

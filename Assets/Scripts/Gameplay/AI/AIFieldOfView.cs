@@ -1,16 +1,15 @@
 using UnityEngine;
 using System.Collections;
+using Gameplay.Managers;
 
 public class AIFieldOfView : MonoBehaviour
 {
-    public bool CanSeePlayer { get; private set; }
+    public GameObject SeenPlayer { get; private set; }
 
     [field:SerializeField]
     public float Radius { get; private set; }
     [field:SerializeField]
     public float Angle { get; private set; }
-    [field:SerializeField]
-    public GameObject Player { get; private set; }
 
     [SerializeField]
     private LayerMask targetMask;
@@ -44,18 +43,21 @@ public class AIFieldOfView : MonoBehaviour
 
             if (Vector3.Angle(transform.forward, directionToTarget) < Angle / 2)
             {
-                float disanceToTarget = Vector3.Distance(transform.position, target.position);
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, directionToTarget, disanceToTarget, obstructionMask))
-                    CanSeePlayer = true;
-                else
-                    CanSeePlayer = false;
+                if (!Physics.Raycast(transform.position, directionToTarget, out RaycastHit hit, distanceToTarget, obstructionMask))
+                {
+                    SeenPlayer = target.gameObject;
+                }
             }
             else
-                CanSeePlayer = false;
+            {
+                SeenPlayer = null;
+            }
         }
-        else if (CanSeePlayer)
-            CanSeePlayer = false;
+        else
+        {
+            SeenPlayer = null;
+        }
     }
-
 }

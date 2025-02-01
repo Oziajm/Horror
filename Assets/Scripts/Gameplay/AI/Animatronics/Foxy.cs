@@ -1,121 +1,85 @@
+using Gameplay.Managers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Foxy : Animatronic
 {
-    private readonly string WALK_ANIMATION_NAME = "WALK_ANIMATION";
-    private readonly string RUN_ANIMATION_NAME = "RUN_ANIMATION";
-
     [SerializeField]
     private FoxysEyesController foxysEyesController;
 
-    [SerializeField]
-    private FlashLightController flashLightController;
+    private float elapsedTime = 0f;
+    private bool isPlayerFlashlightOn = false;
 
-    [SerializeField]
-    private FoxyParameters foxyParameters;
-
-    private bool canBeStunned;
-    private float elapsedTime;
-
-    public void Start()
-    {
-        canBeStunned = true;
-        elapsedTime = 0;
-
-        foxysEyesController.SetFoxyCalmEyes();
-        SetStateMachine(GetComponent<StateMachine>());
-        InitializeStateMachine();
-        AssignSoundController(GetComponent<AnimatronicsSoundsController>());
-    }
-    protected void InitializeStateMachine()
-    {
-        StateMachine.SetStates(new Dictionary<Type, BaseState>()
-        {
-            {typeof(DisabledState), new DisabledState(this)},
-            {typeof(RoamingState), new RoamingState(this)},
-            {typeof(IdleState), new IdleState(this)},
-            {typeof(StunnedState), new StunnedState(this)},
-            {typeof(ChaseState), new ChaseState(this)},
-            {typeof(CheckHidingSpotState), new CheckHidingSpotState(this)},
-        });
-    }
+    private void Start() => Initialize();
 
     private void Update()
     {
-        UpdateAnimatorName();
-        HandleWeakness();
-        HandleFootSteps();
-    }
+        HandleFootsteps();
 
-    public override bool IsPlayerSpotted()
-    {
-        return fov.CanSeePlayer;
-    }
-
-    private void HandleWeakness()
-    {
-        bool weaknessTriggered = IsVisible(gameObject) && flashLightController.IsOn && IsPlayerSpotted();
-
-        if (weaknessTriggered)
+        if (IsPlayerSpotted())
         {
-            elapsedTime = 0;
-
-            if (canBeStunned)
-                StunnAnimatronic();
+            if (IsStunned) { return; }
+            elapsedTime = 0f;
+            if (IsVisible(gameObject) && isPlayerFlashlightOn)
+            {
+                if (!IsStunned)
+                    StunAnimatronic();
+            }
             else
-                MakeAnimatronicAngry();
+            {
+                StateMachine.SwitchState(typeof(ChaseState));
+            }
         }
         else
         {
-            if (canBeStunned) return;
-
             elapsedTime += Time.deltaTime;
-
-            ResetIfNeeded();
+            if (elapsedTime > AnimatronicSettings.StunDuration)
+            {
+                ResetStunState();
+            }
         }
     }
 
-    private void ResetIfNeeded()
+    private void Initialize()
     {
-        if (elapsedTime > foxyParameters.AngerDuration)
+        SetStateMachine(GetComponent<StateMachine>());
+        AssignSoundController(GetComponent<AnimatronicsSoundsController>());
+        InitializeStateMachine();
+        foxysEyesController.SetFoxyCalmEyes();
+    }
+
+    private void InitializeStateMachine()
+    {
+        StateMachine.SetStates(new Dictionary<Type, BaseState>
         {
-            canBeStunned = true;
-            foxysEyesController.SetFoxyCalmEyes();
-            Animator.speed = 1;
-
-            elapsedTime = 0;
-        }
+            { typeof(DefaultState), new DefaultState(this) },
+            { typeof(RoamingState), new RoamingState(this) },
+            { typeof(IdleState), new IdleState(this) },
+            { typeof(StunnedState), new StunnedState(this) },
+            { typeof(ChaseState), new ChaseState(this) },
+        });
     }
 
-    private void StunnAnimatronic()
-    {
-        canBeStunned = false;
-        foxysEyesController.SetFoxyTriggeredEyes();
-        SoundsController.PlayAngerSound();
+    public override bool IsPlayerSpotted() => fov.SeenPlayer != null;
 
+    private void ResetStunState()
+    {
+        ToggleStun(false);
+        foxysEyesController.SetFoxyCalmEyes();
+        elapsedTime = 0f;
+    }
+
+    private void StunAnimatronic()
+    {
+        ToggleStun(true);
         StateMachine.SwitchState(typeof(StunnedState));
+        foxysEyesController.SetFoxyAngerEyes();
+        SoundsController.PlayAngerSound();
     }
 
-    private void MakeAnimatronicAngry()
-    {
-        if (AnimatorClipInfo[0].clip.name == RUN_ANIMATION_NAME)
-        {
-            Animator.speed = foxyParameters.AngerMultiplier;
-            AnimatronicNavMeshController.SwitchAnimatronicMovement(true, MovementSpeed * RunningMultiplier * foxyParameters.AngerMultiplier);
-        }
-    }
+    private void OnToggleFlashlight(bool isOn) => isPlayerFlashlightOn = isOn;
 
-    private void HandleFootSteps()
-    {
-        if (AnimatorClipInfo[0].clip.name == WALK_ANIMATION_NAME)
-        {
-            FootstepController.HandleFootSteps(FootStepDelay);
-        }
-        else if (AnimatorClipInfo[0].clip.name == RUN_ANIMATION_NAME)
-        {
-            FootstepController.HandleFootSteps(FootStepDelay / 2);
-        }
-    }
+    private void OnEnable() => EventsManager.Instance.ToggleFlashlight += OnToggleFlashlight;
+    private void OnDisable() => EventsManager.Instance.ToggleFlashlight -= OnToggleFlashlight;
 }
