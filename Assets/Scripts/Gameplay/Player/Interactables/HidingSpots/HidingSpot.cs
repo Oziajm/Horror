@@ -15,7 +15,8 @@ public class HidingSpot : Interactable
     [SerializeField] private Animator animator;
     [Space(10)]
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip openAudioClip;
+    [SerializeField] private AudioClip closeAudioClip;
 
     private bool isBeingOpen;
 
@@ -25,14 +26,9 @@ public class HidingSpot : Interactable
     {
         if (isBeingOpen) return; 
 
-        PlaySound();
-
-        if (IsOpen)
-            animator.SetBool(PARAMETER_NAME, false);
-        else
-            animator.SetBool(PARAMETER_NAME, true);
-
         IsOpen = !IsOpen;
+        PlaySound();
+        animator.SetBool(PARAMETER_NAME, IsOpen);
     }
 
     public void OnPlayerEnterTrigger(Vector3 hidingSpotPosition, Vector3 animatronicPositionToCheckSpot)
@@ -58,6 +54,6 @@ public class HidingSpot : Interactable
     private void PlaySound()
     {
         if (!audioSource.isPlaying)
-            audioSource.PlayOneShot(audioClip);
+            audioSource.PlayOneShot( IsOpen ? closeAudioClip : openAudioClip );
     }
 }

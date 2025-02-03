@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Gameplay.Managers;
 
 public class StaminaController : MonoBehaviour
 {
@@ -8,24 +9,16 @@ public class StaminaController : MonoBehaviour
     [SerializeField] 
     private PlayerSettings playerSettings;
 
-    [SerializeField]
-    private StaminaBarController staminaBarController;
-
     private Coroutine staminaRegeneration = null;
     private Coroutine usageCoroutine = null;
     private float stamina;
 
     #endregion
 
-    #region Unity Methods
-    private void Start()
+    private void Awake()
     {
         stamina = playerSettings.maxStamina;
-        staminaBarController.SetMaxValue(stamina);
-        staminaBarController.SetStaminaVisible(false);
     }
-
-    #endregion
 
     #region Public Methods
 
@@ -84,22 +77,22 @@ public class StaminaController : MonoBehaviour
         while (stamina < playerSettings.maxStamina)
         {
             stamina += Time.deltaTime * playerSettings.staminaRegenerationSpeed;
-            staminaBarController.SetValue(stamina);
+            EventsManager.Instance.SetStamina(stamina);
             yield return null;
         }
 
-        staminaBarController.SetStaminaVisible(false);
+        EventsManager.Instance.ToggleStaminaBarVisibility(false);
         staminaRegeneration = null;
     }
 
     private IEnumerator UseStamina()
     {
-        staminaBarController.SetStaminaVisible(true);
+        EventsManager.Instance.ToggleStaminaBarVisibility(true);
 
         while (stamina > 0)
         {
             stamina = Mathf.Clamp(stamina - Time.deltaTime * playerSettings.staminaUsageSpeed, 0, playerSettings.maxStamina);
-            staminaBarController.SetValue(stamina);
+            EventsManager.Instance.SetStamina(stamina);
             yield return null;
         }
     }

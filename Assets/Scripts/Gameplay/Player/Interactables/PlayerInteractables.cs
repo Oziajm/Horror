@@ -1,96 +1,65 @@
-using System.Collections;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.InputSystem;
+using Gameplay.Managers;
 
 public class PlayerInteractables : MonoBehaviour
 {
-    #region Variables
+    private const int FramesNeededToUpdate = 10;
 
-    private const float FADE_OUT_ANIM_DURATION = 0.25f;
-    private const int FRAMES_NEEDED_TO_UPDATE = 10;
+    [SerializeField] private float maxDistance = 1f;
+    [SerializeField] private LayerMask layers;
 
-    [SerializeField]
-    private Transform cameraTransform;
-    [SerializeField] 
-    private float maxDistance = 1;
-    [SerializeField] 
-    private LayerMask layers;
-    [SerializeField] 
-    private TextMeshProUGUI useText;
-    [SerializeField]
-    private Image useImage;
-    [SerializeField] 
-    private GameObject textWindow;
-
-    private bool textWindowVisible = true;
-
-    private Interactable interactable;
-    private int framesElapsed;
-
+    private bool isTextWindowVisible = false;
+    private Interactable currentInteractable;
+    private int frameCounter;
     private InputActions inputActions;
-    #endregion
-
-    #region Unity Methods
+    private Transform cameraTransform;
 
     private void Awake()
     {
-        inputActions = new();
-        inputActions.Player.Enable();
-
-        inputActions.Player.Use.performed += Interact;
+        cameraTransform = Camera.main?.transform;
     }
 
-    private void Interact(InputAction.CallbackContext context)
+    private void OnEnable()
     {
-        interactable?.Interact();
+        inputActions = new InputActions();
+        inputActions.Player.Enable();
+        inputActions.Player.Use.performed += OnInteract;
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Player.Use.performed -= OnInteract;
+        inputActions.Player.Disable();
     }
 
     private void Update()
     {
-        if (framesElapsed >= FRAMES_NEEDED_TO_UPDATE)
+        if (frameCounter++ < FramesNeededToUpdate) return;
+        frameCounter = 0;
+
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hitInfo, maxDistance, layers))
         {
-            bool lastVisibleValue = textWindowVisible;
-            textWindowVisible = false;
-
-            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hitInfo, maxDistance, layers))
+            if (hitInfo.collider.TryGetComponent(out Interactable interactable) && interactable.active)
             {
-                if (hitInfo.collider.TryGetComponent<Interactable>(out Interactable interactable) && interactable.active)
-                {
-                    useText.text = interactable.GetHoverText();
-                    textWindowVisible = true;
-                    this.interactable = interactable;
-                }
+                EventsManager.Instance.SetInterctableViewText.Invoke(interactable?.GetHoverText());
+                EventsManager.Instance.ToggleInteractableViewVisibity.Invoke(isTextWindowVisible);
+                isTextWindowVisible = true;
+                currentInteractable = interactable;
             }
-            else
-            {
-                this.interactable = null;
-            }
-
-            if (lastVisibleValue != textWindowVisible)
-            {
-                StopCoroutine(DoFadeInOutAnimation());
-                StartCoroutine(DoFadeInOutAnimation());
-            }
-
-            framesElapsed = 0;
         }
-
-        framesElapsed++;
+        else
+        {
+            if (!isTextWindowVisible) { return; }
+            isTextWindowVisible = false;
+            currentInteractable = null;
+            EventsManager.Instance.ToggleInteractableViewVisibity.Invoke(isTextWindowVisible);
+        }
     }
 
-    private IEnumerator DoFadeInOutAnimation()
+    private void OnInteract(InputAction.CallbackContext context)
     {
-        float time = 0;
-        CanvasGroup textWindowFrame = textWindow.GetComponent<CanvasGroup>();
-        while (time < FADE_OUT_ANIM_DURATION)
-        {
-            textWindowFrame.alpha = (textWindowVisible) ? Mathf.InverseLerp(0, FADE_OUT_ANIM_DURATION, time) : Mathf.InverseLerp(FADE_OUT_ANIM_DURATION, 0, time);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        textWindowFrame.alpha = (textWindowVisible) ? 1f : 0f;
+        currentInteractable?.Interact();
     }
-    #endregion
 }

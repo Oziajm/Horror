@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,9 +17,13 @@ public class StaminaBarController : MonoBehaviour
     [SerializeField] private Image fill;
     [SerializeField] private Gradient gradientFill;
 
-    private float maxValue = 10;
-    private float maxFillWidth = 500;
-    private float normalizedValue = 1;
+    [Header("Player Settings")]
+    [Space(10)]
+    [SerializeField] private PlayerSettings playerSettings;
+
+    private float maxValue;
+    private float maxFillWidth;
+    private float normalizedValue;
     private bool borderLocked = false;
     private Coroutine fadeOutAnimation = null;
 
@@ -29,20 +34,29 @@ public class StaminaBarController : MonoBehaviour
 
     private void Start()
     {
+        SetStaminaVisible(false);
         maxFillWidth = border.rectTransform.rect.width - 2;
+        maxValue = playerSettings.maxStamina;
+        SetValue(maxValue);
+    }
+
+    private void OnEnable()
+    {
+        EventsManager.Instance.ToggleStaminaBarVisibility += SetStaminaVisible;
+        EventsManager.Instance.SetStamina += SetValue;
+    }
+
+    private void OnDisable()
+    {
+        EventsManager.Instance.ToggleStaminaBarVisibility -= SetStaminaVisible;
+        EventsManager.Instance.SetStamina -= SetValue;
     }
 
     #endregion
 
-    #region Public Methods
+    #region Private Methods
 
-    public void SetMaxValue(float value)
-    {
-        maxValue = value;
-        SetValue(value);
-    }
-
-    public void SetValue(float value)
+    private void SetValue(float value)
     {
         normalizedValue = value / maxValue;
         fill.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, normalizedValue * maxFillWidth);
@@ -53,7 +67,7 @@ public class StaminaBarController : MonoBehaviour
         if (normalizedValue <= 0f) StartCoroutine(DoBorderAniamtion());
     }
 
-    public void SetStaminaVisible(bool value)
+    private void SetStaminaVisible(bool value)
     {
         if(!value)
         {

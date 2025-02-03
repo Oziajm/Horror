@@ -19,5 +19,13 @@ namespace Gameplay.Managers
         public Action PlayerOutOfSight;
 
         public Action<bool> ToggleFlashlight;
+
+        public Action<bool> ToggleStaminaBarVisibility;
+        public Action<float> SetStamina;
+
+        public Action<bool> IsPlayerUsingKeyboard;
+
+        public Action<bool> ToggleInteractableViewVisibity;
+        public Action<string> SetInterctableViewText;
     }
 }
