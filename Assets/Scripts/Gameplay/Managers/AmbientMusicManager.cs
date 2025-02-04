@@ -13,20 +13,6 @@ public class AmbientMusicManager : Singleton<AmbientMusicManager>
     [SerializeField]
     private AudioClip chaseAmbient;
 
-    private float volume;
-    private float fadeOutValue;
-
-    private void Start()
-    {
-        volume = audioSource.volume;
-        fadeOutValue = volume / 10;
-
-        EventsManager.Instance.PlayerSpotted += PlayChaseMusic;
-        EventsManager.Instance.PlayerOutOfSight += PlayAmbientMusic;
-
-        PlayAmbientMusic();
-    }
-
     private void PlayMusic(AudioClip musicClip)
     {
         if (audioSource.isPlaying)
@@ -37,13 +23,25 @@ public class AmbientMusicManager : Singleton<AmbientMusicManager>
         audioSource.Play();
     }
 
-    public void PlayChaseMusic()
+    private void PlayChaseMusic()
     {
         PlayMusic(chaseAmbient);
     }
 
-    public void PlayAmbientMusic()
+    private void PlayAmbientMusic()
     {
         PlayMusic(ambient);
+    }
+
+    private void OnEnable()
+    {
+        EventsManager.Instance.PlayerSpotted += PlayChaseMusic;
+        EventsManager.Instance.PlayerOutOfSight += PlayAmbientMusic;
+    }
+
+    private void OnDisable()
+    {
+        EventsManager.Instance.PlayerSpotted -= PlayChaseMusic;
+        EventsManager.Instance.PlayerOutOfSight -= PlayAmbientMusic;
     }
 }

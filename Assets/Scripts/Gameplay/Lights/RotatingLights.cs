@@ -5,7 +5,7 @@ public class RotatingLights : MonoBehaviour
 {
     #region Variables
 
-    private readonly float ROTATION_SPEED = 100f;
+    private readonly float ROTATION_SPEED = 200f;
 
     private Vector3 rotationVec;
 
@@ -15,7 +15,7 @@ public class RotatingLights : MonoBehaviour
 
     private void Start()
     {
-        rotationVec = transform.forward * ROTATION_SPEED;
+        rotationVec = transform.up * ROTATION_SPEED;
     }
 
     private void FixedUpdate()

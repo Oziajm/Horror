@@ -13,7 +13,7 @@ public class InteractableUIView : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI useText;
 
-    private bool isTextWindowVisible = false;
+    private bool isTextWindowVisible = true;
 
     private void Start()
     {

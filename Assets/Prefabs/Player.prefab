@@ -213,14 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98073fe079c35f341a03c01669908336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 3703483883800968728}
   maxDistance: 2
   layers:
     serializedVersion: 2
     m_Bits: 64
-  useText: {fileID: 0}
-  useImage: {fileID: 0}
-  textWindow: {fileID: 0}
 --- !u!114 &3703483882043949195
 MonoBehaviour:
   m_ObjectHideFlags: 0
